@@ -1,0 +1,278 @@
+﻿
+
+user control (1330,600);1300, 600
+
+ALTER TABLE [dbo].[tblPatient]
+ADD  Age int
+
+ALTER PROCEDURE [dbo].[spSearchPatient] 
+@PatientName nvarchar(50),
+@HospitalId int,
+@OperationId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	declare @sql nvarchar(1500)
+	declare @name nvarchar(100)
+	set @name = ' P.[Prefix] + ''. '' + P.[FirstName] + '' '' + P.[MiddleName] + '' '' + P.[LastName] Name '
+	set @sql= ' SELECT P.[PatientId] Id, ' + @name + ', P.[Age] ,P.[Gender] , P.[Mobile] ,P.[HomePhone] ,P.[Email] 
+	FROM [dbo].[tblPatient] P 
+	WHERE (P.[FirstName] like ''%' + @PatientName + '%'' OR P.[LastName] like ''%' + @PatientName + '%'' 
+								OR P.[LastName] like ''%' + @PatientName + '%'') ' ;
+
+	if @HospitalId <> '0' and @HospitalId <> ''
+	begin
+			set @sql = @sql + 'and P.[HospitalId] = ' + convert(varchar(5),@HospitalId)
+	end
+	
+	--print @sql						 
+	execute(@sql)
+
+END
+
+
+ALTER PROCEDURE [dbo].[spAddPatient]
+@Prefix nvarchar(5),
+@FirstName nvarchar(50),
+@MiddleName nvarchar(50),
+@LastName nvarchar(50),
+@Age int,
+@Gender char(1),
+@Address nvarchar(200),
+@Mobile nvarchar(50),
+@HomePhone nvarchar(50),
+@Email nvarchar(50),
+@HospitalId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO [dbo].[tblPatient]
+           ([Prefix]
+           ,[FirstName]
+           ,[MiddleName]
+           ,[LastName]
+           ,[Age]
+           ,[Gender]
+           ,[Address]
+           ,[Mobile]
+           ,[HomePhone]
+           ,[Email]
+           ,[HospitalId]
+           ,[CreatedOn])
+     VALUES
+           ( @Prefix
+           , @FirstName
+           , @MiddleName
+           , @LastName
+           , @Age
+           , @Gender
+           , @Address
+           , @Mobile
+           , @HomePhone
+           , @Email
+           , @HospitalId
+           , getdate())
+
+	SELECT MAX([PatientId]) FROM [dbo].[tblPatient]
+
+END
+
+ALTER PROCEDURE [dbo].[spGetPatient] 
+@PatientId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT P.[PatientId]
+      ,P.[Prefix]
+      ,P.[FirstName]
+      ,P.[MiddleName]
+      ,P.[LastName]
+      ,P.[Age]
+      ,P.[Gender]
+      ,P.[Address]
+      ,P.[Mobile]
+      ,P.[HomePhone]
+      ,P.[Email]
+      ,P.[HospitalId]
+      ,HospitalName = (select H.[Name] from [dbo].[tblHospital] H where P.[HospitalId] = H.[HospitalId])
+      ,P.[CreatedOn]
+  FROM [dbo].[tblPatient] P 
+  WHERE P.[PatientId] = @PatientId
+
+END
+
+
+ALTER PROCEDURE [dbo].[spUpdatePatient]
+@PatientId int,
+@Prefix nvarchar(5),
+@FirstName nvarchar(50),
+@MiddleName nvarchar(50),
+@LastName nvarchar(50),
+@Age int,
+@Gender char(1),
+@Address nvarchar(200),
+@Mobile nchar(10),
+@HomePhone nchar(10),
+@Email nchar(10),
+@HospitalId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE [dbo].[tblPatient]
+    SET		[Prefix] = @Prefix
+           ,[FirstName] = @FirstName
+           ,[MiddleName] = @MiddleName
+           ,[LastName] = @LastName
+           ,[Age] = @Age
+           ,[Gender] = @Gender
+           ,[Address] = @Address
+           ,[Mobile] = @Mobile
+           ,[HomePhone] = @HomePhone
+           ,[Email] = @Email
+           ,[HospitalId] = @HospitalId
+     WHERE [PatientId] = @PatientId
+
+END
+
+
+CREATE TABLE [dbo].[tblSurgeryImplants](
+	[SurgeryId] [int] NOT NULL,
+	[ImplantId] [int] NOT NULL
+) ON [PRIMARY]
+
+ALTER PROCEDURE [dbo].[spGetSurgeriesById] 
+@SurgeryId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	SELECT TOP 1 [SurgeryId]
+		  ,[PatientId]
+		  ,[SurgeryDate]
+		  ,[OperationId]
+		  ,[ACLSubTypeId]
+		  ,[GraftSizeId]
+		  ,[HospitalId]
+		  ,[ImplantId]
+		  ,[IPNumber]
+		  ,[Notes]
+	 FROM [dbo].[tblSurgery] WHERE [SurgeryId] = @SurgeryId
+
+	SELECT	[ImplantId]
+	FROM [dbo].[tblSurgeryImplants] WHERE [SurgeryId] = @SurgeryId
+
+END
+
+CREATE PROCEDURE [dbo].[spAddSurgeryImplants] 
+@SurgeryId int,
+@ImplantId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO [dbo].[tblSurgeryImplants]
+           ([SurgeryId]
+           ,[ImplantId])
+    VALUES (@SurgeryId, @ImplantId)
+
+END
+
+ALTER PROCEDURE [dbo].[spUpdateSurgery]
+@SurgeryId int,
+@PatientId int,
+@SurgeryDate datetime,
+@OperationId int,
+@ACLSubTypeId int,
+@GraftSizeId int,
+@HospitalId int,
+@ImplantId int,
+@IPNumber nvarchar(50),
+@Notes nvarchar(500)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE [dbo].[tblSurgery]
+    SET     [PatientId] = @PatientId
+           ,[SurgeryDate] = @SurgeryDate
+           ,[OperationId] = @OperationId
+           ,[ACLSubTypeId] = @ACLSubTypeId
+           ,[GraftSizeId] = @GraftSizeId
+           ,[HospitalId] = @HospitalId
+           ,[ImplantId] = @ImplantId
+           ,[IPNumber] = @IPNumber
+           ,[Notes] = @Notes
+     WHERE [SurgeryId] = @SurgeryId
+
+	 DELETE FROM [dbo].[tblSurgeryImplants] WHERE [SurgeryId] = @SurgeryId 
+END
+
+ALTER PROCEDURE [dbo].[spAddSurgery]
+@PatientId int,
+@SurgeryDate datetime,
+@OperationId int,
+@ACLSubTypeId int,
+@GraftSizeId int,
+@HospitalId int,
+@ImplantId int,
+@IPNumber nvarchar(50),
+@Notes nvarchar(500)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	INSERT INTO [dbo].[tblSurgery]
+           ([PatientId]
+           ,[SurgeryDate]
+           ,[OperationId]
+           ,[ACLSubTypeId]
+           ,[GraftSizeId]
+           ,[HospitalId]
+           ,[ImplantId]
+           ,[IPNumber]
+           ,[Notes])
+     VALUES
+           (
+		    @PatientId
+           ,@SurgeryDate
+           ,@OperationId
+           ,@ACLSubTypeId
+           ,@GraftSizeId
+           ,@HospitalId
+           ,@ImplantId
+           ,@IPNumber
+           ,@Notes )
+
+	SELECT MAX([SurgeryId]) FROM [dbo].[tblSurgery]
+
+END
+
+CREATE PROCEDURE [dbo].[spReportLogBook] 
+@HospitalId int,
+@OperationId int
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	declare @sql nvarchar(max)
+	declare @name nvarchar(100)
+	set @name = ' P.[FirstName] + '' '' + P.[LastName] Name '
+	set @sql= ' SELECT P.[PatientId] Id, P.[FirstName] [Name], P.[Age] ,P.[Gender] [M/F] , S.[IPNumber], convert(varchar, S.[SurgeryDate], 106) [SurgeryDate],
+	[Operation] = (select O.[OperationName] from [dbo].[tblOperation] O where O.[OperationId] = S.[OperationId]), 
+	[Hospital/Clinic] = (select H.[Name] from [dbo].[tblHospital] H where H.[HospitalId] = S.[HospitalId])
+	FROM [dbo].[tblPatient] P JOIN [dbo].[tblSurgery] S ON P.[PatientId] = S.[PatientId]
+	WHERE S.[OperationId] = ' + convert(varchar(5),@OperationId) ;
+
+	if @HospitalId <> '0' and @HospitalId <> ''
+	begin
+			set @sql = @sql + ' and S.[HospitalId] = ' + convert(varchar(5),@HospitalId)
+	end
+	
+	--print @sql						 
+	execute(@sql)
+
+END
