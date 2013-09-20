@@ -486,7 +486,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(3, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage5;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1248, 594);
             this.radPageView1.TabIndex = 27;
             this.radPageView1.Text = "radPageView1";
