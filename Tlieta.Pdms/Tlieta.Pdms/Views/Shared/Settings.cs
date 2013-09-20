@@ -138,5 +138,60 @@ namespace Tlieta.Pdms.Views.Shared
                 }
             }
         }
+
+        private void btnAddDiagnosis_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddSurgeon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAnaesthetist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddScrubNurse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddService_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPrefix_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddInvestigation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddDosageFrequency_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddDosageDuration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddOtherAdvise_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddDrug_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
