@@ -1,4 +1,4 @@
-﻿namespace Tlieta.Pdms.Views
+﻿namespace Tlieta.Pdms.Views.Shared
 {
     partial class Certificates
     {

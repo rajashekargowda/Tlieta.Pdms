@@ -32,13 +32,18 @@ namespace Tlieta.Pdms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.radPanorama1 = new Telerik.WinControls.UI.RadPanorama();
             this.applicationsGroup = new Telerik.WinControls.UI.TileGroupElement();
-            this.practiceManagementGroup = new Telerik.WinControls.UI.TileGroupElement();
-            this.settingsGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.addPatientTile = new Telerik.WinControls.UI.RadTileElement();
             this.statisticsTile = new Telerik.WinControls.UI.RadTileElement();
-            this.settingsTile = new Telerik.WinControls.UI.RadTileElement();
             this.patientlookupTile = new Telerik.WinControls.UI.RadTileElement();
             this.logBookTile = new Telerik.WinControls.UI.RadTileElement();
+            this.practiceManagementGroup = new Telerik.WinControls.UI.TileGroupElement();
+            this.radTileAppointments = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileDaybook = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileCertificates = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileContacts = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileLetters = new Telerik.WinControls.UI.RadTileElement();
+            this.settingsGroup = new Telerik.WinControls.UI.TileGroupElement();
+            this.settingsTile = new Telerik.WinControls.UI.RadTileElement();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -49,8 +54,7 @@ namespace Tlieta.Pdms
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.applicationsGroup,
             this.practiceManagementGroup,
-            this.settingsGroup
-            });
+            this.settingsGroup});
             this.radPanorama1.Location = new System.Drawing.Point(0, 0);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.PanelImage = ((System.Drawing.Image)(resources.GetObject("radPanorama1.PanelImage")));
@@ -72,7 +76,6 @@ namespace Tlieta.Pdms
             this.applicationsGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.addPatientTile,
             this.statisticsTile,
-            this.settingsTile,
             this.patientlookupTile,
             this.logBookTile});
             this.applicationsGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
@@ -128,30 +131,6 @@ namespace Tlieta.Pdms
             this.statisticsTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.statisticsTile.Click += new System.EventHandler(this.statisticsTile_Click);
             // 
-            // settingsTile
-            // 
-            this.settingsTile.AccessibleDescription = "settingsTile";
-            this.settingsTile.AccessibleName = "settingsTile";
-            this.settingsTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
-            this.settingsTile.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(219)))));
-            this.settingsTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(180)))), ((int)(((byte)(218)))));
-            this.settingsTile.CellPadding = new System.Windows.Forms.Padding(5);
-            this.settingsTile.Column = 1;
-            this.settingsTile.DrawBorder = true;
-            this.settingsTile.GradientAngle = 0F;
-            this.settingsTile.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.settingsTile.Image = ((System.Drawing.Image)(resources.GetObject("settingsTile.Image")));
-            this.settingsTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
-            this.settingsTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.settingsTile.Name = "settingsTile";
-            this.settingsTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
-            this.settingsTile.Row = 1;
-            this.settingsTile.Text = "Settings";
-            this.settingsTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.settingsTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.settingsTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.settingsTile.Click += new System.EventHandler(this.settingsTile_Click);
-            // 
             // patientlookupTile
             // 
             this.patientlookupTile.AccessibleDescription = "patientlookupTile";
@@ -177,23 +156,23 @@ namespace Tlieta.Pdms
             // 
             this.logBookTile.AccessibleDescription = "Log Book";
             this.logBookTile.AccessibleName = "Log Book";
-            this.logBookTile.Column = 2;
-            this.logBookTile.Name = "logBookTile";
-            this.logBookTile.Row = 1;
-            this.logBookTile.Text = "Log Book";
-            this.logBookTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.logBookTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(129)))), ((int)(((byte)(190)))));
-            this.logBookTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.logBookTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.logBookTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.logBookTile.CellPadding = new System.Windows.Forms.Padding(5);
+            this.logBookTile.Column = 1;
             this.logBookTile.DrawBorder = true;
             this.logBookTile.Image = global::Tlieta.Pdms.Properties.Resources.report48;
             this.logBookTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.logBookTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logBookTile.CellPadding = new System.Windows.Forms.Padding(5);
+            this.logBookTile.Name = "logBookTile";
+            this.logBookTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.logBookTile.Row = 1;
+            this.logBookTile.Text = "Log Book";
+            this.logBookTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.logBookTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.logBookTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.logBookTile.Click += new System.EventHandler(this.logBookTile_Click);
             // 
-            // practiceManagement group
+            // practiceManagementGroup
             // 
             this.practiceManagementGroup.AccessibleDescription = "practiceManagement";
             this.practiceManagementGroup.AccessibleName = "practiceManagement";
@@ -201,29 +180,172 @@ namespace Tlieta.Pdms
             this.practiceManagementGroup.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.practiceManagementGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             this.practiceManagementGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            
-            });
+            this.radTileAppointments,
+            this.radTileDaybook,
+            this.radTileCertificates,
+            this.radTileContacts,
+            this.radTileLetters});
             this.practiceManagementGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
             this.practiceManagementGroup.Name = "practiceManagementGroup";
             this.practiceManagementGroup.RowsCount = 2;
             this.practiceManagementGroup.Text = "Practice Management";
             this.practiceManagementGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // settings group
-            //
+            // radTileAppointments
+            // 
+            this.radTileAppointments.AccessibleDescription = "radTileAppointments";
+            this.radTileAppointments.AccessibleName = "radTileAppointments";
+            this.radTileAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(154)))), ((int)(((byte)(170)))));
+            this.radTileAppointments.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(182)))), ((int)(((byte)(201)))));
+            this.radTileAppointments.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(174)))), ((int)(((byte)(187)))));
+            this.radTileAppointments.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileAppointments.ColSpan = 2;
+            this.radTileAppointments.DrawBorder = true;
+            this.radTileAppointments.GradientAngle = 0F;
+            this.radTileAppointments.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileAppointments.Image = ((System.Drawing.Image)(resources.GetObject("radTileAppointments.Image")));
+            this.radTileAppointments.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileAppointments.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileAppointments.Name = "radTileAppointments";
+            this.radTileAppointments.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileAppointments.Text = "Appointments";
+            this.radTileAppointments.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileAppointments.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileAppointments.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileAppointments.Click += new System.EventHandler(this.radTileAppointments_Click);
+            // 
+            // radTileDaybook
+            // 
+            this.radTileDaybook.AccessibleDescription = "radTileDaybook";
+            this.radTileDaybook.AccessibleName = "radTileDaybook";
+            this.radTileDaybook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(212)))), ((int)(((byte)(132)))));
+            this.radTileDaybook.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(196)))), ((int)(((byte)(22)))));
+            this.radTileDaybook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(112)))), ((int)(((byte)(9)))));
+            this.radTileDaybook.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileDaybook.ColSpan = 2;
+            this.radTileDaybook.Column = 2;
+            this.radTileDaybook.DrawBorder = true;
+            this.radTileDaybook.GradientAngle = 0F;
+            this.radTileDaybook.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileDaybook.Image = ((System.Drawing.Image)(resources.GetObject("radTileDaybook.Image")));
+            this.radTileDaybook.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileDaybook.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileDaybook.Name = "radTileDaybook";
+            this.radTileDaybook.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileDaybook.Text = "Income/Expense Daybook";
+            this.radTileDaybook.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileDaybook.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileDaybook.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileDaybook.Click += new System.EventHandler(this.radTileDaybook_Click);
+            // 
+            // radTileCertificates
+            // 
+            this.radTileCertificates.AccessibleDescription = "radTileCertificates";
+            this.radTileCertificates.AccessibleName = "radTileCertificates";
+            this.radTileCertificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
+            this.radTileCertificates.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.radTileCertificates.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
+            this.radTileCertificates.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileCertificates.DrawBorder = true;
+            this.radTileCertificates.GradientAngle = 0F;
+            this.radTileCertificates.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileCertificates.Image = ((System.Drawing.Image)(resources.GetObject("radTileCertificates.Image")));
+            this.radTileCertificates.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileCertificates.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileCertificates.Name = "radTileCertificates";
+            this.radTileCertificates.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileCertificates.Row = 1;
+            this.radTileCertificates.Column = 0;
+            this.radTileCertificates.Text = "Certificates";
+            this.radTileCertificates.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileCertificates.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileCertificates.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileCertificates.Click += new System.EventHandler(this.radTileCertificates_Click);
+            // 
+            // radTileContacts
+            // 
+            this.radTileContacts.AccessibleDescription = "radTileContacts";
+            this.radTileContacts.AccessibleName = "radTileContacts";
+            this.radTileContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(148)))), ((int)(((byte)(97)))));
+            this.radTileContacts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(91)))), ((int)(((byte)(0)))));
+            this.radTileContacts.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
+            this.radTileContacts.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileContacts.Column = 1;
+            this.radTileContacts.DrawBorder = true;
+            this.radTileContacts.GradientAngle = 0F;
+            this.radTileContacts.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileContacts.Image = ((System.Drawing.Image)(resources.GetObject("radTileContacts.Image")));
+            this.radTileContacts.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileContacts.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileContacts.Name = "radTileContacts";
+            this.radTileContacts.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileContacts.Row = 1;
+            this.radTileContacts.Text = "Contacts";
+            this.radTileContacts.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileContacts.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileContacts.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileContacts.Click += new System.EventHandler(this.radTileContacts_Click);
+            // 
+            // radTileLetters
+            // 
+            this.radTileLetters.AccessibleDescription = "radTileLetters";
+            this.radTileLetters.AccessibleName = "radTileLetters";
+            this.radTileLetters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(173)))), ((int)(((byte)(173)))));
+            this.radTileLetters.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.radTileLetters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.radTileLetters.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileLetters.Column = 2;
+            this.radTileLetters.DrawBorder = true;
+            this.radTileLetters.GradientAngle = 0F;
+            this.radTileLetters.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileLetters.Image = ((System.Drawing.Image)(resources.GetObject("radTileLetters.Image")));
+            this.radTileLetters.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileLetters.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileLetters.Name = "radTileLetters";
+            this.radTileLetters.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileLetters.Row = 1;
+            this.radTileLetters.Text = "Letters";
+            this.radTileLetters.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileLetters.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileLetters.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileLetters.Click += new System.EventHandler(this.radTileLetters_Click);
+            // 
+            // settingsGroup
+            // 
             this.settingsGroup.AccessibleDescription = "settingsGroup";
             this.settingsGroup.AccessibleName = "settingsGroup";
             this.settingsGroup.CellSize = new System.Drawing.Size(155, 155);
             this.settingsGroup.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.settingsGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             this.settingsGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            
-            });
+            this.settingsTile});
             this.settingsGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
             this.settingsGroup.Name = "settingsGroup";
             this.settingsGroup.RowsCount = 2;
             this.settingsGroup.Text = "Settings";
             this.settingsGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // settingsTile
+            // 
+            this.settingsTile.AccessibleDescription = "settingsTile";
+            this.settingsTile.AccessibleName = "settingsTile";
+            this.settingsTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
+            this.settingsTile.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(177)))), ((int)(((byte)(219)))));
+            this.settingsTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(180)))), ((int)(((byte)(218)))));
+            this.settingsTile.CellPadding = new System.Windows.Forms.Padding(5);
+            this.settingsTile.DrawBorder = true;
+            this.settingsTile.GradientAngle = 0F;
+            this.settingsTile.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.settingsTile.Image = ((System.Drawing.Image)(resources.GetObject("settingsTile.Image")));
+            this.settingsTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.settingsTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.settingsTile.Name = "settingsTile";
+            this.settingsTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.settingsTile.Text = "Settings";
+            this.settingsTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.settingsTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.settingsTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.settingsTile.Click += new System.EventHandler(this.settingsTile_Click);
             // 
             // Form1
             // 
@@ -254,5 +376,10 @@ namespace Tlieta.Pdms
         private RadTileElement settingsTile;
         private RadTileElement statisticsTile;
         private RadTileElement logBookTile;
+        private RadTileElement radTileAppointments;
+        private RadTileElement radTileDaybook;
+        private RadTileElement radTileCertificates;
+        private RadTileElement radTileContacts;
+        private RadTileElement radTileLetters;
     }
 }

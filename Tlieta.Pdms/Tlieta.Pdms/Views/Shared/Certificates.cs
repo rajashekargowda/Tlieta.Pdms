@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tlieta.Pdms.Views
+namespace Tlieta.Pdms.Views.Shared
 {
     public partial class Certificates : UserControl
     {

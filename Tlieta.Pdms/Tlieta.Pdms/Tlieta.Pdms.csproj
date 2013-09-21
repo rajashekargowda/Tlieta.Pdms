@@ -172,17 +172,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Code\DataFolder.cs" />
-    <Compile Include="Views\Certificates.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Certificates.Designer.cs">
-      <DependentUpon>Certificates.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Shared\Appointments.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Shared\Appointments.Designer.cs">
       <DependentUpon>Appointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Certificates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Certificates.Designer.cs">
+      <DependentUpon>Certificates.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Contacts.cs">
       <SubType>UserControl</SubType>
@@ -274,11 +274,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Certificates.resx">
-      <DependentUpon>Certificates.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Appointments.resx">
       <DependentUpon>Appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Certificates.resx">
+      <DependentUpon>Certificates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>

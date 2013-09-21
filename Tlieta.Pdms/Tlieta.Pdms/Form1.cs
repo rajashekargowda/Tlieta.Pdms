@@ -81,6 +81,11 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Settings", new Tlieta.Pdms.Views.Shared.Settings(serialKey));
             this.exampleControls.Add("Statistics", new Tlieta.Pdms.Views.Shared.Statistics());
             this.exampleControls.Add("LogBook", new Tlieta.Pdms.Views.Shared.LogBook());
+            this.exampleControls.Add("Appointments", new Tlieta.Pdms.Views.Shared.Appointments());
+            this.exampleControls.Add("FinanceDaybook", new Tlieta.Pdms.Views.Shared.FinanceDaybook());
+            this.exampleControls.Add("Certificates", new Tlieta.Pdms.Views.Shared.Certificates());
+            this.exampleControls.Add("Contacts", new Tlieta.Pdms.Views.Shared.Contacts());
+            this.exampleControls.Add("Letters", new Tlieta.Pdms.Views.Shared.Letters());
             this.PreloadControls();
         }
 
@@ -183,7 +188,7 @@ namespace Tlieta.Pdms
         {
             StackLayoutElement footerLayout = new StackLayoutElement();
             footerLayout.Orientation = Orientation.Horizontal;
-            footerLayout.Margin = new System.Windows.Forms.Padding(700, 550, 0, 0);
+            footerLayout.Margin = new System.Windows.Forms.Padding(700, 600, 0, 0);
             footerLayout.StretchHorizontally = false;
 
             this.doctorLabel = new LightVisualElement();
@@ -197,7 +202,7 @@ namespace Tlieta.Pdms
 
             StackLayoutElement serialLayout = new StackLayoutElement();
             serialLayout.Orientation = Orientation.Vertical;
-            serialLayout.Margin = new System.Windows.Forms.Padding(750, 620, 0, 0);
+            serialLayout.Margin = new System.Windows.Forms.Padding(750, 680, 0, 0);
             serialLayout.StretchHorizontally = false;
             
             this.suffixLabel = new LightVisualElement();
@@ -218,23 +223,23 @@ namespace Tlieta.Pdms
             this.suffix2Label.StretchHorizontally = false;
             serialLayout.Children.Add(this.suffix2Label);
 
-            this.suffix3Label = new LightVisualElement();
-            this.suffix3Label.Text = ConfigurationSettings.AppSettings["Suffix3"].ToString();
-            this.suffix3Label.Font = new Font("Segoe UI Light", 15, GraphicsUnit.Point);
-            this.suffix3Label.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.suffix3Label.ForeColor = Color.White;
-            this.suffix3Label.TextAlignment = ContentAlignment.MiddleLeft;
-            this.suffix3Label.StretchHorizontally = false;
-            serialLayout.Children.Add(this.suffix3Label);
+            //this.suffix3Label = new LightVisualElement();
+            //this.suffix3Label.Text = ConfigurationSettings.AppSettings["Suffix3"].ToString();
+            //this.suffix3Label.Font = new Font("Segoe UI Light", 15, GraphicsUnit.Point);
+            //this.suffix3Label.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //this.suffix3Label.ForeColor = Color.White;
+            //this.suffix3Label.TextAlignment = ContentAlignment.MiddleLeft;
+            //this.suffix3Label.StretchHorizontally = false;
+            //serialLayout.Children.Add(this.suffix3Label);
 
-            this.suffix4Label = new LightVisualElement();
-            this.suffix4Label.Text = ConfigurationSettings.AppSettings["Suffix4"].ToString();
-            this.suffix4Label.Font = new Font("Segoe UI Light", 15, GraphicsUnit.Point);
-            this.suffix4Label.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.suffix4Label.ForeColor = Color.White;
-            this.suffix4Label.TextAlignment = ContentAlignment.MiddleLeft;
-            this.suffix4Label.StretchHorizontally = false;
-            serialLayout.Children.Add(this.suffix4Label);
+            //this.suffix4Label = new LightVisualElement();
+            //this.suffix4Label.Text = ConfigurationSettings.AppSettings["Suffix4"].ToString();
+            //this.suffix4Label.Font = new Font("Segoe UI Light", 15, GraphicsUnit.Point);
+            //this.suffix4Label.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //this.suffix4Label.ForeColor = Color.White;
+            //this.suffix4Label.TextAlignment = ContentAlignment.MiddleLeft;
+            //this.suffix4Label.StretchHorizontally = false;
+            //serialLayout.Children.Add(this.suffix4Label);
 
             this.radPanorama1.PanoramaElement.Children.Add(footerLayout);
             this.radPanorama1.PanoramaElement.Children.Add(serialLayout);
@@ -343,6 +348,30 @@ namespace Tlieta.Pdms
             LoadExample("LogBook");
         }
 
+        private void radTileAppointments_Click(object sender, EventArgs e)
+        {
+            LoadExample("Appointments");
+        }
+
+        private void radTileDaybook_Click(object sender, EventArgs e)
+        {
+            LoadExample("FinanceDaybook");
+        }
+
+        private void radTileCertificates_Click(object sender, EventArgs e)
+        {
+            LoadExample("Certificates");
+        }
+
+        private void radTileContacts_Click(object sender, EventArgs e)
+        {
+            LoadExample("Contacts");
+        }
+
+        private void radTileLetters_Click(object sender, EventArgs e)
+        {
+            LoadExample("Letters");
+        }
         
         #endregion
 
