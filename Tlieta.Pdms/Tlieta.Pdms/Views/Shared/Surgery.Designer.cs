@@ -224,7 +224,7 @@
             this.ddlHospital.Location = new System.Drawing.Point(282, 222);
             this.ddlHospital.Name = "ddlHospital";
             this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 32;
             this.ddlHospital.ThemeName = "TelerikMetro";
             // 
@@ -291,7 +291,7 @@
             // btnAddSurgery
             // 
             this.btnAddSurgery.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddSurgery.Location = new System.Drawing.Point(870, 405);
+            this.btnAddSurgery.Location = new System.Drawing.Point(624, 473);
             this.btnAddSurgery.Name = "btnAddSurgery";
             this.btnAddSurgery.Size = new System.Drawing.Size(92, 32);
             this.btnAddSurgery.TabIndex = 38;
@@ -302,7 +302,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Location = new System.Drawing.Point(968, 405);
+            this.btnUpdate.Location = new System.Drawing.Point(746, 473);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(92, 32);
             this.btnUpdate.TabIndex = 39;
@@ -361,7 +361,7 @@
             this.txtPreOpDiagnosis.Location = new System.Drawing.Point(1001, 48);
             this.txtPreOpDiagnosis.MaxLength = 20;
             this.txtPreOpDiagnosis.Name = "txtPreOpDiagnosis";
-            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 21);
             this.txtPreOpDiagnosis.TabIndex = 44;
             this.txtPreOpDiagnosis.TabStop = false;
             this.txtPreOpDiagnosis.ThemeName = "TelerikMetro";
@@ -371,7 +371,7 @@
             this.txtPostOpDiagnosis.Location = new System.Drawing.Point(1001, 90);
             this.txtPostOpDiagnosis.MaxLength = 20;
             this.txtPostOpDiagnosis.Name = "txtPostOpDiagnosis";
-            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 21);
             this.txtPostOpDiagnosis.TabIndex = 46;
             this.txtPostOpDiagnosis.TabStop = false;
             this.txtPostOpDiagnosis.ThemeName = "TelerikMetro";
@@ -390,7 +390,7 @@
             this.txtReferredBy.Location = new System.Drawing.Point(1001, 133);
             this.txtReferredBy.MaxLength = 20;
             this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(258, 23);
+            this.txtReferredBy.Size = new System.Drawing.Size(258, 21);
             this.txtReferredBy.TabIndex = 48;
             this.txtReferredBy.TabStop = false;
             this.txtReferredBy.ThemeName = "TelerikMetro";
@@ -419,7 +419,7 @@
             this.ddlSurgeon.Location = new System.Drawing.Point(1001, 207);
             this.ddlSurgeon.Name = "ddlSurgeon";
             this.ddlSurgeon.ShowImageInEditorArea = true;
-            this.ddlSurgeon.Size = new System.Drawing.Size(200, 20);
+            this.ddlSurgeon.Size = new System.Drawing.Size(200, 22);
             this.ddlSurgeon.TabIndex = 50;
             this.ddlSurgeon.ThemeName = "TelerikMetro";
             // 
@@ -429,7 +429,7 @@
             this.ddlAsstSurgeon.Location = new System.Drawing.Point(1001, 247);
             this.ddlAsstSurgeon.Name = "ddlAsstSurgeon";
             this.ddlAsstSurgeon.ShowImageInEditorArea = true;
-            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 20);
+            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 22);
             this.ddlAsstSurgeon.TabIndex = 52;
             this.ddlAsstSurgeon.ThemeName = "TelerikMetro";
             // 
@@ -448,7 +448,7 @@
             this.ddlAnaesthetist.Location = new System.Drawing.Point(1001, 286);
             this.ddlAnaesthetist.Name = "ddlAnaesthetist";
             this.ddlAnaesthetist.ShowImageInEditorArea = true;
-            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 20);
+            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 22);
             this.ddlAnaesthetist.TabIndex = 54;
             this.ddlAnaesthetist.ThemeName = "TelerikMetro";
             // 
@@ -467,7 +467,7 @@
             this.ddlScrubNurse.Location = new System.Drawing.Point(1001, 325);
             this.ddlScrubNurse.Name = "ddlScrubNurse";
             this.ddlScrubNurse.ShowImageInEditorArea = true;
-            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 20);
+            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 22);
             this.ddlScrubNurse.TabIndex = 56;
             this.ddlScrubNurse.ThemeName = "TelerikMetro";
             // 

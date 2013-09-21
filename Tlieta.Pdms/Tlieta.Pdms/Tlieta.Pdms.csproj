@@ -172,11 +172,41 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Code\DataFolder.cs" />
+    <Compile Include="Views\Certificates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Certificates.Designer.cs">
+      <DependentUpon>Certificates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Appointments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Appointments.Designer.cs">
+      <DependentUpon>Appointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Contacts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Contacts.Designer.cs">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\EditPatient.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Shared\EditPatient.Designer.cs">
       <DependentUpon>EditPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\FinanceDaybook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\FinanceDaybook.Designer.cs">
+      <DependentUpon>FinanceDaybook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Letters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Letters.Designer.cs">
+      <DependentUpon>Letters.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\LogBook.cs">
       <SubType>UserControl</SubType>
@@ -244,8 +274,23 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Certificates.resx">
+      <DependentUpon>Certificates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Appointments.resx">
+      <DependentUpon>Appointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Contacts.resx">
+      <DependentUpon>Contacts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\EditPatient.resx">
       <DependentUpon>EditPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\FinanceDaybook.resx">
+      <DependentUpon>FinanceDaybook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Letters.resx">
+      <DependentUpon>Letters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\LogBook.resx">
       <DependentUpon>LogBook.cs</DependentUpon>

@@ -32,6 +32,8 @@ namespace Tlieta.Pdms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.radPanorama1 = new Telerik.WinControls.UI.RadPanorama();
             this.applicationsGroup = new Telerik.WinControls.UI.TileGroupElement();
+            this.practiceManagementGroup = new Telerik.WinControls.UI.TileGroupElement();
+            this.settingsGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.addPatientTile = new Telerik.WinControls.UI.RadTileElement();
             this.statisticsTile = new Telerik.WinControls.UI.RadTileElement();
             this.settingsTile = new Telerik.WinControls.UI.RadTileElement();
@@ -45,7 +47,10 @@ namespace Tlieta.Pdms
             // 
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
-            this.applicationsGroup});
+            this.applicationsGroup,
+            this.practiceManagementGroup,
+            this.settingsGroup
+            });
             this.radPanorama1.Location = new System.Drawing.Point(0, 0);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.PanelImage = ((System.Drawing.Image)(resources.GetObject("radPanorama1.PanelImage")));
@@ -73,7 +78,7 @@ namespace Tlieta.Pdms
             this.applicationsGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
             this.applicationsGroup.Name = "applicationsGroup";
             this.applicationsGroup.RowsCount = 2;
-            this.applicationsGroup.Text = "";
+            this.applicationsGroup.Text = "Patient Management";
             this.applicationsGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // addPatientTile
@@ -188,6 +193,38 @@ namespace Tlieta.Pdms
             this.logBookTile.CellPadding = new System.Windows.Forms.Padding(5);
             this.logBookTile.Click += new System.EventHandler(this.logBookTile_Click);
             // 
+            // practiceManagement group
+            // 
+            this.practiceManagementGroup.AccessibleDescription = "practiceManagement";
+            this.practiceManagementGroup.AccessibleName = "practiceManagement";
+            this.practiceManagementGroup.CellSize = new System.Drawing.Size(155, 155);
+            this.practiceManagementGroup.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.practiceManagementGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
+            this.practiceManagementGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            
+            });
+            this.practiceManagementGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
+            this.practiceManagementGroup.Name = "practiceManagementGroup";
+            this.practiceManagementGroup.RowsCount = 2;
+            this.practiceManagementGroup.Text = "Practice Management";
+            this.practiceManagementGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // settings group
+            //
+            this.settingsGroup.AccessibleDescription = "settingsGroup";
+            this.settingsGroup.AccessibleName = "settingsGroup";
+            this.settingsGroup.CellSize = new System.Drawing.Size(155, 155);
+            this.settingsGroup.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
+            this.settingsGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            
+            });
+            this.settingsGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
+            this.settingsGroup.Name = "settingsGroup";
+            this.settingsGroup.RowsCount = 2;
+            this.settingsGroup.Text = "Settings";
+            this.settingsGroup.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1352, 734);
@@ -210,6 +247,8 @@ namespace Tlieta.Pdms
 
         private RadPanorama radPanorama1;
         private TileGroupElement applicationsGroup;
+        private TileGroupElement practiceManagementGroup;
+        private TileGroupElement settingsGroup;
         private RadTileElement addPatientTile;
         private RadTileElement patientlookupTile;
         private RadTileElement settingsTile;
