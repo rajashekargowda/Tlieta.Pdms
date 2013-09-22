@@ -90,6 +90,8 @@ namespace Tlieta.Pdms.Views.Shared
             }
 
             int result = new SchedulerData().AddSchedule(start, end, summary, txtDescription.Text, txtLocation.Text);
+            if(result == -1)
+                MessageBox.Show("Added Successfully");
 
             LoadSchedulerGrid();
             RefreshTexts();
@@ -131,6 +133,9 @@ namespace Tlieta.Pdms.Views.Shared
             }
 
             int result = new SchedulerData().UpdateSchedule(id, start, end, summary, txtDescription.Text, txtLocation.Text);
+
+            if (result == -1)
+                MessageBox.Show("Updated Successfully");
 
             LoadSchedulerGrid();
             RefreshTexts();
