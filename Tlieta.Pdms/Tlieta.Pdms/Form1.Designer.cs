@@ -195,8 +195,8 @@ namespace Tlieta.Pdms
             // 
             this.radTileAppointments.AccessibleDescription = "radTileAppointments";
             this.radTileAppointments.AccessibleName = "radTileAppointments";
-            this.radTileAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(154)))), ((int)(((byte)(170)))));
-            this.radTileAppointments.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(182)))), ((int)(((byte)(201)))));
+            this.radTileAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.radTileAppointments.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(124)))), ((int)(((byte)(137)))));
             this.radTileAppointments.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(174)))), ((int)(((byte)(187)))));
             this.radTileAppointments.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileAppointments.ColSpan = 2;
@@ -218,8 +218,8 @@ namespace Tlieta.Pdms
             // 
             this.radTileDaybook.AccessibleDescription = "radTileDaybook";
             this.radTileDaybook.AccessibleName = "radTileDaybook";
-            this.radTileDaybook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(212)))), ((int)(((byte)(132)))));
-            this.radTileDaybook.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(196)))), ((int)(((byte)(22)))));
+            this.radTileDaybook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(53)))), ((int)(((byte)(1)))));
+            this.radTileDaybook.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(154)))), ((int)(((byte)(7)))));
             this.radTileDaybook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(112)))), ((int)(((byte)(9)))));
             this.radTileDaybook.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileDaybook.ColSpan = 2;
@@ -242,8 +242,8 @@ namespace Tlieta.Pdms
             // 
             this.radTileCertificates.AccessibleDescription = "radTileCertificates";
             this.radTileCertificates.AccessibleName = "radTileCertificates";
-            this.radTileCertificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
-            this.radTileCertificates.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.radTileCertificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.radTileCertificates.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
             this.radTileCertificates.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
             this.radTileCertificates.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileCertificates.DrawBorder = true;
@@ -266,8 +266,8 @@ namespace Tlieta.Pdms
             // 
             this.radTileContacts.AccessibleDescription = "radTileContacts";
             this.radTileContacts.AccessibleName = "radTileContacts";
-            this.radTileContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(148)))), ((int)(((byte)(97)))));
-            this.radTileContacts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(91)))), ((int)(((byte)(0)))));
+            this.radTileContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(1)))), ((int)(((byte)(17)))));
+            this.radTileContacts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(5)))), ((int)(((byte)(46)))));
             this.radTileContacts.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
             this.radTileContacts.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileContacts.Column = 1;
@@ -290,9 +290,9 @@ namespace Tlieta.Pdms
             // 
             this.radTileLetters.AccessibleDescription = "radTileLetters";
             this.radTileLetters.AccessibleName = "radTileLetters";
-            this.radTileLetters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(173)))), ((int)(((byte)(173)))));
-            this.radTileLetters.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.radTileLetters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(97)))), ((int)(((byte)(97)))));
+            this.radTileLetters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(0)))), ((int)(((byte)(65)))));
+            this.radTileLetters.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(5)))), ((int)(((byte)(115)))));
+            this.radTileLetters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(16)))), ((int)(((byte)(202)))));
             this.radTileLetters.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileLetters.Column = 2;
             this.radTileLetters.DrawBorder = true;
