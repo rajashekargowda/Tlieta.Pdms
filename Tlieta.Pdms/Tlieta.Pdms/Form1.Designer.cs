@@ -203,7 +203,7 @@ namespace Tlieta.Pdms
             this.radTileAppointments.DrawBorder = true;
             this.radTileAppointments.GradientAngle = 0F;
             this.radTileAppointments.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.radTileAppointments.Image = ((System.Drawing.Image)(resources.GetObject("radTileAppointments.Image")));
+            this.radTileAppointments.Image = global::Tlieta.Pdms.Properties.Resources.appointments;
             this.radTileAppointments.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileAppointments.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radTileAppointments.Name = "radTileAppointments";
@@ -227,7 +227,7 @@ namespace Tlieta.Pdms
             this.radTileDaybook.DrawBorder = true;
             this.radTileDaybook.GradientAngle = 0F;
             this.radTileDaybook.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.radTileDaybook.Image = ((System.Drawing.Image)(resources.GetObject("radTileDaybook.Image")));
+            this.radTileDaybook.Image = global::Tlieta.Pdms.Properties.Resources.finance;
             this.radTileDaybook.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileDaybook.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radTileDaybook.Name = "radTileDaybook";
@@ -249,7 +249,7 @@ namespace Tlieta.Pdms
             this.radTileCertificates.DrawBorder = true;
             this.radTileCertificates.GradientAngle = 0F;
             this.radTileCertificates.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.radTileCertificates.Image = ((System.Drawing.Image)(resources.GetObject("radTileCertificates.Image")));
+            this.radTileCertificates.Image = global::Tlieta.Pdms.Properties.Resources.certificate;
             this.radTileCertificates.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileCertificates.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radTileCertificates.Name = "radTileCertificates";
@@ -274,7 +274,7 @@ namespace Tlieta.Pdms
             this.radTileContacts.DrawBorder = true;
             this.radTileContacts.GradientAngle = 0F;
             this.radTileContacts.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.radTileContacts.Image = ((System.Drawing.Image)(resources.GetObject("radTileContacts.Image")));
+            this.radTileContacts.Image = global::Tlieta.Pdms.Properties.Resources.contacts;
             this.radTileContacts.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileContacts.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radTileContacts.Name = "radTileContacts";
@@ -298,7 +298,7 @@ namespace Tlieta.Pdms
             this.radTileLetters.DrawBorder = true;
             this.radTileLetters.GradientAngle = 0F;
             this.radTileLetters.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
-            this.radTileLetters.Image = ((System.Drawing.Image)(resources.GetObject("radTileLetters.Image")));
+            this.radTileLetters.Image = global::Tlieta.Pdms.Properties.Resources.letters;
             this.radTileLetters.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileLetters.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radTileLetters.Name = "radTileLetters";

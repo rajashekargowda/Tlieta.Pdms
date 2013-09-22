@@ -82,7 +82,7 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Statistics", new Tlieta.Pdms.Views.Shared.Statistics());
             this.exampleControls.Add("LogBook", new Tlieta.Pdms.Views.Shared.LogBook());
             this.exampleControls.Add("Appointments", new Tlieta.Pdms.Views.Shared.Appointments());
-            this.exampleControls.Add("FinanceDaybook", new Tlieta.Pdms.Views.Shared.FinanceDaybook());
+            this.exampleControls.Add("Income/Expense Daybook", new Tlieta.Pdms.Views.Shared.FinanceDaybook());
             this.exampleControls.Add("Certificates", new Tlieta.Pdms.Views.Shared.Certificates());
             this.exampleControls.Add("Contacts", new Tlieta.Pdms.Views.Shared.Contacts());
             this.exampleControls.Add("Letters", new Tlieta.Pdms.Views.Shared.Letters());
@@ -355,7 +355,7 @@ namespace Tlieta.Pdms
 
         private void radTileDaybook_Click(object sender, EventArgs e)
         {
-            LoadExample("FinanceDaybook");
+            LoadExample("Income/Expense Daybook");
         }
 
         private void radTileCertificates_Click(object sender, EventArgs e)
