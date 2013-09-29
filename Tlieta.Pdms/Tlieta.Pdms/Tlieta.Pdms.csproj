@@ -217,6 +217,12 @@
     <Compile Include="Views\Shared\LogBook.Designer.cs">
       <DependentUpon>LogBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Measurements.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Measurements.Designer.cs">
+      <DependentUpon>Measurements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\PatientHub.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\LogBook.resx">
       <DependentUpon>LogBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Measurements.resx">
+      <DependentUpon>Measurements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\PatientHub.resx">
       <DependentUpon>PatientHub.cs</DependentUpon>

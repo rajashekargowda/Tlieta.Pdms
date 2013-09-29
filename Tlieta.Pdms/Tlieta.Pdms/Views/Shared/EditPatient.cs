@@ -12,6 +12,7 @@ using Tlieta.Pdms.DataAccess;
 using Telerik.WinControls.UI;
 using System.IO;
 using System.Configuration;
+using Telerik.WinControls.Enumerations;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -31,7 +32,9 @@ namespace Tlieta.Pdms.Views.Shared
             if (_patientid != 0)
             {
                 btnSavePatient.Visible = false;
+                lblPatientId.Text = _patientid.ToString();
                 btnUpdate.Visible = true;
+                btnAdvanced.Visible = true;
                 PopulatePatient(_patientid);
             }
             else
@@ -39,6 +42,7 @@ namespace Tlieta.Pdms.Views.Shared
 
                 btnSavePatient.Visible = true;
                 btnUpdate.Visible = false;
+                btnAdvanced.Visible = false;
             }
         }
 
@@ -185,6 +189,19 @@ namespace Tlieta.Pdms.Views.Shared
             }
             else
                 return "";
+
+        }
+
+        private void btnAdvanced_ToggleStateChanging(object sender, StateChangingEventArgs args)
+        {
+            if (!(btnAdvanced.ToggleState == ToggleState.On))
+            { btnAdvanced.Text = "Hide Advanced Data"; boxAdvanced.Visible = true; } 
+            else
+            { btnAdvanced.Text = "Show Advanced Data"; boxAdvanced.Visible = false; } 
+        }
+
+        private void btnSaveAdvanced_Click(object sender, EventArgs e)
+        {
 
         }
     }

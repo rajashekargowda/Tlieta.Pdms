@@ -112,6 +112,7 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("PrintPhoto", new Tlieta.Pdms.Views.Shared.PrintPhoto(_patientId.ToString()));
             this.exampleControls.Add("Notes", new Tlieta.Pdms.Views.Shared.EditPatient(0));
             this.exampleControls.Add("Surgery", new Tlieta.Pdms.Views.Shared.Surgery(_patientId));
+            this.exampleControls.Add("Measurement & Vitals", new Tlieta.Pdms.Views.Shared.Measurements(_patientId));
             this.PreloadControls();
         }
 
@@ -361,7 +362,12 @@ namespace Tlieta.Pdms
 
         private void notesTile_Click(object sender, EventArgs e)
         {
-            LoadExample("Notes");
+            //No notes implemented
+        }
+
+        private void measurementTile_Click(object sender, EventArgs e)
+        {
+            LoadExample("Measurement & Vitals");
         }
         
         #endregion
