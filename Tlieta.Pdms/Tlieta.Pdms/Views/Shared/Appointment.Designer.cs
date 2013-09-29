@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark3 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.btnUpdateSchedule = new Telerik.WinControls.UI.RadButton();
             this.btnAddSchedule = new Telerik.WinControls.UI.RadButton();
             this.txtPatientId = new Telerik.WinControls.UI.RadTextBox();
@@ -221,6 +221,7 @@
             this.txtAppointmentId.TabIndex = 79;
             this.txtAppointmentId.TabStop = false;
             this.txtAppointmentId.ThemeName = "TelerikMetro";
+            this.txtAppointmentId.Visible = false;
             // 
             // btnDelete
             // 
@@ -256,6 +257,7 @@
             this.AppointmentsGrid.TabIndex = 80;
             this.AppointmentsGrid.Text = "radGridView1";
             this.AppointmentsGrid.ThemeName = "TelerikMetro";
+            this.AppointmentsGrid.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.AppointmentsGrid_CellDoubleClick);
             // 
             // btnSearch
             // 
@@ -331,9 +333,9 @@
             // 
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark1.DrawInFront = true;
-            radPrintWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
-            this.radPrintDocument1.Watermark = radPrintWatermark1;
+            radPrintWatermark3.DrawInFront = true;
+            radPrintWatermark3.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
+            this.radPrintDocument1.Watermark = radPrintWatermark3;
             // 
             // Appointment
             // 
