@@ -150,12 +150,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Appointment.cs" />
+    <Compile Include="DataAccess\AppointmentData.cs" />
     <Compile Include="DataAccess\ContactData.cs" />
     <Compile Include="DataAccess\MasterData.cs" />
     <Compile Include="DataAccess\PatientData.cs" />
     <Compile Include="DataAccess\ReportsData.cs" />
-    <Compile Include="DataAccess\SchedulerData.cs" />
     <Compile Include="DataAccess\SharedData.cs" />
     <Compile Include="DataAccess\SurgeryData.cs" />
     <Compile Include="Form1.cs">
@@ -176,11 +175,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Code\DataFolder.cs" />
-    <Compile Include="Views\Shared\Appointments.cs">
+    <Compile Include="Views\Shared\Appointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Shared\Appointments.Designer.cs">
-      <DependentUpon>Appointments.cs</DependentUpon>
+    <Compile Include="Views\Shared\Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Certificates.cs">
       <SubType>UserControl</SubType>
@@ -278,8 +277,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\Appointments.resx">
-      <DependentUpon>Appointments.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Shared\Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Certificates.resx">
       <DependentUpon>Certificates.cs</DependentUpon>

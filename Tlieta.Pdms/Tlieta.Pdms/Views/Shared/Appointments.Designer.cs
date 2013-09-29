@@ -88,7 +88,7 @@
             this.radScheduler1.Location = new System.Drawing.Point(308, 104);
             this.radScheduler1.Name = "radScheduler1";
             schedulerDailyPrintStyle1.AppointmentFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2013, 9, 27, 0, 0, 0, 0);
+            schedulerDailyPrintStyle1.DateEndRange = new System.DateTime(2013, 9, 29, 0, 0, 0, 0);
             schedulerDailyPrintStyle1.DateHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             schedulerDailyPrintStyle1.DateStartRange = new System.DateTime(2013, 9, 22, 0, 0, 0, 0);
             schedulerDailyPrintStyle1.PageHeadingFont = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
@@ -112,7 +112,7 @@
             // 
             // 
             this.radSchedulerNavigator1.RootElement.StretchVertically = false;
-            this.radSchedulerNavigator1.Size = new System.Drawing.Size(989, 95);
+            this.radSchedulerNavigator1.Size = new System.Drawing.Size(989, 77);
             this.radSchedulerNavigator1.TabIndex = 1;
             this.radSchedulerNavigator1.Text = "radSchedulerNavigator1";
             this.radSchedulerNavigator1.ThemeName = "TelerikMetro";
@@ -158,7 +158,7 @@
             this.radTimeStart.HeadersHeight = 19;
             this.radTimeStart.Location = new System.Drawing.Point(171, 54);
             this.radTimeStart.Name = "radTimeStart";
-            this.radTimeStart.Size = new System.Drawing.Size(106, 23);
+            this.radTimeStart.Size = new System.Drawing.Size(106, 20);
             this.radTimeStart.TabIndex = 28;
             this.radTimeStart.TabStop = false;
             this.radTimeStart.ThemeName = "TelerikMetro";
@@ -170,7 +170,7 @@
             this.radTimeEnd.HeadersHeight = 19;
             this.radTimeEnd.Location = new System.Drawing.Point(171, 122);
             this.radTimeEnd.Name = "radTimeEnd";
-            this.radTimeEnd.Size = new System.Drawing.Size(106, 23);
+            this.radTimeEnd.Size = new System.Drawing.Size(106, 20);
             this.radTimeEnd.TabIndex = 32;
             this.radTimeEnd.TabStop = false;
             this.radTimeEnd.ThemeName = "TelerikMetro";
@@ -235,7 +235,7 @@
             this.txtSummary.Location = new System.Drawing.Point(14, 194);
             this.txtSummary.MaxLength = 30;
             this.txtSummary.Name = "txtSummary";
-            this.txtSummary.Size = new System.Drawing.Size(263, 23);
+            this.txtSummary.Size = new System.Drawing.Size(263, 20);
             this.txtSummary.TabIndex = 49;
             this.txtSummary.TabStop = false;
             this.txtSummary.ThemeName = "TelerikMetro";
@@ -245,7 +245,7 @@
             this.txtLocation.Location = new System.Drawing.Point(14, 379);
             this.txtLocation.MaxLength = 30;
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(263, 23);
+            this.txtLocation.Size = new System.Drawing.Size(263, 20);
             this.txtLocation.TabIndex = 52;
             this.txtLocation.TabStop = false;
             this.txtLocation.ThemeName = "TelerikMetro";
@@ -310,7 +310,7 @@
             this.txtId.Location = new System.Drawing.Point(14, 559);
             this.txtId.MaxLength = 100;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(263, 23);
+            this.txtId.Size = new System.Drawing.Size(263, 20);
             this.txtId.TabIndex = 59;
             this.txtId.TabStop = false;
             this.txtId.ThemeName = "TelerikMetro";

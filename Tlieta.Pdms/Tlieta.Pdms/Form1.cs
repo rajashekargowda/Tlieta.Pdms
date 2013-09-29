@@ -81,7 +81,7 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Settings", new Tlieta.Pdms.Views.Shared.Settings(serialKey));
             this.exampleControls.Add("Statistics", new Tlieta.Pdms.Views.Shared.Statistics());
             this.exampleControls.Add("LogBook", new Tlieta.Pdms.Views.Shared.LogBook());
-            this.exampleControls.Add("Appointments", new Tlieta.Pdms.Views.Shared.Appointments());
+            this.exampleControls.Add("Appointments", new Tlieta.Pdms.Views.Shared.Appointment());
             this.exampleControls.Add("Income/Expense Daybook", new Tlieta.Pdms.Views.Shared.FinanceDaybook());
             this.exampleControls.Add("Certificates", new Tlieta.Pdms.Views.Shared.Certificates());
             this.exampleControls.Add("Contacts", new Tlieta.Pdms.Views.Shared.Contacts());
