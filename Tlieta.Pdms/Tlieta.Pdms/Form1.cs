@@ -86,6 +86,7 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Certificates", new Tlieta.Pdms.Views.Shared.Certificates());
             this.exampleControls.Add("Contacts", new Tlieta.Pdms.Views.Shared.Contacts());
             this.exampleControls.Add("Letters", new Tlieta.Pdms.Views.Shared.Letters());
+            this.exampleControls.Add("Charts", new Tlieta.Pdms.Views.Shared.Charts());
             this.PreloadControls();
         }
 
@@ -371,6 +372,11 @@ namespace Tlieta.Pdms
         private void radTileLetters_Click(object sender, EventArgs e)
         {
             LoadExample("Letters");
+        }
+
+        private void radTileCharts_Click(object sender, EventArgs e)
+        {
+            LoadExample("Charts");
         }
         
         #endregion

@@ -187,6 +187,12 @@
     <Compile Include="Views\Shared\Certificates.Designer.cs">
       <DependentUpon>Certificates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Charts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Charts.Designer.cs">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Contacts.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     <EmbeddedResource Include="Views\Shared\Certificates.resx">
       <DependentUpon>Certificates.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Charts.resx">
+      <DependentUpon>Charts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Contacts.resx">
       <DependentUpon>Contacts.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +392,7 @@
     <Content Include="Resources\ivf_fertilization48.png" />
     <Content Include="Resources\letterpadheader.png" />
     <Content Include="Resources\letters.png" />
+    <Content Include="Resources\medicalchart.png" />
     <Content Include="Resources\medical_record48.png" />
     <Content Include="Resources\medicine48.png" />
     <Content Include="Resources\microbiology48.png" />

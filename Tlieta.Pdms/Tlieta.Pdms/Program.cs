@@ -19,22 +19,22 @@ namespace Tlieta.Pdms
         {            
             string serialkey = new SharedData().GetSerialKey();
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1(serialkey));
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1(serialkey));
 
-            string machineid = FingerPrint.Value();
-            if (serialkey != machineid)
-            {
-                MessageBox.Show("This machine is not registered");
-                Application.Exit();
-            }
-            else
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1(serialkey));
-            }
+            //string machineid = FingerPrint.Value();
+            //if (serialkey != machineid)
+            //{
+            //    MessageBox.Show("This machine is not registered");
+            //    Application.Exit();
+            //}
+            //else
+            //{
+            //    Application.EnableVisualStyles();
+            //    Application.SetCompatibleTextRenderingDefault(false);
+            //    Application.Run(new Form1(serialkey));
+            //}
         }
     }
 }

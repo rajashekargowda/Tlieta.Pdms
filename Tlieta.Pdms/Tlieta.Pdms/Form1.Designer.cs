@@ -44,6 +44,7 @@ namespace Tlieta.Pdms
             this.radTileLetters = new Telerik.WinControls.UI.RadTileElement();
             this.settingsGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.settingsTile = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileCharts = new Telerik.WinControls.UI.RadTileElement();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -184,7 +185,8 @@ namespace Tlieta.Pdms
             this.radTileDaybook,
             this.radTileCertificates,
             this.radTileContacts,
-            this.radTileLetters});
+            this.radTileLetters,
+            this.radTileCharts});
             this.practiceManagementGroup.Margin = new System.Windows.Forms.Padding(120, 200, 65, 0);
             this.practiceManagementGroup.Name = "practiceManagementGroup";
             this.practiceManagementGroup.RowsCount = 2;
@@ -310,6 +312,27 @@ namespace Tlieta.Pdms
             this.radTileLetters.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radTileLetters.Click += new System.EventHandler(this.radTileLetters_Click);
             // 
+            // radTileCharts
+            // 
+            this.radTileCharts.AccessibleDescription = "Charts";
+            this.radTileCharts.AccessibleName = "Charts";
+            this.radTileCharts.Name = "radTileCharts";
+            this.radTileCharts.Text = "Charts";
+            this.radTileCharts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(48)))), ((int)(((byte)(98)))));
+            this.radTileCharts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(78)))), ((int)(((byte)(162)))));
+            this.radTileCharts.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileCharts.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileCharts.Image = global::Tlieta.Pdms.Properties.Resources.medicalchart;
+            this.radTileCharts.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.radTileCharts.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileCharts.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.radTileCharts.Row = 1;
+            this.radTileCharts.Column = 3;
+            this.radTileCharts.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radTileCharts.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.radTileCharts.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileCharts.Click += new System.EventHandler(this.radTileCharts_Click);
+            // 
             // settingsGroup
             // 
             this.settingsGroup.AccessibleDescription = "settingsGroup";
@@ -381,5 +404,6 @@ namespace Tlieta.Pdms
         private RadTileElement radTileCertificates;
         private RadTileElement radTileContacts;
         private RadTileElement radTileLetters;
+        private RadTileElement radTileCharts;
     }
 }
