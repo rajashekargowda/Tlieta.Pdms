@@ -64,6 +64,7 @@
     <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\AxInterop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -138,13 +139,13 @@
     </Reference>
     <Reference Include="Tlieta.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Tlieta.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Tlieta.Pdms\Tlieta.DataAccess\bin\Release\Tlieta.DataAccess.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
     <Reference Include="Tlieta.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Tlieta.Utility.dll</HintPath>
+      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Tlieta.Pdms\Tlieta.Utility\bin\Release\Tlieta.Utility.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
@@ -363,6 +364,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="libs\AxInterop.WMPLib.dll" />
+    <Content Include="libs\Interop.WMPLib.dll" />
     <Content Include="Resources\add_user.png" />
     <Content Include="Resources\ambulance48.png" />
     <Content Include="Resources\appointments.png" />
