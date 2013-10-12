@@ -2,10 +2,14 @@
 using System.Configuration;
 using System.Data;
 using Tlieta.DataAccess;
+
+
 namespace Tlieta.Pdms.DataAccess
 {
     public class PatientData
     {
+        PDMSDataEntities entities = new PDMSDataEntities();
+
         private DataSet ds = null;
         public PatientData()
         {
@@ -16,6 +20,7 @@ namespace Tlieta.Pdms.DataAccess
         {
             try
             {
+                 
                 using (DBManager db = new DBManager())
                 {
                     db.Open();
@@ -38,6 +43,16 @@ namespace Tlieta.Pdms.DataAccess
                     }
                     else { return 0; }
                 }
+            }
+            catch { return 0; }
+        }
+
+        public int AddPatient(Patient patient )
+        {
+            try
+            {
+                entities.Patients.Add(patient);
+                return entities.SaveChanges();
             }
             catch { return 0; }
         }

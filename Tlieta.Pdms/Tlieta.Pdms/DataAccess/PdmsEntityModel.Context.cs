@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms
+namespace Tlieta.Pdms.DataAccess
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PDMSEFConnection : DbContext
+    public partial class PDMSDataEntities : DbContext
     {
-        public PDMSEFConnection()
-            : base("name=PDMSEFConnection")
+        public PDMSDataEntities()
+            : base("name=PDMSDataEntities")
         {
         }
     
@@ -25,5 +25,6 @@ namespace Tlieta.Pdms
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Patient> Patients { get; set; }
     }
 }

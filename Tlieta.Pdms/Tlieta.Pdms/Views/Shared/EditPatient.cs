@@ -74,48 +74,51 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnSavePatient_Click(object sender, EventArgs e)
         {
+            bool result = true;
             try
             {
-                bool result = true;
-                string firstname = txtFirstName.Text.Trim();
-                string lastname = txtLastName.Text.Trim();
-                string mobile = txtMobile.Text.Trim();
-                int age = GetAgeValue();
-                string prefix = ddlPrefix.SelectedItem == null ? "" : ddlPrefix.SelectedItem.Text;
-
-                try
-                {
-                    PatientData patientObject = new PatientData();
-                    _patientid = patientObject.InsertPatient(prefix, firstname, txtMiddleName.Text, lastname, chkMale.Checked ? "M" : "F", txtAddress.Text,
-                                                        age, mobile, txtPhone.Text,
-                                                        txtEmail.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString()));
-                }
-                catch { result = false; }
-
-                if (result)
-                {
-                    txtFirstName.Text = "";
-                    txtLastName.Text = "";
-                    txtMiddleName.Text = "";
-                    txtMobile.Text = "";
-                    txtPhone.Text = "";
-                    txtAddress.Text = "";
-                    txtEmail.Text = "";
-
-                    //Make Dirctories
-                    DataFolder.CreatePatientDataFolders(_patientid);
-
-                    //Open Patient hub
-                    new PatientForm(_patientid).ShowDialog();
-                }
-                else
-                {
-                    btnSavePatient.Visible = true;
-                    MessageBox.Show("Error adding a patient : Please contact support");
-                    return;
-                }
+                Patient patient = new Patient();
+                patient.Prefix = ddlPrefix.SelectedItem.Text;
+                patient.FirstName = txtFirstName.Text.Trim();
+                patient.MiddleName = txtMiddleName.Text.Trim();
+                patient.LastName = txtLastName.Text.Trim();
+                patient.Age = GetAgeValue();
+                patient.Gender = chkMale.Checked ? "M" : "F";
+                patient.Address = txtAddress.Text;
+                patient.Mobile = txtMobile.Text.Trim();
+                patient.HomePhone = txtPhone.Text.Trim();
+                patient.Email = txtEmail.Text;
+                patient.HospitalId = Convert.ToInt32(ddlHospital.SelectedValue.ToString());
+                patient.CreatedOn = DateTime.Now;
+                patient.UpdatedOn = DateTime.Now;
+                
+                PatientData patientObject = new PatientData();
+                _patientid = patientObject.AddPatient(patient);
             }
-            catch { MessageBox.Show("Error in system : Please contact support"); return; }
+            catch { result = false; }
+
+            if (result)
+            {
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                txtMiddleName.Text = "";
+                txtMobile.Text = "";
+                txtPhone.Text = "";
+                txtAddress.Text = "";
+                txtEmail.Text = "";
+
+                //Make Dirctories
+                DataFolder.CreatePatientDataFolders(_patientid);
+
+                //Open Patient hub
+                new PatientForm(_patientid).ShowDialog();
+            }
+            else
+            {
+                btnSavePatient.Visible = true;
+                MessageBox.Show("Error adding a patient : Please contact support");
+                return;
+            }
         }
 
         private int GetAgeValue()
@@ -131,32 +134,47 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            bool result = true;
-            string firstname = txtFirstName.Text.Trim();
-            string lastname = txtLastName.Text.Trim();
-            string mobile = txtMobile.Text.Trim();
-            int age = GetAgeValue();
+            //bool result = true;
 
-            try
-            {
-                PatientData patientObject = new PatientData();
-                result = patientObject.UpdatePatient(_patientid, ddlPrefix.SelectedItem.Text, firstname, txtMiddleName.Text, lastname, chkMale.Checked ? "M" : "F", txtAddress.Text,
-                                                    age, mobile, txtPhone.Text,
-                                                    txtEmail.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString()));
-            }
-            catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
+            //try
+            //{
+            //    Patient patient = new Patient();
+            //    patient.Prefix = ddlPrefix.SelectedItem.Text;
+            //    patient.FirstName = txtFirstName.Text.Trim();
+            //    patient.MiddleName = txtMiddleName.Text.Trim();
+            //    patient.LastName = txtLastName.Text.Trim();
+            //    patient.Age = GetAgeValue();
+            //    patient.Gender = chkMale.Checked ? "M" : "F";
+            //    patient.Address = txtAddress.Text;
+            //    patient.Mobile = txtMobile.Text.Trim();
+            //    patient.HomePhone = txtPhone.Text.Trim();
+            //    patient.Email = txtEmail.Text;
+            //    patient.HospitalId = Convert.ToInt32(ddlHospital.SelectedValue.ToString());
 
-            if (result)
-            {
-                MessageBox.Show("Patient successfully updated");
 
-                //Open Patient hub
-            }
-            else
-            {
-                MessageBox.Show("Error updating patient : Please contact support");
-                return;
-            }
+            //}
+            //catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
+
+            //try
+            //{
+            //    PatientData patientObject = new PatientData();
+            //    result = patientObject.UpdatePatient(_patientid, ddlPrefix.SelectedItem.Text, firstname, txtMiddleName.Text, lastname, chkMale.Checked ? "M" : "F", txtAddress.Text,
+            //                                        age, mobile, txtPhone.Text,
+            //                                        txtEmail.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString()));
+            //}
+            //catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
+
+            //if (result)
+            //{
+            //    MessageBox.Show("Patient successfully updated");
+
+            //    //Open Patient hub
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error updating patient : Please contact support");
+            //    return;
+            //}
         }
 
         private void txtFirstName_Leave(object sender, EventArgs e)
