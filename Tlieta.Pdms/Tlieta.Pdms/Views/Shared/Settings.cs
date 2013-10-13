@@ -21,7 +21,7 @@ namespace Tlieta.Pdms.Views.Shared
         }
 
         private void btnAddHospital_Click(object sender, EventArgs e)
-        {
+        {            
             string name = txtHospitalName.Text.Trim();
             string location = txtLocation.Text.Trim();
 
@@ -32,7 +32,8 @@ namespace Tlieta.Pdms.Views.Shared
             }
             else
             {
-                bool result = new MasterData().AddHospital(name, location);
+                Hospital hospital = new Hospital() { HospitalName = name, Location = location };
+                bool result = new MasterData().AddHospital(hospital);
                 if (result)
                 {
                     txtHospitalName.Text = "";
@@ -57,7 +58,8 @@ namespace Tlieta.Pdms.Views.Shared
             }
             else
             {
-                bool result = new MasterData().AddOperation(name);
+                Operation operation = new Operation() { OperationName = name };
+                bool result = new MasterData().AddOperation(operation);
                 if (result)
                 {
                     txtOperationName.Text = "";
@@ -66,75 +68,6 @@ namespace Tlieta.Pdms.Views.Shared
                 else
                 {
                     MessageBox.Show("Cannot add operation : contact Admin");
-                }
-            }
-        }
-
-        private void btnAddImplant_Click(object sender, EventArgs e)
-        {
-            string name = txtImplant.Text.Trim();
-
-            if (name == "")
-            {
-                MessageBox.Show("Enter implant name");
-                return;
-            }
-            else
-            {
-                bool result = new MasterData().AddImplant(name);
-                if (result)
-                {
-                    txtImplant.Text = "";
-                    MessageBox.Show("Implant name added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Cannot add implant : contact Admin");
-                }
-            }
-        }
-
-        private void btnAddGraftSize_Click(object sender, EventArgs e)
-        {
-            decimal size = 0;
-            try
-            {
-                size = Convert.ToDecimal(txtGraftSize.Text.Trim());
-            }
-            catch { MessageBox.Show("Enter valid size"); return; }
-
-            bool result = new MasterData().AddGraftSize(size);
-            if (result)
-            {
-                txtGraftSize.Text = "";
-                MessageBox.Show("Graft Size added successfully");
-            }
-            else
-            {
-                MessageBox.Show("Cannot add Graft Size : contact Admin");
-            }
-        }
-
-        private void btnAddACLSubType_Click(object sender, EventArgs e)
-        {
-            string name = txtACLSubType.Text.Trim();
-
-            if (name == "")
-            {
-                MessageBox.Show("Enter ACL SubType name");
-                return;
-            }
-            else
-            {
-                bool result = new MasterData().AddACLSubType(name);
-                if (result)
-                {
-                    txtACLSubType.Text = "";
-                    MessageBox.Show("ACL SubType name added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Cannot add ACL SubType : contact Admin");
                 }
             }
         }

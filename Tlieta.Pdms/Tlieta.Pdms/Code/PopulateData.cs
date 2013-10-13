@@ -13,47 +13,22 @@ namespace Tlieta.Pdms.Views.Shared
     {
         public static void PopulateHospital(RadDropDownList ddl)
         {
-            DataTable dt = new MasterData().GetHospitals();
-            dt.Rows.InsertAt(dt.NewRow(), 0); dt.Rows[0][0] = "0"; dt.Rows[0][1] = "Select Hospital";
-            ddl.DataSource = dt;
+            List<Hospital> hospitals = new MasterData().GetHospitals();
+            hospitals.Insert(0, new Hospital() { HospitalId = 0, HospitalName = "Select Hospital" });
+
+            ddl.DataSource = hospitals;
             ddl.ValueMember = "HospitalId";
             ddl.DisplayMember = "HospitalName";
         }
 
         public static void PopulateOperations(RadDropDownList ddl)
         {
-            DataTable dt = new MasterData().GetOperations();
-            dt.Rows.InsertAt(dt.NewRow(), 0); dt.Rows[0][0] = "0"; dt.Rows[0][1] = "Select Operation";
-            ddl.DataSource = dt;
+            List<Operation> operations = new MasterData().GetOperations();
+            operations.Insert(0, new Operation() { OperationId = 0, OperationName = "Select Operation" });
+
+            ddl.DataSource = operations;
             ddl.ValueMember = "OperationId";
             ddl.DisplayMember = "OperationName";
-        }
-
-        public static void PopulateImplants(RadDropDownList ddl)
-        {
-            DataTable dt = new MasterData().GetImplants();
-            dt.Rows.InsertAt(dt.NewRow(), 0); dt.Rows[0][0] = "0"; dt.Rows[0][1] = "Select Implant";
-            ddl.DataSource = dt;
-            ddl.ValueMember = "ImplantId";
-            ddl.DisplayMember = "ImplantName";
-        }
-
-        public static void PopulateGraftSize(RadDropDownList ddl)
-        {
-            DataTable dt = new MasterData().GetGraftSizes();
-            dt.Rows.InsertAt(dt.NewRow(), 0); dt.Rows[0][0] = "0"; dt.Rows[0][1] = "0";
-            ddl.DataSource = dt;
-            ddl.ValueMember = "GraftSizeId";
-            ddl.DisplayMember = "GraftSizeValue";
-        }
-
-        public static void PopulateACLSubType(RadDropDownList ddl)
-        {
-            DataTable dt = new MasterData().GetACLSubTypes();
-            dt.Rows.InsertAt(dt.NewRow(), 0); dt.Rows[0][0] = "0"; dt.Rows[0][1] = "Select ACL SubType";
-            ddl.DataSource = dt;
-            ddl.ValueMember = "ACLSubTypeId";
-            ddl.DisplayMember = "ACLSubTypeName";
         }
 
         public static void SelectDropDownItem(RadDropDownList ddl, string value)

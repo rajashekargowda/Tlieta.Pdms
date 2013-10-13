@@ -33,14 +33,14 @@ namespace Tlieta.Pdms.Views.Shared
         {
             this.docPrintPhoto.InsertImage((Bitmap)Resources.letterpadheader);
 
-            System.Data.DataTable dt = new PatientData().GetPatientById(Convert.ToInt32(_patientid));
-            docPrintPhoto.Insert("Patient Name : " + dt.Rows[0]["FirstName"].ToString().ToUpper() + " " + dt.Rows[0]["LastName"].ToString().ToUpper());
+            Patient patient = new PatientData().GetPatientById(Convert.ToInt32(_patientid));
+            docPrintPhoto.Insert("Patient Name : " + patient.FirstName.ToUpper() + " " + patient.LastName.ToUpper());
             docPrintPhoto.InsertLineBreak();
             docPrintPhoto.Insert("Patient Id : " + _patientid);
             docPrintPhoto.InsertLineBreak();
-            docPrintPhoto.Insert("Age : " + dt.Rows[0]["Age"].ToString());
+            docPrintPhoto.Insert("Age : " + patient.Age.ToString());
             docPrintPhoto.InsertLineBreak();
-            docPrintPhoto.Insert("Address : " + dt.Rows[0]["Address"].ToString().ToUpper());
+            docPrintPhoto.Insert("Address : " + patient.Address.ToUpper());
             docPrintPhoto.InsertLineBreak();
             docPrintPhoto.Insert("Hospital : ");
             docPrintPhoto.InsertLineBreak();

@@ -29,6 +29,8 @@ namespace Tlieta.Pdms.Views.Shared
             new TelerikMetroTheme();
 
             _patientid = patientId;
+            lblPatientId.Text = patientId.ToString();
+
             if (_patientid != 0)
             {
                 btnSavePatient.Visible = false;
@@ -48,12 +50,12 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void PopulatePatient(int patientId)
         {
-            DataTable dt = new PatientData().GetPatientById(patientId);
+            Patient patient = new PatientData().GetPatientById(patientId);
 
-            txtFirstName.Text = dt.Rows[0]["FirstName"].ToString();
-            txtLastName.Text = dt.Rows[0]["LastName"].ToString();
-            txtMiddleName.Text = dt.Rows[0]["MiddleName"].ToString();
-            if (dt.Rows[0]["Gender"].ToString().Trim() == "M")
+            txtFirstName.Text = patient.FirstName;
+            txtLastName.Text = patient.LastName;
+            txtMiddleName.Text = patient.MiddleName;
+            if (patient.Gender.Trim() == "M")
             {
                 chkMale.Checked = true; chkFemale.Checked = false;
             }
@@ -61,15 +63,15 @@ namespace Tlieta.Pdms.Views.Shared
             {
                 chkMale.Checked = false; chkFemale.Checked = true;
             }
-            txtMobile.Text = dt.Rows[0]["Mobile"].ToString();
-            txtPhone.Text = dt.Rows[0]["HomePhone"].ToString();
-            txtAddress.Text = dt.Rows[0]["Address"].ToString();
-            txtEmail.Text = dt.Rows[0]["Email"].ToString();
-            txtAge.Text = dt.Rows[0]["Age"].ToString();
+            txtMobile.Text = patient.Mobile;
+            txtPhone.Text = patient.HomePhone;
+            txtAddress.Text = patient.Address;
+            txtEmail.Text = patient.Email;
+            txtAge.Text = patient.Age.ToString();
 
-            PopulateData.SelectDropDownItem(ddlHospital, dt.Rows[0]["HospitalId"].ToString().Trim());
-            if(dt.Rows[0]["Prefix"].ToString().Trim() != "")
-                ddlPrefix.FindItemExact(dt.Rows[0]["Prefix"].ToString().Trim(), false).Selected = true;
+            PopulateData.SelectDropDownItem(ddlHospital, patient.HospitalId.ToString().Trim());
+            if(patient.Prefix.Trim() != "")
+                ddlPrefix.FindItemExact(patient.Prefix.Trim(), false).Selected = true;
         }
 
         private void btnSavePatient_Click(object sender, EventArgs e)
@@ -134,26 +136,43 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //bool result = true;
+            bool result = true;
 
-            //try
-            //{
-            //    Patient patient = new Patient();
-            //    patient.Prefix = ddlPrefix.SelectedItem.Text;
-            //    patient.FirstName = txtFirstName.Text.Trim();
-            //    patient.MiddleName = txtMiddleName.Text.Trim();
-            //    patient.LastName = txtLastName.Text.Trim();
-            //    patient.Age = GetAgeValue();
-            //    patient.Gender = chkMale.Checked ? "M" : "F";
-            //    patient.Address = txtAddress.Text;
-            //    patient.Mobile = txtMobile.Text.Trim();
-            //    patient.HomePhone = txtPhone.Text.Trim();
-            //    patient.Email = txtEmail.Text;
-            //    patient.HospitalId = Convert.ToInt32(ddlHospital.SelectedValue.ToString());
+            try
+            {
+                int patientid = Convert.ToInt32(lblPatientId.Text);
+                Patient patient = new PatientData().GetPatientById(patientid);
 
+                patient.Prefix = ddlPrefix.SelectedItem.Text;
+                patient.FirstName = txtFirstName.Text.Trim();
+                patient.MiddleName = txtMiddleName.Text.Trim();
+                patient.LastName = txtLastName.Text.Trim();
+                patient.Age = GetAgeValue();
+                patient.Gender = chkMale.Checked ? "M" : "F";
+                patient.Address = txtAddress.Text;
+                patient.Mobile = txtMobile.Text.Trim();
+                patient.HomePhone = txtPhone.Text.Trim();
+                patient.Email = txtEmail.Text;
+                patient.HospitalId = Convert.ToInt32(ddlHospital.SelectedValue.ToString());
 
-            //}
-            //catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
+                patient.KnownIllness = txtMedicalIssues.Text;
+                patient.KnownAllergy = txtAllergies.Text;
+                patient.Medications = txtMedication.Text;
+                patient.ReferredBy = txtReferredBy.Text;
+                patient.FamilyHistory = txtFamilyHistory.Text;
+                patient.SocioEconomicStatus = txtSocioStatus.Text;
+                patient.Diet = txtDiet.Text;
+                patient.IsSmoker = chkSmoker.Checked;
+                patient.SmokingInfo = txtSmoker.Text;
+                patient.IsAlchoholic = chkAlchoholic.Checked;
+                patient.AlchoholInfo = txtAlchoholic.Text;
+                patient.MedicalInsurance = txtMeicalInsurance.Text;
+
+                patient.UpdatedOn = DateTime.Now;
+
+                new PatientData().UpdatePatient(patient);
+            }
+            catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
 
             //try
             //{
@@ -216,11 +235,6 @@ namespace Tlieta.Pdms.Views.Shared
             { btnAdvanced.Text = "Hide Advanced Data"; boxAdvanced.Visible = true; } 
             else
             { btnAdvanced.Text = "Show Advanced Data"; boxAdvanced.Visible = false; } 
-        }
-
-        private void btnSaveAdvanced_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

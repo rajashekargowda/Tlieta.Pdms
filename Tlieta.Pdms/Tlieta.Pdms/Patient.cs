@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.DataAccess
+namespace Tlieta.Pdms
 {
     using System;
     using System.Collections.Generic;

@@ -1,6 +1,6 @@
 ﻿namespace Tlieta.Pdms.Views.Shared
 {
-    partial class Surgery
+    partial class SurgeryView
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,23 +34,16 @@
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.ddlOpertaion = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.ddlACLSubType = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.ddlGraftSize = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.ddlHospital = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.txtIPNumber = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.txtNotes = new Telerik.WinControls.UI.RadTextBox();
             this.btnAddSurgery = new Telerik.WinControls.UI.RadButton();
             this.btnUpdate = new Telerik.WinControls.UI.RadButton();
             this.listSurgery = new Telerik.WinControls.UI.RadListControl();
-            this.panelACL = new Telerik.WinControls.UI.RadPanel();
-            this.listImplants = new Telerik.WinControls.UI.RadListControl();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.txtPreOpDiagnosis = new Telerik.WinControls.UI.RadTextBox();
             this.txtPostOpDiagnosis = new Telerik.WinControls.UI.RadTextBox();
@@ -71,24 +64,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlOpertaion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlACLSubType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlGraftSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlHospital)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIPNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddSurgery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listSurgery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelACL)).BeginInit();
-            this.panelACL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listImplants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreOpDiagnosis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPostOpDiagnosis)).BeginInit();
@@ -159,7 +144,6 @@
             this.ddlOpertaion.Size = new System.Drawing.Size(200, 20);
             this.ddlOpertaion.TabIndex = 26;
             this.ddlOpertaion.ThemeName = "TelerikMetro";
-            this.ddlOpertaion.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ddlOpertaion_SelectedIndexChanged);
             // 
             // radLabel11
             // 
@@ -169,44 +153,6 @@
             this.radLabel11.Size = new System.Drawing.Size(119, 24);
             this.radLabel11.TabIndex = 25;
             this.radLabel11.Text = "Operation name";
-            // 
-            // ddlACLSubType
-            // 
-            this.ddlACLSubType.DropDownAnimationEnabled = true;
-            this.ddlACLSubType.Location = new System.Drawing.Point(3, 30);
-            this.ddlACLSubType.Name = "ddlACLSubType";
-            this.ddlACLSubType.ShowImageInEditorArea = true;
-            this.ddlACLSubType.Size = new System.Drawing.Size(200, 22);
-            this.ddlACLSubType.TabIndex = 28;
-            this.ddlACLSubType.ThemeName = "TelerikMetro";
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.radLabel1.Location = new System.Drawing.Point(3, 4);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(84, 20);
-            this.radLabel1.TabIndex = 27;
-            this.radLabel1.Text = "ACL Sub Type";
-            // 
-            // ddlGraftSize
-            // 
-            this.ddlGraftSize.DropDownAnimationEnabled = true;
-            this.ddlGraftSize.Location = new System.Drawing.Point(219, 30);
-            this.ddlGraftSize.Name = "ddlGraftSize";
-            this.ddlGraftSize.ShowImageInEditorArea = true;
-            this.ddlGraftSize.Size = new System.Drawing.Size(98, 22);
-            this.ddlGraftSize.TabIndex = 30;
-            this.ddlGraftSize.ThemeName = "TelerikMetro";
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.radLabel2.Location = new System.Drawing.Point(219, 4);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(60, 20);
-            this.radLabel2.TabIndex = 29;
-            this.radLabel2.Text = "Graft Size";
             // 
             // radLabel3
             // 
@@ -224,7 +170,7 @@
             this.ddlHospital.Location = new System.Drawing.Point(282, 222);
             this.ddlHospital.Name = "ddlHospital";
             this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
             this.ddlHospital.TabIndex = 32;
             this.ddlHospital.ThemeName = "TelerikMetro";
             // 
@@ -255,15 +201,6 @@
             this.radLabel5.Size = new System.Drawing.Size(81, 24);
             this.radLabel5.TabIndex = 34;
             this.radLabel5.Text = "IP Number";
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.radLabel7.Location = new System.Drawing.Point(513, 124);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(60, 24);
-            this.radLabel7.TabIndex = 33;
-            this.radLabel7.Text = "Implant";
             // 
             // radLabel8
             // 
@@ -323,30 +260,6 @@
             this.listSurgery.ThemeName = "TelerikMetro";
             this.listSurgery.SelectedValueChanged += new System.EventHandler(this.listSurgery_SelectedValueChanged);
             // 
-            // panelACL
-            // 
-            this.panelACL.Controls.Add(this.radLabel1);
-            this.panelACL.Controls.Add(this.ddlACLSubType);
-            this.panelACL.Controls.Add(this.radLabel2);
-            this.panelACL.Controls.Add(this.ddlGraftSize);
-            this.panelACL.Location = new System.Drawing.Point(513, 48);
-            this.panelACL.Name = "panelACL";
-            this.panelACL.Size = new System.Drawing.Size(325, 66);
-            this.panelACL.TabIndex = 41;
-            // 
-            // listImplants
-            // 
-            this.listImplants.AutoScroll = true;
-            this.listImplants.CaseSensitiveSort = true;
-            this.listImplants.EnableKineticScrolling = true;
-            this.listImplants.ItemHeight = 25;
-            this.listImplants.Location = new System.Drawing.Point(516, 154);
-            this.listImplants.Name = "listImplants";
-            this.listImplants.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listImplants.Size = new System.Drawing.Size(322, 167);
-            this.listImplants.TabIndex = 42;
-            this.listImplants.ThemeName = "TelerikMetro";
-            // 
             // radLabel9
             // 
             this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,7 +274,7 @@
             this.txtPreOpDiagnosis.Location = new System.Drawing.Point(1001, 48);
             this.txtPreOpDiagnosis.MaxLength = 20;
             this.txtPreOpDiagnosis.Name = "txtPreOpDiagnosis";
-            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 21);
+            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 23);
             this.txtPreOpDiagnosis.TabIndex = 44;
             this.txtPreOpDiagnosis.TabStop = false;
             this.txtPreOpDiagnosis.ThemeName = "TelerikMetro";
@@ -371,7 +284,7 @@
             this.txtPostOpDiagnosis.Location = new System.Drawing.Point(1001, 90);
             this.txtPostOpDiagnosis.MaxLength = 20;
             this.txtPostOpDiagnosis.Name = "txtPostOpDiagnosis";
-            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 21);
+            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 23);
             this.txtPostOpDiagnosis.TabIndex = 46;
             this.txtPostOpDiagnosis.TabStop = false;
             this.txtPostOpDiagnosis.ThemeName = "TelerikMetro";
@@ -390,7 +303,7 @@
             this.txtReferredBy.Location = new System.Drawing.Point(1001, 133);
             this.txtReferredBy.MaxLength = 20;
             this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(258, 21);
+            this.txtReferredBy.Size = new System.Drawing.Size(258, 23);
             this.txtReferredBy.TabIndex = 48;
             this.txtReferredBy.TabStop = false;
             this.txtReferredBy.ThemeName = "TelerikMetro";
@@ -419,7 +332,7 @@
             this.ddlSurgeon.Location = new System.Drawing.Point(1001, 207);
             this.ddlSurgeon.Name = "ddlSurgeon";
             this.ddlSurgeon.ShowImageInEditorArea = true;
-            this.ddlSurgeon.Size = new System.Drawing.Size(200, 22);
+            this.ddlSurgeon.Size = new System.Drawing.Size(200, 20);
             this.ddlSurgeon.TabIndex = 50;
             this.ddlSurgeon.ThemeName = "TelerikMetro";
             // 
@@ -429,7 +342,7 @@
             this.ddlAsstSurgeon.Location = new System.Drawing.Point(1001, 247);
             this.ddlAsstSurgeon.Name = "ddlAsstSurgeon";
             this.ddlAsstSurgeon.ShowImageInEditorArea = true;
-            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 22);
+            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 20);
             this.ddlAsstSurgeon.TabIndex = 52;
             this.ddlAsstSurgeon.ThemeName = "TelerikMetro";
             // 
@@ -448,7 +361,7 @@
             this.ddlAnaesthetist.Location = new System.Drawing.Point(1001, 286);
             this.ddlAnaesthetist.Name = "ddlAnaesthetist";
             this.ddlAnaesthetist.ShowImageInEditorArea = true;
-            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 22);
+            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 20);
             this.ddlAnaesthetist.TabIndex = 54;
             this.ddlAnaesthetist.ThemeName = "TelerikMetro";
             // 
@@ -467,7 +380,7 @@
             this.ddlScrubNurse.Location = new System.Drawing.Point(1001, 325);
             this.ddlScrubNurse.Name = "ddlScrubNurse";
             this.ddlScrubNurse.ShowImageInEditorArea = true;
-            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 22);
+            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 20);
             this.ddlScrubNurse.TabIndex = 56;
             this.ddlScrubNurse.ThemeName = "TelerikMetro";
             // 
@@ -500,14 +413,11 @@
             this.Controls.Add(this.txtPreOpDiagnosis);
             this.Controls.Add(this.radLabel9);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.listImplants);
-            this.Controls.Add(this.panelACL);
             this.Controls.Add(this.listSurgery);
             this.Controls.Add(this.btnAddSurgery);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.radLabel8);
             this.Controls.Add(this.txtIPNumber);
-            this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.ddlHospital);
@@ -527,25 +437,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlOpertaion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlACLSubType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlGraftSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlHospital)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIPNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddSurgery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listSurgery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelACL)).EndInit();
-            this.panelACL.ResumeLayout(false);
-            this.panelACL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listImplants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreOpDiagnosis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPostOpDiagnosis)).EndInit();
@@ -573,23 +474,16 @@
         private Telerik.WinControls.UI.RadLabel radLabel17;
         private Telerik.WinControls.UI.RadDropDownList ddlOpertaion;
         private Telerik.WinControls.UI.RadLabel radLabel11;
-        private Telerik.WinControls.UI.RadDropDownList ddlACLSubType;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadDropDownList ddlGraftSize;
-        private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadDropDownList ddlHospital;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadTextBox txtIPNumber;
         private Telerik.WinControls.UI.RadLabel radLabel5;
-        private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadTextBox txtNotes;
         private Telerik.WinControls.UI.RadButton btnAddSurgery;
         private Telerik.WinControls.UI.RadButton btnUpdate;
         private Telerik.WinControls.UI.RadListControl listSurgery;
-        private Telerik.WinControls.UI.RadPanel panelACL;
-        private Telerik.WinControls.UI.RadListControl listImplants;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadTextBox txtPreOpDiagnosis;
         private Telerik.WinControls.UI.RadTextBox txtPostOpDiagnosis;

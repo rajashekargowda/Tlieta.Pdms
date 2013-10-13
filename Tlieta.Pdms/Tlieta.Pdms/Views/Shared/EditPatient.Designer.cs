@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.btnSavePatient = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -62,27 +62,26 @@
             this.lblPatientId = new Telerik.WinControls.UI.RadLabel();
             this.btnAdvanced = new Telerik.WinControls.UI.RadToggleButton();
             this.boxAdvanced = new Telerik.WinControls.UI.RadGroupBox();
-            this.txtMedicalIssues = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
-            this.txtAllergies = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.txtMedication = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.txtReferredBy = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
-            this.txtSmoker = new Telerik.WinControls.UI.RadTextBox();
-            this.chkSmoker = new Telerik.WinControls.UI.RadCheckBox();
-            this.chkAlchoholic = new Telerik.WinControls.UI.RadCheckBox();
-            this.txtAlchoholic = new Telerik.WinControls.UI.RadTextBox();
-            this.txtDiet = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
-            this.txtFamilyHistory = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
+            this.txtMeicalInsurance = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel20 = new Telerik.WinControls.UI.RadLabel();
             this.txtSocioStatus = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
-            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel20 = new Telerik.WinControls.UI.RadLabel();
-            this.btnSaveAdvanced = new Telerik.WinControls.UI.RadButton();
+            this.txtFamilyHistory = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
+            this.txtDiet = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
+            this.chkAlchoholic = new Telerik.WinControls.UI.RadCheckBox();
+            this.txtAlchoholic = new Telerik.WinControls.UI.RadTextBox();
+            this.chkSmoker = new Telerik.WinControls.UI.RadCheckBox();
+            this.txtSmoker = new Telerik.WinControls.UI.RadTextBox();
+            this.txtReferredBy = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
+            this.txtMedication = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
+            this.txtAllergies = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
+            this.txtMedicalIssues = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnSavePatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -113,27 +112,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdvanced)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boxAdvanced)).BeginInit();
             this.boxAdvanced.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAllergies)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMedication)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtReferredBy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmoker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmoker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkAlchoholic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAlchoholic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFamilyHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMeicalInsurance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSocioStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaveAdvanced)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFamilyHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAlchoholic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAlchoholic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmoker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmoker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReferredBy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMedication)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAllergies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSavePatient
@@ -186,18 +184,18 @@
             // ddlPrefix
             // 
             this.ddlPrefix.DropDownAnimationEnabled = true;
-            radListDataItem1.Text = "Mr";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "Mrs";
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "Ms";
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "Miss";
-            radListDataItem4.TextWrap = true;
-            this.ddlPrefix.Items.Add(radListDataItem1);
-            this.ddlPrefix.Items.Add(radListDataItem2);
-            this.ddlPrefix.Items.Add(radListDataItem3);
-            this.ddlPrefix.Items.Add(radListDataItem4);
+            radListDataItem5.Text = "Mr";
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.Text = "Mrs";
+            radListDataItem6.TextWrap = true;
+            radListDataItem7.Text = "Ms";
+            radListDataItem7.TextWrap = true;
+            radListDataItem8.Text = "Miss";
+            radListDataItem8.TextWrap = true;
+            this.ddlPrefix.Items.Add(radListDataItem5);
+            this.ddlPrefix.Items.Add(radListDataItem6);
+            this.ddlPrefix.Items.Add(radListDataItem7);
+            this.ddlPrefix.Items.Add(radListDataItem8);
             this.ddlPrefix.Location = new System.Drawing.Point(34, 119);
             this.ddlPrefix.Name = "ddlPrefix";
             this.ddlPrefix.ShowImageInEditorArea = true;
@@ -418,8 +416,7 @@
             // boxAdvanced
             // 
             this.boxAdvanced.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.boxAdvanced.Controls.Add(this.btnSaveAdvanced);
-            this.boxAdvanced.Controls.Add(this.radTextBox1);
+            this.boxAdvanced.Controls.Add(this.txtMeicalInsurance);
             this.boxAdvanced.Controls.Add(this.radLabel20);
             this.boxAdvanced.Controls.Add(this.txtSocioStatus);
             this.boxAdvanced.Controls.Add(this.radLabel19);
@@ -457,169 +454,28 @@
             this.boxAdvanced.Text = "Advanced Data";
             this.boxAdvanced.Visible = false;
             // 
-            // txtMedicalIssues
+            // txtMeicalInsurance
             // 
-            this.txtMedicalIssues.Location = new System.Drawing.Point(16, 54);
-            this.txtMedicalIssues.Multiline = true;
-            this.txtMedicalIssues.Name = "txtMedicalIssues";
-            // 
-            // 
-            // 
-            this.radTextBox1.RootElement.StretchVertically = true;
-            this.txtMedicalIssues.Size = new System.Drawing.Size(200, 83);
-            this.txtMedicalIssues.TabIndex = 15;
-            this.txtMedicalIssues.TabStop = false;
-            this.txtMedicalIssues.ThemeName = "TelerikMetro";
-            // 
-            // radLabel13
-            // 
-            this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel13.Location = new System.Drawing.Point(16, 27);
-            this.radLabel13.Name = "radLabel13";
-            this.radLabel13.Size = new System.Drawing.Size(140, 21);
-            this.radLabel13.TabIndex = 14;
-            this.radLabel13.Text = "Known Medical Issues";
-            // 
-            // txtAllergies
-            // 
-            this.txtAllergies.Location = new System.Drawing.Point(16, 170);
-            this.txtAllergies.Multiline = true;
-            this.txtAllergies.Name = "txtAllergies";
+            this.txtMeicalInsurance.Location = new System.Drawing.Point(478, 199);
+            this.txtMeicalInsurance.Multiline = true;
+            this.txtMeicalInsurance.Name = "txtMeicalInsurance";
             // 
             // 
             // 
-            this.radTextBox1.RootElement.StretchVertically = true;
-            this.txtAllergies.Size = new System.Drawing.Size(200, 83);
-            this.txtAllergies.TabIndex = 17;
-            this.txtAllergies.TabStop = false;
-            this.txtAllergies.ThemeName = "TelerikMetro";
+            this.txtMeicalInsurance.RootElement.StretchVertically = true;
+            this.txtMeicalInsurance.Size = new System.Drawing.Size(200, 112);
+            this.txtMeicalInsurance.TabIndex = 34;
+            this.txtMeicalInsurance.TabStop = false;
+            this.txtMeicalInsurance.ThemeName = "TelerikMetro";
             // 
-            // radLabel14
+            // radLabel20
             // 
-            this.radLabel14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel14.Location = new System.Drawing.Point(16, 143);
-            this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(104, 21);
-            this.radLabel14.TabIndex = 16;
-            this.radLabel14.Text = "Known Allergies";
-            // 
-            // txtMedication
-            // 
-            this.txtMedication.Location = new System.Drawing.Point(16, 286);
-            this.txtMedication.Multiline = true;
-            this.txtMedication.Name = "txtMedication";
-            // 
-            // 
-            // 
-            this.radTextBox1.RootElement.StretchVertically = true;
-            this.txtMedication.Size = new System.Drawing.Size(200, 83);
-            this.txtMedication.TabIndex = 19;
-            this.txtMedication.TabStop = false;
-            this.txtMedication.ThemeName = "TelerikMetro";
-            // 
-            // radLabel15
-            // 
-            this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel15.Location = new System.Drawing.Point(16, 259);
-            this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(174, 21);
-            this.radLabel15.TabIndex = 18;
-            this.radLabel15.Text = "On Any Regular Medication";
-            // 
-            // txtReferredBy
-            // 
-            this.txtReferredBy.Location = new System.Drawing.Point(258, 54);
-            this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(160, 23);
-            this.txtReferredBy.TabIndex = 21;
-            this.txtReferredBy.TabStop = false;
-            this.txtReferredBy.ThemeName = "TelerikMetro";
-            // 
-            // radLabel16
-            // 
-            this.radLabel16.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel16.Location = new System.Drawing.Point(258, 27);
-            this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(77, 21);
-            this.radLabel16.TabIndex = 20;
-            this.radLabel16.Text = "Referred By";
-            // 
-            // txtSmoker
-            // 
-            this.txtSmoker.Location = new System.Drawing.Point(478, 54);
-            this.txtSmoker.Name = "txtSmoker";
-            this.txtSmoker.Size = new System.Drawing.Size(160, 23);
-            this.txtSmoker.TabIndex = 23;
-            this.txtSmoker.TabStop = false;
-            this.txtSmoker.ThemeName = "TelerikMetro";
-            // 
-            // chkSmoker
-            // 
-            this.chkSmoker.Location = new System.Drawing.Point(478, 29);
-            this.chkSmoker.Name = "chkSmoker";
-            this.chkSmoker.Size = new System.Drawing.Size(65, 19);
-            this.chkSmoker.TabIndex = 24;
-            this.chkSmoker.Text = "Smoker";
-            this.chkSmoker.ThemeName = "TelerikMetro";
-            // 
-            // chkAlchoholic
-            // 
-            this.chkAlchoholic.Location = new System.Drawing.Point(478, 91);
-            this.chkAlchoholic.Name = "chkAlchoholic";
-            this.chkAlchoholic.Size = new System.Drawing.Size(80, 19);
-            this.chkAlchoholic.TabIndex = 26;
-            this.chkAlchoholic.Text = "Alchoholic";
-            this.chkAlchoholic.ThemeName = "TelerikMetro";
-            // 
-            // txtAlchoholic
-            // 
-            this.txtAlchoholic.Location = new System.Drawing.Point(478, 116);
-            this.txtAlchoholic.Name = "txtAlchoholic";
-            this.txtAlchoholic.Size = new System.Drawing.Size(160, 23);
-            this.txtAlchoholic.TabIndex = 25;
-            this.txtAlchoholic.TabStop = false;
-            this.txtAlchoholic.ThemeName = "TelerikMetro";
-            // 
-            // txtDiet
-            // 
-            this.txtDiet.Location = new System.Drawing.Point(258, 346);
-            this.txtDiet.Name = "txtDiet";
-            this.txtDiet.Size = new System.Drawing.Size(160, 23);
-            this.txtDiet.TabIndex = 28;
-            this.txtDiet.TabStop = false;
-            this.txtDiet.ThemeName = "TelerikMetro";
-            // 
-            // radLabel17
-            // 
-            this.radLabel17.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel17.Location = new System.Drawing.Point(258, 319);
-            this.radLabel17.Name = "radLabel17";
-            this.radLabel17.Size = new System.Drawing.Size(32, 21);
-            this.radLabel17.TabIndex = 27;
-            this.radLabel17.Text = "Diet";
-            // 
-            // txtFamilyHistory
-            // 
-            this.txtFamilyHistory.Location = new System.Drawing.Point(258, 110);
-            this.txtFamilyHistory.Multiline = true;
-            this.txtFamilyHistory.Name = "txtFamilyHistory";
-            // 
-            // 
-            // 
-            this.txtFamilyHistory.RootElement.StretchVertically = true;
-            this.txtFamilyHistory.Size = new System.Drawing.Size(200, 83);
-            this.txtFamilyHistory.TabIndex = 30;
-            this.txtFamilyHistory.TabStop = false;
-            this.txtFamilyHistory.ThemeName = "TelerikMetro";
-            // 
-            // radLabel18
-            // 
-            this.radLabel18.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel18.Location = new System.Drawing.Point(258, 83);
-            this.radLabel18.Name = "radLabel18";
-            this.radLabel18.Size = new System.Drawing.Size(93, 21);
-            this.radLabel18.TabIndex = 29;
-            this.radLabel18.Text = "Family History";
+            this.radLabel20.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel20.Location = new System.Drawing.Point(478, 172);
+            this.radLabel20.Name = "radLabel20";
+            this.radLabel20.Size = new System.Drawing.Size(177, 21);
+            this.radLabel20.TabIndex = 33;
+            this.radLabel20.Text = "Details of Medical Insurance";
             // 
             // txtSocioStatus
             // 
@@ -644,39 +500,169 @@
             this.radLabel19.TabIndex = 31;
             this.radLabel19.Text = "Socio Economic Status";
             // 
-            // radTextBox1
+            // txtFamilyHistory
             // 
-            this.radTextBox1.Location = new System.Drawing.Point(478, 199);
-            this.radTextBox1.Multiline = true;
-            this.radTextBox1.Name = "radTextBox1";
+            this.txtFamilyHistory.Location = new System.Drawing.Point(258, 110);
+            this.txtFamilyHistory.Multiline = true;
+            this.txtFamilyHistory.Name = "txtFamilyHistory";
             // 
             // 
             // 
-            this.radTextBox1.RootElement.StretchVertically = true;
-            this.radTextBox1.Size = new System.Drawing.Size(200, 112);
-            this.radTextBox1.TabIndex = 34;
-            this.radTextBox1.TabStop = false;
-            this.radTextBox1.ThemeName = "TelerikMetro";
+            this.txtFamilyHistory.RootElement.StretchVertically = true;
+            this.txtFamilyHistory.Size = new System.Drawing.Size(200, 83);
+            this.txtFamilyHistory.TabIndex = 30;
+            this.txtFamilyHistory.TabStop = false;
+            this.txtFamilyHistory.ThemeName = "TelerikMetro";
             // 
-            // radLabel20
+            // radLabel18
             // 
-            this.radLabel20.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel20.Location = new System.Drawing.Point(478, 172);
-            this.radLabel20.Name = "radLabel20";
-            this.radLabel20.Size = new System.Drawing.Size(177, 21);
-            this.radLabel20.TabIndex = 33;
-            this.radLabel20.Text = "Details of Medical Insurance";
+            this.radLabel18.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel18.Location = new System.Drawing.Point(258, 83);
+            this.radLabel18.Name = "radLabel18";
+            this.radLabel18.Size = new System.Drawing.Size(93, 21);
+            this.radLabel18.TabIndex = 29;
+            this.radLabel18.Text = "Family History";
             // 
-            // btnSaveAdvanced
+            // txtDiet
             // 
-            this.btnSaveAdvanced.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSaveAdvanced.Location = new System.Drawing.Point(478, 337);
-            this.btnSaveAdvanced.Name = "btnSaveAdvanced";
-            this.btnSaveAdvanced.Size = new System.Drawing.Size(92, 32);
-            this.btnSaveAdvanced.TabIndex = 26;
-            this.btnSaveAdvanced.Text = "Save";
-            this.btnSaveAdvanced.ThemeName = "TelerikMetro";
-            this.btnSaveAdvanced.Click += new System.EventHandler(this.btnSaveAdvanced_Click);
+            this.txtDiet.Location = new System.Drawing.Point(258, 346);
+            this.txtDiet.Name = "txtDiet";
+            this.txtDiet.Size = new System.Drawing.Size(160, 23);
+            this.txtDiet.TabIndex = 28;
+            this.txtDiet.TabStop = false;
+            this.txtDiet.ThemeName = "TelerikMetro";
+            // 
+            // radLabel17
+            // 
+            this.radLabel17.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel17.Location = new System.Drawing.Point(258, 319);
+            this.radLabel17.Name = "radLabel17";
+            this.radLabel17.Size = new System.Drawing.Size(32, 21);
+            this.radLabel17.TabIndex = 27;
+            this.radLabel17.Text = "Diet";
+            // 
+            // chkAlchoholic
+            // 
+            this.chkAlchoholic.Location = new System.Drawing.Point(478, 91);
+            this.chkAlchoholic.Name = "chkAlchoholic";
+            this.chkAlchoholic.Size = new System.Drawing.Size(80, 19);
+            this.chkAlchoholic.TabIndex = 26;
+            this.chkAlchoholic.Text = "Alchoholic";
+            this.chkAlchoholic.ThemeName = "TelerikMetro";
+            // 
+            // txtAlchoholic
+            // 
+            this.txtAlchoholic.Location = new System.Drawing.Point(478, 116);
+            this.txtAlchoholic.Name = "txtAlchoholic";
+            this.txtAlchoholic.Size = new System.Drawing.Size(160, 23);
+            this.txtAlchoholic.TabIndex = 25;
+            this.txtAlchoholic.TabStop = false;
+            this.txtAlchoholic.ThemeName = "TelerikMetro";
+            // 
+            // chkSmoker
+            // 
+            this.chkSmoker.Location = new System.Drawing.Point(478, 29);
+            this.chkSmoker.Name = "chkSmoker";
+            this.chkSmoker.Size = new System.Drawing.Size(65, 19);
+            this.chkSmoker.TabIndex = 24;
+            this.chkSmoker.Text = "Smoker";
+            this.chkSmoker.ThemeName = "TelerikMetro";
+            // 
+            // txtSmoker
+            // 
+            this.txtSmoker.Location = new System.Drawing.Point(478, 54);
+            this.txtSmoker.Name = "txtSmoker";
+            this.txtSmoker.Size = new System.Drawing.Size(160, 23);
+            this.txtSmoker.TabIndex = 23;
+            this.txtSmoker.TabStop = false;
+            this.txtSmoker.ThemeName = "TelerikMetro";
+            // 
+            // txtReferredBy
+            // 
+            this.txtReferredBy.Location = new System.Drawing.Point(258, 54);
+            this.txtReferredBy.Name = "txtReferredBy";
+            this.txtReferredBy.Size = new System.Drawing.Size(160, 23);
+            this.txtReferredBy.TabIndex = 21;
+            this.txtReferredBy.TabStop = false;
+            this.txtReferredBy.ThemeName = "TelerikMetro";
+            // 
+            // radLabel16
+            // 
+            this.radLabel16.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel16.Location = new System.Drawing.Point(258, 27);
+            this.radLabel16.Name = "radLabel16";
+            this.radLabel16.Size = new System.Drawing.Size(77, 21);
+            this.radLabel16.TabIndex = 20;
+            this.radLabel16.Text = "Referred By";
+            // 
+            // txtMedication
+            // 
+            this.txtMedication.Location = new System.Drawing.Point(16, 286);
+            this.txtMedication.Multiline = true;
+            this.txtMedication.Name = "txtMedication";
+            // 
+            // 
+            // 
+            this.txtMedication.RootElement.StretchVertically = true;
+            this.txtMedication.Size = new System.Drawing.Size(200, 83);
+            this.txtMedication.TabIndex = 19;
+            this.txtMedication.TabStop = false;
+            this.txtMedication.ThemeName = "TelerikMetro";
+            // 
+            // radLabel15
+            // 
+            this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel15.Location = new System.Drawing.Point(16, 259);
+            this.radLabel15.Name = "radLabel15";
+            this.radLabel15.Size = new System.Drawing.Size(174, 21);
+            this.radLabel15.TabIndex = 18;
+            this.radLabel15.Text = "On Any Regular Medication";
+            // 
+            // txtAllergies
+            // 
+            this.txtAllergies.Location = new System.Drawing.Point(16, 170);
+            this.txtAllergies.Multiline = true;
+            this.txtAllergies.Name = "txtAllergies";
+            // 
+            // 
+            // 
+            this.txtAllergies.RootElement.StretchVertically = true;
+            this.txtAllergies.Size = new System.Drawing.Size(200, 83);
+            this.txtAllergies.TabIndex = 17;
+            this.txtAllergies.TabStop = false;
+            this.txtAllergies.ThemeName = "TelerikMetro";
+            // 
+            // radLabel14
+            // 
+            this.radLabel14.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel14.Location = new System.Drawing.Point(16, 143);
+            this.radLabel14.Name = "radLabel14";
+            this.radLabel14.Size = new System.Drawing.Size(104, 21);
+            this.radLabel14.TabIndex = 16;
+            this.radLabel14.Text = "Known Allergies";
+            // 
+            // txtMedicalIssues
+            // 
+            this.txtMedicalIssues.Location = new System.Drawing.Point(16, 54);
+            this.txtMedicalIssues.Multiline = true;
+            this.txtMedicalIssues.Name = "txtMedicalIssues";
+            // 
+            // 
+            // 
+            this.txtMedicalIssues.RootElement.StretchVertically = true;
+            this.txtMedicalIssues.Size = new System.Drawing.Size(200, 83);
+            this.txtMedicalIssues.TabIndex = 15;
+            this.txtMedicalIssues.TabStop = false;
+            this.txtMedicalIssues.ThemeName = "TelerikMetro";
+            // 
+            // radLabel13
+            // 
+            this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radLabel13.Location = new System.Drawing.Point(16, 27);
+            this.radLabel13.Name = "radLabel13";
+            this.radLabel13.Size = new System.Drawing.Size(140, 21);
+            this.radLabel13.TabIndex = 14;
+            this.radLabel13.Text = "Known Medical Issues";
             // 
             // EditPatient
             // 
@@ -745,27 +731,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.boxAdvanced)).EndInit();
             this.boxAdvanced.ResumeLayout(false);
             this.boxAdvanced.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAllergies)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMedication)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtReferredBy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSmoker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSmoker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkAlchoholic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAlchoholic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFamilyHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMeicalInsurance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSocioStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaveAdvanced)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFamilyHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAlchoholic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAlchoholic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSmoker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSmoker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReferredBy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMedication)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAllergies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -821,8 +806,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel19;
         private Telerik.WinControls.UI.RadTextBox txtFamilyHistory;
         private Telerik.WinControls.UI.RadLabel radLabel18;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.UI.RadTextBox txtMeicalInsurance;
         private Telerik.WinControls.UI.RadLabel radLabel20;
-        private Telerik.WinControls.UI.RadButton btnSaveAdvanced;
     }
 }

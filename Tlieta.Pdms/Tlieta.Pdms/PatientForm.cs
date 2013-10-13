@@ -47,9 +47,9 @@ namespace Tlieta.Pdms
 
             this._patientId = patientId;
 
-            DataTable dt = new PatientData().GetPatientById(_patientId);
-            this._patientname = dt.Rows[0]["FirstName"].ToString() + " " + dt.Rows[0]["LastName"].ToString();
-            this._patientage = dt.Rows[0]["Age"].ToString() ;
+            Patient patient = new PatientData().GetPatientById(_patientId);
+            this._patientname = patient.FirstName.ToUpper() + " " + patient.LastName.ToUpper();
+            this._patientage = patient.Age.ToString();
 
             new TelerikMetroTheme();
             this.ThemeName = "Panorama";
@@ -111,7 +111,7 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Photos", new Tlieta.Pdms.Views.Shared.Photos(_patientId.ToString()));
             this.exampleControls.Add("PrintPhoto", new Tlieta.Pdms.Views.Shared.PrintPhoto(_patientId.ToString()));
             this.exampleControls.Add("Notes", new Tlieta.Pdms.Views.Shared.EditPatient(0));
-            this.exampleControls.Add("Surgery", new Tlieta.Pdms.Views.Shared.Surgery(_patientId));
+            this.exampleControls.Add("Surgery", new Tlieta.Pdms.Views.Shared.SurgeryView(_patientId));
             this.exampleControls.Add("Measurement & Vitals", new Tlieta.Pdms.Views.Shared.Measurements(_patientId));
             this.PreloadControls();
         }

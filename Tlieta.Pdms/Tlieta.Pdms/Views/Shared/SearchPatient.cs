@@ -25,9 +25,21 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = new PatientData().GetSearchResult(txtName.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString()),0); //ddlOperation.SelectedValue.ToString());
+            //DataTable dt = new PatientData().GetSearchResult(txtName.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString())); //ddlOperation.SelectedValue.ToString());
+            List<Patient> patients = new PatientData().GetSearchResult(txtName.Text, Convert.ToInt32(ddlHospital.SelectedValue.ToString()));
+            var result = from p in patients
+                         select new {
+                             Id = p.PatientId,
+                             Name = p.FirstName + " " + p.LastName,
+                             Age = p.Age,
+                             Gender = p.Gender,
+                             Mobile = p.Mobile,
+                             HomePhone = p.HomePhone,
+                             Email = p.Email
+                         };
 
-            SearchGrid.DataSource = dt;
+
+            SearchGrid.DataSource = result;
             SearchGrid.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             SearchGrid.ClearSelection();
         }

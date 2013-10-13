@@ -1,163 +1,52 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using Tlieta.DataAccess;
+
 namespace Tlieta.Pdms.DataAccess
 {
     public class MasterData
     {
         DataSet _ds = null;
+        PDMSDataEntities entities = new PDMSDataEntities();
 
-        public DataTable GetHospitals()
-        {
-            using (DBManager db = new DBManager())
-            {
-                db.Open();
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetHospitals");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
-                {
-                    return _ds.Tables[0];
-                }
-                else { return null; }
-            }
-        }
-
-        public bool AddHospital(string hospitalname, string location)
+        public List<Hospital> GetHospitals()
         {
             try
             {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(2);
-                    db.AddParameters(0, "@Name", hospitalname);
-                    db.AddParameters(1, "@Location", location);
-                    db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddHospital");
+                return (from h in entities.Hospitals select h).ToList();
+            }
+            catch { return null; }
+        }
 
-                    return true;
-                }
+        public bool AddHospital(Hospital hospital)
+        {
+            try
+            {
+                entities.Hospitals.Add(hospital);
+                entities.SaveChanges();
+                return true;
             }
             catch { return false; }
         }
 
-        public DataTable GetOperations()
-        {
-            using (DBManager db = new DBManager())
-            {
-                db.Open();
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetOperations");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
-                {
-                    return _ds.Tables[0];
-                }
-                else { return null; }
-            }
-        }
-
-        public bool AddOperation(string operationname)
+        public List<Operation> GetOperations()
         {
             try
             {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(1);
-                    db.AddParameters(0, "@OperationName", operationname);
-                    db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddOperation");
-
-                    return true;
-                }
+                return (from o in entities.Operations select o).ToList();
             }
-            catch { return false; }
+            catch { return null; }
         }
 
-        public DataTable GetImplants()
-        {
-            using (DBManager db = new DBManager())
-            {
-                db.Open();
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetImplants");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
-                {
-                    return _ds.Tables[0];
-                }
-                else { return null; }
-            }
-        }
-
-        public bool AddImplant(string implantname)
+        public bool AddOperation(Operation operation)
         {
             try
             {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(1);
-                    db.AddParameters(0, "@ImplantName", implantname);
-                    db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddImplant");
-
-                    return true;
-                }
-            }
-            catch { return false; }
-        }
-
-        public DataTable GetGraftSizes()
-        {
-            using (DBManager db = new DBManager())
-            {
-                db.Open();
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetGraftSizes");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
-                {
-                    return _ds.Tables[0];
-                }
-                else { return null; }
-            }
-        }
-
-        public bool AddGraftSize(decimal graftsizevalue)
-        {
-            try
-            {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(1);
-                    db.AddParameters(0, "@GraftSizeValue", graftsizevalue);
-                    db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddGraftSize");
-
-                    return true;
-                }
-            }
-            catch { return false; }
-        }
-
-        public DataTable GetACLSubTypes()
-        {
-            using (DBManager db = new DBManager())
-            {
-                db.Open();
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetACLSubTypes");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
-                {
-                    return _ds.Tables[0];
-                }
-                else { return null; }
-            }
-        }
-
-        public bool AddACLSubType(string aclsubtypename)
-        {
-            try
-            {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(1);
-                    db.AddParameters(0, "@ACLSubTypeName", aclsubtypename);
-                    db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddACLSubType");
-
-                    return true;
-                }
+                entities.Operations.Add(operation);
+                entities.SaveChanges();
+                return true;
             }
             catch { return false; }
         }

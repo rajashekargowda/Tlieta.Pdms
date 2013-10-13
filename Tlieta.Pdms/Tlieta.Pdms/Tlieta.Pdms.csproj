@@ -158,28 +158,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Utility.cs" />
     <Compile Include="DataAccess\AppointmentData.cs" />
     <Compile Include="DataAccess\ContactData.cs" />
     <Compile Include="DataAccess\MasterData.cs" />
-    <Compile Include="DataAccess\Patient.cs">
-      <DependentUpon>PdmsEntityModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataAccess\PatientData.cs" />
-    <Compile Include="DataAccess\PdmsEntityModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PdmsEntityModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\PdmsEntityModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PdmsEntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\PdmsEntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PdmsEntityModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="DataAccess\ReportsData.cs" />
     <Compile Include="DataAccess\SharedData.cs" />
     <Compile Include="DataAccess\SurgeryData.cs" />
@@ -189,8 +172,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospital.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MyFormBehavior.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientForm.cs">
       <SubType>Form</SubType>
@@ -201,6 +208,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Code\DataFolder.cs" />
+    <Compile Include="Surgery.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Appointment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,11 +302,11 @@
     <Compile Include="Views\Shared\Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Surgery.cs">
+    <Compile Include="Views\Shared\SurgeryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Shared\Surgery.Designer.cs">
-      <DependentUpon>Surgery.cs</DependentUpon>
+    <Compile Include="Views\Shared\SurgeryView.Designer.cs">
+      <DependentUpon>SurgeryView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Videos.cs">
       <SubType>UserControl</SubType>
@@ -360,28 +370,28 @@
     <EmbeddedResource Include="Views\Shared\Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\Surgery.resx">
-      <DependentUpon>Surgery.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Shared\SurgeryView.resx">
+      <DependentUpon>SurgeryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Videos.resx">
       <DependentUpon>Videos.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DataAccess\PdmsEntityModel.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PdmsEntityModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataAccess\PdmsEntityModel.Context.tt">
+    <None Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PdmsEntityModel.edmx</DependentUpon>
-      <LastGenOutput>PdmsEntityModel.Context.cs</LastGenOutput>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
-    <None Include="DataAccess\PdmsEntityModel.edmx.diagram">
-      <DependentUpon>PdmsEntityModel.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
-    <None Include="DataAccess\PdmsEntityModel.tt">
+    <None Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PdmsEntityModel.edmx</DependentUpon>
-      <LastGenOutput>PdmsEntityModel.cs</LastGenOutput>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -406,12 +416,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\PDMSData.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="icon.ico" />
     <Content Include="libs\AxInterop.WMPLib.dll" />
     <Content Include="libs\Interop.WMPLib.dll" />
+    <Content Include="PDMSData.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\add_user.png" />
     <Content Include="Resources\ambulance48.png" />
     <Content Include="Resources\appointments.png" />
