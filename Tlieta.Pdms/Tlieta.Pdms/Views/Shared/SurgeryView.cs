@@ -28,6 +28,10 @@ namespace Tlieta.Pdms.Views.Shared
             PopulateSurgery();
             PopulateData.PopulateHospital(ddlHospital);
             PopulateData.PopulateOperations(ddlOpertaion);
+            PopulateData.PopulateEmployees(ddlSurgeon, Roles.Surgeon);
+            PopulateData.PopulateEmployees(ddlAsstSurgeon, Roles.Surgeon);
+            PopulateData.PopulateEmployees(ddlAnaesthetist, Roles.Anaesthetist);
+            PopulateData.PopulateEmployees(ddlScrubNurse, Roles.ScrubNurse);
         }
 
         private void PopulateSurgery()

@@ -86,18 +86,6 @@
             this.txtInvestigationValue = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel28 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.btnAddAnaesthetist = new Telerik.WinControls.UI.RadButton();
-            this.txtSurgeonName = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
-            this.txtAnaesthetistName = new Telerik.WinControls.UI.RadTextBox();
-            this.btnAddScrubNurse = new Telerik.WinControls.UI.RadButton();
-            this.btnAddSurgeon = new Telerik.WinControls.UI.RadButton();
-            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
-            this.txtScrubNurseName = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel20 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radLabel21 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddService = new Telerik.WinControls.UI.RadButton();
@@ -107,6 +95,16 @@
             this.radLabel23 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.btnAddRole = new Telerik.WinControls.UI.RadButton();
+            this.txtRole = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            this.btnAddEmployee = new Telerik.WinControls.UI.RadButton();
+            this.txtEmployee = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.ddlRole = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProductKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -166,18 +164,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtInvestigationValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).BeginInit();
             this.radPageViewPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddAnaesthetist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSurgeonName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnaesthetistName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddScrubNurse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddSurgeon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtScrubNurseName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).BeginInit();
             this.radPageViewPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddService)).BeginInit();
@@ -186,6 +172,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCharges)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).BeginInit();
             this.radPageViewPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddRole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -348,7 +344,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(3, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage3;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1248, 594);
             this.radPageView1.TabIndex = 27;
             this.radPageView1.Text = "radPageView1";
@@ -358,6 +354,16 @@
             // radPageViewPage1
             // 
             this.radPageViewPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.radPageViewPage1.Controls.Add(this.ddlRole);
+            this.radPageViewPage1.Controls.Add(this.radLabel11);
+            this.radPageViewPage1.Controls.Add(this.radLabel9);
+            this.radPageViewPage1.Controls.Add(this.btnAddEmployee);
+            this.radPageViewPage1.Controls.Add(this.txtEmployee);
+            this.radPageViewPage1.Controls.Add(this.radLabel10);
+            this.radPageViewPage1.Controls.Add(this.radLabel5);
+            this.radPageViewPage1.Controls.Add(this.btnAddRole);
+            this.radPageViewPage1.Controls.Add(this.txtRole);
+            this.radPageViewPage1.Controls.Add(this.radLabel8);
             this.radPageViewPage1.Controls.Add(this.radLabel24);
             this.radPageViewPage1.Controls.Add(this.btnAddPrefix);
             this.radPageViewPage1.Controls.Add(this.txtPrefixName);
@@ -771,18 +777,6 @@
             // 
             // radPageViewPage3
             // 
-            this.radPageViewPage3.Controls.Add(this.radLabel15);
-            this.radPageViewPage3.Controls.Add(this.btnAddAnaesthetist);
-            this.radPageViewPage3.Controls.Add(this.txtSurgeonName);
-            this.radPageViewPage3.Controls.Add(this.radLabel16);
-            this.radPageViewPage3.Controls.Add(this.radLabel17);
-            this.radPageViewPage3.Controls.Add(this.txtAnaesthetistName);
-            this.radPageViewPage3.Controls.Add(this.btnAddScrubNurse);
-            this.radPageViewPage3.Controls.Add(this.btnAddSurgeon);
-            this.radPageViewPage3.Controls.Add(this.radLabel18);
-            this.radPageViewPage3.Controls.Add(this.radLabel19);
-            this.radPageViewPage3.Controls.Add(this.txtScrubNurseName);
-            this.radPageViewPage3.Controls.Add(this.radLabel20);
             this.radPageViewPage3.Controls.Add(this.radLabel7);
             this.radPageViewPage3.Controls.Add(this.btnAddDiagnosis);
             this.radPageViewPage3.Controls.Add(this.txtOperationName);
@@ -795,120 +789,6 @@
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(1039, 586);
             this.radPageViewPage3.Text = "Surgery";
-            // 
-            // radLabel15
-            // 
-            this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel15.Location = new System.Drawing.Point(29, 136);
-            this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(150, 24);
-            this.radLabel15.TabIndex = 27;
-            this.radLabel15.Text = "Add new Surgeon : ";
-            this.radLabel15.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnAddAnaesthetist
-            // 
-            this.btnAddAnaesthetist.Location = new System.Drawing.Point(459, 176);
-            this.btnAddAnaesthetist.Name = "btnAddAnaesthetist";
-            this.btnAddAnaesthetist.Size = new System.Drawing.Size(130, 24);
-            this.btnAddAnaesthetist.TabIndex = 38;
-            this.btnAddAnaesthetist.Text = "Add";
-            this.btnAddAnaesthetist.ThemeName = "TelerikMetro";
-            this.btnAddAnaesthetist.Click += new System.EventHandler(this.btnAddAnaesthetist_Click);
-            // 
-            // txtSurgeonName
-            // 
-            this.txtSurgeonName.Location = new System.Drawing.Point(264, 136);
-            this.txtSurgeonName.MaxLength = 40;
-            this.txtSurgeonName.Name = "txtSurgeonName";
-            this.txtSurgeonName.Size = new System.Drawing.Size(171, 23);
-            this.txtSurgeonName.TabIndex = 28;
-            this.txtSurgeonName.TabStop = false;
-            this.txtSurgeonName.ThemeName = "TelerikMetro";
-            // 
-            // radLabel16
-            // 
-            this.radLabel16.Location = new System.Drawing.Point(222, 184);
-            this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(39, 19);
-            this.radLabel16.TabIndex = 37;
-            this.radLabel16.Text = "Name";
-            // 
-            // radLabel17
-            // 
-            this.radLabel17.Location = new System.Drawing.Point(222, 143);
-            this.radLabel17.Name = "radLabel17";
-            this.radLabel17.Size = new System.Drawing.Size(39, 19);
-            this.radLabel17.TabIndex = 29;
-            this.radLabel17.Text = "Name";
-            // 
-            // txtAnaesthetistName
-            // 
-            this.txtAnaesthetistName.Location = new System.Drawing.Point(264, 177);
-            this.txtAnaesthetistName.MaxLength = 40;
-            this.txtAnaesthetistName.Name = "txtAnaesthetistName";
-            this.txtAnaesthetistName.Size = new System.Drawing.Size(171, 23);
-            this.txtAnaesthetistName.TabIndex = 36;
-            this.txtAnaesthetistName.TabStop = false;
-            this.txtAnaesthetistName.ThemeName = "TelerikMetro";
-            // 
-            // btnAddScrubNurse
-            // 
-            this.btnAddScrubNurse.Location = new System.Drawing.Point(459, 216);
-            this.btnAddScrubNurse.Name = "btnAddScrubNurse";
-            this.btnAddScrubNurse.Size = new System.Drawing.Size(130, 24);
-            this.btnAddScrubNurse.TabIndex = 34;
-            this.btnAddScrubNurse.Text = "Add";
-            this.btnAddScrubNurse.ThemeName = "TelerikMetro";
-            this.btnAddScrubNurse.Click += new System.EventHandler(this.btnAddScrubNurse_Click);
-            // 
-            // btnAddSurgeon
-            // 
-            this.btnAddSurgeon.Location = new System.Drawing.Point(459, 135);
-            this.btnAddSurgeon.Name = "btnAddSurgeon";
-            this.btnAddSurgeon.Size = new System.Drawing.Size(130, 24);
-            this.btnAddSurgeon.TabIndex = 30;
-            this.btnAddSurgeon.Text = "Add";
-            this.btnAddSurgeon.ThemeName = "TelerikMetro";
-            this.btnAddSurgeon.Click += new System.EventHandler(this.btnAddSurgeon_Click);
-            // 
-            // radLabel18
-            // 
-            this.radLabel18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel18.Location = new System.Drawing.Point(29, 177);
-            this.radLabel18.Name = "radLabel18";
-            this.radLabel18.Size = new System.Drawing.Size(179, 24);
-            this.radLabel18.TabIndex = 35;
-            this.radLabel18.Text = "Add new Anaesthetist : ";
-            this.radLabel18.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // radLabel19
-            // 
-            this.radLabel19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel19.Location = new System.Drawing.Point(29, 217);
-            this.radLabel19.Name = "radLabel19";
-            this.radLabel19.Size = new System.Drawing.Size(177, 24);
-            this.radLabel19.TabIndex = 31;
-            this.radLabel19.Text = "Add new Scrub Nurse : ";
-            this.radLabel19.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // txtScrubNurseName
-            // 
-            this.txtScrubNurseName.Location = new System.Drawing.Point(264, 217);
-            this.txtScrubNurseName.MaxLength = 40;
-            this.txtScrubNurseName.Name = "txtScrubNurseName";
-            this.txtScrubNurseName.Size = new System.Drawing.Size(171, 23);
-            this.txtScrubNurseName.TabIndex = 32;
-            this.txtScrubNurseName.TabStop = false;
-            this.txtScrubNurseName.ThemeName = "TelerikMetro";
-            // 
-            // radLabel20
-            // 
-            this.radLabel20.Location = new System.Drawing.Point(222, 224);
-            this.radLabel20.Name = "radLabel20";
-            this.radLabel20.Size = new System.Drawing.Size(39, 19);
-            this.radLabel20.TabIndex = 33;
-            this.radLabel20.Text = "Name";
             // 
             // radPageViewPage4
             // 
@@ -988,6 +868,100 @@
             this.radPageViewPage5.Size = new System.Drawing.Size(1039, 586);
             this.radPageViewPage5.Text = "About";
             // 
+            // radLabel5
+            // 
+            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.radLabel5.Location = new System.Drawing.Point(14, 129);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(87, 24);
+            this.radLabel5.TabIndex = 13;
+            this.radLabel5.Text = "Add Role : ";
+            this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // btnAddRole
+            // 
+            this.btnAddRole.Location = new System.Drawing.Point(447, 128);
+            this.btnAddRole.Name = "btnAddRole";
+            this.btnAddRole.Size = new System.Drawing.Size(130, 24);
+            this.btnAddRole.TabIndex = 16;
+            this.btnAddRole.Text = "Add";
+            this.btnAddRole.ThemeName = "TelerikMetro";
+            this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
+            // 
+            // txtRole
+            // 
+            this.txtRole.Location = new System.Drawing.Point(249, 129);
+            this.txtRole.MaxLength = 40;
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(171, 23);
+            this.txtRole.TabIndex = 14;
+            this.txtRole.TabStop = false;
+            this.txtRole.ThemeName = "TelerikMetro";
+            // 
+            // radLabel8
+            // 
+            this.radLabel8.Location = new System.Drawing.Point(207, 136);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(39, 19);
+            this.radLabel8.TabIndex = 15;
+            this.radLabel8.Text = "Name";
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.radLabel9.Location = new System.Drawing.Point(14, 171);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(125, 24);
+            this.radLabel9.TabIndex = 17;
+            this.radLabel9.Text = "Add Employee : ";
+            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(679, 171);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(130, 24);
+            this.btnAddEmployee.TabIndex = 20;
+            this.btnAddEmployee.Text = "Add";
+            this.btnAddEmployee.ThemeName = "TelerikMetro";
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
+            // txtEmployee
+            // 
+            this.txtEmployee.Location = new System.Drawing.Point(249, 171);
+            this.txtEmployee.MaxLength = 40;
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(171, 23);
+            this.txtEmployee.TabIndex = 18;
+            this.txtEmployee.TabStop = false;
+            this.txtEmployee.ThemeName = "TelerikMetro";
+            // 
+            // radLabel10
+            // 
+            this.radLabel10.Location = new System.Drawing.Point(207, 178);
+            this.radLabel10.Name = "radLabel10";
+            this.radLabel10.Size = new System.Drawing.Size(39, 19);
+            this.radLabel10.TabIndex = 19;
+            this.radLabel10.Text = "Name";
+            // 
+            // radLabel11
+            // 
+            this.radLabel11.Location = new System.Drawing.Point(426, 175);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(31, 19);
+            this.radLabel11.TabIndex = 21;
+            this.radLabel11.Text = "Role";
+            // 
+            // ddlRole
+            // 
+            this.ddlRole.DropDownAnimationEnabled = true;
+            this.ddlRole.Location = new System.Drawing.Point(462, 172);
+            this.ddlRole.Name = "ddlRole";
+            this.ddlRole.ShowImageInEditorArea = true;
+            this.ddlRole.Size = new System.Drawing.Size(200, 23);
+            this.ddlRole.TabIndex = 27;
+            this.ddlRole.ThemeName = "TelerikMetro";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1058,18 +1032,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).EndInit();
             this.radPageViewPage3.ResumeLayout(false);
             this.radPageViewPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddAnaesthetist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSurgeonName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnaesthetistName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddScrubNurse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddSurgeon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtScrubNurseName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).EndInit();
             this.radPageViewPage4.ResumeLayout(false);
             this.radPageViewPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel21)).EndInit();
@@ -1080,6 +1042,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).EndInit();
             this.radPageViewPage5.ResumeLayout(false);
             this.radPageViewPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddRole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1109,18 +1081,6 @@
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage4;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage5;
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
-        private Telerik.WinControls.UI.RadButton btnAddAnaesthetist;
-        private Telerik.WinControls.UI.RadLabel radLabel15;
-        private Telerik.WinControls.UI.RadTextBox txtSurgeonName;
-        private Telerik.WinControls.UI.RadLabel radLabel16;
-        private Telerik.WinControls.UI.RadLabel radLabel17;
-        private Telerik.WinControls.UI.RadTextBox txtAnaesthetistName;
-        private Telerik.WinControls.UI.RadButton btnAddScrubNurse;
-        private Telerik.WinControls.UI.RadButton btnAddSurgeon;
-        private Telerik.WinControls.UI.RadLabel radLabel18;
-        private Telerik.WinControls.UI.RadLabel radLabel19;
-        private Telerik.WinControls.UI.RadTextBox txtScrubNurseName;
-        private Telerik.WinControls.UI.RadLabel radLabel20;
         private Telerik.WinControls.UI.RadButton btnAddService;
         private Telerik.WinControls.UI.RadTextBox txtCharges;
         private Telerik.WinControls.UI.RadLabel radLabel21;
@@ -1165,5 +1125,15 @@
         private Telerik.WinControls.UI.RadLabel radLabel40;
         private Telerik.WinControls.UI.RadTextBox txtFormulation;
         private Telerik.WinControls.UI.RadLabel radLabel41;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
+        private Telerik.WinControls.UI.RadButton btnAddRole;
+        private Telerik.WinControls.UI.RadTextBox txtRole;
+        private Telerik.WinControls.UI.RadLabel radLabel8;
+        private Telerik.WinControls.UI.RadLabel radLabel9;
+        private Telerik.WinControls.UI.RadButton btnAddEmployee;
+        private Telerik.WinControls.UI.RadTextBox txtEmployee;
+        private Telerik.WinControls.UI.RadLabel radLabel10;
+        private Telerik.WinControls.UI.RadLabel radLabel11;
+        private Telerik.WinControls.UI.RadDropDownList ddlRole;
     }
 }

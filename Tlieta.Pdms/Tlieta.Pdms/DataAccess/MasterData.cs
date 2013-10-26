@@ -50,5 +50,45 @@ namespace Tlieta.Pdms.DataAccess
             }
             catch { return false; }
         }
+
+        public List<Employee> GetEmployees()
+        {
+            try
+            {
+                return (from e in entities.Employees select e).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddEmployee(Employee employee)
+        {
+            try
+            {
+                entities.Employees.Add(employee);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public List<Role> GetRoles()
+        {
+            try
+            {
+                return (from r in entities.Roles select r).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddRole(Role role)
+        {
+            try
+            {
+                entities.Roles.Add(role);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
     }
 }

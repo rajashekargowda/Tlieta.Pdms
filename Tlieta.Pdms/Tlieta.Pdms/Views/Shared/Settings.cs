@@ -72,22 +72,37 @@ namespace Tlieta.Pdms.Views.Shared
             }
         }
 
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddRole_Click(object sender, EventArgs e)
+        {
+            string name = txtRole.Text.Trim();
+
+            if (name == "")
+            {
+                MessageBox.Show("Enter role name");
+                return;
+            }
+            else
+            {
+                Role role = new Role() { RoleName = name };
+                bool result = new MasterData().AddRole(role);
+                if (result)
+                {
+                    txtRole.Text = "";
+                    MessageBox.Show("Role added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add role : contact Admin");
+                }
+            }
+        }
+
         private void btnAddDiagnosis_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddSurgeon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddAnaesthetist_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddScrubNurse_Click(object sender, EventArgs e)
         {
 
         }

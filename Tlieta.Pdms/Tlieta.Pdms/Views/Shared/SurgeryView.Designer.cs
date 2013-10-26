@@ -170,7 +170,7 @@
             this.ddlHospital.Location = new System.Drawing.Point(282, 222);
             this.ddlHospital.Name = "ddlHospital";
             this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 32;
             this.ddlHospital.ThemeName = "TelerikMetro";
             // 
@@ -263,7 +263,7 @@
             // radLabel9
             // 
             this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(870, 48);
+            this.radLabel9.Location = new System.Drawing.Point(560, 48);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(125, 24);
             this.radLabel9.TabIndex = 43;
@@ -271,20 +271,20 @@
             // 
             // txtPreOpDiagnosis
             // 
-            this.txtPreOpDiagnosis.Location = new System.Drawing.Point(1001, 48);
+            this.txtPreOpDiagnosis.Location = new System.Drawing.Point(691, 48);
             this.txtPreOpDiagnosis.MaxLength = 20;
             this.txtPreOpDiagnosis.Name = "txtPreOpDiagnosis";
-            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 21);
             this.txtPreOpDiagnosis.TabIndex = 44;
             this.txtPreOpDiagnosis.TabStop = false;
             this.txtPreOpDiagnosis.ThemeName = "TelerikMetro";
             // 
             // txtPostOpDiagnosis
             // 
-            this.txtPostOpDiagnosis.Location = new System.Drawing.Point(1001, 90);
+            this.txtPostOpDiagnosis.Location = new System.Drawing.Point(691, 90);
             this.txtPostOpDiagnosis.MaxLength = 20;
             this.txtPostOpDiagnosis.Name = "txtPostOpDiagnosis";
-            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 21);
             this.txtPostOpDiagnosis.TabIndex = 46;
             this.txtPostOpDiagnosis.TabStop = false;
             this.txtPostOpDiagnosis.ThemeName = "TelerikMetro";
@@ -292,7 +292,7 @@
             // radLabel10
             // 
             this.radLabel10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel10.Location = new System.Drawing.Point(870, 90);
+            this.radLabel10.Location = new System.Drawing.Point(560, 90);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(132, 24);
             this.radLabel10.TabIndex = 45;
@@ -300,10 +300,10 @@
             // 
             // txtReferredBy
             // 
-            this.txtReferredBy.Location = new System.Drawing.Point(1001, 133);
+            this.txtReferredBy.Location = new System.Drawing.Point(691, 133);
             this.txtReferredBy.MaxLength = 20;
             this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(258, 23);
+            this.txtReferredBy.Size = new System.Drawing.Size(258, 21);
             this.txtReferredBy.TabIndex = 48;
             this.txtReferredBy.TabStop = false;
             this.txtReferredBy.ThemeName = "TelerikMetro";
@@ -311,7 +311,7 @@
             // radLabel12
             // 
             this.radLabel12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel12.Location = new System.Drawing.Point(870, 133);
+            this.radLabel12.Location = new System.Drawing.Point(560, 133);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(86, 24);
             this.radLabel12.TabIndex = 47;
@@ -320,7 +320,7 @@
             // radLabel13
             // 
             this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel13.Location = new System.Drawing.Point(870, 207);
+            this.radLabel13.Location = new System.Drawing.Point(560, 192);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(65, 24);
             this.radLabel13.TabIndex = 49;
@@ -329,27 +329,27 @@
             // ddlSurgeon
             // 
             this.ddlSurgeon.DropDownAnimationEnabled = true;
-            this.ddlSurgeon.Location = new System.Drawing.Point(1001, 207);
+            this.ddlSurgeon.Location = new System.Drawing.Point(691, 192);
             this.ddlSurgeon.Name = "ddlSurgeon";
             this.ddlSurgeon.ShowImageInEditorArea = true;
-            this.ddlSurgeon.Size = new System.Drawing.Size(200, 20);
+            this.ddlSurgeon.Size = new System.Drawing.Size(200, 22);
             this.ddlSurgeon.TabIndex = 50;
             this.ddlSurgeon.ThemeName = "TelerikMetro";
             // 
             // ddlAsstSurgeon
             // 
             this.ddlAsstSurgeon.DropDownAnimationEnabled = true;
-            this.ddlAsstSurgeon.Location = new System.Drawing.Point(1001, 247);
+            this.ddlAsstSurgeon.Location = new System.Drawing.Point(691, 232);
             this.ddlAsstSurgeon.Name = "ddlAsstSurgeon";
             this.ddlAsstSurgeon.ShowImageInEditorArea = true;
-            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 20);
+            this.ddlAsstSurgeon.Size = new System.Drawing.Size(200, 22);
             this.ddlAsstSurgeon.TabIndex = 52;
             this.ddlAsstSurgeon.ThemeName = "TelerikMetro";
             // 
             // radLabel15
             // 
             this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel15.Location = new System.Drawing.Point(870, 247);
+            this.radLabel15.Location = new System.Drawing.Point(560, 232);
             this.radLabel15.Name = "radLabel15";
             this.radLabel15.Size = new System.Drawing.Size(97, 24);
             this.radLabel15.TabIndex = 51;
@@ -358,17 +358,17 @@
             // ddlAnaesthetist
             // 
             this.ddlAnaesthetist.DropDownAnimationEnabled = true;
-            this.ddlAnaesthetist.Location = new System.Drawing.Point(1001, 286);
+            this.ddlAnaesthetist.Location = new System.Drawing.Point(691, 271);
             this.ddlAnaesthetist.Name = "ddlAnaesthetist";
             this.ddlAnaesthetist.ShowImageInEditorArea = true;
-            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 20);
+            this.ddlAnaesthetist.Size = new System.Drawing.Size(200, 22);
             this.ddlAnaesthetist.TabIndex = 54;
             this.ddlAnaesthetist.ThemeName = "TelerikMetro";
             // 
             // radLabel16
             // 
             this.radLabel16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel16.Location = new System.Drawing.Point(870, 286);
+            this.radLabel16.Location = new System.Drawing.Point(560, 271);
             this.radLabel16.Name = "radLabel16";
             this.radLabel16.Size = new System.Drawing.Size(92, 24);
             this.radLabel16.TabIndex = 53;
@@ -377,23 +377,23 @@
             // ddlScrubNurse
             // 
             this.ddlScrubNurse.DropDownAnimationEnabled = true;
-            this.ddlScrubNurse.Location = new System.Drawing.Point(1001, 325);
+            this.ddlScrubNurse.Location = new System.Drawing.Point(691, 310);
             this.ddlScrubNurse.Name = "ddlScrubNurse";
             this.ddlScrubNurse.ShowImageInEditorArea = true;
-            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 20);
+            this.ddlScrubNurse.Size = new System.Drawing.Size(200, 22);
             this.ddlScrubNurse.TabIndex = 56;
             this.ddlScrubNurse.ThemeName = "TelerikMetro";
             // 
             // radLabel18
             // 
             this.radLabel18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel18.Location = new System.Drawing.Point(870, 325);
+            this.radLabel18.Location = new System.Drawing.Point(560, 310);
             this.radLabel18.Name = "radLabel18";
             this.radLabel18.Size = new System.Drawing.Size(91, 24);
             this.radLabel18.TabIndex = 55;
             this.radLabel18.Text = "Scrub Nurse";
             // 
-            // Surgery
+            // SurgeryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -428,7 +428,7 @@
             this.Controls.Add(this.radLabel14);
             this.Controls.Add(this.datetimeSurgery);
             this.Controls.Add(this.radLabel6);
-            this.Name = "Surgery";
+            this.Name = "SurgeryView";
             this.Size = new System.Drawing.Size(1300, 600);
             this.Load += new System.EventHandler(this.Surgery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();

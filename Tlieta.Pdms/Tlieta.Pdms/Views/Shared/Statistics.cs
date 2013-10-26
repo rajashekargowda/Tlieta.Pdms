@@ -141,13 +141,19 @@ namespace Tlieta.Pdms.Views.Shared
         private void ddlYear_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             if (ddlOpertaion.SelectedItem != null && ddlOpertaion.SelectedValue.ToString() != "System.Data.DataRowView")
-                LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(Convert.ToInt32(ddlOpertaion.SelectedItem.Value.ToString()), ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+            {
+                Operation operation = (Operation)(ddlOpertaion.SelectedValue);
+                LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(operation.OperationId, ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+            }
         }
             
         private void ddlOpertaion_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
                 if (ddlOpertaion.SelectedItem != null && ddlOpertaion.SelectedValue.ToString() != "System.Data.DataRowView")
-                LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(Convert.ToInt32(ddlOpertaion.SelectedItem.Value.ToString()), ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+                {
+                    Operation operation = (Operation)(ddlOpertaion.SelectedValue);
+                    LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(operation.OperationId, ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+                }
         }
 
         private void btnChart3Refresh_Click(object sender, EventArgs e)
