@@ -1,6 +1,6 @@
 ﻿namespace Tlieta.Pdms.Views.Shared
 {
-    partial class Contacts
+    partial class ContactView
     {
         /// <summary> 
         /// Required designer variable.

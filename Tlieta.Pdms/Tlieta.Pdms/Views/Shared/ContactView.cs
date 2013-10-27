@@ -11,9 +11,9 @@ using Tlieta.Pdms.DataAccess;
 
 namespace Tlieta.Pdms.Views.Shared
 {
-    public partial class Contacts : UserControl
+    public partial class ContactView : UserControl
     {
-        public Contacts()
+        public ContactView()
         {
             InitializeComponent();
 
@@ -62,14 +62,18 @@ namespace Tlieta.Pdms.Views.Shared
                 return;
             }
 
-            int result = new ContactData().AddContact(
-                                            name,
-                                            txtAddress.Text,
-                                            txtMobile.Text,
-                                            txtEmail.Text,
-                                            txtCompany.Text,
-                                            txtDesignation.Text);
-            if (result == -1)
+            bool result = new ContactData().AddContact(new Contact()
+            {
+                ContactName = name,
+                Address = txtAddress.Text,
+                Mobile = txtMobile.Text,
+                Email = txtEmail.Text,
+                Company = txtCompany.Text,
+                Designation = txtDesignation.Text,
+                UpdatedOn = DateTime.Now
+            });
+
+            if (result)
                 MessageBox.Show("Added Successfully");
 
             FillGrid();
@@ -92,15 +96,19 @@ namespace Tlieta.Pdms.Views.Shared
                 return;
             }
 
-            int result = new ContactData().UpdateContact(
-                                            Convert.ToInt32(id),
-                                            name,
-                                            txtAddress.Text,
-                                            txtMobile.Text,
-                                            txtEmail.Text,
-                                            txtCompany.Text,
-                                            txtDesignation.Text);
-            if (result == -1)
+            bool result = new ContactData().UpdateContact(new Contact()
+            {
+                ContactId = Convert.ToInt32(id),
+                ContactName = name,
+                Address = txtAddress.Text,
+                Mobile = txtMobile.Text,
+                Email = txtEmail.Text,
+                Company = txtCompany.Text,
+                Designation = txtDesignation.Text,
+                UpdatedOn = DateTime.Now
+            });
+
+            if (result)
                 MessageBox.Show("Updated Successfully");
 
             FillGrid();

@@ -158,6 +158,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Code\Utility.cs" />
+    <Compile Include="Contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\AppointmentData.cs" />
     <Compile Include="DataAccess\ContactData.cs" />
     <Compile Include="DataAccess\Enums.cs" />
@@ -238,11 +241,11 @@
     <Compile Include="Views\Shared\Charts.Designer.cs">
       <DependentUpon>Charts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Contacts.cs">
+    <Compile Include="Views\Shared\ContactView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Shared\Contacts.Designer.cs">
-      <DependentUpon>Contacts.cs</DependentUpon>
+    <Compile Include="Views\Shared\ContactView.Designer.cs">
+      <DependentUpon>ContactView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\EditPatient.cs">
       <SubType>UserControl</SubType>
@@ -343,8 +346,8 @@
     <EmbeddedResource Include="Views\Shared\Charts.resx">
       <DependentUpon>Charts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\Contacts.resx">
-      <DependentUpon>Contacts.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Shared\ContactView.resx">
+      <DependentUpon>ContactView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\EditPatient.resx">
       <DependentUpon>EditPatient.cs</DependentUpon>
