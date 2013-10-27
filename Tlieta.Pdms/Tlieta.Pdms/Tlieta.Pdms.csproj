@@ -146,18 +146,17 @@
     </Reference>
     <Reference Include="Tlieta.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Tlieta.Pdms\Tlieta.DataAccess\bin\Release\Tlieta.DataAccess.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\Tlieta.DataAccess\bin\Debug\Tlieta.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Tlieta.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Visual Studio 2012\Projects\Tlieta.Pdms\Tlieta.Utility\bin\Release\Tlieta.Utility.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\Tlieta.Utility\bin\Debug\Tlieta.Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Code\Utility.cs" />
     <Compile Include="DataAccess\AppointmentData.cs" />
     <Compile Include="DataAccess\ContactData.cs" />
@@ -221,11 +220,11 @@
     <Compile Include="Surgery.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Appointment.cs">
+    <Compile Include="Views\Shared\AppointmentView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Shared\Appointment.Designer.cs">
-      <DependentUpon>Appointment.cs</DependentUpon>
+    <Compile Include="Views\Shared\AppointmentView.Designer.cs">
+      <DependentUpon>AppointmentView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Certificates.cs">
       <SubType>UserControl</SubType>
@@ -335,8 +334,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Shared\Appointment.resx">
-      <DependentUpon>Appointment.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Shared\AppointmentView.resx">
+      <DependentUpon>AppointmentView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Certificates.resx">
       <DependentUpon>Certificates.cs</DependentUpon>

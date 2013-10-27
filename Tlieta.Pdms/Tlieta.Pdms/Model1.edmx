@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="PDMSDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PDMSDataModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="PDMSDataModel.Store.Appointment" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="PDMSDataModel.Store.Employee" store:Type="Tables" />
           <EntitySet Name="Hospital" EntityType="PDMSDataModel.Store.Hospital" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="PDMSDataModel.Store.Operation" store:Type="Tables" />
@@ -14,6 +15,18 @@
           <EntitySet Name="Role" EntityType="PDMSDataModel.Store.Role" store:Type="Tables" />
           <EntitySet Name="Surgery" EntityType="PDMSDataModel.Store.Surgery" store:Type="Tables" />
         </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Name="AppointmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PatientId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeId" />
@@ -119,6 +132,7 @@
           <EntitySet Name="Employees" EntityType="PDMSDataModel.Employee" />
           <EntitySet Name="Roles" EntityType="PDMSDataModel.Role" />
           <EntitySet Name="Products" EntityType="PDMSDataModel.Product" />
+          <EntitySet Name="Appointments" EntityType="PDMSDataModel.Appointment" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -212,6 +226,18 @@
           <Property Type="String" Name="ProductKey" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="CPUId" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="DiskId" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Type="Int32" Name="AppointmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PatientId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -316,6 +342,19 @@
                 <ScalarProperty Name="DiskId" ColumnName="DiskId" />
                 <ScalarProperty Name="CPUId" ColumnName="CPUId" />
                 <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="PDMSDataModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Tlieta.DataAccess;
 
 namespace Tlieta.Pdms.DataAccess
 {
     public class MasterData
     {
-        DataSet _ds = null;
         PDMSDataEntities entities = new PDMSDataEntities();
 
         public List<Hospital> GetHospitals()

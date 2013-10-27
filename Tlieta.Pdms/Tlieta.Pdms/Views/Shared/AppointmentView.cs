@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Data;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
 using Telerik.WinControls.Themes;
 
 namespace Tlieta.Pdms.Views.Shared
 {
-    public partial class Appointment : UserControl
+    public partial class AppointmentView : UserControl
     {
-        public Appointment()
+        public AppointmentView()
         {
             InitializeComponent();
         }
@@ -19,13 +21,16 @@ namespace Tlieta.Pdms.Views.Shared
             DateTime starttime = (DateTime)(radTimeStart.Value);
             DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
 
-            int result = new AppointmentData().AddSchedule(
-                                            appointment,
-                                            txtName.Text,
-                                            txtPatientId.Text,
-                                            txtMobile.Text,
-                                            txtEmail.Text);
-            if (result == -1)
+            bool result = new AppointmentData().AddSchedule(new Appointment(){
+                                            AppointmentDate = appointment,
+                                            Name = txtName.Text,
+                                            PatientId = txtPatientId.Text,
+                                            Mobile = txtMobile.Text,
+                                            Email = txtEmail.Text,
+                                            UpdatedOn = DateTime.Now
+            });
+
+            if (result)
                 MessageBox.Show("Added Successfully");
 
             RefreshTexts();
@@ -43,14 +48,17 @@ namespace Tlieta.Pdms.Views.Shared
             DateTime starttime = (DateTime)(radTimeStart.Value);
             DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
 
-            int result = new AppointmentData().UpdateSchedule(
-                                            Convert.ToInt32(id),
-                                            appointment,
-                                            txtName.Text,
-                                            txtPatientId.Text,
-                                            txtMobile.Text,
-                                            txtEmail.Text);
-            if (result == -1)
+            bool result = new AppointmentData().UpdateSchedule(new Appointment(){
+                                            AppointmentId = Convert.ToInt32(id),
+                                            AppointmentDate = appointment,
+                                            Name = txtName.Text,
+                                            PatientId = txtPatientId.Text,
+                                            Mobile = txtMobile.Text,
+                                            Email = txtEmail.Text,
+                                            UpdatedOn = DateTime.Now 
+            });
+
+            if (result)
                 MessageBox.Show("Updated Successfully");
 
             FillGrid();
@@ -66,9 +74,9 @@ namespace Tlieta.Pdms.Views.Shared
                 return;
             }
 
-            int result = new AppointmentData().DeleteSchedule(
+            bool result = new AppointmentData().DeleteSchedule(
                                             Convert.ToInt32(id));
-            if (result == -1)
+            if (result)
                 MessageBox.Show("Deleted Successfully");
 
             FillGrid();
@@ -90,18 +98,15 @@ namespace Tlieta.Pdms.Views.Shared
             DateTime from = GetDateFromControl(FromDate);
             DateTime to = GetDateFromControl(ToDate);
 
-            DataTable dt = new AppointmentData().GetAppointments(from, to);
+            //DataTable dt = new AppointmentData().GetAppointments(from, to);
+            List<Appointment> appointments = new AppointmentData().GetAppointments(from, to);
 
-            AppointmentsGrid.DataSource = dt;
+            AppointmentsGrid.DataSource = appointments;
             AppointmentsGrid.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             AppointmentsGrid.ClearSelection();
 
-            //SearchGrid.Columns[0].Width = 170;
-            //SearchGrid.Columns[1].Width = 120;
-            //SearchGrid.Columns[2].Width = 50;
-            //SearchGrid.Columns[3].Width = 50;
-
             AppointmentsGrid.Columns["AppointmentId"].IsVisible = false;
+            AppointmentsGrid.Columns["UpdatedOn"].IsVisible = false;
             //SearchGrid.Columns[1].Width = 120;
 
             AppointmentsGrid.Columns[0].AllowFiltering = false;

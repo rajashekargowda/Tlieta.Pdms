@@ -1,6 +1,6 @@
 ﻿namespace Tlieta.Pdms.Views.Shared
 {
-    partial class Appointment
+    partial class AppointmentView
     {
         /// <summary> 
         /// Required designer variable.

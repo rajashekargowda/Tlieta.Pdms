@@ -1,84 +1,75 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Data;
-using Tlieta.DataAccess;
-using Tlieta.Pdms.Views.Shared;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Tlieta.Pdms.DataAccess
 {
     public class AppointmentData
     {
-        DataSet _ds = null;
+        PDMSDataEntities entities = new PDMSDataEntities();
 
-        public DataTable GetAppointments(DateTime from, DateTime to)
+        public List<Appointment> GetAppointments(DateTime from, DateTime to)
         {
-            using (DBManager db = new DBManager())
+            List<Appointment> appointments = new List<Appointment>();
+            try
             {
-                db.Open();
-                db.CreateParameters(2);
-                db.AddParameters(0, "@FromDate", from);
-                db.AddParameters(1, "@ToDate", to);
-                _ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetAppointments");
-                if (_ds != null && _ds.Tables[0].Rows.Count > 0)
+                appointments = (from a in entities.Appointments select a).ToList();
+                if (appointments.Count > 0)
                 {
-                    return _ds.Tables[0];
+                    return appointments.Where(i => i.AppointmentDate > from && i.AppointmentDate < to).ToList();
                 }
-                else { return null; }
             }
+            catch { }
+            return appointments;
         }
 
-        public int AddSchedule(DateTime start, string name, string id, string mobile, string email)
+        public bool AddSchedule(Appointment model)
         {
             try
             {
-                using (DBManager db = new DBManager())
-                {
-                    db.Open();
-                    db.CreateParameters(5);
-                    db.AddParameters(0, "@AppointmentDate", start);
-                    db.AddParameters(1, "@Name", name);
-                    db.AddParameters(2, "@PatientId", id);
-                    db.AddParameters(3, "@Mobile", mobile);
-                    db.AddParameters(4, "@Email", email);
-                    return db.ExecuteNonQuery(CommandType.StoredProcedure, "spAddAppointment");
-                }
+                entities.Appointments.Add(model);
+                entities.SaveChanges();
+                return true;
             }
-            catch { return 0; }
+            catch { return false; }
         }
 
-        public int UpdateSchedule(int id, DateTime start, string name, string patientid, string mobile, string email)
+        public bool UpdateSchedule(Appointment model)
         {
             try
             {
-                using (DBManager db = new DBManager())
+                Appointment appointment = entities.Appointments.Where(x => x.AppointmentId == model.AppointmentId).SingleOrDefault();
+                if (appointment != null)
                 {
-                    db.Open();
-                    db.CreateParameters(6);
-                    db.AddParameters(0, "@AppointmentId", id);
-                    db.AddParameters(1, "@AppointmentDate", start);
-                    db.AddParameters(2, "@Name", name);
-                    db.AddParameters(3, "@PatientId", patientid);
-                    db.AddParameters(4, "@Mobile", mobile);
-                    db.AddParameters(5, "@Email", email);
-                    return db.ExecuteNonQuery(CommandType.StoredProcedure, "spUpdateAppointment");
+                    entities.Entry(appointment).CurrentValues.SetValues(model);
+                    entities.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
-            catch { return 0; }
+            catch { return false; }
         }
 
-        public int DeleteSchedule(int id)
+        public bool DeleteSchedule(int id)
         {
             try
             {
-                using (DBManager db = new DBManager())
+                Appointment appointment = entities.Appointments.Where(x => x.AppointmentId == id).SingleOrDefault();
+                if (appointment != null)
                 {
-                    db.Open();
-                    db.CreateParameters(1);
-                    db.AddParameters(0, "@AppointmentId", id);
-                    return db.ExecuteNonQuery(CommandType.StoredProcedure, "spDeleteAppointment");
+                    entities.Appointments.Remove(appointment);
+                    entities.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
-            catch { return 0; }
+            catch { return false; }
         }
     }
 }

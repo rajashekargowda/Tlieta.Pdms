@@ -140,10 +140,13 @@ namespace Tlieta.Utility
         //Main physical hard drive ID
         private static string diskId()
         {
-            return identifier("Win32_DiskDrive", "Model")
-            + identifier("Win32_DiskDrive", "Manufacturer")
-            + identifier("Win32_DiskDrive", "Signature")
-            + identifier("Win32_DiskDrive", "TotalHeads");
+            //string diskId =  identifier("Win32_DiskDrive", "Model")
+            //+ identifier("Win32_DiskDrive", "Manufacturer")
+            //+ identifier("Win32_DiskDrive", "Signature")
+            //+ identifier("Win32_DiskDrive", "TotalHeads");
+
+            string diskId = identifier("Win32_DiskDrive", "Signature");
+            return diskId;
         }
         //Motherboard ID
         private static string baseId()

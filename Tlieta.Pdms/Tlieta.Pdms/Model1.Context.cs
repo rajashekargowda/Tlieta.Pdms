@@ -32,5 +32,6 @@ namespace Tlieta.Pdms
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 }
