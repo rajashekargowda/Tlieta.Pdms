@@ -41,6 +41,16 @@ namespace Tlieta.Pdms.Views.Shared
             ddl.DisplayMember = "EmployeeName";
         }
 
+        public static void PopulateRoles(RadDropDownList ddl)
+        {
+            List<Role> roles = new MasterData().GetRoles();
+            roles.Insert(0, new Role() { RoleId = 0, RoleName = "Select" });
+
+            ddl.DataSource = roles;
+            ddl.ValueMember = "RoleId";
+            ddl.DisplayMember = "RoleName";
+        }
+
         public static void SelectDropDownItem(RadDropDownList ddl, string value)
         {
             foreach (RadListDataItem item in ddl.Items)

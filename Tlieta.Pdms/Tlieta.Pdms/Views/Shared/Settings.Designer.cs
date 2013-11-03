@@ -46,6 +46,12 @@
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ddlRole = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
+            this.btnAddEmployee = new Telerik.WinControls.UI.RadButton();
+            this.txtEmployee = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel24 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddPrefix = new Telerik.WinControls.UI.RadButton();
             this.txtPrefixName = new Telerik.WinControls.UI.RadTextBox();
@@ -95,16 +101,6 @@
             this.radLabel23 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.btnAddRole = new Telerik.WinControls.UI.RadButton();
-            this.txtRole = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.btnAddEmployee = new Telerik.WinControls.UI.RadButton();
-            this.txtEmployee = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.ddlRole = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProductKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -124,6 +120,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddPrefix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrefixName)).BeginInit();
@@ -172,16 +174,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCharges)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).BeginInit();
             this.radPageViewPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddRole)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRole)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).BeginInit();
             this.SuspendLayout();
             // 
             // radLabel1
@@ -360,10 +352,6 @@
             this.radPageViewPage1.Controls.Add(this.btnAddEmployee);
             this.radPageViewPage1.Controls.Add(this.txtEmployee);
             this.radPageViewPage1.Controls.Add(this.radLabel10);
-            this.radPageViewPage1.Controls.Add(this.radLabel5);
-            this.radPageViewPage1.Controls.Add(this.btnAddRole);
-            this.radPageViewPage1.Controls.Add(this.txtRole);
-            this.radPageViewPage1.Controls.Add(this.radLabel8);
             this.radPageViewPage1.Controls.Add(this.radLabel24);
             this.radPageViewPage1.Controls.Add(this.btnAddPrefix);
             this.radPageViewPage1.Controls.Add(this.txtPrefixName);
@@ -379,10 +367,66 @@
             this.radPageViewPage1.Size = new System.Drawing.Size(1039, 586);
             this.radPageViewPage1.Text = "General";
             // 
+            // ddlRole
+            // 
+            this.ddlRole.DropDownAnimationEnabled = true;
+            this.ddlRole.Location = new System.Drawing.Point(462, 140);
+            this.ddlRole.Name = "ddlRole";
+            this.ddlRole.ShowImageInEditorArea = true;
+            this.ddlRole.Size = new System.Drawing.Size(200, 23);
+            this.ddlRole.TabIndex = 27;
+            this.ddlRole.ThemeName = "TelerikMetro";
+            // 
+            // radLabel11
+            // 
+            this.radLabel11.Location = new System.Drawing.Point(426, 143);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(31, 19);
+            this.radLabel11.TabIndex = 21;
+            this.radLabel11.Text = "Role";
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.radLabel9.Location = new System.Drawing.Point(14, 139);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(125, 24);
+            this.radLabel9.TabIndex = 17;
+            this.radLabel9.Text = "Add Employee : ";
+            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(679, 139);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(130, 24);
+            this.btnAddEmployee.TabIndex = 20;
+            this.btnAddEmployee.Text = "Add";
+            this.btnAddEmployee.ThemeName = "TelerikMetro";
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
+            // txtEmployee
+            // 
+            this.txtEmployee.Location = new System.Drawing.Point(249, 139);
+            this.txtEmployee.MaxLength = 40;
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(171, 23);
+            this.txtEmployee.TabIndex = 18;
+            this.txtEmployee.TabStop = false;
+            this.txtEmployee.ThemeName = "TelerikMetro";
+            // 
+            // radLabel10
+            // 
+            this.radLabel10.Location = new System.Drawing.Point(207, 146);
+            this.radLabel10.Name = "radLabel10";
+            this.radLabel10.Size = new System.Drawing.Size(39, 19);
+            this.radLabel10.TabIndex = 19;
+            this.radLabel10.Text = "Name";
+            // 
             // radLabel24
             // 
             this.radLabel24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel24.Location = new System.Drawing.Point(14, 67);
+            this.radLabel24.Location = new System.Drawing.Point(14, 79);
             this.radLabel24.Name = "radLabel24";
             this.radLabel24.Size = new System.Drawing.Size(97, 24);
             this.radLabel24.TabIndex = 9;
@@ -391,7 +435,7 @@
             // 
             // btnAddPrefix
             // 
-            this.btnAddPrefix.Location = new System.Drawing.Point(447, 66);
+            this.btnAddPrefix.Location = new System.Drawing.Point(447, 78);
             this.btnAddPrefix.Name = "btnAddPrefix";
             this.btnAddPrefix.Size = new System.Drawing.Size(130, 24);
             this.btnAddPrefix.TabIndex = 12;
@@ -401,7 +445,7 @@
             // 
             // txtPrefixName
             // 
-            this.txtPrefixName.Location = new System.Drawing.Point(249, 67);
+            this.txtPrefixName.Location = new System.Drawing.Point(249, 79);
             this.txtPrefixName.MaxLength = 40;
             this.txtPrefixName.Name = "txtPrefixName";
             this.txtPrefixName.Size = new System.Drawing.Size(171, 23);
@@ -411,7 +455,7 @@
             // 
             // radLabel25
             // 
-            this.radLabel25.Location = new System.Drawing.Point(207, 74);
+            this.radLabel25.Location = new System.Drawing.Point(207, 86);
             this.radLabel25.Name = "radLabel25";
             this.radLabel25.Size = new System.Drawing.Size(39, 19);
             this.radLabel25.TabIndex = 11;
@@ -868,100 +912,6 @@
             this.radPageViewPage5.Size = new System.Drawing.Size(1039, 586);
             this.radPageViewPage5.Text = "About";
             // 
-            // radLabel5
-            // 
-            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel5.Location = new System.Drawing.Point(14, 129);
-            this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(87, 24);
-            this.radLabel5.TabIndex = 13;
-            this.radLabel5.Text = "Add Role : ";
-            this.radLabel5.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnAddRole
-            // 
-            this.btnAddRole.Location = new System.Drawing.Point(447, 128);
-            this.btnAddRole.Name = "btnAddRole";
-            this.btnAddRole.Size = new System.Drawing.Size(130, 24);
-            this.btnAddRole.TabIndex = 16;
-            this.btnAddRole.Text = "Add";
-            this.btnAddRole.ThemeName = "TelerikMetro";
-            this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
-            // 
-            // txtRole
-            // 
-            this.txtRole.Location = new System.Drawing.Point(249, 129);
-            this.txtRole.MaxLength = 40;
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(171, 23);
-            this.txtRole.TabIndex = 14;
-            this.txtRole.TabStop = false;
-            this.txtRole.ThemeName = "TelerikMetro";
-            // 
-            // radLabel8
-            // 
-            this.radLabel8.Location = new System.Drawing.Point(207, 136);
-            this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(39, 19);
-            this.radLabel8.TabIndex = 15;
-            this.radLabel8.Text = "Name";
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel9.Location = new System.Drawing.Point(14, 171);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(125, 24);
-            this.radLabel9.TabIndex = 17;
-            this.radLabel9.Text = "Add Employee : ";
-            this.radLabel9.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnAddEmployee
-            // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(679, 171);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(130, 24);
-            this.btnAddEmployee.TabIndex = 20;
-            this.btnAddEmployee.Text = "Add";
-            this.btnAddEmployee.ThemeName = "TelerikMetro";
-            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
-            // 
-            // txtEmployee
-            // 
-            this.txtEmployee.Location = new System.Drawing.Point(249, 171);
-            this.txtEmployee.MaxLength = 40;
-            this.txtEmployee.Name = "txtEmployee";
-            this.txtEmployee.Size = new System.Drawing.Size(171, 23);
-            this.txtEmployee.TabIndex = 18;
-            this.txtEmployee.TabStop = false;
-            this.txtEmployee.ThemeName = "TelerikMetro";
-            // 
-            // radLabel10
-            // 
-            this.radLabel10.Location = new System.Drawing.Point(207, 178);
-            this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(39, 19);
-            this.radLabel10.TabIndex = 19;
-            this.radLabel10.Text = "Name";
-            // 
-            // radLabel11
-            // 
-            this.radLabel11.Location = new System.Drawing.Point(426, 175);
-            this.radLabel11.Name = "radLabel11";
-            this.radLabel11.Size = new System.Drawing.Size(31, 19);
-            this.radLabel11.TabIndex = 21;
-            this.radLabel11.Text = "Role";
-            // 
-            // ddlRole
-            // 
-            this.ddlRole.DropDownAnimationEnabled = true;
-            this.ddlRole.Location = new System.Drawing.Point(462, 172);
-            this.ddlRole.Name = "ddlRole";
-            this.ddlRole.ShowImageInEditorArea = true;
-            this.ddlRole.Size = new System.Drawing.Size(200, 23);
-            this.ddlRole.TabIndex = 27;
-            this.ddlRole.ThemeName = "TelerikMetro";
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -990,6 +940,12 @@
             this.radPageView1.ResumeLayout(false);
             this.radPageViewPage1.ResumeLayout(false);
             this.radPageViewPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddPrefix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrefixName)).EndInit();
@@ -1042,16 +998,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel23)).EndInit();
             this.radPageViewPage5.ResumeLayout(false);
             this.radPageViewPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddRole)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRole)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlRole)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1125,10 +1071,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel40;
         private Telerik.WinControls.UI.RadTextBox txtFormulation;
         private Telerik.WinControls.UI.RadLabel radLabel41;
-        private Telerik.WinControls.UI.RadLabel radLabel5;
-        private Telerik.WinControls.UI.RadButton btnAddRole;
-        private Telerik.WinControls.UI.RadTextBox txtRole;
-        private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadButton btnAddEmployee;
         private Telerik.WinControls.UI.RadTextBox txtEmployee;

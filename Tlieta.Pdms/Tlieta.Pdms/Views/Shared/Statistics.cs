@@ -50,27 +50,27 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void LoadReportMonthlyOperations()
         {
-            LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(Convert.ToInt32(ddlOpertaion.SelectedValue.ToString()), ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+            LoadChart(chartMonthlyOperations, new ReportsData().MonthlyOperations((int)ddlOpertaion.SelectedItem.Value, Convert.ToInt32(ddlYear.SelectedItem.Text)), "Month");
         }
 
         private void LoadReportOperationsCount()
         {
-            LoadChart(chartOperationsCount, new ReportsData().ReportOperationsCount(), "Operation", "OperationCount", "Operation");
+            LoadChart(chartOperationsCount, new ReportsData().OperationsCount(), "Operation");
         }
 
         private void LoadReportSurgeriesByHospital()
         {
-            LoadChart(chartSurgeryCount, new ReportsData().ReportSurgeriesByHospital(), "Hospital", "SurgeryCount", "Hospital");
+            LoadChart(chartSurgeryCount, new ReportsData().SurgeriesByHospital(), "Hospital");
         }
 
-        private void LoadChart(RadChart chart, DataTable dt, string labelcolumn, string ycolumn, string seriesname)
+        private void LoadChart(RadChart chart, List<ReportData> dt, string seriesname)
         {
             if (dt != null)
             {
                 chart.DataManager.DataSource = dt;
                 //set the column in the datasource to be used for the labels    
-                chart.DataManager.LabelsColumn = labelcolumn;
-                chart.DataManager.ValuesYColumns = new string[] { ycolumn };
+                chart.DataManager.LabelsColumn = "Value";
+                chart.DataManager.ValuesYColumns = new string[] { "Count" };
                 //sets the labels so that there are no overlaps            
                 chart.IntelligentLabelsEnabled = true;
                 chart.DataBind();
@@ -142,18 +142,30 @@ namespace Tlieta.Pdms.Views.Shared
         {
             if (ddlOpertaion.SelectedItem != null && ddlOpertaion.SelectedValue.ToString() != "System.Data.DataRowView")
             {
-                Operation operation = (Operation)(ddlOpertaion.SelectedValue);
-                LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(operation.OperationId, ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+                int operationid = 0;
+                try
+                {
+                    operationid = (int)ddlOpertaion.SelectedItem.Value;
+                }
+                catch { Operation operation = (Operation)ddlOpertaion.SelectedItem.Value; operationid = operation.OperationId; }
+
+                LoadChart(chartMonthlyOperations, new ReportsData().MonthlyOperations(operationid, Convert.ToInt32(ddlYear.SelectedItem.Text)), "Month");
             }
         }
             
         private void ddlOpertaion_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-                if (ddlOpertaion.SelectedItem != null && ddlOpertaion.SelectedValue.ToString() != "System.Data.DataRowView")
+            if (ddlOpertaion.SelectedItem != null && ddlOpertaion.SelectedValue.ToString() != "System.Data.DataRowView")
+            {
+                int operationid = 0;
+                try
                 {
-                    Operation operation = (Operation)(ddlOpertaion.SelectedValue);
-                    LoadChart(chartMonthlyOperations, new ReportsData().ReportMonthlyOperations(operation.OperationId, ddlYear.SelectedItem.Text), "Month", "Count", "Month");
+                    operationid = (int)ddlOpertaion.SelectedItem.Value;
                 }
+                catch { Operation operation = (Operation)ddlOpertaion.SelectedItem.Value; operationid = operation.OperationId; }
+
+                LoadChart(chartMonthlyOperations, new ReportsData().MonthlyOperations(operationid, Convert.ToInt32(ddlYear.SelectedItem.Text)), "Month");
+            }
         }
 
         private void btnChart3Refresh_Click(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace Tlieta.Pdms.Views.Shared
             InitializeComponent();
 
             lblProductKey.Text = serialkey;
+
+            PopulateData.PopulateRoles(ddlRole);
         }
 
         private void btnAddHospital_Click(object sender, EventArgs e)
@@ -74,32 +76,59 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
+            string name = txtEmployee.Text.Trim();
+            int role = Convert.ToInt32(ddlRole.SelectedValue);
 
+            if (name == "")
+            {
+                MessageBox.Show("Enter employee name");
+                return;
+            }
+            else if (role == 0)
+            {
+                MessageBox.Show("Select role");
+                return;
+            }
+            else{
+                Employee employee = new Employee(){ EmployeeName = name, RoleId = role};
+                bool result = new MasterData().AddEmployee(employee); 
+                
+                if (result)
+                {
+                    txtEmployee.Text = "";
+                    ddlRole.SelectedIndex = ddlRole.FindString("Select");
+                    MessageBox.Show("Employee added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add employee : contact Admin");
+                }
+            }
         }
 
         private void btnAddRole_Click(object sender, EventArgs e)
         {
-            string name = txtRole.Text.Trim();
+            //string name = txtRole.Text.Trim();
 
-            if (name == "")
-            {
-                MessageBox.Show("Enter role name");
-                return;
-            }
-            else
-            {
-                Role role = new Role() { RoleName = name };
-                bool result = new MasterData().AddRole(role);
-                if (result)
-                {
-                    txtRole.Text = "";
-                    MessageBox.Show("Role added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Cannot add role : contact Admin");
-                }
-            }
+            //if (name == "")
+            //{
+            //    MessageBox.Show("Enter role name");
+            //    return;
+            //}
+            //else
+            //{
+            //    Role role = new Role() { RoleName = name };
+            //    bool result = new MasterData().AddRole(role);
+            //    if (result)
+            //    {
+            //        txtRole.Text = "";
+            //        MessageBox.Show("Role added successfully");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Cannot add role : contact Admin");
+            //    }
+            //}
         }
 
         private void btnAddDiagnosis_Click(object sender, EventArgs e)

@@ -1,6 +1,4 @@
-﻿using System.Data;
-using Tlieta.DataAccess;
-using Tlieta.Utility;
+﻿using Tlieta.Utility;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -8,7 +6,6 @@ namespace Tlieta.Pdms.DataAccess
 {
     public class SharedData
     {
-        private DataSet ds = null;
         PDMSDataEntities entities = new PDMSDataEntities();
 
         public SharedData()

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Configuration;
-using System.Data;
-using System.IO;
 using System.Windows.Forms;
-using Tlieta.DataAccess;
 using Tlieta.Pdms.DataAccess;
 using Tlieta.Utility;
 

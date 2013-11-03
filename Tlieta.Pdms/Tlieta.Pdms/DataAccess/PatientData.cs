@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -10,7 +8,6 @@ namespace Tlieta.Pdms.DataAccess
     {
         PDMSDataEntities entities = new PDMSDataEntities();
 
-        private DataSet ds = null;
         public PatientData()
         {
         }

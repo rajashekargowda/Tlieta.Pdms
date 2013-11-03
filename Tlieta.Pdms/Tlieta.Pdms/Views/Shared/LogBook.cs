@@ -25,9 +25,7 @@ namespace Tlieta.Pdms.Views.Shared
             {
                 if (ddlOpertaion.SelectedValue.ToString() != "0")
                 {
-                    DataTable dt = new ReportsData().GetReportLogBook(Convert.ToInt32(ddlOpertaion.SelectedValue.ToString()), Convert.ToInt32(ddlHospital.SelectedValue.ToString()));
-
-                    SearchGrid.DataSource = dt;
+                    SearchGrid.DataSource = new ReportsData().GetLogBook(Convert.ToInt32(ddlOpertaion.SelectedValue.ToString()), Convert.ToInt32(ddlHospital.SelectedValue.ToString())); ;
                     //SearchGrid.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
                     SearchGrid.ClearSelection();
 
@@ -35,11 +33,11 @@ namespace Tlieta.Pdms.Views.Shared
                     SearchGrid.Columns[0].Width = 30;
                     SearchGrid.Columns[1].Width = 120;
                     SearchGrid.Columns[2].Width = 50;
-                    SearchGrid.Columns[3].Width = 50;
+                    SearchGrid.Columns[3].Width = 80;
                     SearchGrid.Columns[4].Width = 120;
                     SearchGrid.Columns[5].Width = 120;
                     SearchGrid.Columns[6].Width = 170;
-                    SearchGrid.Columns[7].Width = 170;
+                    SearchGrid.Columns[7].Width = 140;
 
 
                     SearchGrid.Columns[0].AllowFiltering = false;
