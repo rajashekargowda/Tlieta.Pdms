@@ -8,6 +8,7 @@
         <EntityContainer Name="PDMSDataModelStoreContainer">
           <EntitySet Name="Appointment" EntityType="PDMSDataModel.Store.Appointment" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="PDMSDataModel.Store.Contact" store:Type="Tables" />
+          <EntitySet Name="Diagnosis" EntityType="PDMSDataModel.Store.Diagnosis" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="PDMSDataModel.Store.Employee" store:Type="Tables" />
           <EntitySet Name="Hospital" EntityType="PDMSDataModel.Store.Hospital" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="PDMSDataModel.Store.Operation" store:Type="Tables" />
@@ -41,6 +42,14 @@
           <Property Name="Company" Type="nvarchar" MaxLength="100" />
           <Property Name="Designation" Type="nvarchar" MaxLength="100" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="DiagnosisId" />
+          </Key>
+          <Property Name="DiagnosisId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiagnosisName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -159,6 +168,7 @@
           <EntitySet Name="Appointments" EntityType="PDMSDataModel.Appointment" />
           <EntitySet Name="Contacts" EntityType="PDMSDataModel.Contact" />
           <EntitySet Name="Services" EntityType="PDMSDataModel.Service" />
+          <EntitySet Name="Diagnoses" EntityType="PDMSDataModel.Diagnosis" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -285,6 +295,14 @@
           <Property Type="Int32" Name="ServiceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="ServiceName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Double" Name="Cost" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="DiagnosisId" />
+          </Key>
+          <Property Type="Int32" Name="DiagnosisId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DiagnosisName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
@@ -427,6 +445,15 @@
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
                 <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diagnoses">
+            <EntityTypeMapping TypeName="PDMSDataModel.Diagnosis">
+              <MappingFragment StoreEntitySet="Diagnosis">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DiagnosisName" ColumnName="DiagnosisName" />
+                <ScalarProperty Name="DiagnosisId" ColumnName="DiagnosisId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

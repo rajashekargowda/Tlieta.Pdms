@@ -65,7 +65,32 @@ namespace Tlieta.Pdms.Views.Shared
                 if (result)
                 {
                     txtOperationName.Text = "";
-                    MessageBox.Show("Operation name added successfully");
+                    MessageBox.Show("Operation added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add operation : contact Admin");
+                }
+            }
+        }
+
+        private void btnAddDiagnosis_Click(object sender, EventArgs e)
+        {
+            string name = txtDiagnosisName.Text.Trim();
+
+            if (name == "")
+            {
+                MessageBox.Show("Enter diagnosis name");
+                return;
+            }
+            else
+            {
+                Diagnosis diagnosis = new Diagnosis() { DiagnosisName = name, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddDiagnosis(diagnosis);
+                if (result)
+                {
+                    txtDiagnosisName.Text = "";
+                    MessageBox.Show("Diagnosis added successfully");
                 }
                 else
                 {
@@ -105,36 +130,6 @@ namespace Tlieta.Pdms.Views.Shared
                     MessageBox.Show("Cannot add employee : contact Admin");
                 }
             }
-        }
-
-        private void btnAddRole_Click(object sender, EventArgs e)
-        {
-            //string name = txtRole.Text.Trim();
-
-            //if (name == "")
-            //{
-            //    MessageBox.Show("Enter role name");
-            //    return;
-            //}
-            //else
-            //{
-            //    Role role = new Role() { RoleName = name };
-            //    bool result = new MasterData().AddRole(role);
-            //    if (result)
-            //    {
-            //        txtRole.Text = "";
-            //        MessageBox.Show("Role added successfully");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Cannot add role : contact Admin");
-            //    }
-            //}
-        }
-
-        private void btnAddDiagnosis_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAddService_Click(object sender, EventArgs e)
@@ -202,6 +197,31 @@ namespace Tlieta.Pdms.Views.Shared
         private void btnAddDrug_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddRole_Click(object sender, EventArgs e)
+        {
+            //string name = txtRole.Text.Trim();
+
+            //if (name == "")
+            //{
+            //    MessageBox.Show("Enter role name");
+            //    return;
+            //}
+            //else
+            //{
+            //    Role role = new Role() { RoleName = name };
+            //    bool result = new MasterData().AddRole(role);
+            //    if (result)
+            //    {
+            //        txtRole.Text = "";
+            //        MessageBox.Show("Role added successfully");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Cannot add role : contact Admin");
+            //    }
+            //}
         }
     }
 }

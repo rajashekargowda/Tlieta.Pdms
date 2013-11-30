@@ -52,10 +52,6 @@
             this.btnAddEmployee = new Telerik.WinControls.UI.RadButton();
             this.txtEmployee = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel24 = new Telerik.WinControls.UI.RadLabel();
-            this.btnAddPrefix = new Telerik.WinControls.UI.RadButton();
-            this.txtPrefixName = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel25 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.txtInstructions = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel43 = new Telerik.WinControls.UI.RadLabel();
@@ -71,19 +67,15 @@
             this.radLabel39 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel35 = new Telerik.WinControls.UI.RadLabel();
             this.txtOtherAdvise = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel36 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddOtherAdvise = new Telerik.WinControls.UI.RadButton();
             this.radLabel33 = new Telerik.WinControls.UI.RadLabel();
             this.txtDosageDuration = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel34 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddDosageDuration = new Telerik.WinControls.UI.RadButton();
             this.radLabel31 = new Telerik.WinControls.UI.RadLabel();
             this.txtDosageFrequency = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel32 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddDosageFrequency = new Telerik.WinControls.UI.RadButton();
             this.radLabel29 = new Telerik.WinControls.UI.RadLabel();
             this.txtImagingName = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel30 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddImaging = new Telerik.WinControls.UI.RadButton();
             this.radLabel26 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddInvestigation = new Telerik.WinControls.UI.RadButton();
@@ -126,10 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPrefix)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrefixName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel25)).BeginInit();
             this.radPageViewPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInstructions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel43)).BeginInit();
@@ -145,19 +133,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel39)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherAdvise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddOtherAdvise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDosageDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddDosageDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDosageFrequency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddDosageFrequency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImagingName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImaging)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddInvestigation)).BeginInit();
@@ -198,7 +182,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel2.Location = new System.Drawing.Point(14, 21);
+            this.radLabel2.Location = new System.Drawing.Point(14, 52);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(147, 24);
             this.radLabel2.TabIndex = 3;
@@ -207,7 +191,7 @@
             // 
             // txtHospitalName
             // 
-            this.txtHospitalName.Location = new System.Drawing.Point(249, 21);
+            this.txtHospitalName.Location = new System.Drawing.Point(249, 52);
             this.txtHospitalName.MaxLength = 40;
             this.txtHospitalName.Name = "txtHospitalName";
             this.txtHospitalName.Size = new System.Drawing.Size(171, 23);
@@ -217,7 +201,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(207, 28);
+            this.radLabel3.Location = new System.Drawing.Point(207, 59);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(39, 19);
             this.radLabel3.TabIndex = 5;
@@ -225,7 +209,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(426, 28);
+            this.radLabel4.Location = new System.Drawing.Point(426, 59);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(53, 19);
             this.radLabel4.TabIndex = 7;
@@ -233,7 +217,7 @@
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(481, 21);
+            this.txtLocation.Location = new System.Drawing.Point(481, 52);
             this.txtLocation.MaxLength = 20;
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(171, 23);
@@ -243,7 +227,7 @@
             // 
             // btnAddHospital
             // 
-            this.btnAddHospital.Location = new System.Drawing.Point(668, 21);
+            this.btnAddHospital.Location = new System.Drawing.Point(668, 52);
             this.btnAddHospital.Name = "btnAddHospital";
             this.btnAddHospital.Size = new System.Drawing.Size(130, 24);
             this.btnAddHospital.TabIndex = 8;
@@ -336,7 +320,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(3, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage4;
+            this.radPageView1.SelectedPage = this.radPageViewPage3;
             this.radPageView1.Size = new System.Drawing.Size(1248, 594);
             this.radPageView1.TabIndex = 27;
             this.radPageView1.Text = "radPageView1";
@@ -352,10 +336,6 @@
             this.radPageViewPage1.Controls.Add(this.btnAddEmployee);
             this.radPageViewPage1.Controls.Add(this.txtEmployee);
             this.radPageViewPage1.Controls.Add(this.radLabel10);
-            this.radPageViewPage1.Controls.Add(this.radLabel24);
-            this.radPageViewPage1.Controls.Add(this.btnAddPrefix);
-            this.radPageViewPage1.Controls.Add(this.txtPrefixName);
-            this.radPageViewPage1.Controls.Add(this.radLabel25);
             this.radPageViewPage1.Controls.Add(this.radLabel2);
             this.radPageViewPage1.Controls.Add(this.btnAddHospital);
             this.radPageViewPage1.Controls.Add(this.txtHospitalName);
@@ -423,44 +403,6 @@
             this.radLabel10.TabIndex = 19;
             this.radLabel10.Text = "Name";
             // 
-            // radLabel24
-            // 
-            this.radLabel24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.radLabel24.Location = new System.Drawing.Point(14, 79);
-            this.radLabel24.Name = "radLabel24";
-            this.radLabel24.Size = new System.Drawing.Size(97, 24);
-            this.radLabel24.TabIndex = 9;
-            this.radLabel24.Text = "Add Prefix : ";
-            this.radLabel24.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnAddPrefix
-            // 
-            this.btnAddPrefix.Location = new System.Drawing.Point(447, 78);
-            this.btnAddPrefix.Name = "btnAddPrefix";
-            this.btnAddPrefix.Size = new System.Drawing.Size(130, 24);
-            this.btnAddPrefix.TabIndex = 12;
-            this.btnAddPrefix.Text = "Add";
-            this.btnAddPrefix.ThemeName = "TelerikMetro";
-            this.btnAddPrefix.Click += new System.EventHandler(this.btnAddPrefix_Click);
-            // 
-            // txtPrefixName
-            // 
-            this.txtPrefixName.Location = new System.Drawing.Point(249, 79);
-            this.txtPrefixName.MaxLength = 40;
-            this.txtPrefixName.Name = "txtPrefixName";
-            this.txtPrefixName.Size = new System.Drawing.Size(171, 23);
-            this.txtPrefixName.TabIndex = 10;
-            this.txtPrefixName.TabStop = false;
-            this.txtPrefixName.ThemeName = "TelerikMetro";
-            // 
-            // radLabel25
-            // 
-            this.radLabel25.Location = new System.Drawing.Point(207, 86);
-            this.radLabel25.Name = "radLabel25";
-            this.radLabel25.Size = new System.Drawing.Size(39, 19);
-            this.radLabel25.TabIndex = 11;
-            this.radLabel25.Text = "Name";
-            // 
             // radPageViewPage2
             // 
             this.radPageViewPage2.Controls.Add(this.txtInstructions);
@@ -477,19 +419,15 @@
             this.radPageViewPage2.Controls.Add(this.radLabel39);
             this.radPageViewPage2.Controls.Add(this.radLabel35);
             this.radPageViewPage2.Controls.Add(this.txtOtherAdvise);
-            this.radPageViewPage2.Controls.Add(this.radLabel36);
             this.radPageViewPage2.Controls.Add(this.btnAddOtherAdvise);
             this.radPageViewPage2.Controls.Add(this.radLabel33);
             this.radPageViewPage2.Controls.Add(this.txtDosageDuration);
-            this.radPageViewPage2.Controls.Add(this.radLabel34);
             this.radPageViewPage2.Controls.Add(this.btnAddDosageDuration);
             this.radPageViewPage2.Controls.Add(this.radLabel31);
             this.radPageViewPage2.Controls.Add(this.txtDosageFrequency);
-            this.radPageViewPage2.Controls.Add(this.radLabel32);
             this.radPageViewPage2.Controls.Add(this.btnAddDosageFrequency);
             this.radPageViewPage2.Controls.Add(this.radLabel29);
             this.radPageViewPage2.Controls.Add(this.txtImagingName);
-            this.radPageViewPage2.Controls.Add(this.radLabel30);
             this.radPageViewPage2.Controls.Add(this.btnAddImaging);
             this.radPageViewPage2.Controls.Add(this.radLabel26);
             this.radPageViewPage2.Controls.Add(this.btnAddInvestigation);
@@ -632,14 +570,6 @@
             this.txtOtherAdvise.TabStop = false;
             this.txtOtherAdvise.ThemeName = "TelerikMetro";
             // 
-            // radLabel36
-            // 
-            this.radLabel36.Location = new System.Drawing.Point(220, 217);
-            this.radLabel36.Name = "radLabel36";
-            this.radLabel36.Size = new System.Drawing.Size(39, 19);
-            this.radLabel36.TabIndex = 29;
-            this.radLabel36.Text = "Name";
-            // 
             // btnAddOtherAdvise
             // 
             this.btnAddOtherAdvise.Location = new System.Drawing.Point(457, 209);
@@ -669,14 +599,6 @@
             this.txtDosageDuration.TabIndex = 24;
             this.txtDosageDuration.TabStop = false;
             this.txtDosageDuration.ThemeName = "TelerikMetro";
-            // 
-            // radLabel34
-            // 
-            this.radLabel34.Location = new System.Drawing.Point(220, 171);
-            this.radLabel34.Name = "radLabel34";
-            this.radLabel34.Size = new System.Drawing.Size(39, 19);
-            this.radLabel34.TabIndex = 25;
-            this.radLabel34.Text = "Name";
             // 
             // btnAddDosageDuration
             // 
@@ -708,14 +630,6 @@
             this.txtDosageFrequency.TabStop = false;
             this.txtDosageFrequency.ThemeName = "TelerikMetro";
             // 
-            // radLabel32
-            // 
-            this.radLabel32.Location = new System.Drawing.Point(220, 127);
-            this.radLabel32.Name = "radLabel32";
-            this.radLabel32.Size = new System.Drawing.Size(39, 19);
-            this.radLabel32.TabIndex = 21;
-            this.radLabel32.Text = "Name";
-            // 
             // btnAddDosageFrequency
             // 
             this.btnAddDosageFrequency.Location = new System.Drawing.Point(457, 119);
@@ -745,14 +659,6 @@
             this.txtImagingName.TabIndex = 16;
             this.txtImagingName.TabStop = false;
             this.txtImagingName.ThemeName = "TelerikMetro";
-            // 
-            // radLabel30
-            // 
-            this.radLabel30.Location = new System.Drawing.Point(220, 82);
-            this.radLabel30.Name = "radLabel30";
-            this.radLabel30.Size = new System.Drawing.Size(39, 19);
-            this.radLabel30.TabIndex = 17;
-            this.radLabel30.Text = "Name";
             // 
             // btnAddImaging
             // 
@@ -946,10 +852,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAddEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPrefix)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrefixName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel25)).EndInit();
             this.radPageViewPage2.ResumeLayout(false);
             this.radPageViewPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInstructions)).EndInit();
@@ -966,19 +868,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherAdvise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel36)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddOtherAdvise)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDosageDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddDosageDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDosageFrequency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddDosageFrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImagingName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImaging)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddInvestigation)).EndInit();
@@ -1033,10 +931,6 @@
         private Telerik.WinControls.UI.RadTextBox txtServiceName;
         private Telerik.WinControls.UI.RadLabel radLabel22;
         private Telerik.WinControls.UI.RadLabel radLabel23;
-        private Telerik.WinControls.UI.RadLabel radLabel24;
-        private Telerik.WinControls.UI.RadButton btnAddPrefix;
-        private Telerik.WinControls.UI.RadTextBox txtPrefixName;
-        private Telerik.WinControls.UI.RadLabel radLabel25;
         private Telerik.WinControls.UI.RadLabel radLabel26;
         private Telerik.WinControls.UI.RadButton btnAddInvestigation;
         private Telerik.WinControls.UI.RadTextBox txtInvestigationName;
@@ -1045,19 +939,15 @@
         private Telerik.WinControls.UI.RadLabel radLabel28;
         private Telerik.WinControls.UI.RadLabel radLabel29;
         private Telerik.WinControls.UI.RadTextBox txtImagingName;
-        private Telerik.WinControls.UI.RadLabel radLabel30;
         private Telerik.WinControls.UI.RadButton btnAddImaging;
         private Telerik.WinControls.UI.RadLabel radLabel35;
         private Telerik.WinControls.UI.RadTextBox txtOtherAdvise;
-        private Telerik.WinControls.UI.RadLabel radLabel36;
         private Telerik.WinControls.UI.RadButton btnAddOtherAdvise;
         private Telerik.WinControls.UI.RadLabel radLabel33;
         private Telerik.WinControls.UI.RadTextBox txtDosageDuration;
-        private Telerik.WinControls.UI.RadLabel radLabel34;
         private Telerik.WinControls.UI.RadButton btnAddDosageDuration;
         private Telerik.WinControls.UI.RadLabel radLabel31;
         private Telerik.WinControls.UI.RadTextBox txtDosageFrequency;
-        private Telerik.WinControls.UI.RadLabel radLabel32;
         private Telerik.WinControls.UI.RadButton btnAddDosageFrequency;
         private Telerik.WinControls.UI.RadLabel radLabel37;
         private Telerik.WinControls.UI.RadButton btnAddDrug;

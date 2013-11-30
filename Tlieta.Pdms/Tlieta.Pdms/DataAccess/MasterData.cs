@@ -47,6 +47,26 @@ namespace Tlieta.Pdms.DataAccess
             catch { return false; }
         }
 
+        public List<Diagnosis> GetDiagnoses()
+        {
+            try
+            {
+                return (from o in entities.Diagnoses select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddDiagnosis(Diagnosis diagnosis)
+        {
+            try
+            {
+                entities.Diagnoses.Add(diagnosis);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
         public List<Employee> GetEmployees()
         {
             try

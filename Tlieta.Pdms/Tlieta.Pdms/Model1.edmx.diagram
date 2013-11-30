@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="PDMSDataModel.Appointment" Width="1.5" PointX="4.25" PointY="2.75" />
         <EntityTypeShape EntityType="PDMSDataModel.Contact" Width="1.5" PointX="6" PointY="2.75" />
         <EntityTypeShape EntityType="PDMSDataModel.Service" Width="1.5" PointX="2.5" PointY="6.75" />
+        <EntityTypeShape EntityType="PDMSDataModel.Diagnosis" Width="1.5" PointX="4.25" PointY="5.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
