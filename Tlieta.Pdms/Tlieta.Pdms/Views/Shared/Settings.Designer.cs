@@ -336,7 +336,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(3, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.SelectedPage = this.radPageViewPage4;
             this.radPageView1.Size = new System.Drawing.Size(1248, 594);
             this.radPageView1.TabIndex = 27;
             this.radPageView1.Text = "radPageView1";
@@ -870,7 +870,7 @@
             // txtServiceName
             // 
             this.txtServiceName.Location = new System.Drawing.Point(265, 31);
-            this.txtServiceName.MaxLength = 40;
+            this.txtServiceName.MaxLength = 100;
             this.txtServiceName.Name = "txtServiceName";
             this.txtServiceName.Size = new System.Drawing.Size(171, 23);
             this.txtServiceName.TabIndex = 10;

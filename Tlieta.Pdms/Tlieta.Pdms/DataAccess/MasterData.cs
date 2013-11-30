@@ -86,5 +86,25 @@ namespace Tlieta.Pdms.DataAccess
             }
             catch { return false; }
         }
+
+        public List<Service> GetServices()
+        {
+            try
+            {
+                return (from e in entities.Services select e).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddService(Service service)
+        {
+            try
+            {
+                entities.Services.Add(service);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
     }
 }

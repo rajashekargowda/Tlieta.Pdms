@@ -34,5 +34,6 @@ namespace Tlieta.Pdms
         public DbSet<Product> Products { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }

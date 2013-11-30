@@ -23,7 +23,7 @@ namespace Tlieta.Pdms.Views.Shared
         }
 
         private void btnAddHospital_Click(object sender, EventArgs e)
-        {            
+        {
             string name = txtHospitalName.Text.Trim();
             string location = txtLocation.Text.Trim();
 
@@ -34,7 +34,7 @@ namespace Tlieta.Pdms.Views.Shared
             }
             else
             {
-                Hospital hospital = new Hospital() { HospitalName = name, Location = location };
+                Hospital hospital = new Hospital() { HospitalName = name, Location = location, CreatedOn = DateTime.Now };
                 bool result = new MasterData().AddHospital(hospital);
                 if (result)
                 {
@@ -53,14 +53,14 @@ namespace Tlieta.Pdms.Views.Shared
         {
             string name = txtOperationName.Text.Trim();
 
-            if (name == "" )
+            if (name == "")
             {
                 MessageBox.Show("Enter operation name");
                 return;
             }
             else
             {
-                Operation operation = new Operation() { OperationName = name };
+                Operation operation = new Operation() { OperationName = name, CreatedOn = DateTime.Now };
                 bool result = new MasterData().AddOperation(operation);
                 if (result)
                 {
@@ -89,10 +89,11 @@ namespace Tlieta.Pdms.Views.Shared
                 MessageBox.Show("Select role");
                 return;
             }
-            else{
-                Employee employee = new Employee(){ EmployeeName = name, RoleId = role};
-                bool result = new MasterData().AddEmployee(employee); 
-                
+            else
+            {
+                Employee employee = new Employee() { EmployeeName = name, RoleId = role, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddEmployee(employee);
+
                 if (result)
                 {
                     txtEmployee.Text = "";
@@ -138,7 +139,39 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddService_Click(object sender, EventArgs e)
         {
+            string name = txtServiceName.Text.Trim();
+            double cost = 0;
 
+            if (name == "")
+            {
+                MessageBox.Show("Enter service name");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    cost = Convert.ToDouble(txtCharges.Text.Trim());
+                }
+                catch
+                {
+                    MessageBox.Show("Enter valid charge value");
+                    return;
+                }
+
+                Service service = new Service() { ServiceName = name, Cost = cost, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddService(service);
+                if (result)
+                {
+                    txtServiceName.Text = "";
+                    txtCharges.Text = "";
+                    MessageBox.Show("Service added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add service : contact Admin");
+                }
+            }
         }
 
         private void btnAddPrefix_Click(object sender, EventArgs e)
