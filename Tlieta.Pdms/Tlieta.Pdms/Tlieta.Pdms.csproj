@@ -168,6 +168,12 @@
     <Compile Include="Diagnosis.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DosageDuration.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DosageFrequency.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -178,6 +184,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospital.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imaging.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LabInvestigation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
@@ -199,6 +211,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Operation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OtherAdvise.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs">

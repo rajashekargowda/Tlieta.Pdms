@@ -126,5 +126,105 @@ namespace Tlieta.Pdms.DataAccess
             }
             catch { return false; }
         }
+
+        public List<LabInvestigation> GetLabInvestigations()
+        {
+            try
+            {
+                return (from o in entities.LabInvestigations select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddLabInvestigation(LabInvestigation labinvestigation)
+        {
+            try
+            {
+                entities.LabInvestigations.Add(labinvestigation);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public List<DosageFrequency> GetDosageFrequencies()
+        {
+            try
+            {
+                return (from o in entities.DosageFrequencies select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddDosageFrequency(DosageFrequency dosagefrequency)
+        {
+            try
+            {
+                entities.DosageFrequencies.Add(dosagefrequency);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public List<DosageDuration> GetDosageDurations()
+        {
+            try
+            {
+                return (from o in entities.DosageDurations select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddDosageDuration(DosageDuration dosageduration)
+        {
+            try
+            {
+                entities.DosageDurations.Add(dosageduration);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public List<Imaging> GetImagings()
+        {
+            try
+            {
+                return (from o in entities.Imagings select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddImaging(Imaging imaging)
+        {
+            try
+            {
+                entities.Imagings.Add(imaging);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+
+        public List<OtherAdvise> GetOtherAdvises()
+        {
+            try
+            {
+                return (from o in entities.OtherAdvises select o).ToList();
+            }
+            catch { return null; }
+        }
+
+        public bool AddOtherAdvise(OtherAdvise otheradvise)
+        {
+            try
+            {
+                entities.OtherAdvises.Add(otheradvise);
+                entities.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
     }
 }

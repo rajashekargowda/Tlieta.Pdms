@@ -169,59 +169,136 @@ namespace Tlieta.Pdms.Views.Shared
             }
         }
 
-        private void btnAddPrefix_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddInvestigation_Click(object sender, EventArgs e)
         {
+            string name = txtInvestigationName.Text.Trim();
+            string value = txtInvestigationValue.Text.Trim();
 
+            if (name == "" || value == "")
+            {
+                MessageBox.Show("Enter name and value");
+                return;
+            }
+            else
+            {
+                LabInvestigation labinvestigation = new LabInvestigation () { LabInvestigationName = name, NormalValue = value, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddLabInvestigation(labinvestigation);
+                if (result)
+                {
+                    txtInvestigationName.Text = "";
+                    txtInvestigationValue.Text = "";
+                    MessageBox.Show("Lab Investigation added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add Lab Investigation : contact Admin");
+                }
+            }
         }
 
         private void btnAddDosageFrequency_Click(object sender, EventArgs e)
         {
+            string name = txtDosageFrequency.Text.Trim();
 
+            if (name == "")
+            {
+                MessageBox.Show("Enter dosage frequency");
+                return;
+            }
+            else
+            {
+                DosageFrequency dosagefrequency = new DosageFrequency() { DosageFrequencyName = name, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddDosageFrequency(dosagefrequency);
+                if (result)
+                {
+                    txtDosageFrequency.Text = "";
+                    MessageBox.Show("Dosage frequency added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add dosage frequency : contact Admin");
+                }
+            }
         }
 
         private void btnAddDosageDuration_Click(object sender, EventArgs e)
         {
+            string name = txtDosageDuration.Text.Trim();
 
+            if (name == "")
+            {
+                MessageBox.Show("Enter dosage duration");
+                return;
+            }
+            else
+            {
+                DosageDuration dosageduration = new DosageDuration() { DosageDurationName = name, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddDosageDuration(dosageduration);
+                if (result)
+                {
+                    txtDosageDuration.Text = "";
+                    MessageBox.Show("Dosage duration added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add dosage duration : contact Admin");
+                }
+            }
         }
 
         private void btnAddOtherAdvise_Click(object sender, EventArgs e)
         {
+            string name = txtOtherAdvise.Text.Trim();
 
+            if (name == "")
+            {
+                MessageBox.Show("Enter advise");
+                return;
+            }
+            else
+            {
+                OtherAdvise otheradvise = new OtherAdvise() { OtherAdviseName = name, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddOtherAdvise(otheradvise);
+                if (result)
+                {
+                    txtOtherAdvise.Text = "";
+                    MessageBox.Show("Advise added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add advise : contact Admin");
+                }
+            }
+        }
+
+        private void btnAddImaging_Click(object sender, EventArgs e)
+        {
+            string name = txtImagingName.Text.Trim();
+
+            if (name == "")
+            {
+                MessageBox.Show("Enter imaging");
+                return;
+            }
+            else
+            {
+                Imaging imaging = new Imaging() { ImagingName = name, CreatedOn = DateTime.Now };
+                bool result = new MasterData().AddImaging(imaging);
+                if (result)
+                {
+                    txtImagingName.Text = "";
+                    MessageBox.Show("Imaging added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add imaging : contact Admin");
+                }
+            }
         }
 
         private void btnAddDrug_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnAddRole_Click(object sender, EventArgs e)
-        {
-            //string name = txtRole.Text.Trim();
-
-            //if (name == "")
-            //{
-            //    MessageBox.Show("Enter role name");
-            //    return;
-            //}
-            //else
-            //{
-            //    Role role = new Role() { RoleName = name };
-            //    bool result = new MasterData().AddRole(role);
-            //    if (result)
-            //    {
-            //        txtRole.Text = "";
-            //        MessageBox.Show("Role added successfully");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Cannot add role : contact Admin");
-            //    }
-            //}
         }
     }
 }

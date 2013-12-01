@@ -36,5 +36,10 @@ namespace Tlieta.Pdms
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Diagnosis> Diagnoses { get; set; }
+        public DbSet<DosageDuration> DosageDurations { get; set; }
+        public DbSet<DosageFrequency> DosageFrequencies { get; set; }
+        public DbSet<Imaging> Imagings { get; set; }
+        public DbSet<LabInvestigation> LabInvestigations { get; set; }
+        public DbSet<OtherAdvise> OtherAdvises { get; set; }
     }
 }

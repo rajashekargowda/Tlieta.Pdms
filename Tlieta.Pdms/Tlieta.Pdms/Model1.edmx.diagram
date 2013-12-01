@@ -16,6 +16,11 @@
         <EntityTypeShape EntityType="PDMSDataModel.Contact" Width="1.5" PointX="6" PointY="2.75" />
         <EntityTypeShape EntityType="PDMSDataModel.Service" Width="1.5" PointX="2.5" PointY="6.75" />
         <EntityTypeShape EntityType="PDMSDataModel.Diagnosis" Width="1.5" PointX="4.25" PointY="5.375" />
+        <EntityTypeShape EntityType="PDMSDataModel.DosageDuration" Width="1.5" PointX="11.292148416532273" PointY="6.1411591498838547" />
+        <EntityTypeShape EntityType="PDMSDataModel.DosageFrequency" Width="1.5" PointX="13.625" PointY="16.5" />
+        <EntityTypeShape EntityType="PDMSDataModel.Imaging" Width="1.5" PointX="15.25" PointY="16.5" />
+        <EntityTypeShape EntityType="PDMSDataModel.LabInvestigation" Width="1.5" PointX="8.75" PointY="16.5" />
+        <EntityTypeShape EntityType="PDMSDataModel.OtherAdvise" Width="1.5" PointX="10.375" PointY="16.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -9,9 +9,14 @@
           <EntitySet Name="Appointment" EntityType="PDMSDataModel.Store.Appointment" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="PDMSDataModel.Store.Contact" store:Type="Tables" />
           <EntitySet Name="Diagnosis" EntityType="PDMSDataModel.Store.Diagnosis" store:Type="Tables" />
+          <EntitySet Name="DosageDuration" EntityType="PDMSDataModel.Store.DosageDuration" store:Type="Tables" />
+          <EntitySet Name="DosageFrequency" EntityType="PDMSDataModel.Store.DosageFrequency" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="PDMSDataModel.Store.Employee" store:Type="Tables" />
           <EntitySet Name="Hospital" EntityType="PDMSDataModel.Store.Hospital" store:Type="Tables" />
+          <EntitySet Name="Imaging" EntityType="PDMSDataModel.Store.Imaging" store:Type="Tables" />
+          <EntitySet Name="LabInvestigation" EntityType="PDMSDataModel.Store.LabInvestigation" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="PDMSDataModel.Store.Operation" store:Type="Tables" />
+          <EntitySet Name="OtherAdvise" EntityType="PDMSDataModel.Store.OtherAdvise" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="PDMSDataModel.Store.Patient" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="PDMSDataModel.Store.Product" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="PDMSDataModel.Store.Role" store:Type="Tables" />
@@ -51,6 +56,22 @@
           <Property Name="DiagnosisName" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="DosageDuration">
+          <Key>
+            <PropertyRef Name="DosageDurationId" />
+          </Key>
+          <Property Name="DosageDurationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DosageDurationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DosageFrequency">
+          <Key>
+            <PropertyRef Name="DosageFrequencyId" />
+          </Key>
+          <Property Name="DosageFrequencyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DosageFrequencyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeId" />
@@ -69,6 +90,23 @@
           <Property Name="Location" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedOn" Type="datetime" />
         </EntityType>
+        <EntityType Name="Imaging">
+          <Key>
+            <PropertyRef Name="ImagingId" />
+          </Key>
+          <Property Name="ImagingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImagingName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LabInvestigation">
+          <Key>
+            <PropertyRef Name="LabInvestigationId" />
+          </Key>
+          <Property Name="LabInvestigationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LabInvestigationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="NormalValue" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Operation">
           <Key>
             <PropertyRef Name="OperationId" />
@@ -76,6 +114,14 @@
           <Property Name="OperationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="OperationName" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OtherAdvise">
+          <Key>
+            <PropertyRef Name="OtherAdviseId" />
+          </Key>
+          <Property Name="OtherAdviseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OtherAdviseName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -169,6 +215,11 @@
           <EntitySet Name="Contacts" EntityType="PDMSDataModel.Contact" />
           <EntitySet Name="Services" EntityType="PDMSDataModel.Service" />
           <EntitySet Name="Diagnoses" EntityType="PDMSDataModel.Diagnosis" />
+          <EntitySet Name="DosageDurations" EntityType="PDMSDataModel.DosageDuration" />
+          <EntitySet Name="DosageFrequencies" EntityType="PDMSDataModel.DosageFrequency" />
+          <EntitySet Name="Imagings" EntityType="PDMSDataModel.Imaging" />
+          <EntitySet Name="LabInvestigations" EntityType="PDMSDataModel.LabInvestigation" />
+          <EntitySet Name="OtherAdvises" EntityType="PDMSDataModel.OtherAdvise" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -303,6 +354,47 @@
           </Key>
           <Property Type="Int32" Name="DiagnosisId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="DiagnosisName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DosageDuration">
+          <Key>
+            <PropertyRef Name="DosageDurationId" />
+          </Key>
+          <Property Type="Int32" Name="DosageDurationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DosageDurationName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DosageFrequency">
+          <Key>
+            <PropertyRef Name="DosageFrequencyId" />
+          </Key>
+          <Property Type="Int32" Name="DosageFrequencyId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DosageFrequencyName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Imaging">
+          <Key>
+            <PropertyRef Name="ImagingId" />
+          </Key>
+          <Property Type="Int32" Name="ImagingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ImagingName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LabInvestigation">
+          <Key>
+            <PropertyRef Name="LabInvestigationId" />
+          </Key>
+          <Property Type="Int32" Name="LabInvestigationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LabInvestigationName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NormalValue" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OtherAdvise">
+          <Key>
+            <PropertyRef Name="OtherAdviseId" />
+          </Key>
+          <Property Type="Int32" Name="OtherAdviseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OtherAdviseName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
@@ -454,6 +546,52 @@
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="DiagnosisName" ColumnName="DiagnosisName" />
                 <ScalarProperty Name="DiagnosisId" ColumnName="DiagnosisId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DosageDurations">
+            <EntityTypeMapping TypeName="PDMSDataModel.DosageDuration">
+              <MappingFragment StoreEntitySet="DosageDuration">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DosageDurationName" ColumnName="DosageDurationName" />
+                <ScalarProperty Name="DosageDurationId" ColumnName="DosageDurationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DosageFrequencies">
+            <EntityTypeMapping TypeName="PDMSDataModel.DosageFrequency">
+              <MappingFragment StoreEntitySet="DosageFrequency">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DosageFrequencyName" ColumnName="DosageFrequencyName" />
+                <ScalarProperty Name="DosageFrequencyId" ColumnName="DosageFrequencyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imagings">
+            <EntityTypeMapping TypeName="PDMSDataModel.Imaging">
+              <MappingFragment StoreEntitySet="Imaging">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ImagingName" ColumnName="ImagingName" />
+                <ScalarProperty Name="ImagingId" ColumnName="ImagingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LabInvestigations">
+            <EntityTypeMapping TypeName="PDMSDataModel.LabInvestigation">
+              <MappingFragment StoreEntitySet="LabInvestigation">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="NormalValue" ColumnName="NormalValue" />
+                <ScalarProperty Name="LabInvestigationName" ColumnName="LabInvestigationName" />
+                <ScalarProperty Name="LabInvestigationId" ColumnName="LabInvestigationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherAdvises">
+            <EntityTypeMapping TypeName="PDMSDataModel.OtherAdvise">
+              <MappingFragment StoreEntitySet="OtherAdvise">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="OtherAdviseName" ColumnName="OtherAdviseName" />
+                <ScalarProperty Name="OtherAdviseId" ColumnName="OtherAdviseId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
