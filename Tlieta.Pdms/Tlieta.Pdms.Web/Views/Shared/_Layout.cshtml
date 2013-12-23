@@ -2,42 +2,97 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
 </head>
 <body>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <img src="~/Images/TLIETA125.png" /></p>
-            </div>
-            <div class="float-right">
-                <h2>Patient Data Management System</h2>
+    <div id="bodyBg">
+        <!--Header Starts-->
+        <div class="header">
+            <div class="mainBody">
+                <div class="logo"></div>
+                <div class="userInfo">
+                    <div class="logInfo">Last Logged : @DateTime.Now.ToShortTimeString() </div>
+                    <ul class="userAccount">
+                        <li><a href="#">Welcome <strong>Sachin</strong> </a>
+                            <ul class="userLinks">
+                                <li>@Html.ActionLink("Change password", "ChangePassword", "Home")</li>
+                                <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="@Url.Action("Entry", "Home")" class="homeBtn"></a>
+                </div>
             </div>
         </div>
-    </header>
-    <div id="body">
-        <section class="content-wrapper main-content clear-fix">
-            @RenderBody()
-        </section>
-    </div>
+        <!-- Header ends -->
 
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - Tlieta Solutions</p>
+        <div class="mainBody">
+            <div class="pageCenter">
+                <!--Main Navigation Starts here-->
+                <div class="nav">
+                   <ul id="nav">
+                        <li class="first">
+                            <a>Administration</a>
+                            <ul class="firstLevel">
+                                 <li><a href="#">Link 1</a></li>
+                                 <li><a href="#">Link 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a>Patient Forms</a>
+                            <ul class="firstLevel">
+                               <li><a>Level 1</a>
+                                   <ul class="secondLevel">
+                                    <li><a href="#">Level 2</a></li>
+                                </ul>
+                               </li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a>Reports View</a>
+                            <ul class="firstLevel">
+                                 <li><a href="#">Link 1</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a>Other Service Request</a>
+                            <ul class="firstLevel">
+                                 <li><a href="#">Link 1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                   </div>
+                <!--Main Navigation ends here-->
+
+                <!--Content-->
+                <div class="mainCon">
+                    <div class="contentCon  nopadd wd100">
+                        @RenderBody()
+                    </div>
+                </div>
+
             </div>
         </div>
-    </footer>
+    </div>
+     
+    <!-- Footer starts -->
+    <div class="footer">
+    <div class="mainBody">
+    	<div class="lhs"> <a href="#"> Press Releases </a> <span>|</span> <a href="#"> Privacy Policy</a>   <span>|</span>    <a href="#"> Terms Of Use</a>  <span>|</span>   Contact Us </div>
+        <div class="rhs">Tlieta Solutions Private Ltd © @DateTime.Now.Year</div>
+        </div>
+    </div>
+   <!-- Footer ends-->
+
     <script type="text/javascript">
         $(function () {
             var alertwindow = $("#PDMSAlert").kendoWindow({
@@ -47,6 +102,8 @@
                 modal: true,
                 width: "300px"
             }).data("kendoWindow");
+
+            $("#menu").kendoMenu();
         });
         function PDMSAlert(m) {
             var alertwindow = $("#PDMSAlert").data('kendoWindow');

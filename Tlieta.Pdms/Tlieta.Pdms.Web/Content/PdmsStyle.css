@@ -15,7 +15,7 @@ body {
 }
 
 #bodyBg {
-    background: url(../images/page-bg.png) 20px 0 repeat-x fixed #10442d;
+    background-color: #3276b1;
     width: 100%;
     float: left;
 }
@@ -181,8 +181,7 @@ a.ic-preferences {
 
 
 .footer {
-    background: url("../images/footer-bg.png") repeat-x scroll 0 0 transparent;
-    color: #10442D;
+    color: #3276b1;
     float: left;
     font-size: 11px;
     padding: 9px 0;
@@ -190,7 +189,7 @@ a.ic-preferences {
 }
 
     .footer a {
-        color: #10442D;
+        color: #3276b1;
     }
 
         .footer a:hover {
@@ -198,7 +197,7 @@ a.ic-preferences {
         }
 
     .footer span {
-        color: #226c4b;
+        color: #3276b1;
         padding: 0 4px;
     }
 
@@ -218,14 +217,17 @@ a.ic-preferences {
 }
 
 .header {
-    background: url("../images/header-bg.png") repeat-x scroll 0 0 transparent;
+    background-color:#fff;
     float: left;
     padding-bottom: 5px;
     width: 100%;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:#3276b1;
 }
 
     .header .logo {
-        background: url("../images/logo.png") repeat scroll 0 0 transparent;
+        background: url("../images/TLIETA125.png") no-repeat scroll 0 0 transparent;
         float: left;
         height: 70px;
         margin-left: 10px;
@@ -257,7 +259,7 @@ ul.userAccount {
     ul.userAccount a {
         background: url(../images/downarrow.png) right 2px no-repeat;
         padding: 0 16px 2px 0;
-        color: #10442d;
+        color: #3276b1;
         float: left;
         display: block;
     }
@@ -349,7 +351,7 @@ ul.userLinks, #moduleTop ul {
 
 ul.userAccount li:hover ul {
     display: block;
-    background-color: #4f9a79;
+    background-color: #3276b1;
     z-index: 20;
     right: 0;
     top: 16px;
@@ -365,7 +367,7 @@ ul.userAccount li:hover a {
 
 ul.userAccount li:hover ul, #moduleTop li:hover ul {
     text-align: left;
-    border: 2px solid #4f9a79;
+    border: 2px solid #67afe9;
 }
 
     ul.userAccount li:hover ul li, #moduleTop li:hover ul li {
@@ -382,12 +384,12 @@ ul.userAccount li:hover ul, #moduleTop li:hover ul {
         text-transform: capitalize;
         color: #fff;
         font-size: 12px;
-        border-bottom: 1px solid #b8d8ca;
+        border-bottom: 1px solid #67afe9;
         width: 110px;
     }
 
         ul.userAccount li:hover ul li a:hover, #moduleTop li:hover ul a:hover {
-            background-color: #e3e5e4;
+            background-color: #ebebeb;
             color: #666;
             text-decoration: none;
         }
@@ -402,7 +404,7 @@ ul.userAccount li:hover ul, #moduleTop li:hover ul {
 
 #moduleTop li:hover a {
     color: #c1ffe5;
-    border-color: #1db675;
+    border-color: #67afe9;
 }
 
 #moduleTop li:hover ul a {
@@ -415,7 +417,7 @@ ul.userAccount li:hover ul, #moduleTop li:hover ul {
 }
 
 #moduleTop li:hover ul {
-    border: 2px solid #97c4b1;
+    border: 2px solid #67afe9;
 }
 
     #moduleTop li:hover ul a:hover {
@@ -446,9 +448,9 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 
 
 .homeBtn {
-    background: url(../images/ic-home.png) 0px 3px no-repeat;
+    background: url(../images/home.png) 0px 3px no-repeat;
     width: 21px;
-    height: 20px;
+    height: 26px;
     float: right;
     display: block;
     margin-right: 15px;
@@ -459,14 +461,12 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
     }
 
 .nav {
-    background: url("../images/mainmenu-bg.png") 0 0 repeat-x scroll transparent;
     float: left;
     width: 100%;
 }
 
     .nav ul {
         list-style: none inside;
-        background: url(../images/mainmenu-bg.png) 0 0 no-repeat;
         float: left;
     }
 
@@ -486,8 +486,8 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
             }
 
     .nav a {
-        color: #104A30;
-        border-bottom: 3px solid #e2e4e3;
+        color: #3276b1;
+        border-bottom: 3px solid #3276b1;
         font-size: 13px;
         font-weight: bold;
         text-transform: uppercase;
@@ -498,12 +498,12 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
     }
 
         .nav a:hover {
-            color: #009933;
-            border-color: #107c4d;
+            color: #67afe9;
+            border-color: #67afe9;
         }
 
         .nav a.active {
-            border-bottom: 3px solid #107c4d;
+            border-bottom: 3px solid #67afe9;
         }
 
 
@@ -530,7 +530,7 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 
 #nav li:hover ul.firstLevel {
     display: block;
-    background-color: #4f9a79;
+    background-color: #ffffff;
     z-index: 20;
 }
 
@@ -539,14 +539,14 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 }
 
 #nav li:hover a {
-    border-bottom: 3px solid #107c4d;
-    color: #009933;
+    border-bottom: 3px solid #67afe9;
+    color: #67afe9;
 }
 
 #nav li:hover ul {
     min-width: 200px;
     text-align: left;
-    border: 4px solid #b8d8ca;
+    border: 4px solid #ebebeb;
     box-shadow: 2px 3px 3px #666;
 }
 
@@ -560,14 +560,14 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
         padding: 8px 6px;
         text-align: left;
         text-transform: capitalize;
-        color: #fff;
+        color: #3276b1;
         font-size: 12px;
-        border-bottom: 1px solid #b8d8ca;
+        border-bottom: 1px solid #67afe9;
     }
 
     #nav li:hover ul li a:hover {
-        background-color: #e3e5e4;
-        color: #666;
+        background-color: #67afe9;
+        color: #fff;
         text-decoration: none;
     }
 
@@ -577,7 +577,7 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 }
 
 #nav li li:hover ul.secondLevel {
-    background-color: #e3e5e4;
+    background-color: #fff;
     display: block;
     top: 0;
     left: 210px;
@@ -588,8 +588,8 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 }
 
 #nav li li:hover a {
-    background-color: #e3e5e4;
-    color: #666;
+    background-color: #67afe9;
+    color: #fff;
 }
 
 #nav li li:hover ul {
@@ -610,15 +610,15 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
         text-align: left;
         text-transform: capitalize;
         font-size: 12px;
-        border-bottom: 1px solid #e3e5e4;
-        background-color: #5fa385;
-        color: #efefef;
+        border-bottom: 1px solid #67afe9;
+        background-color: #fff;
+        color: #3276b1;
     }
 
     #nav li li:hover ul li a:hover {
-        background-color: #b8d8ca;
+        background-color: #67afe9;
         text-decoration: none;
-        color: #666;
+        color: #fff;
     }
 
 
@@ -1616,7 +1616,9 @@ a.mainAction {
 
 
 .mainActionBtn {
-    background: url(../images/btn-grey.png) 0 0 no-repeat;
+    /*background: url(../images/btn-grey.png) 0 0 no-repeat;*/
+    background-color:#559dcf;
+    border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
     width: 76px;
@@ -1629,8 +1631,10 @@ a.mainAction {
 }
 
     .mainActionBtn:hover {
-        background-image: url(../images/btn-grey-o.png);
-        color: #105939;
+        /*background-image: url(../images/btn-grey-o.png);*/
+        background-color:#fff;
+        border: 1px solid #559dcf;
+        color: #3276b1;
     }
 
 .mainActionBtnB {
@@ -1795,8 +1799,8 @@ a.mainAction {
 
     .loginPanel .loginInner {
         float: left;
-        background: url(../images/login-bg.png) 0 0 repeat-x #d8f3e7;
-        border: 2px solid #94c3ae;
+        /*background: url(../images/login-bg.png) 0 0 repeat-x #d8f3e7;*/
+        border: 2px solid #559dcf;
         padding: 35px 10px 20px;
         border-radius: 12px;
     }

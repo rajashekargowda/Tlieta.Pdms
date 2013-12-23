@@ -17,5 +17,29 @@ namespace Tlieta.Pdms.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult SessionTimeout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SessionTimeout()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        
+        public ActionResult Logout()
+        {
+            ModelState.AddModelError("LoginException", "Successfully logged out !");
+            FormsAuthentication.SignOut();
+            HttpContext.Session.RemoveAll();
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
     }
 }
