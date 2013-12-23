@@ -8,7 +8,7 @@
 }
 
 body {
-    border-top: 2px solid #108552;
+    border-top: 2px solid #3276b1;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #444;
@@ -258,7 +258,7 @@ ul.userAccount {
 
     ul.userAccount a {
         background: url(../images/downarrow.png) right 2px no-repeat;
-        padding: 0 16px 2px 0;
+        padding: 0 16px 2px 10px;
         color: #3276b1;
         float: left;
         display: block;
@@ -1616,7 +1616,6 @@ a.mainAction {
 
 
 .mainActionBtn {
-    /*background: url(../images/btn-grey.png) 0 0 no-repeat;*/
     background-color:#559dcf;
     border: 1px solid #559dcf;
     font-size: 13px;
@@ -1631,14 +1630,14 @@ a.mainAction {
 }
 
     .mainActionBtn:hover {
-        /*background-image: url(../images/btn-grey-o.png);*/
         background-color:#fff;
         border: 1px solid #559dcf;
         color: #3276b1;
     }
 
 .mainActionBtnB {
-    background: url(../images/btn-grey-b.png) 0 0 no-repeat;
+    background-color:#559dcf;
+    border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
     width: 147px;
@@ -1651,12 +1650,14 @@ a.mainAction {
 }
 
     .mainActionBtnB:hover {
-        background-image: url(../images/btn-grey-b-o.png);
-        color: #105939;
+        background-color:#fff;
+        border: 1px solid #559dcf;
+        color: #3276b1;
     }
 
 .mainActionBtnBgst {
-    background: url(../images/btn-grey-bgst.png) 0 0 no-repeat;
+    background-color:#559dcf;
+    border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
     width: 235px;
@@ -1669,8 +1670,9 @@ a.mainAction {
 }
 
     .mainActionBtnBgst:hover {
-        background-image: url(../images/btn-grey-bgst-o.png);
-        color: #105939;
+        background-color:#fff;
+        border: 1px solid #559dcf;
+        color: #3276b1;
     }
 
 
