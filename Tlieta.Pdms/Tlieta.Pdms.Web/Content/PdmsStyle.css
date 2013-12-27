@@ -31,10 +31,14 @@ input[type=text], input[type=email], input[type=url], input[type=password], sele
     padding: 3px;
     width: 238px;
     font-size: 12px;
-    float: left; height:auto; line-height:auto; text-indent:0
+    float: left;
+    height: auto;
+    line-height: auto;
+    text-indent: 0;
 }
+
 .k-autocomplete {
-    float:left;
+    float: left;
 }
 
 input[type=checkbox] {
@@ -140,7 +144,8 @@ a.addNew {
     padding: 4px;
     font-weight: bold;
     color: #0e7848;
-    font-size: 16px; line-height:1.5;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 a.ic-lookup {
@@ -217,13 +222,13 @@ a.ic-preferences {
 }
 
 .header {
-    background-color:#fff;
+    background-color: #fff;
     float: left;
     padding-bottom: 5px;
     width: 100%;
-    border-bottom-style:solid;
-    border-bottom-width:1px;
-    border-bottom-color:#3276b1;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #3276b1;
 }
 
     .header .logo {
@@ -1205,9 +1210,10 @@ label {
     float: left;
     width: 269px;
 }
-.fieldInput span {
-    float:left;
-}
+
+    .fieldInput span {
+        float: left;
+    }
 
 .fieldLabel input[type="checkbox"] {
     float: none;
@@ -1327,21 +1333,24 @@ label {
 }
 
 .checkCol .smlCol {
-    width:60px;
-    
+    width: 60px;
 }
+
 .checkCol .largCol {
-    width:185px;
-    
+    width: 185px;
 }
-.checkCol .largCol .formRow {
-        padding:0 0 4px 4px;
+
+    .checkCol .largCol .formRow {
+        padding: 0 0 4px 4px;
     }
-    .checkCol .largCol .formRow label {
-        width:32px; font-weight:normal;
-    }
+
+        .checkCol .largCol .formRow label {
+            width: 32px;
+            font-weight: normal;
+        }
+
     .checkCol .largCol input[type="text"] {
-        width:40px;
+        width: 40px;
     }
 
 .dataDis {
@@ -1482,7 +1491,7 @@ label {
     }
 
 .k-numeric-wrap .k-select {
-    width:21px;
+    width: 21px;
 }
 
 /*Form Area ends*/
@@ -1616,7 +1625,7 @@ a.mainAction {
 
 
 .mainActionBtn {
-    background-color:#559dcf;
+    background-color: #559dcf;
     border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
@@ -1630,13 +1639,13 @@ a.mainAction {
 }
 
     .mainActionBtn:hover {
-        background-color:#fff;
+        background-color: #fff;
         border: 1px solid #559dcf;
         color: #3276b1;
     }
 
 .mainActionBtnB {
-    background-color:#559dcf;
+    background-color: #559dcf;
     border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
@@ -1650,13 +1659,13 @@ a.mainAction {
 }
 
     .mainActionBtnB:hover {
-        background-color:#fff;
+        background-color: #fff;
         border: 1px solid #559dcf;
         color: #3276b1;
     }
 
 .mainActionBtnBgst {
-    background-color:#559dcf;
+    background-color: #559dcf;
     border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
@@ -1670,7 +1679,7 @@ a.mainAction {
 }
 
     .mainActionBtnBgst:hover {
-        background-color:#fff;
+        background-color: #fff;
         border: 1px solid #559dcf;
         color: #3276b1;
     }
@@ -1984,8 +1993,9 @@ ul.TabbedPanelsTabGroup {
     padding: 0;
     background: #f1f1f1;
 }
+
 #tabstrip .k-editor iframe.k-content {
-    border:none;
+    border: none;
 }
 
 .k-tabstrip #tabstrip-2 {
@@ -2158,6 +2168,7 @@ table#RuletblSummary {
 .marBtm {
     margin-bottom: 10px;
 }
+
 .marTop4 {
     margin-top: 4px;
 }
@@ -2187,6 +2198,7 @@ input[type=text].smllest {
     width: 80px;
     margin-right: 2px;
 }
+
 input[type=text].smllests {
     width: 40px;
     margin-right: 2px;
@@ -2434,10 +2446,24 @@ div.k-window-content {
 .pageHeader {
     color: white;
 }
-.customtable table{ border:1px solid #999; background-color:#FFFFFF}
-.customtable table td, #customTableStyle table th{ padding:4px;  text-align:left}
-.customtable table th{ background-color:#CCCCCC;}
-.customtable .altRow{ background-color:#e5f3ed}
+
+.customtable table {
+    border: 1px solid #999;
+    background-color: #FFFFFF;
+}
+
+    .customtable table td, #customTableStyle table th {
+        padding: 4px;
+        text-align: left;
+    }
+
+    .customtable table th {
+        background-color: #CCCCCC;
+    }
+
+.customtable .altRow {
+    background-color: #e5f3ed;
+}
 /* Added BY Venkat.D */
 
 /*Table - Only for HTML - Remove this from the application CSS*/
@@ -2703,8 +2729,32 @@ input[type="text"].dateInput {
 
 /*Rms Print styles*/
 
-.docType{ background: 0 0 no-repeat; width:19px; height:24px; float:left}
-          .docWord{ background:url(../images/ico-doc.png)}
-          .docXsl{ background:url(../images/ico-excel.png)}
-          .docPdf{ background:url(../images/ico-pdf.png)}
+.docType {
+    background: 0 0 no-repeat;
+    width: 19px;
+    height: 24px;
+    float: left;
+}
 
+.docWord {
+    background: url(../images/ico-doc.png);
+}
+
+.docXsl {
+    background: url(../images/ico-excel.png);
+}
+
+.docPdf {
+    background: url(../images/ico-pdf.png);
+}
+
+
+
+
+input.ng-invalid {
+    border-color: #e2323a;
+}
+
+    input.ng-invalid.ng-dirty {
+        border-color: #e2323a;
+    }

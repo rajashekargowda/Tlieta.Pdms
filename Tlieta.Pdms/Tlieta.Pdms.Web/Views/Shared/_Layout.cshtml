@@ -1,39 +1,41 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="tlieta">
 <head>
     <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/angular-kendo.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/Controllers/headercontroller.js")"></script>
     <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
-    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
 </head>
 <body>
     <div id="bodyBg">
         <!--Header Starts-->
-        <div class="header">
+        <div class="header" ng-controller="headercontroller">
             <div class="mainBody">
                 <div class="logo"></div>
                 <div class="userInfo">
                     <ul class="userAccount">
-                        <li><a href="#">Welcome <strong>Sachin</strong> </a>
+                        <li><a href="#">Welcome <strong>{{username}}</strong> </a>
                             <ul class="userLinks">
-                                <li>@Html.ActionLink("Change password", "ChangePassword", "Home")</li>
-                                <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                                <li><a href="#" ng-click="changepassword()">Change password</a></li>
+                                <li><a href="#" ng-click="logout()">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <a href="@Url.Action("Entry", "Home")" class="homeBtn"></a>
+                    <a href="#" class="homeBtn" ng-click="home()"></a>
                 </div>
             </div>
         </div>
         <!-- Header ends -->
-
         <div class="mainBody">
             <div class="pageCenter">
                 <!--Main Navigation Starts here-->
@@ -91,31 +93,5 @@
         </div>
     </div>
    <!-- Footer ends-->
-
-    <script type="text/javascript">
-        $(function () {
-            var alertwindow = $("#PDMSAlert").kendoWindow({
-                title: "Alert",
-                visible: false,
-                iframe: true,
-                modal: true,
-                width: "300px"
-            }).data("kendoWindow");
-
-            $("#menu").kendoMenu();
-        });
-        function PDMSAlert(m) {
-            var alertwindow = $("#PDMSAlert").data('kendoWindow');
-            $("#pdmsalertmessage").html("<p>" + m + "</p>");
-            alertwindow.center();
-            alertwindow.open();
-            alertwindow.toFront();
-        }
-
-    </script>
-    <div id="PDMSAlert" >
-        <div id="pdmsalertmessage" class="padd10" ></div>
-       <div class="formAction" ><button id="btnOk" onclick="$('#PDMSAlert').data('kendoWindow').close();" class="greeenGrBtn clear" type="button" role="button" aria-disabled="false">OK</button></div>
-    </div>  
 </body>
 </html>
