@@ -6,15 +6,16 @@
     <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-kendo.js")"></script>
-    @*<script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>*@
-    @*<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>*@
-    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script src="@Url.Content("~/Scripts/Common.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
-    <script src="@Url.Content("~/Scripts/AngularJS/Controllers/headercontroller.js")"></script>
     <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/AngularJS/Controllers/headercontroller.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/Controllers/menucontroller.js")"></script>
 </head>
 <body>
     <div id="bodyBg">
@@ -39,12 +40,12 @@
         <div class="mainBody">
             <div class="pageCenter">
                 <!--Main Navigation Starts here-->
-                <div class="nav">
+                <div class="nav" ng-controller="menucontroller">
                    <ul id="nav">
                         <li class="first">
                             <a>Administration</a>
                             <ul class="firstLevel">
-                                 <li><a href="#">Link 1</a></li>
+                                 <li><a href="#" ng-click="redirect('contact')">Contact</a></li>
                                  <li><a href="#">Link 2</a></li>
                             </ul>
                         </li>

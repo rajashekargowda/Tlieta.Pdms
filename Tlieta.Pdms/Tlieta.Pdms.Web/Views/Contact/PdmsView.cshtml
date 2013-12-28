@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/AngularJS/Controllers/contactcontroller.js")"></script>
+<div class="mainBlock marBtm">
+    <h2><span>
+        <img src="~/Images/contact.png" /></span>Contacts</h2>
+    <div class="searchBlock">
+        <ul id="moduleTop"></ul>
+    </div>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea" ng-controller="contactcontroller">
+                    <form name="formContact" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span ng-show="!formContact.$invalid">Valid data.</span>
+                                <span ng-show="formContact.ContactName.$error.required" class="required">( * ) Mandatory fields. </span>
+                                <span ng-show="formContact.Email.$invalid" class="required">Enter valid email. </span>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Name<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="ContactId" type="hidden" name="ContactId" ng-model="contact.ContactId" />
+                                    <input id="ContactName" type="text" name="ContactName" ng-model="contact.ContactName" required />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Company :</label>
+                                <div class="fieldInput"><input id="Company" type="text" name="Company" ng-model="contact.Company" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Designation :</label>
+                                <div class="fieldInput"><input id="Designation" type="text" name="Designation" ng-model="contact.Designation" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel"></label>
+                                <div class="fieldInput"></div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">&nbsp;</label>
+                                <div class="fieldInput">
+                                    <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Add Contact</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Address :</label>
+                                <div class="fieldInput"><textarea id="Address" name="Address" ng-model="contact.Address" rows="3" ></textarea>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Phone :</label>
+                                <div class="fieldInput"><input id="Mobile" type="text" name="Mobile" ng-model="contact.Mobile" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Email :</label>
+                                <div class="fieldInput"><input type="email" id="Email" name="Email" ng-model="contact.Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="gridArea">
+                @(Html.Kendo().Grid<Tlieta.Pdms.Web.Models.Contact>()
+                        .Name("ContactGrid")
+                        .Columns(
+                        columns =>
+                        {
+                            columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
+                            columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
+                            columns.Bound(p => p.ContactId).Visible(false);
+                            columns.Bound(p => p.ContactName).Title("Contact Name");
+                            columns.Bound(p => p.Company).Title("Company");
+                            columns.Bound(p => p.Mobile).Title("Phone");
+                            columns.Bound(p => p.Email).Title("Email");
+                            columns.Bound(p => p.Designation).Title("Designation");
+                        })
+                  .Scrollable()
+                  .Filterable(filterable => filterable
+                                .Extra(false)
+                                .Operators(operators => operators
+                                    .ForString(str => str.Clear()
+                                    .StartsWith("Starts With")
+                                    .Contains("Contains")
+                              )))
+                  .Pageable()
+                  .DataSource(dataSource => dataSource
+                      .Ajax().PageSize(10)
+                      .Model(model =>
+                      {
+                          model.Id(p => p.ContactId);
+                          model.Field(p => p.ContactId);
+                          model.Field(p => p.ContactName);
+                          model.Field(p => p.Company);
+                          model.Field(p => p.Mobile);
+                          model.Field(p => p.Email);
+                          model.Field(p => p.Designation);
+                      })
+                      .Read(read => read.Action("Read", "Contact"))
+                  )
+              )
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Edit(e) {
+        ('#ContactId').val('2');
+        alert('c');
+        @*var currentDataItem = null;
+        var dataItem = this.dataItem($(e.target).closest("tr"));
+        var ID = dataItem.ID;
+        location = "@Url.Action("CompanyMasterView", "Company")" + "?ids=" + ID;*@
+    }
+
+    function Delete(e) {
+        var currentDataItem = null;
+        var dataItem = this.dataItem($(e.target).closest("tr"));
+        var ID = dataItem.ID;
+        var entityGrid = $("#CompanyMasterGrid").data("kendoGrid");
+        var data = entityGrid.dataSource.data();
+        var totalNumber = data.length;
+        divValidation.style.display = "none";
+        var retVal = confirm('Are you sure you want to delete the record?');
+        if (retVal) {
+
+            var url = '/Company/Delete?id=' + ID;
+            $.ajax({
+                url: url,
+                data: {}, //parameters go here in object literal form
+                type: 'POST',
+                datatype: 'json',
+                success: function (data) {
+                    alert("Record deleted Successfuly");
+                },
+                error: function (error) {
+
+                    alert("Record is in use.");
+                }
+            });
+
+            var grid = $("#CompanyMasterGrid").data("kendoGrid");
+            grid.dataSource.read();
+            grid.dataSource.page(1);
+
+        }
+        else {
+            return false;
+        }
+    }
+</script>
