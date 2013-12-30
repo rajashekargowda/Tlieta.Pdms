@@ -2352,25 +2352,25 @@ div.k-window-content {
 }
 
 .gridArea .k-grid-CustomEdit {
-    background: url(../images/sprite.png) -32px 0 no-repeat;
+    background: url(../images/edit.png) no-repeat;
     height: 16px;
     width: 16px;
     display: inline-block;
 }
 
     .gridArea .k-grid-CustomEdit:hover {
-        background: url(../images/sprite.png) -32px 0 no-repeat;
+    background: url(../images/edit.png) no-repeat;
     }
 
 .gridArea .k-grid-CustomDelete {
-    background: url(../images/sprite.png) -32px -16px no-repeat;
+    background: url(../images/delete.png) no-repeat;
     height: 16px;
     width: 16px;
     display: inline-block;
 }
 
     .gridArea .k-grid-CustomDelete:hover {
-        background: url(../images/sprite.png) -32px -16px no-repeat;
+        background: url(../images/delete.png) no-repeat;
     }
 
 /*.k-pager-numbers .k-state-selected {

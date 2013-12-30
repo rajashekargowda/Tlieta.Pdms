@@ -20,7 +20,7 @@ namespace Tlieta.Pdms.Web.Models
             return contacts;
         }
 
-        public bool AddContact(Contact model)
+        public bool Add(Contact model)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace Tlieta.Pdms.Web.Models
             catch { return false; }
         }
 
-        public bool UpdateContact(Contact model)
+        public bool Update(Contact model)
         {
             try
             {
@@ -48,6 +48,18 @@ namespace Tlieta.Pdms.Web.Models
                 }
             }
             catch { return false; }
+        }
+
+        public bool Delete(int Id)
+        {
+            var result = entities.Contacts.Where(x => x.ContactId == Id);
+            if (result.Count() > 0)
+            {
+                Contact contact = result.First();
+                entities.Contacts.Remove(contact);
+                entities.SaveChanges();
+            }
+            return true;
         }
     }
 }

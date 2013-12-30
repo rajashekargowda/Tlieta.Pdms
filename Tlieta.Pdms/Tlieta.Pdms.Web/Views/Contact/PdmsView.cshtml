@@ -5,9 +5,6 @@
 <div class="mainBlock marBtm">
     <h2><span>
         <img src="~/Images/contact.png" /></span>Contacts</h2>
-    <div class="searchBlock">
-        <ul id="moduleTop"></ul>
-    </div>
     <div class="blockCon">
         <div class="padd10">
             <div class="blockCon" id="showblockCon">
@@ -30,12 +27,14 @@
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Company :</label>
-                                <div class="fieldInput"><input id="Company" type="text" name="Company" ng-model="contact.Company" />
+                                <div class="fieldInput">
+                                    <input id="Company" type="text" name="Company" ng-model="contact.Company" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Designation :</label>
-                                <div class="fieldInput"><input id="Designation" type="text" name="Designation" ng-model="contact.Designation" />
+                                <div class="fieldInput">
+                                    <input id="Designation" type="text" name="Designation" ng-model="contact.Designation" />
                                 </div>
                             </div>
                             <div class="formRow">
@@ -45,24 +44,27 @@
                             <div class="formRow">
                                 <label class="fieldLabel">&nbsp;</label>
                                 <div class="fieldInput">
-                                    <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Add Contact</button>
+                                    <button id="Save" class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Save Contact</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="formRow">
                                 <label class="fieldLabel">Address :</label>
-                                <div class="fieldInput"><textarea id="Address" name="Address" ng-model="contact.Address" rows="3" ></textarea>
+                                <div class="fieldInput">
+                                    <textarea id="Address" name="Address" ng-model="contact.Address" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Phone :</label>
-                                <div class="fieldInput"><input id="Mobile" type="text" name="Mobile" ng-model="contact.Mobile" />
+                                <div class="fieldInput">
+                                    <input id="Mobile" type="text" name="Mobile" ng-model="contact.Mobile" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Email :</label>
-                                <div class="fieldInput"><input type="email" id="Email" name="Email" ng-model="contact.Email" />
+                                <div class="fieldInput">
+                                    <input type="email" id="Email" name="Email" ng-model="contact.Email" />
                                 </div>
                             </div>
                         </div>
@@ -82,9 +84,10 @@
                             columns.Bound(p => p.ContactId).Visible(false);
                             columns.Bound(p => p.ContactName).Title("Contact Name");
                             columns.Bound(p => p.Company).Title("Company");
+                            columns.Bound(p => p.Designation).Title("Designation");
+                            columns.Bound(p => p.Address).Title("Address");
                             columns.Bound(p => p.Mobile).Title("Phone");
                             columns.Bound(p => p.Email).Title("Email");
-                            columns.Bound(p => p.Designation).Title("Designation");
                         })
                   .Scrollable()
                   .Filterable(filterable => filterable
@@ -103,9 +106,10 @@
                           model.Field(p => p.ContactId);
                           model.Field(p => p.ContactName);
                           model.Field(p => p.Company);
+                          model.Field(p => p.Designation);
+                          model.Field(p => p.Address);
                           model.Field(p => p.Mobile);
                           model.Field(p => p.Email);
-                          model.Field(p => p.Designation);
                       })
                       .Read(read => read.Action("Read", "Contact"))
                   )
@@ -115,48 +119,45 @@
     </div>
 </div>
 <script type="text/javascript">
+
     function Edit(e) {
-        ('#ContactId').val('2');
-        alert('c');
-        @*var currentDataItem = null;
         var dataItem = this.dataItem($(e.target).closest("tr"));
-        var ID = dataItem.ID;
-        location = "@Url.Action("CompanyMasterView", "Company")" + "?ids=" + ID;*@
+        var scope = angular.element("#ContactName").scope();
+        scope.$apply(function () {
+            scope.contact.ContactId = dataItem.ContactId;
+            scope.contact.ContactName = dataItem.ContactName;
+            scope.contact.Company = dataItem.Company;
+            scope.contact.Designation = dataItem.Designation;
+            scope.contact.Address = dataItem.Address;
+            scope.contact.Mobile = dataItem.Mobile;
+            scope.contact.Email = dataItem.Email;
+        });
+        return false;
     }
 
     function Delete(e) {
-        var currentDataItem = null;
         var dataItem = this.dataItem($(e.target).closest("tr"));
-        var ID = dataItem.ID;
-        var entityGrid = $("#CompanyMasterGrid").data("kendoGrid");
-        var data = entityGrid.dataSource.data();
-        var totalNumber = data.length;
-        divValidation.style.display = "none";
-        var retVal = confirm('Are you sure you want to delete the record?');
+        var retVal = confirm('Are you sure you want to delete the contact?');
         if (retVal) {
-
-            var url = '/Company/Delete?id=' + ID;
+            var url = '/Contact/Delete?id=' + dataItem.ContactId;
             $.ajax({
                 url: url,
-                data: {}, //parameters go here in object literal form
                 type: 'POST',
                 datatype: 'json',
-                success: function (data) {
-                    alert("Record deleted Successfuly");
+                success: function (e) {
+                    RefreshGrid();
+                    RefreshModel();
                 },
                 error: function (error) {
-
-                    alert("Record is in use.");
+                    alert("Record could not be deleted");
                 }
             });
-
-            var grid = $("#CompanyMasterGrid").data("kendoGrid");
-            grid.dataSource.read();
-            grid.dataSource.page(1);
-
         }
-        else {
-            return false;
-        }
+        return false;
+    }
+
+    function RefreshGrid() {
+        var grid = $("#ContactGrid").data("kendoGrid");
+        grid.dataSource.read();
     }
 </script>
