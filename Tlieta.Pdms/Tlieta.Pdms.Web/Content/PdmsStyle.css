@@ -1645,7 +1645,7 @@ a.mainAction {
     border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
-    width: 147px;
+    width: 100px;
     padding: 6px 0;
     *padding: 4px 0;
     color: #fff;
@@ -2754,3 +2754,22 @@ input.ng-invalid {
     input.ng-invalid.ng-dirty {
         border-color: #e2323a;
     }
+
+.CustomEdit {
+    background: url(../images/edit.png) no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    cursor: pointer;
+    border:none;
+    vertical-align:middle;
+}
+.CustomDelete {
+    background: url(../images/delete.png) no-repeat;
+    height: 17px;
+    width: 26px;
+    display: inline-block;
+    cursor: pointer;
+    border:none;
+    vertical-align:middle;
+}

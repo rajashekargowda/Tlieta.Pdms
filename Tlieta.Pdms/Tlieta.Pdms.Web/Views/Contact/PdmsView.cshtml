@@ -44,7 +44,8 @@
                             <div class="formRow">
                                 <label class="fieldLabel">&nbsp;</label>
                                 <div class="fieldInput">
-                                    <button id="Save" class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Save Contact</button>
+                                    <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Save Contact</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshcontact()">Reset</button>
                                 </div>
                             </div>
                         </div>
@@ -124,35 +125,14 @@
         var dataItem = this.dataItem($(e.target).closest("tr"));
         var scope = angular.element("#ContactName").scope();
         scope.$apply(function () {
-            scope.contact.ContactId = dataItem.ContactId;
-            scope.contact.ContactName = dataItem.ContactName;
-            scope.contact.Company = dataItem.Company;
-            scope.contact.Designation = dataItem.Designation;
-            scope.contact.Address = dataItem.Address;
-            scope.contact.Mobile = dataItem.Mobile;
-            scope.contact.Email = dataItem.Email;
+            scope.contact = dataItem;
         });
         return false;
     }
 
     function Delete(e) {
         var dataItem = this.dataItem($(e.target).closest("tr"));
-        var retVal = confirm('Are you sure you want to delete the contact?');
-        if (retVal) {
-            var url = '/Contact/Delete?id=' + dataItem.ContactId;
-            $.ajax({
-                url: url,
-                type: 'POST',
-                datatype: 'json',
-                success: function (e) {
-                    RefreshGrid();
-                    RefreshModel();
-                },
-                error: function (error) {
-                    alert("Record could not be deleted");
-                }
-            });
-        }
+        angular.element("#ContactName").scope().deletecontact(dataItem.ContactId);
         return false;
     }
 
