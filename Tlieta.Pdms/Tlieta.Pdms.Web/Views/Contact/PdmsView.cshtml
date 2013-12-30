@@ -123,6 +123,7 @@
 
     function Edit(e) {
         var dataItem = this.dataItem($(e.target).closest("tr"));
+        //angular.element("#ContactName").scope().editcontact(dataItem);
         var scope = angular.element("#ContactName").scope();
         scope.$apply(function () {
             scope.contact = dataItem;

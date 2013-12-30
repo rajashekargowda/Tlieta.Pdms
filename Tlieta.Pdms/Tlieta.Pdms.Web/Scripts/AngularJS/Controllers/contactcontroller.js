@@ -10,6 +10,11 @@ function contactcontroller($scope) {
         }
     }
 
+    $scope.editcontact = function (selectedcontact) {
+        alert(selectedcontact.ContactId);
+        $scope.contact.ContactName = selectedcontact.ContactName;
+    }
+
     $scope.savecontact = function (contact) {
         $.ajax({
             url: "/Contact/Save",
