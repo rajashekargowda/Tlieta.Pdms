@@ -402,7 +402,6 @@
       <LastGenOutput>PDMSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Images\contact.png" />
-    <Content Include="Images\contacts.ico" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\home.png" />
@@ -420,17 +419,6 @@
       <LastGenOutput>PDMSModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
-    <Content Include="Images\accordintab.gif" />
-    <Content Include="Images\accordintabactive.gif" />
-    <Content Include="Images\animated-overlay.gif" />
-    <Content Include="Images\attachment.png" />
-    <Content Include="Images\btn-grey-b-o.png" />
-    <Content Include="Images\btn-grey-b.png" />
-    <Content Include="Images\btn-grey-bgst-o.png" />
-    <Content Include="Images\btn-grey-bgst.png" />
-    <Content Include="Images\btn-grey-o.png" />
-    <Content Include="Images\btn-grey.png" />
-    <Content Include="Images\call-controls.png" />
     <Content Include="Images\dark-tab-a.png" />
     <Content Include="Images\dark-tab.png" />
     <Content Include="Images\dgreybtn.png" />
@@ -438,49 +426,24 @@
     <Content Include="Images\dropdownarrow.png" />
     <Content Include="Images\error.png" />
     <Content Include="Images\footer-bg.png" />
-    <Content Include="Images\gr-btn-lft-o.png" />
-    <Content Include="Images\gr-btn-lft.png" />
-    <Content Include="Images\gr-btn-right-o.png" />
-    <Content Include="Images\gr-btn-right.png" />
-    <Content Include="Images\grdownarrow.png" />
-    <Content Include="Images\green-btn.png" />
-    <Content Include="Images\green-gr.png" />
-    <Content Include="Images\greenstripgr.png" />
     <Content Include="Images\gridicons.png" />
     <Content Include="Images\head-sep.png" />
     <Content Include="Images\header-bg.png" />
     <Content Include="Images\ic-calendar.png" />
     <Content Include="Images\ic-errormsg.png" />
-    <Content Include="Images\ic-home.png" />
     <Content Include="Images\ic-msg.png" />
     <Content Include="Images\ico-search.png" />
-    <Content Include="Images\lftnav-arrow.png" />
     <Content Include="Images\login-bg.png" />
     <Content Include="Images\login-shadow.png" />
-    <Content Include="Images\logo.png" />
     <Content Include="Images\lookup-icon.png" />
-    <Content Include="Images\maillogo.jpg" />
-    <Content Include="Images\mainaction-btn-left-o.png" />
-    <Content Include="Images\mainaction-btn-left.png" />
-    <Content Include="Images\mainaction-btn-right-o.png" />
-    <Content Include="Images\mainaction-btn-right.png" />
-    <Content Include="Images\mainbtn-gr-o.png" />
-    <Content Include="Images\mainbtn-gr.png" />
     <Content Include="Images\mainmenu-bg.png" />
     <Content Include="Images\menu-shadow.png" />
     <Content Include="Images\page-bg.png" />
-    <Content Include="Images\pdf-viwerscreen.png" />
-    <Content Include="Images\pdf-viwerscreen2.png" />
-    <Content Include="Images\pdf-viwerscreen3.png" />
     <Content Include="Images\phbtn-bg.png" />
     <Content Include="Images\phbtnbg-green.png" />
     <Content Include="Images\phbtnbg-red.png" />
     <Content Include="Images\red-btn.png" />
     <Content Include="Images\redstripgr.png" />
-    <Content Include="Images\rich-text.png" />
-    <Content Include="Images\richtext-editor-mail.png" />
-    <Content Include="Images\sampleimg.png" />
-    <Content Include="Images\samplepdf.png" />
     <Content Include="Images\sprite.png" />
     <Content Include="Images\subnav-bg.png" />
     <Content Include="Images\subnav-left.png" />
@@ -488,9 +451,6 @@
     <Content Include="Images\texteditor-toolbar.jpg" />
     <Content Include="Images\TLIETA.png" />
     <Content Include="Images\TLIETA125.png" />
-    <Content Include="Images\tool-audit.png" />
-    <Content Include="Images\tool-home.png" />
-    <Content Include="Images\tool-reports.png" />
     <Content Include="Images\toptab-a.png" />
     <Content Include="Images\toptab.png" />
     <Content Include="Images\trans.png" />
@@ -643,8 +603,6 @@
     <Content Include="Views\Web.config">
     </Content>
     <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
