@@ -11,7 +11,7 @@ namespace Tlieta.Pdms.Web.Controllers
 {
     public class ContactController : Controller
     {
-        public ActionResult PdmsView()
+        public ActionResult Manage()
         {
             return View();
         }

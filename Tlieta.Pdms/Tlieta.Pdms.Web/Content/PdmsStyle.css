@@ -1095,7 +1095,6 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
         }
 
     .gridArea .k-grid tbody .k-button, .k-ie8 .k-grid tbody button.k-button {
-        min-width: 18px;
         margin: 0;
     }
 
@@ -1645,7 +1644,7 @@ a.mainAction {
     border: 1px solid #559dcf;
     font-size: 13px;
     text-align: center;
-    width: 100px;
+    width: 147px;
     padding: 6px 0;
     *padding: 4px 0;
     color: #fff;

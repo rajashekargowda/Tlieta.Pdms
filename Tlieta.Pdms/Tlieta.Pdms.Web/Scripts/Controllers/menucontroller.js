@@ -2,6 +2,6 @@
 function menucontroller($scope) {
     $scope.redirect = function (menu) {
         if (menu == 'contact')
-            location.href = '/Contact/PdmsView/';
+            location.href = '/Contact/Manage/';
     };
 }
