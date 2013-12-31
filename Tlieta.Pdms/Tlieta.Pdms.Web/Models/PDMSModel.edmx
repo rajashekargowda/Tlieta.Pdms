@@ -4,9 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PDMSDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PDMSDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PDMSDatabaseModelStoreContainer">
           <EntitySet Name="Contact" EntityType="PDMSDatabaseModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patient" EntityType="PDMSDatabaseModel.Store.Patient" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Contact">
           <Key>
@@ -21,13 +22,42 @@
           <Property Name="Designation" Type="nvarchar" MaxLength="150" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Prefix" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="KnownIllness" Type="nvarchar" MaxLength="500" />
+          <Property Name="KnownAllergy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Medications" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyHistory" Type="nvarchar" MaxLength="500" />
+          <Property Name="SocioEconomicStatus" Type="nvarchar" MaxLength="500" />
+          <Property Name="Diet" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsSmoker" Type="bit" />
+          <Property Name="SmokingInfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsAlchoholic" Type="bit" />
+          <Property Name="AlchoholInfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MedicalInsurance" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PDMSDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PDMSDatabaseEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="PDMSDatabaseModel.Contact" />
+          <EntitySet Name="Patients" EntityType="PDMSDatabaseModel.Patient" />
         </EntityContainer>
         <EntityType Name="Contact">
           <Key>
@@ -41,6 +71,35 @@
           <Property Name="Company" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="Designation" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Type="Int32" Name="PatientId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Prefix" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Age" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HomePhone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KnownIllness" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KnownAllergy" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Medications" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReferredBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyHistory" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SocioEconomicStatus" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Diet" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSmoker" />
+          <Property Type="String" Name="SmokingInfo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAlchoholic" />
+          <Property Type="String" Name="AlchoholInfo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MedicalInsurance" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -59,6 +118,36 @@
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="Designation" ColumnName="Designation" />
                 <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="MedicalInsurance" ColumnName="MedicalInsurance" />
+                <ScalarProperty Name="AlchoholInfo" ColumnName="AlchoholInfo" />
+                <ScalarProperty Name="IsAlchoholic" ColumnName="IsAlchoholic" />
+                <ScalarProperty Name="SmokingInfo" ColumnName="SmokingInfo" />
+                <ScalarProperty Name="IsSmoker" ColumnName="IsSmoker" />
+                <ScalarProperty Name="Diet" ColumnName="Diet" />
+                <ScalarProperty Name="SocioEconomicStatus" ColumnName="SocioEconomicStatus" />
+                <ScalarProperty Name="FamilyHistory" ColumnName="FamilyHistory" />
+                <ScalarProperty Name="ReferredBy" ColumnName="ReferredBy" />
+                <ScalarProperty Name="Medications" ColumnName="Medications" />
+                <ScalarProperty Name="KnownAllergy" ColumnName="KnownAllergy" />
+                <ScalarProperty Name="KnownIllness" ColumnName="KnownIllness" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

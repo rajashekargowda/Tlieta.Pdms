@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="545d57e2646046068f096147e70dbf20" Name="Diagram1">
         <EntityTypeShape EntityType="PDMSDatabaseModel.Contact" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Patient" Width="1.5" PointX="2.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

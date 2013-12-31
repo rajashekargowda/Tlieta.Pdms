@@ -426,7 +426,6 @@
     <Content Include="Images\dropdownarrow.png" />
     <Content Include="Images\error.png" />
     <Content Include="Images\footer-bg.png" />
-    <Content Include="Images\gridicons.png" />
     <Content Include="Images\head-sep.png" />
     <Content Include="Images\header-bg.png" />
     <Content Include="Images\ic-calendar.png" />
@@ -468,7 +467,6 @@
     <Content Include="Images\ui-icons_454545_256x240.png" />
     <Content Include="Images\ui-icons_888888_256x240.png" />
     <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Images\underconstruction.png" />
     <Content Include="Images\yellow-btn.png" />
     <Content Include="Scripts\AngularJS\angular-kendo.js" />
     <Content Include="Scripts\AngularJS\angular.min.js" />
