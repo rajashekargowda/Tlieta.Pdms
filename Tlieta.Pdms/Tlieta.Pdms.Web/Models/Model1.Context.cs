@@ -26,5 +26,6 @@ namespace Tlieta.Pdms.Web.Models
         }
     
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Patient> Patients { get; set; }
     }
 }
