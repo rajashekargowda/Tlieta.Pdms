@@ -1,36 +1,73 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@*<script src="@Url.Content("~/Scripts/Controllers/createpatientcontroller.js")"></script>*@
 <div class="mainBlock marBtm">
     <h2><span>
-        <img src="~/Images/ico-email-server.png" /></span>New Patient</h2>
-    <div class="blockCon" id="emailpreferences">
-        <div class="formArea noBorder noBg">
-            <div class="col">
-                <div class="formRow">
-                    <label class="fieldLabel">SMTP Server:</label>
-                    <div class="fieldInput">
-                    </div>
-                </div>
-                <div class="formRow">
-                    <label class="fieldLabel">SMTP Username:</label>
-                    <div class="fieldInput">
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="formRow">
-                    <label class="fieldLabel">SMTP Password:</label>
-                    <div class="fieldInput">
-                    </div>
-                </div>
-                <div class="formRow">
-                    <label class="fieldLabel">Webmaster Email:</label>
-                    <div class="fieldInput">
-                    </div>
+        <img src="~/Images/addpatient.png" /></span>Add Patient</h2>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea" ng-controller="contactcontroller">
+                    <form name="formContact" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span ng-show="!formContact.$invalid">Valid data.</span>
+                                <span ng-show="formContact.ContactName.$error.required" class="required">( * ) Mandatory fields. </span>
+                                <span ng-show="formContact.Email.$invalid" class="required">Enter valid email. </span>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Name<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="ContactId" type="hidden" name="ContactId" ng-model="contact.ContactId" />
+                                    <input id="ContactName" type="text" name="ContactName" ng-model="contact.ContactName" required />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Company :</label>
+                                <div class="fieldInput">
+                                    <input id="Company" type="text" name="Company" ng-model="contact.Company" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Designation :</label>
+                                <div class="fieldInput">
+                                    <input id="Designation" type="text" name="Designation" ng-model="contact.Designation" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Address :</label>
+                                <div class="fieldInput">
+                                    <textarea id="Address" name="Address" ng-model="contact.Address" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Phone :</label>
+                                <div class="fieldInput">
+                                    <input id="Mobile" type="text" name="Mobile" ng-model="contact.Mobile" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Email :</label>
+                                <div class="fieldInput">
+                                    <input type="email" id="Email" name="Email" ng-model="contact.Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="formAction">
+                            <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Add Patient</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshcontact()">Reset</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+</script>

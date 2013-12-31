@@ -702,11 +702,10 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107549', endColorstr='#f0f9f5',GradientType=1 ); /* IE6-8 */
         background: linear-gradient(to right, #3276b1 0%, #F0F9F5 88%) repeat scroll 0 0 transparent;
         color: #FFFFFF;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
         line-height: 32px;
         padding: 3px;
-        text-transform: uppercase;
     }
 
         .mainBlock h2 span {
@@ -1169,6 +1168,7 @@ div.k-grid-header .k-header {
 
 /*Form Area*/
 .formArea {
+    padding:5px;
     background-color: #FFF;
     border: 1px dashed #C3C3C3;
     float: left;
@@ -2105,7 +2105,7 @@ table#RuletblSummary {
 }
 
 .padd10 {
-    padding: 10px;
+    padding: 5px 15px 5px 5px;
 }
 
 .paddTop10 {

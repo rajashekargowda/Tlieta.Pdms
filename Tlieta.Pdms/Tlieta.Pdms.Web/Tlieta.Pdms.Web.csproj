@@ -401,6 +401,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\kendo\2013.3.1119\images\kendoui.ttf" />
     <Content Include="Content\kendo\2013.3.1119\images\kendoui.woff" />
+    <Content Include="Images\addpatient.png" />
     <Content Include="Images\contact.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
@@ -719,7 +720,6 @@
     <Content Include="Views\Home\ChangePassword.cshtml" />
     <Content Include="Views\Patient\Create.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
-    <Content Include="Views\Contact\PdmsView.cshtml" />
     <Content Include="Views\Contact\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>

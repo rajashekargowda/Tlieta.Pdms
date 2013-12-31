@@ -24,7 +24,7 @@
         <!--Header Starts-->
         <div class="header" ng-controller="headercontroller">
             <div class="mainBody">
-                @*<div class="logo"></div>*@
+                <div class="logo"></div>
                 <div class="userInfo">
                     <ul class="userAccount">
                         <li><a href="#">Welcome <strong>{{username}}</strong> </a>
@@ -48,7 +48,7 @@
                             <a>Administration</a>
                             <ul class="firstLevel">
                                  <li><a href="#" ng-click="redirect('contact')">Contact</a></li>
-                                 <li><a href="#">Link 2</a></li>
+                                 <li><a href="#" ng-click="redirect('addpatient')">Add Patient</a></li>
                             </ul>
                         </li>
                         @*<li class="first">
