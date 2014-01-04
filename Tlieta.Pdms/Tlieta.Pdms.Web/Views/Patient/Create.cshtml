@@ -1,14 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<script src="@Url.Content("~/Scripts/Controllers/createpatientcontroller.js")"></script>*@
-<div class="mainBlock marBtm">
+<div class="mainBlock marBtm" ng-controller="patientcontroller">
     <h2><span>
         <img src="~/Images/addpatient.png" /></span>Add Patient</h2>
     <div class="blockCon">
         <div class="padd10">
             <div class="blockCon" id="showblockCon">
-                <div class="formArea" ng-controller="patientcontroller">
+                <div class="formArea">
                     <form name="formPatient" novalidate>
                         <div class="msgBox">
                             <span class="ic-msg">
@@ -21,27 +20,29 @@
                             <div class="formRow">
                                 <label class="fieldLabel">First Name<span class="required"> * </span>:</label>
                                 <div class="fieldInput">
-                                    <input id="ContactId" type="hidden" name="ContactId" ng-model="patient.PatientId" />
-                                    <input id="ContactName" type="text" name="ContactName" ng-model="patient.FirstName" required />
+                                    <input type="hidden" name="PatientId" ng-model="patient.PatientId" />
+                                    <input type="text" name="FirstName" ng-model="patient.FirstName" required />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Last Name :</label>
                                 <div class="fieldInput">
-                                    <input id="Company" type="text" name="Company" ng-model="patient.Company" />
+                                    <input type="text" name="LastName" ng-model="patient.LastName" />
                                 </div>
                             </div>
                             <div class="formRow">
-                                <label class="fieldLabel">Age :</label>
+                                <label class="fieldLabel">DOB :</label>
                                 <div class="fieldInput">
-                                    <input id="Age" type="number" name="Age" ng-model="patient.Age" />
+                                    <input type="date" name="DOB" ng-model="patient.DOB" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Gender :</label>
                                 <div class="fieldInput">
-                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Male"> Male&nbsp;
-                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Female"> Female
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Male">
+                                    Male&nbsp;
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Female">
+                                    Female
                                 </div>
                             </div>
                         </div>
@@ -49,28 +50,54 @@
                             <div class="formRow">
                                 <label class="fieldLabel">Address :</label>
                                 <div class="fieldInput">
-                                    <textarea id="Address" name="Address" ng-model="patient.Address" rows="3"></textarea>
+                                    <textarea name="Address" ng-model="patient.Address" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Mobile :</label>
                                 <div class="fieldInput">
-                                    <input id="Mobile" type="text" name="Mobile" ng-model="patient.Mobile" />
+                                    <input type="text" name="Mobile" ng-model="patient.Mobile" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Home Phone :</label>
                                 <div class="fieldInput">
-                                    <input id="HomePhone" type="text" name="HomePhone" ng-model="patient.HomePhone" />
+                                    <input type="text" name="HomePhone" ng-model="patient.HomePhone" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Email :</label>
                                 <div class="fieldInput">
-                                    <input type="email" id="Email" name="Email" ng-model="patient.Email" />
+                                    <input type="email" name="Email" ng-model="patient.Email" />
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
+                        <table class="footable" data-page-size="4">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Last Shipment</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="product in products">
+                                <tr>
+                                    <td>{{product.id}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.department}}</td>
+                                    <td>{{product.lastShipment}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="pagination pagination-centered"></div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                         <div class="clear"></div>
                         <div class="formAction">
                             <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savepatient(patient)">Add Patient</button>&nbsp;
@@ -82,3 +109,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+</script>
+<script src="@Url.Content("~/Scripts/Controllers/patientcontroller.js")"></script>

@@ -195,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-combined.min.css" />
+    <Content Include="Content\footable.css" />
     <Content Include="Content\PdmsStyle.css" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\kendo\2013.3.1119\Black\editor.png" />
@@ -478,10 +479,15 @@
     <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\contactcontroller.js" />
+    <Content Include="Scripts\Controllers\patientcontroller.js" />
     <Content Include="Scripts\Controllers\headercontroller.js" />
     <Content Include="Scripts\Controllers\menucontroller.js" />
     <Content Include="Scripts\Controllers\passwordcontroller.js" />
     <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\FooTable\footable.filter.js" />
+    <Content Include="Scripts\FooTable\footable.js" />
+    <Content Include="Scripts\FooTable\footable.paginate.js" />
+    <Content Include="Scripts\FooTable\footable.sort.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

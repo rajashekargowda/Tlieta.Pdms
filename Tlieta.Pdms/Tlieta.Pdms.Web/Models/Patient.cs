@@ -19,7 +19,7 @@ namespace Tlieta.Pdms.Web.Models
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public Nullable<int> Age { get; set; }
+        public System.DateTime DOB { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
         public string Mobile { get; set; }
@@ -38,5 +38,6 @@ namespace Tlieta.Pdms.Web.Models
         public string AlchoholInfo { get; set; }
         public string MedicalInsurance { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
     }
 }

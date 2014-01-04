@@ -692,18 +692,9 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
 }
 
     .mainBlock h2 {
-        background: background: rgb(16,117,73);
-        background: -moz-linear-gradient(left, rgba(16,117,73,1) 0%, rgba(240,249,245,1) 88%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(16,117,73,1)), color-stop(88%,rgba(240,249,245,1))); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(left, rgba(16,117,73,1) 0%,rgba(240,249,245,1) 88%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(left, rgba(16,117,73,1) 0%,rgba(240,249,245,1) 88%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(left, rgba(16,117,73,1) 0%,rgba(240,249,245,1) 88%); /* IE10+ */
-        background: linear-gradient(to right, rgba(16,117,73,1) 0%,rgba(240,249,245,1) 88%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107549', endColorstr='#f0f9f5',GradientType=1 ); /* IE6-8 */
-        background: linear-gradient(to right, #3276b1 0%, #F0F9F5 88%) repeat scroll 0 0 transparent;
+        background-color: #559dcf;
         color: #FFFFFF;
         font-size: 18px;
-        /*font-weight: bold;*/
         line-height: 32px;
         padding: 3px;
     }

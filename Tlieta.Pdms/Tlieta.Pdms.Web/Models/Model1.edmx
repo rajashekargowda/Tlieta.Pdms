@@ -31,7 +31,7 @@
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="MiddleName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Age" Type="int" />
+          <Property Name="DOB" Type="date" Nullable="false" />
           <Property Name="Gender" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
@@ -50,6 +50,7 @@
           <Property Name="AlchoholInfo" Type="nvarchar" MaxLength="500" />
           <Property Name="MedicalInsurance" Type="nvarchar" MaxLength="500" />
           <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
         </EntityType>
       </Schema>
     </edmx:StorageModels>
@@ -82,7 +83,7 @@
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Age" Type="Int32" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Mobile" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
@@ -101,6 +102,7 @@
           <Property Name="AlchoholInfo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="MedicalInsurance" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -130,7 +132,7 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Mobile" ColumnName="Mobile" />
@@ -149,6 +151,7 @@
                 <ScalarProperty Name="AlchoholInfo" ColumnName="AlchoholInfo" />
                 <ScalarProperty Name="MedicalInsurance" ColumnName="MedicalInsurance" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
