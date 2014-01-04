@@ -12,5 +12,15 @@ namespace Tlieta.Pdms.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        public ActionResult Info()
+        {
+            return View();
+        }
     }
 }

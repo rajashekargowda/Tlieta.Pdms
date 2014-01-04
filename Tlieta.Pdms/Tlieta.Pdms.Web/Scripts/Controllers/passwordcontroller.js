@@ -2,7 +2,6 @@
 
 function passwordcontroller($scope) {
     $scope.savepassword = function (password) {
-        alert(password.newpassword);
         alert('Saved');
     };
 }

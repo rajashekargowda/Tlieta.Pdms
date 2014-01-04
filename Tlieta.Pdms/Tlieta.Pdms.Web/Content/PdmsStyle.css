@@ -9,7 +9,7 @@
 
 body {
     border-top: 2px solid #3276b1;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI';
     font-size: 12px;
     color: #444;
 }
@@ -703,7 +703,7 @@ ul.userAccount li:hover ul li a:hover{	background-color:#e3e5e4; color:#666; tex
         background: linear-gradient(to right, #3276b1 0%, #F0F9F5 88%) repeat scroll 0 0 transparent;
         color: #FFFFFF;
         font-size: 18px;
-        font-weight: bold;
+        /*font-weight: bold;*/
         line-height: 32px;
         padding: 3px;
     }
@@ -2771,4 +2771,14 @@ input.ng-invalid {
     cursor: pointer;
     border:none;
     vertical-align:middle;
+}
+
+.alert
+{
+    font-size: 1.3em;
+    padding: 0.5em;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+    word-wrap: normal;
 }

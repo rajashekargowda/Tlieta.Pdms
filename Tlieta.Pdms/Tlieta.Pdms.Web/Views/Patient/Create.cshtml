@@ -8,33 +8,40 @@
     <div class="blockCon">
         <div class="padd10">
             <div class="blockCon" id="showblockCon">
-                <div class="formArea" ng-controller="contactcontroller">
-                    <form name="formContact" novalidate>
+                <div class="formArea" ng-controller="patientcontroller">
+                    <form name="formPatient" novalidate>
                         <div class="msgBox">
                             <span class="ic-msg">
-                                <span ng-show="!formContact.$invalid">Valid data.</span>
-                                <span ng-show="formContact.ContactName.$error.required" class="required">( * ) Mandatory fields. </span>
-                                <span ng-show="formContact.Email.$invalid" class="required">Enter valid email. </span>
+                                <span ng-show="!formPatient.$invalid">Valid data.</span>
+                                <span ng-show="formPatient.FirstName.$error.required" class="required">( * ) Mandatory fields. </span>
+                                <span ng-show="formPatient.Email.$invalid" class="required">Enter valid email. </span>
                             </span>
                         </div>
                         <div class="col">
                             <div class="formRow">
-                                <label class="fieldLabel">Name<span class="required"> * </span>:</label>
+                                <label class="fieldLabel">First Name<span class="required"> * </span>:</label>
                                 <div class="fieldInput">
-                                    <input id="ContactId" type="hidden" name="ContactId" ng-model="contact.ContactId" />
-                                    <input id="ContactName" type="text" name="ContactName" ng-model="contact.ContactName" required />
+                                    <input id="ContactId" type="hidden" name="ContactId" ng-model="patient.PatientId" />
+                                    <input id="ContactName" type="text" name="ContactName" ng-model="patient.FirstName" required />
                                 </div>
                             </div>
                             <div class="formRow">
-                                <label class="fieldLabel">Company :</label>
+                                <label class="fieldLabel">Last Name :</label>
                                 <div class="fieldInput">
-                                    <input id="Company" type="text" name="Company" ng-model="contact.Company" />
+                                    <input id="Company" type="text" name="Company" ng-model="patient.Company" />
                                 </div>
                             </div>
                             <div class="formRow">
-                                <label class="fieldLabel">Designation :</label>
+                                <label class="fieldLabel">Age :</label>
                                 <div class="fieldInput">
-                                    <input id="Designation" type="text" name="Designation" ng-model="contact.Designation" />
+                                    <input id="Age" type="number" name="Age" ng-model="patient.Age" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Gender :</label>
+                                <div class="fieldInput">
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Male"> Male&nbsp;
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Female"> Female
                                 </div>
                             </div>
                         </div>
@@ -42,26 +49,32 @@
                             <div class="formRow">
                                 <label class="fieldLabel">Address :</label>
                                 <div class="fieldInput">
-                                    <textarea id="Address" name="Address" ng-model="contact.Address" rows="3"></textarea>
+                                    <textarea id="Address" name="Address" ng-model="patient.Address" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="formRow">
-                                <label class="fieldLabel">Phone :</label>
+                                <label class="fieldLabel">Mobile :</label>
                                 <div class="fieldInput">
-                                    <input id="Mobile" type="text" name="Mobile" ng-model="contact.Mobile" />
+                                    <input id="Mobile" type="text" name="Mobile" ng-model="patient.Mobile" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Home Phone :</label>
+                                <div class="fieldInput">
+                                    <input id="HomePhone" type="text" name="HomePhone" ng-model="patient.HomePhone" />
                                 </div>
                             </div>
                             <div class="formRow">
                                 <label class="fieldLabel">Email :</label>
                                 <div class="fieldInput">
-                                    <input type="email" id="Email" name="Email" ng-model="contact.Email" />
+                                    <input type="email" id="Email" name="Email" ng-model="patient.Email" />
                                 </div>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <div class="formAction">
-                            <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">Add Patient</button>&nbsp;
-                                    <button class="mainActionBtnB" ng-click="refreshcontact()">Reset</button>
+                            <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savepatient(patient)">Add Patient</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshpatient()">Reset</button>
                         </div>
                     </form>
                 </div>
@@ -69,5 +82,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-</script>
