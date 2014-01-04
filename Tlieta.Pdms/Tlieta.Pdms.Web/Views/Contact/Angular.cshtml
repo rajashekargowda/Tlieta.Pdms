@@ -1,14 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script src="@Url.Content("~/Scripts/Controllers/contactcontroller.js")"></script>
-<div class="mainBlock marBtm">
+<div class="mainBlock marBtm" ng-controller="testcontroller">
     <h2><span>
         <img src="~/Images/contact.png" /></span>Contacts</h2>
     <div class="blockCon">
         <div class="padd10">
             <div class="blockCon" id="showblockCon">
-                <div class="formArea" ng-controller="contactcontroller">
+                <div class="formArea">
                     <form name="formContact" novalidate>
                         <div class="msgBox">
                             <span class="ic-msg">
@@ -63,75 +62,46 @@
                                     <button class="mainActionBtnB" ng-click="refreshcontact()">Reset</button>
                         </div>
                         <div class="clear"></div>
+                        <div kendo-grid="" k-data-source="products" k-selectable="'row'"
+                            k-columns="[{ &quot;field&quot;: &quot;ProductName&quot;, &quot;title&quot;: &quot;Name&quot;},
+                      { &quot;field&quot;: &quot;Supplier.SupplierName&quot;, &quot;title&quot;: &quot;Supplier&quot;},
+                      { &quot;field&quot;: &quot;Category.CategoryName&quot;, &quot;title&quot;: &quot;Category&quot; }]" data-role="grid" ></div>
+                        <table class="footable" data-page-size="4">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Contact Name</th>
+                                    <th>Company</th>
+                                    <th>Designation</th>
+                                    <th>Address</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="contact in contacts">
+                                <tr>
+                                    <td>{{contact.ContactId}}</td>
+                                    <td>{{contact.ContactName}}</td>
+                                    <td>{{contact.Company}}</td>
+                                    <td>{{contact.Designation}}</td>
+                                    <td>{{contact.Address}}</td>
+                                    <td>{{contact.Mobile}}</td>
+                                    <td>{{contact.Email}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="pagination pagination-centered"></div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="clear"></div>
                     </form>
                 </div>
-            </div>
-            <div class="clear"></div>
-            <div class="gridArea">
-                @(Html.Kendo().Grid<Tlieta.Pdms.Web.Models.Contact>()
-                        .Name("ContactGrid")
-                        .Columns(
-                        columns =>
-                        {
-                            columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
-                            columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
-                            columns.Bound(p => p.ContactId).Visible(false);
-                            columns.Bound(p => p.ContactName).Title("Contact Name");
-                            columns.Bound(p => p.Company).Title("Company");
-                            columns.Bound(p => p.Designation).Title("Designation").Filterable(false);
-                            columns.Bound(p => p.Address).Title("Address").Filterable(false);
-                            columns.Bound(p => p.Mobile).Title("Phone").Filterable(false);
-                            columns.Bound(p => p.Email).Title("Email").Filterable(false);
-                        })
-                  .Scrollable()
-                  .Filterable(filterable => filterable
-                                .Extra(false)
-                                .Operators(operators => operators
-                                    .ForString(str => str.Clear()
-                                    .StartsWith("Starts With")
-                                    .Contains("Contains")
-                              )))
-                  .Pageable()
-                  .DataSource(dataSource => dataSource
-                      .Ajax().PageSize(10)
-                      .Model(model =>
-                      {
-                          model.Id(p => p.ContactId);
-                          model.Field(p => p.ContactId);
-                          model.Field(p => p.ContactName);
-                          model.Field(p => p.Company);
-                          model.Field(p => p.Designation);
-                          model.Field(p => p.Address);
-                          model.Field(p => p.Mobile);
-                          model.Field(p => p.Email);
-                      })
-                      .Read(read => read.Action("Read", "Contact"))
-                  )
-              )
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-
-    function Edit(e) {
-        var dataItem = this.dataItem($(e.target).closest("tr"));
-        var scope = angular.element("#ContactName").scope();
-        scope.$apply(function () {
-            scope.contact = dataItem;
-            scope.buttontext = "Save Contact";
-        });
-        return false;
-    }
-
-    function Delete(e) {
-        var dataItem = this.dataItem($(e.target).closest("tr"));
-        angular.element("#ContactName").scope().deletecontact(dataItem.ContactId);
-        return false;
-    }
-
-    function RefreshGrid() {
-        var grid = $("#ContactGrid").data("kendoGrid");
-        grid.dataSource.read();
-    }
-</script>
+<script src="@Url.Content("~/Scripts/Controllers/testcontroller.js")"></script>
