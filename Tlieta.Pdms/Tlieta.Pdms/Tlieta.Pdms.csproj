@@ -461,6 +461,7 @@
     <Content Include="Resources\back.png" />
     <Content Include="Resources\Background.png" />
     <Content Include="Resources\bg-pattern.png" />
+    <Content Include="Resources\bill.png" />
     <Content Include="Resources\blood_transfusion48.png" />
     <Content Include="Resources\cardiology48.png" />
     <Content Include="Resources\certificate.png" />
