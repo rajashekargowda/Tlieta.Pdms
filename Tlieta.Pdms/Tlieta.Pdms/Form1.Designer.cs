@@ -42,9 +42,9 @@ namespace Tlieta.Pdms
             this.radTileCertificates = new Telerik.WinControls.UI.RadTileElement();
             this.radTileContacts = new Telerik.WinControls.UI.RadTileElement();
             this.radTileLetters = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileCharts = new Telerik.WinControls.UI.RadTileElement();
             this.settingsGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.settingsTile = new Telerik.WinControls.UI.RadTileElement();
-            this.radTileCharts = new Telerik.WinControls.UI.RadTileElement();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -199,7 +199,7 @@ namespace Tlieta.Pdms
             this.radTileAppointments.AccessibleName = "radTileAppointments";
             this.radTileAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.radTileAppointments.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(124)))), ((int)(((byte)(137)))));
-            this.radTileAppointments.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(174)))), ((int)(((byte)(187)))));
+            this.radTileAppointments.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(124)))), ((int)(((byte)(137)))));
             this.radTileAppointments.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileAppointments.ColSpan = 2;
             this.radTileAppointments.DrawBorder = true;
@@ -222,7 +222,7 @@ namespace Tlieta.Pdms
             this.radTileDaybook.AccessibleName = "radTileDaybook";
             this.radTileDaybook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(53)))), ((int)(((byte)(1)))));
             this.radTileDaybook.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(154)))), ((int)(((byte)(7)))));
-            this.radTileDaybook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(112)))), ((int)(((byte)(9)))));
+            this.radTileDaybook.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(154)))), ((int)(((byte)(7)))));
             this.radTileDaybook.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileDaybook.ColSpan = 2;
             this.radTileDaybook.Column = 2;
@@ -246,7 +246,7 @@ namespace Tlieta.Pdms
             this.radTileCertificates.AccessibleName = "radTileCertificates";
             this.radTileCertificates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
             this.radTileCertificates.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.radTileCertificates.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
+            this.radTileCertificates.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
             this.radTileCertificates.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileCertificates.DrawBorder = true;
             this.radTileCertificates.GradientAngle = 0F;
@@ -270,7 +270,7 @@ namespace Tlieta.Pdms
             this.radTileContacts.AccessibleName = "radTileContacts";
             this.radTileContacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(1)))), ((int)(((byte)(17)))));
             this.radTileContacts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(5)))), ((int)(((byte)(46)))));
-            this.radTileContacts.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(114)))), ((int)(((byte)(51)))));
+            this.radTileContacts.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(5)))), ((int)(((byte)(46)))));
             this.radTileContacts.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileContacts.Column = 1;
             this.radTileContacts.DrawBorder = true;
@@ -294,7 +294,7 @@ namespace Tlieta.Pdms
             this.radTileLetters.AccessibleName = "radTileLetters";
             this.radTileLetters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(0)))), ((int)(((byte)(65)))));
             this.radTileLetters.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(5)))), ((int)(((byte)(115)))));
-            this.radTileLetters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(16)))), ((int)(((byte)(202)))));
+            this.radTileLetters.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(5)))), ((int)(((byte)(115)))));
             this.radTileLetters.CellPadding = new System.Windows.Forms.Padding(5);
             this.radTileLetters.Column = 2;
             this.radTileLetters.DrawBorder = true;
@@ -316,18 +316,19 @@ namespace Tlieta.Pdms
             // 
             this.radTileCharts.AccessibleDescription = "Charts";
             this.radTileCharts.AccessibleName = "Charts";
-            this.radTileCharts.Name = "radTileCharts";
-            this.radTileCharts.Text = "Charts";
             this.radTileCharts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(48)))), ((int)(((byte)(98)))));
             this.radTileCharts.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(78)))), ((int)(((byte)(162)))));
-            this.radTileCharts.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
+            this.radTileCharts.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(78)))), ((int)(((byte)(162)))));
             this.radTileCharts.CellPadding = new System.Windows.Forms.Padding(5);
+            this.radTileCharts.Column = 3;
+            this.radTileCharts.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
             this.radTileCharts.Image = global::Tlieta.Pdms.Properties.Resources.medicalchart;
             this.radTileCharts.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.radTileCharts.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radTileCharts.Name = "radTileCharts";
             this.radTileCharts.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
             this.radTileCharts.Row = 1;
-            this.radTileCharts.Column = 3;
+            this.radTileCharts.Text = "Charts";
             this.radTileCharts.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.radTileCharts.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.radTileCharts.Visibility = Telerik.WinControls.ElementVisibility.Visible;
