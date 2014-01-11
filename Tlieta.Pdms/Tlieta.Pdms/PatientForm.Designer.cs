@@ -96,7 +96,7 @@ namespace Tlieta.Pdms
             this.patientinfoTile.BorderGradientStyle = Telerik.WinControls.GradientStyles.Linear;
             this.patientinfoTile.CellPadding = new System.Windows.Forms.Padding(5);
             this.patientinfoTile.DrawBorder = true;
-            this.patientinfoTile.Image = global::Tlieta.Pdms.Properties.Resources.add_user;
+            this.patientinfoTile.Image = global::Tlieta.Pdms.Properties.Resources.doctor48;
             this.patientinfoTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.patientinfoTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.patientinfoTile.Name = "patientinfoTile";
@@ -108,18 +108,6 @@ namespace Tlieta.Pdms
             this.patientinfoTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.patientinfoTile.Click += new System.EventHandler(this.patientinfoTile_Click);
             // 
-            // measurementTile
-            // 
-            this.measurementTile.AccessibleDescription = "Measurements & Vitals";
-            this.measurementTile.AccessibleName = "Measurements & Vitals";
-            this.measurementTile.ColSpan = 2;
-            this.measurementTile.Column = 0;
-            this.measurementTile.Name = "measurementTile";
-            this.measurementTile.Row = 1;
-            this.measurementTile.Text = "Measurements & Vitals";
-            this.measurementTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.measurementTile.Click += new System.EventHandler(this.measurementTile_Click);
-            // 
             // surgeryTile
             // 
             this.surgeryTile.AccessibleDescription = "surgeryTile";
@@ -130,12 +118,12 @@ namespace Tlieta.Pdms
             this.surgeryTile.ColSpan = 2;
             this.surgeryTile.Column = 1;
             this.surgeryTile.DrawBorder = true;
-            this.surgeryTile.Image = global::Tlieta.Pdms.Properties.Resources.surgery48;
-            this.surgeryTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
-            this.surgeryTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.surgeryTile.Name = "surgeryTile";
             this.surgeryTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
             this.surgeryTile.Text = "Surgery";
+            this.surgeryTile.Image = global::Tlieta.Pdms.Properties.Resources.surgery48;
+            this.surgeryTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.surgeryTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
             this.surgeryTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.surgeryTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.surgeryTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -211,19 +199,43 @@ namespace Tlieta.Pdms
             this.printphotoTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.printphotoTile.Click += new System.EventHandler(this.printphotoTile_Click);
             // 
+            // measurementTile
+            // 
+            this.measurementTile.AccessibleDescription = "Measurements & Vitals";
+            this.measurementTile.AccessibleName = "Measurements & Vitals";
+            this.measurementTile.ColSpan = 2;
+            this.measurementTile.Name = "measurementTile";
+            this.measurementTile.Column = 0;
+            this.measurementTile.Row = 1;
+            this.measurementTile.Text = "Measurements & Vitals";
+            this.measurementTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.measurementTile.Image = global::Tlieta.Pdms.Properties.Resources.cardiology48;
+            this.measurementTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.measurementTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.measurementTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.measurementTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.measurementTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.measurementTile.Click += new System.EventHandler(this.measurementTile_Click);
+            // 
             // newvisitTile
             // 
             this.newvisitTile.AccessibleDescription = "Add New Visit";
             this.newvisitTile.AccessibleName = "Add New Visit";
             this.newvisitTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(31)))), ((int)(((byte)(64)))));
             this.newvisitTile.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(53)))), ((int)(((byte)(115)))));
-            this.newvisitTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(119)))), ((int)(((byte)(210)))));
+            this.newvisitTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(53)))), ((int)(((byte)(115)))));
             this.newvisitTile.ColSpan = 2;
             this.newvisitTile.Column = 3;
             this.newvisitTile.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
             this.newvisitTile.Name = "newvisitTile";
             this.newvisitTile.Text = "Add New Visit";
             this.newvisitTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.newvisitTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.newvisitTile.Image = global::Tlieta.Pdms.Properties.Resources.ambulance48;
+            this.newvisitTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.newvisitTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.newvisitTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.newvisitTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // visitsTile
             // 
@@ -231,23 +243,37 @@ namespace Tlieta.Pdms
             this.visitsTile.AccessibleName = "Visits";
             this.visitsTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
             this.visitsTile.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(16)))), ((int)(((byte)(33)))));
+            this.visitsTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(16)))), ((int)(((byte)(33)))));
             this.visitsTile.Column = 5;
             this.visitsTile.GradientStyle = Telerik.WinControls.GradientStyles.Linear;
             this.visitsTile.Name = "visitsTile";
             this.visitsTile.Text = "Visits";
             this.visitsTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.visitsTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.visitsTile.Image = global::Tlieta.Pdms.Properties.Resources.medical_record48;
+            this.visitsTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.visitsTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.visitsTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.visitsTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // billingTile
             // 
             this.billingTile.AccessibleDescription = "Billing";
             this.billingTile.AccessibleName = "Billing";
-            this.billingTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(57)))), ((int)(((byte)(234)))));
-            this.billingTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(19)))), ((int)(((byte)(164)))));
+            this.billingTile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(80)))), ((int)(((byte)(89)))));
+            this.billingTile.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(80)))), ((int)(((byte)(89)))));
+            this.billingTile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(80)))), ((int)(((byte)(89)))));
             this.billingTile.Column = 5;
             this.billingTile.Name = "billingTile";
             this.billingTile.Row = 1;
             this.billingTile.Text = "Billing";
             this.billingTile.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.billingTile.Padding = new System.Windows.Forms.Padding(15, 15, 15, 10);
+            this.billingTile.Image = global::Tlieta.Pdms.Properties.Resources.bill;
+            this.billingTile.ImageAlignment = System.Drawing.ContentAlignment.BottomLeft;
+            this.billingTile.ImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.billingTile.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.billingTile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // PatientForm
             // 

@@ -52,7 +52,6 @@ namespace Tlieta.Pdms.Views.Shared
 
             FillGrid();
             RefreshTexts();
-
         }
 
         private void RefreshTexts()
