@@ -113,6 +113,9 @@ namespace Tlieta.Pdms
             this.exampleControls.Add("Notes", new Tlieta.Pdms.Views.Shared.EditPatient(0));
             this.exampleControls.Add("Surgery", new Tlieta.Pdms.Views.Shared.SurgeryView(_patientId));
             this.exampleControls.Add("Measurement & Vitals", new Tlieta.Pdms.Views.Shared.Measurements(_patientId));
+            this.exampleControls.Add("New Visit", new Tlieta.Pdms.Views.Shared.NewVisitView(_patientId));
+            this.exampleControls.Add("Visit History", new Tlieta.Pdms.Views.Shared.VisitHistoryView(_patientId));
+            this.exampleControls.Add("Billing", new Tlieta.Pdms.Views.Shared.BillingView(_patientId));
             this.PreloadControls();
         }
 
@@ -368,6 +371,21 @@ namespace Tlieta.Pdms
         private void measurementTile_Click(object sender, EventArgs e)
         {
             LoadExample("Measurement & Vitals");
+        }
+
+        private void newvisitTile_Click(object sender, EventArgs e)
+        {
+            LoadExample("New Visit");
+        }
+
+        private void visitsTile_Click(object sender, EventArgs e)
+        {
+            LoadExample("Visit History");
+        }
+
+        private void billingTile_Click(object sender, EventArgs e)
+        {
+            LoadExample("Billing");
         }
         
         #endregion

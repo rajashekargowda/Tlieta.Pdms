@@ -250,6 +250,12 @@
     <Compile Include="Views\Shared\AppointmentView.Designer.cs">
       <DependentUpon>AppointmentView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\BillingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\BillingView.Designer.cs">
+      <DependentUpon>BillingView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Certificates.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -297,6 +303,12 @@
     </Compile>
     <Compile Include="Views\Shared\Measurements.Designer.cs">
       <DependentUpon>Measurements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\NewVisitView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\NewVisitView.Designer.cs">
+      <DependentUpon>NewVisitView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\PatientHub.cs">
       <SubType>UserControl</SubType>
@@ -347,6 +359,12 @@
     <Compile Include="Views\Shared\Videos.Designer.cs">
       <DependentUpon>Videos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\VisitHistoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\VisitHistoryView.Designer.cs">
+      <DependentUpon>VisitHistoryView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\AppointmentView.resx">
       <DependentUpon>AppointmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\BillingView.resx">
+      <DependentUpon>BillingView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Certificates.resx">
       <DependentUpon>Certificates.cs</DependentUpon>
@@ -385,6 +406,9 @@
     <EmbeddedResource Include="Views\Shared\Measurements.resx">
       <DependentUpon>Measurements.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\NewVisitView.resx">
+      <DependentUpon>NewVisitView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\PatientHub.resx">
       <DependentUpon>PatientHub.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\Videos.resx">
       <DependentUpon>Videos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\VisitHistoryView.resx">
+      <DependentUpon>VisitHistoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
