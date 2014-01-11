@@ -82,9 +82,9 @@ namespace Tlieta.Pdms.Views.Shared
                 txtFamilyHistory.Text = patient.FamilyHistory;
                 txtSocioStatus.Text = patient.SocioEconomicStatus;
                 txtDiet.Text = patient.Diet;
-                chkSmoker.Checked = (bool)patient.IsSmoker;
+                chkSmoker.Checked = (bool)(patient.IsSmoker == null ? false : patient.IsSmoker);
                 txtSmoker.Text = patient.SmokingInfo;
-                chkAlchoholic.Checked = (bool)patient.IsAlchoholic;
+                chkAlchoholic.Checked = (bool)(patient.IsAlchoholic == null ? false : patient.IsAlchoholic);
                 txtAlchoholic.Text = patient.AlchoholInfo;
                 txtMeicalInsurance.Text = patient.MedicalInsurance;
             }
@@ -109,7 +109,8 @@ namespace Tlieta.Pdms.Views.Shared
                 patient.HospitalId = Convert.ToInt32(ddlHospital.SelectedValue.ToString());
                 patient.CreatedOn = DateTime.Now;
                 patient.UpdatedOn = DateTime.Now;
-
+                patient.IsSmoker = false;
+                patient.IsAlchoholic = false;
                 PatientData patientObject = new PatientData();
                 _patientid = patientObject.AddPatient(patient);
             }

@@ -21,6 +21,7 @@
         <EntityTypeShape EntityType="PDMSDataModel.Imaging" Width="1.5" PointX="15.25" PointY="16.5" />
         <EntityTypeShape EntityType="PDMSDataModel.LabInvestigation" Width="1.5" PointX="8.75" PointY="16.5" />
         <EntityTypeShape EntityType="PDMSDataModel.OtherAdvise" Width="1.5" PointX="10.375" PointY="16.5" />
+        <EntityTypeShape EntityType="PDMSDataModel.PatientVital" Width="1.5" PointX="4.5849610960972313" PointY="22.783530201196452" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

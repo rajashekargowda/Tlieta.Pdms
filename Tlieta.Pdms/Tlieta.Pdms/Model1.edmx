@@ -18,6 +18,7 @@
           <EntitySet Name="Operation" EntityType="PDMSDataModel.Store.Operation" store:Type="Tables" />
           <EntitySet Name="OtherAdvise" EntityType="PDMSDataModel.Store.OtherAdvise" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="PDMSDataModel.Store.Patient" store:Type="Tables" />
+          <EntitySet Name="PatientVital" EntityType="PDMSDataModel.Store.PatientVital" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="PDMSDataModel.Store.Product" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="PDMSDataModel.Store.Role" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="PDMSDataModel.Store.Service" store:Type="Tables" />
@@ -154,6 +155,22 @@
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="PatientVital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="BPHigh" Type="nvarchar" MaxLength="10" />
+          <Property Name="BPLow" Type="nvarchar" MaxLength="10" />
+          <Property Name="PulseRate" Type="nvarchar" MaxLength="10" />
+          <Property Name="RespiratoryRate" Type="nvarchar" MaxLength="10" />
+          <Property Name="Temperature" Type="nvarchar" MaxLength="10" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="10" />
+          <Property Name="Height" Type="nvarchar" MaxLength="10" />
+          <Property Name="BMI" Type="nvarchar" MaxLength="10" />
+          <Property Name="TimeLine" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductKey" />
@@ -220,6 +237,7 @@
           <EntitySet Name="Imagings" EntityType="PDMSDataModel.Imaging" />
           <EntitySet Name="LabInvestigations" EntityType="PDMSDataModel.LabInvestigation" />
           <EntitySet Name="OtherAdvises" EntityType="PDMSDataModel.OtherAdvise" />
+          <EntitySet Name="PatientVitals" EntityType="PDMSDataModel.PatientVital" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -396,6 +414,22 @@
           <Property Type="Int32" Name="OtherAdviseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="OtherAdviseName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PatientVital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="BPHigh" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BPLow" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PulseRate" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RespiratoryRate" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Temperature" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Weight" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Height" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BMI" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TimeLine" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -592,6 +626,23 @@
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="OtherAdviseName" ColumnName="OtherAdviseName" />
                 <ScalarProperty Name="OtherAdviseId" ColumnName="OtherAdviseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientVitals">
+            <EntityTypeMapping TypeName="PDMSDataModel.PatientVital">
+              <MappingFragment StoreEntitySet="PatientVital">
+                <ScalarProperty Name="TimeLine" ColumnName="TimeLine" />
+                <ScalarProperty Name="BMI" ColumnName="BMI" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="RespiratoryRate" ColumnName="RespiratoryRate" />
+                <ScalarProperty Name="PulseRate" ColumnName="PulseRate" />
+                <ScalarProperty Name="BPLow" ColumnName="BPLow" />
+                <ScalarProperty Name="BPHigh" ColumnName="BPHigh" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

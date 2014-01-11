@@ -41,5 +41,6 @@ namespace Tlieta.Pdms
         public DbSet<Imaging> Imagings { get; set; }
         public DbSet<LabInvestigation> LabInvestigations { get; set; }
         public DbSet<OtherAdvise> OtherAdvises { get; set; }
+        public DbSet<PatientVital> PatientVitals { get; set; }
     }
 }

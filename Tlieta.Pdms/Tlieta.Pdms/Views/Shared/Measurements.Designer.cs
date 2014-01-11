@@ -88,6 +88,7 @@
             this.btnAddMeasurement.TabIndex = 80;
             this.btnAddMeasurement.Text = "Add to Timeline";
             this.btnAddMeasurement.ThemeName = "TelerikMetro";
+            this.btnAddMeasurement.Click += new System.EventHandler(this.btnAddMeasurement_Click);
             // 
             // txtBPHigh
             // 

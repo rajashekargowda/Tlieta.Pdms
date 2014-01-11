@@ -49,6 +49,7 @@
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Print";
             this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // docCertificate
             // 
@@ -68,6 +69,7 @@
             this.btnMedical.TabIndex = 8;
             this.btnMedical.Text = "Medical Certificate";
             this.btnMedical.ThemeName = "TelerikMetro";
+            this.btnMedical.Click += new System.EventHandler(this.btnMedical_Click);
             // 
             // btnFitness
             // 

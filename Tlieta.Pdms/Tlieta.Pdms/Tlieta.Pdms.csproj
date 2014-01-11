@@ -162,6 +162,7 @@
     <Compile Include="DataAccess\Enums.cs" />
     <Compile Include="DataAccess\MasterData.cs" />
     <Compile Include="DataAccess\PatientData.cs" />
+    <Compile Include="DataAccess\PatientVitalData.cs" />
     <Compile Include="DataAccess\ReportsData.cs" />
     <Compile Include="DataAccess\SharedData.cs" />
     <Compile Include="DataAccess\SurgeryData.cs" />
@@ -224,6 +225,9 @@
     </Compile>
     <Compile Include="PatientForm.Designer.cs">
       <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientVital.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
