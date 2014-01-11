@@ -2,6 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="mainBlock marBtm" ng-controller="testcontroller">
+    <kendogrid source="contacts" groupable="true" sortable="true" columns="columns" pageable="true"></kendogrid>
     <h2><span>
         <img src="~/Images/contact.png" /></span>Contacts</h2>
     <div class="blockCon">
@@ -61,47 +62,12 @@
                             <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savecontact(contact)">{{buttontext}}</button>&nbsp;
                                     <button class="mainActionBtnB" ng-click="refreshcontact()">Reset</button>
                         </div>
-                        <div class="clear"></div>
-                        <div kendo-grid="" k-data-source="products" k-selectable="'row'"
-                            k-columns="[{ &quot;field&quot;: &quot;ProductName&quot;, &quot;title&quot;: &quot;Name&quot;},
-                      { &quot;field&quot;: &quot;Supplier.SupplierName&quot;, &quot;title&quot;: &quot;Supplier&quot;},
-                      { &quot;field&quot;: &quot;Category.CategoryName&quot;, &quot;title&quot;: &quot;Category&quot; }]" data-role="grid" ></div>
-                        <table class="footable" data-page-size="4">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Contact Name</th>
-                                    <th>Company</th>
-                                    <th>Designation</th>
-                                    <th>Address</th>
-                                    <th>Mobile</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody ng-repeat="contact in contacts">
-                                <tr>
-                                    <td>{{contact.ContactId}}</td>
-                                    <td>{{contact.ContactName}}</td>
-                                    <td>{{contact.Company}}</td>
-                                    <td>{{contact.Designation}}</td>
-                                    <td>{{contact.Address}}</td>
-                                    <td>{{contact.Mobile}}</td>
-                                    <td>{{contact.Email}}</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="7">
-                                        <div class="pagination pagination-centered"></div>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <div class="clear"></div>
                     </form>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div kendogrid source="products"
 <script src="@Url.Content("~/Scripts/Controllers/testcontroller.js")"></script>

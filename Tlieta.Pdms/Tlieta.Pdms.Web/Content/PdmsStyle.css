@@ -1187,7 +1187,6 @@ label {
 .fieldLabel {
     float: left;
     font-weight: bold;
-    margin-right: 8px;
     margin-top: 4px;
     width: 180px;
 }
@@ -1199,6 +1198,7 @@ label {
 
     .fieldInput span {
         float: left;
+        margin-top:4px;
     }
 
 .fieldLabel input[type="checkbox"] {

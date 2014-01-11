@@ -32,12 +32,12 @@ namespace Tlieta.Pdms.Web.Models
         public string FamilyHistory { get; set; }
         public string SocioEconomicStatus { get; set; }
         public string Diet { get; set; }
-        public Nullable<bool> IsSmoker { get; set; }
+        public bool IsSmoker { get; set; }
         public string SmokingInfo { get; set; }
-        public Nullable<bool> IsAlchoholic { get; set; }
+        public bool IsAlchoholic { get; set; }
         public string AlchoholInfo { get; set; }
         public string MedicalInsurance { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public System.DateTime CreatedOn { get; set; }
+        public System.DateTime UpdatedOn { get; set; }
     }
 }

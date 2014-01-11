@@ -2,31 +2,24 @@
 <html ng-app="tlieta">
 <head>
     <title>@ViewBag.Title</title>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/AngularJS/angular-route.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-kendo.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
-    <script src="@Url.Content("~/Scripts/FooTable/footable.js")"></script>
-    <script src="@Url.Content("~/Scripts/FooTable/footable.paginate.js")"></script>
     
     <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/footable.css")" rel="stylesheet" />
-
-    <script src="@Url.Content("~/Scripts/Controllers/headercontroller.js")"></script>
-    <script src="@Url.Content("~/Scripts/Controllers/menucontroller.js")"></script>
 </head>
 <body>
     <div id="bodyBg">
         <!--Header Starts-->
         <div class="header" ng-controller="headercontroller">
             <div class="mainBody">
-                <div class="logo"></div>
+                @*<div class="logo"></div>*@
                 <div class="userInfo">
                     <ul class="userAccount">
                         <li><a href="#">Welcome <strong>{{username}}</strong> </a>
@@ -45,40 +38,17 @@
             <div class="pageCenter">
                 <!--Main Navigation Starts here-->
                 <div class="nav" ng-controller="menucontroller">
-                   <ul id="nav">
+                    <ul id="nav">
                         <li class="first">
                             <a>Administration</a>
                             <ul class="firstLevel">
-                                 <li><a href="#" ng-click="redirect('contact')">Contact</a></li>
-                                 <li><a href="#" ng-click="redirect('addpatient')">Add Patient</a></li>
+                                <li><a href="#" ng-click="redirect('contact')">Contact</a></li>
+                                <li><a href="#" ng-click="redirect('addpatient')">Add Patient</a></li>
                             </ul>
                         </li>
-                        @*<li class="first">
-                            <a>Patient Forms</a>
-                            <ul class="firstLevel">
-                               <li><a>Level 1</a>
-                                   <ul class="secondLevel">
-                                    <li><a href="#">Level 2</a></li>
-                                </ul>
-                               </li>
-                            </ul>
-                        </li>
-                        <li class="first">
-                            <a>Reports View</a>
-                            <ul class="firstLevel">
-                                 <li><a href="#">Link 1</a></li>
-                            </ul>
-                        </li>
-                        <li class="first">
-                            <a>Other Service Request</a>
-                            <ul class="firstLevel">
-                                 <li><a href="#">Link 1</a></li>
-                            </ul>
-                        </li>*@
                     </ul>
-                   </div>
+                </div>
                 <!--Main Navigation ends here-->
-
                 <!--Content-->
                 <div class="mainCon">
                     <div class="contentCon  nopadd wd100">
@@ -89,14 +59,16 @@
             </div>
         </div>
     </div>
-     
+
     <!-- Footer starts -->
     <div class="footer">
-    <div class="mainBody">
-    	@*<div class="lhs"> <a href="#"> Press Releases </a> <span>|</span> <a href="#"> Privacy Policy</a>   <span>|</span>    <a href="#"> Terms Of Use</a>  <span>|</span>   Contact Us </div>
-        <div class="rhs">Tlieta Solutions Private Ltd © @DateTime.Now.Year</div>*@
+        <div class="mainBody">
+            <div class="lhs"> <a href="#"> Press Releases </a> <span>|</span> <a href="#"> Privacy Policy</a>   <span>|</span>    <a href="#"> Terms Of Use</a>  <span>|</span>   Contact Us </div>
+        <div class="rhs">Tlieta Solutions Private Ltd © @DateTime.Now.Year</div>
         </div>
     </div>
-   <!-- Footer ends-->
+    <!-- Footer ends-->
 </body>
+<script src="@Url.Content("~/Scripts/Controllers/headercontroller.js")"></script>
+<script src="@Url.Content("~/Scripts/Controllers/menucontroller.js")"></script>
 </html>

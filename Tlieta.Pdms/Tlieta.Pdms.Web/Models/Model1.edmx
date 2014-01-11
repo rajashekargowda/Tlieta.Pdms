@@ -27,12 +27,12 @@
             <PropertyRef Name="PatientId" />
           </Key>
           <Property Name="PatientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Prefix" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Prefix" Type="nvarchar" MaxLength="5" />
           <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="MiddleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="DOB" Type="date" Nullable="false" />
-          <Property Name="Gender" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
           <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
@@ -44,13 +44,13 @@
           <Property Name="FamilyHistory" Type="nvarchar" MaxLength="500" />
           <Property Name="SocioEconomicStatus" Type="nvarchar" MaxLength="500" />
           <Property Name="Diet" Type="nvarchar" MaxLength="50" />
-          <Property Name="IsSmoker" Type="bit" />
+          <Property Name="IsSmoker" Type="bit" Nullable="false" />
           <Property Name="SmokingInfo" Type="nvarchar" MaxLength="500" />
-          <Property Name="IsAlchoholic" Type="bit" />
+          <Property Name="IsAlchoholic" Type="bit" Nullable="false" />
           <Property Name="AlchoholInfo" Type="nvarchar" MaxLength="500" />
           <Property Name="MedicalInsurance" Type="nvarchar" MaxLength="500" />
-          <Property Name="CreatedOn" Type="datetime" />
-          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:StorageModels>
@@ -79,12 +79,12 @@
             <PropertyRef Name="PatientId" />
           </Key>
           <Property Name="PatientId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Prefix" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Prefix" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Mobile" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
           <Property Name="HomePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
@@ -96,13 +96,13 @@
           <Property Name="FamilyHistory" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="SocioEconomicStatus" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="Diet" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="IsSmoker" Type="Boolean" />
+          <Property Name="IsSmoker" Type="Boolean" Nullable="false" />
           <Property Name="SmokingInfo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="IsAlchoholic" Type="Boolean" />
+          <Property Name="IsAlchoholic" Type="Boolean" Nullable="false" />
           <Property Name="AlchoholInfo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="MedicalInsurance" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
-          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

@@ -93,7 +93,7 @@
                               )))
                   .Pageable()
                   .DataSource(dataSource => dataSource
-                      .Ajax().PageSize(10)
+                      .Ajax().PageSize(5)
                       .Model(model =>
                       {
                           model.Id(p => p.ContactId);
@@ -112,26 +112,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-
-    function Edit(e) {
-        var dataItem = this.dataItem($(e.target).closest("tr"));
-        var scope = angular.element("#ContactName").scope();
-        scope.$apply(function () {
-            scope.contact = dataItem;
-            scope.buttontext = "Save Contact";
-        });
-        return false;
-    }
-
-    function Delete(e) {
-        var dataItem = this.dataItem($(e.target).closest("tr"));
-        angular.element("#ContactName").scope().deletecontact(dataItem.ContactId);
-        return false;
-    }
-
-    function RefreshGrid() {
-        var grid = $("#ContactGrid").data("kendoGrid");
-        grid.dataSource.read();
-    }
-</script>

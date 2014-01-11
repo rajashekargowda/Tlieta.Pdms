@@ -43,7 +43,7 @@ namespace Tlieta.Pdms.Web.Controllers
             }
             catch (Exception ex)
             { }
-            return Json(list.ToDataSourceResult(request));
+            return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult Save(Contact contact)

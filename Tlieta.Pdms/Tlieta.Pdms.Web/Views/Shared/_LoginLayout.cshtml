@@ -2,23 +2,15 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js")"></script>
     <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/kendo/2013.3.1119/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.aspnetmvc.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
-    <script src="@Url.Content("~/Scripts/Commmon.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
 </head>
 <body>
     <div id="bodyBg">
     <!--Header Starts-->
     	<div class="header">
         	<div class="mainBody"> 
-            	<div class="logo"></div>
+            	@*<div class="logo"></div>*@
             </div>
         </div>
     <!-- Header ends -->
@@ -45,29 +37,5 @@
         </div>
     </div>
    <!-- Footer ends-->
-
-    <script type="text/javascript">
-        $(function () {
-            var alertwindow = $("#PDMSAlert").kendoWindow({
-                title: "Alert",
-                visible: false,
-                iframe: true,
-                modal: true,
-                width: "300px"
-            }).data("kendoWindow");
-        });
-        function PDMSAlert(m) {
-            var alertwindow = $("#PDMSAlert").data('kendoWindow');
-            $("#pdmsalertmessage").html("<p>" + m + "</p>");
-            alertwindow.center();
-            alertwindow.open();
-            alertwindow.toFront();
-        }
-
-    </script>
-    <div id="PDMSAlert" >
-        <div id="pdmsalertmessage" class="padd10" ></div>
-        <div class="formAction" ><button id="btnOk" onclick="$('#PDMSAlert').data('kendoWindow').close();" type="button" role="button" aria-disabled="false">OK</button></div>
-    </div>  
 </body>
 </html>

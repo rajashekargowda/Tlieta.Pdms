@@ -2,7 +2,7 @@
 function menucontroller($scope) {
     $scope.redirect = function (menu) {
         if (menu == 'contact')
-            location.href = '/Contact/Angular/';
+            location.href = '/Contact/Manage/';
         else if (menu == 'addpatient')
             location.href = '/Patient/Create/';
     };

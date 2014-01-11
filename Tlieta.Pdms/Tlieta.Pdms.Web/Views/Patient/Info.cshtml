@@ -1,5 +1,99 @@
 ﻿@{
-    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Info</h2>
+<script type="text/javascript">
+    var pId = '@ViewBag.Id';
+    alert(pId);
+
+    function getId() {
+        return pId;
+    }
+</script>
+<div class="mainBlock marBtm" ng-controller="patientinfocontroller">
+    <h2><span>
+        <img src="~/Images/addpatient.png" /></span>Patient Info</h2>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea">
+                    <form name="formPatient" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span ng-show="!formPatient.$invalid">Valid data.</span>
+                                <span ng-show="formPatient.FirstName.$error.required" class="required">( * ) Mandatory fields. </span>
+                                <span ng-show="formPatient.Email.$invalid" class="required">Enter valid email. </span>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">First Name<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="PatientId" type="hidden" name="PatientId" ng-model="patient.PatientId" />
+                                    <span ng-bind="patient.FirstName"></span>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Last Name :</label>
+                                <div class="fieldInput">
+                                    <input type="text" name="LastName" ng-model="patient.LastName" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">DOB :</label>
+                                <div class="fieldInput">
+                                    <input type="date" name="DOB" ng-model="patient.DOB" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Gender :</label>
+                                <div class="fieldInput">
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Male">
+                                    Male&nbsp;
+                                    <input name="Gender" type="radio" ng-model="patient.Gender" value="Female">
+                                    Female
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Address :</label>
+                                <div class="fieldInput">
+                                    <textarea name="Address" ng-model="patient.Address" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Mobile :</label>
+                                <div class="fieldInput">
+                                    <input type="text" name="Mobile" ng-model="patient.Mobile" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Home Phone :</label>
+                                <div class="fieldInput">
+                                    <input type="text" name="HomePhone" ng-model="patient.HomePhone" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Email :</label>
+                                <div class="fieldInput">
+                                    <input type="email" name="Email" ng-model="patient.Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="formAction">
+                            <button class="mainActionBtnB" ng-disabled="formContact.$invalid" ng-click="savepatient(patient)">Add Patient</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshpatient()">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/Controllers/patientcontroller.js")" >
+
+</script>
+
+

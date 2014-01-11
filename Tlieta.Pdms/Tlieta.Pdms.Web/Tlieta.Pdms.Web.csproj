@@ -475,6 +475,7 @@
     <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Images\yellow-btn.png" />
     <Content Include="Scripts\AngularJS\angular-kendo.js" />
+    <Content Include="Scripts\AngularJS\angular-route.js" />
     <Content Include="Scripts\AngularJS\angular.min.js" />
     <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -484,6 +485,7 @@
     <Content Include="Scripts\Controllers\menucontroller.js" />
     <Content Include="Scripts\Controllers\passwordcontroller.js" />
     <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\Controllers\testcontroller.js" />
     <Content Include="Scripts\FooTable\footable.filter.js" />
     <Content Include="Scripts\FooTable\footable.js" />
     <Content Include="Scripts\FooTable\footable.paginate.js" />
