@@ -71,8 +71,8 @@ namespace Tlieta.Pdms
             {
                 this.PrepareHeader();
                 this.PrepareTitleBar();
-                this.PrepareLogo();
-                this.PrepareFooter();
+                //this.PrepareLogo();
+                //this.PrepareFooter();
                 this.PreparePages();
             }
             catch (Exception x) { string error = x.Message; }

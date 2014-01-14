@@ -59,8 +59,8 @@ namespace Tlieta.Pdms
 
             this.PrepareHeader();
             this.PrepareTitleBar();
-            this.PrepareFooter();
-            this.PrepareLogo();
+            //this.PrepareFooter();
+            //this.PrepareLogo();
             this.PreparePages();
         }
 
