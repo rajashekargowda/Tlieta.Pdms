@@ -7,11 +7,13 @@
     <Schema Namespace="PDMSDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PDMSDataModelStoreContainer">
           <EntitySet Name="Appointment" EntityType="PDMSDataModel.Store.Appointment" store:Type="Tables" />
+          <EntitySet Name="ComplaintTemplate" EntityType="PDMSDataModel.Store.ComplaintTemplate" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="PDMSDataModel.Store.Contact" store:Type="Tables" />
           <EntitySet Name="Diagnosis" EntityType="PDMSDataModel.Store.Diagnosis" store:Type="Tables" />
           <EntitySet Name="DosageDuration" EntityType="PDMSDataModel.Store.DosageDuration" store:Type="Tables" />
           <EntitySet Name="DosageFrequency" EntityType="PDMSDataModel.Store.DosageFrequency" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="PDMSDataModel.Store.Employee" store:Type="Tables" />
+          <EntitySet Name="ExaminationTemplate" EntityType="PDMSDataModel.Store.ExaminationTemplate" store:Type="Tables" />
           <EntitySet Name="Hospital" EntityType="PDMSDataModel.Store.Hospital" store:Type="Tables" />
           <EntitySet Name="Imaging" EntityType="PDMSDataModel.Store.Imaging" store:Type="Tables" />
           <EntitySet Name="LabInvestigation" EntityType="PDMSDataModel.Store.LabInvestigation" store:Type="Tables" />
@@ -35,6 +37,14 @@
           <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComplaintTemplate">
+          <Key>
+            <PropertyRef Name="ComplaintTemplateId" />
+          </Key>
+          <Property Name="ComplaintTemplateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ComplaintTemplateText" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -80,6 +90,14 @@
           <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" />
           <Property Name="RoleId" Type="int" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ExaminationTemplate">
+          <Key>
+            <PropertyRef Name="ExaminationTemplateId" />
+          </Key>
+          <Property Name="ExaminationTemplateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExaminationTemplateText" Type="nvarchar" MaxLength="150" />
           <Property Name="CreatedOn" Type="datetime" />
         </EntityType>
         <EntityType Name="Hospital">
@@ -238,6 +256,8 @@
           <EntitySet Name="LabInvestigations" EntityType="PDMSDataModel.LabInvestigation" />
           <EntitySet Name="OtherAdvises" EntityType="PDMSDataModel.OtherAdvise" />
           <EntitySet Name="PatientVitals" EntityType="PDMSDataModel.PatientVital" />
+          <EntitySet Name="ComplaintTemplates" EntityType="PDMSDataModel.ComplaintTemplate" />
+          <EntitySet Name="ExaminationTemplates" EntityType="PDMSDataModel.ExaminationTemplate" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -430,6 +450,22 @@
           <Property Type="String" Name="Height" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="BMI" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="TimeLine" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ComplaintTemplate">
+          <Key>
+            <PropertyRef Name="ComplaintTemplateId" />
+          </Key>
+          <Property Type="Int32" Name="ComplaintTemplateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ComplaintTemplateText" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ExaminationTemplate">
+          <Key>
+            <PropertyRef Name="ExaminationTemplateId" />
+          </Key>
+          <Property Type="Int32" Name="ExaminationTemplateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ExaminationTemplateText" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -643,6 +679,24 @@
                 <ScalarProperty Name="BPHigh" ColumnName="BPHigh" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplaintTemplates">
+            <EntityTypeMapping TypeName="PDMSDataModel.ComplaintTemplate">
+              <MappingFragment StoreEntitySet="ComplaintTemplate">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ComplaintTemplateText" ColumnName="ComplaintTemplateText" />
+                <ScalarProperty Name="ComplaintTemplateId" ColumnName="ComplaintTemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExaminationTemplates">
+            <EntityTypeMapping TypeName="PDMSDataModel.ExaminationTemplate">
+              <MappingFragment StoreEntitySet="ExaminationTemplate">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ExaminationTemplateText" ColumnName="ExaminationTemplateText" />
+                <ScalarProperty Name="ExaminationTemplateId" ColumnName="ExaminationTemplateId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

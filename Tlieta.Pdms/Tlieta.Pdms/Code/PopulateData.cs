@@ -72,5 +72,25 @@ namespace Tlieta.Pdms.Views.Shared
                 }
             }
         }
+
+        public static void PopulateComplaintTemplate(RadDropDownList ddl)
+        {
+            List<ComplaintTemplate> complaints = new TemplateData().GetComplaintTemplate();
+            complaints.Insert(0, new ComplaintTemplate() { ComplaintTemplateId = 0, ComplaintTemplateText = "New Template" });
+
+            ddl.DataSource = complaints;
+            ddl.ValueMember = "ComplaintTemplateId";
+            ddl.DisplayMember = "ComplaintTemplateText";
+        }
+
+        public static void PopulateExaminationTemplate(RadDropDownList ddl)
+        {
+            List<ExaminationTemplate> examination = new TemplateData().GetExaminationTemplate();
+            examination.Insert(0, new ExaminationTemplate() { ExaminationTemplateId = 0, ExaminationTemplateText = "New Template" });
+
+            ddl.DataSource = examination;
+            ddl.ValueMember = "ExaminationTemplateId";
+            ddl.DisplayMember = "ExaminationTemplateText";
+        }
     }
 }

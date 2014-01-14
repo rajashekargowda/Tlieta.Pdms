@@ -12,6 +12,9 @@ using Telerik.WinControls.RichTextBox.FileFormats.OpenXml.Docx;
 using System.IO;
 using System.Diagnostics;
 using Tlieta.Pdms.Properties;
+using Telerik.WinControls.RichTextBox.FileFormats.Pdf;
+using Telerik.WinControls.RichTextBox.Model;
+using Telerik.WinControls.RichTextBox.FileFormats.Html;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -24,12 +27,15 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnMedical_Click(object sender, EventArgs e)
         {
-            PrepareDocument((Bitmap)Resources.letterpadheader);
+            PrepareDocument("<b>Sachin</b>");
         }
 
-        private void PrepareDocument(Bitmap image)
+        private void PrepareDocument(string content)
         {
-            this.docCertificate.InsertImage(image);
+            //string htmlcontent = File.ReadAllText("Certificates/Medical.txt");
+            HtmlFormatProvider provider = new HtmlFormatProvider();
+            RadDocument document = provider.Import(content);
+            this.docCertificate.Document = document;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
