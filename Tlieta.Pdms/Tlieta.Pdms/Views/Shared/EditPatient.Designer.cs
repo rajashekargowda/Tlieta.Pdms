@@ -259,15 +259,17 @@
             this.chkMale.TabIndex = 9;
             this.chkMale.Text = "Male";
             this.chkMale.ThemeName = "TelerikMetro";
+            this.chkMale.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkMale_ToggleStateChanged);
             // 
             // chkFemale
             // 
-            this.chkFemale.Location = new System.Drawing.Point(90, 401);
+            this.chkFemale.Location = new System.Drawing.Point(90, 400);
             this.chkFemale.Name = "chkFemale";
             this.chkFemale.Size = new System.Drawing.Size(62, 19);
             this.chkFemale.TabIndex = 10;
             this.chkFemale.Text = "Female";
             this.chkFemale.ThemeName = "TelerikMetro";
+            this.chkFemale.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkFemale_ToggleStateChanged);
             // 
             // radLabel7
             // 

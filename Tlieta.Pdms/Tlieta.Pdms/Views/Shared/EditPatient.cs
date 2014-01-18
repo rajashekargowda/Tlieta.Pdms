@@ -242,5 +242,21 @@ namespace Tlieta.Pdms.Views.Shared
             else
             { btnAdvanced.Text = "Show Advanced Data"; boxAdvanced.Visible = false; }
         }
+
+        private void chkMale_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            if (chkMale.Checked)
+            {
+                chkFemale.Checked = false;
+            }
+        }
+
+        private void chkFemale_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            if (chkFemale.Checked)
+            {
+                chkMale.Checked = false;
+            }
+        }
     }
 }

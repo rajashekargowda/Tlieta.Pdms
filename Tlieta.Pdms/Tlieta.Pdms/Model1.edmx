@@ -7,6 +7,7 @@
     <Schema Namespace="PDMSDataModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PDMSDataModelStoreContainer">
           <EntitySet Name="Appointment" EntityType="PDMSDataModel.Store.Appointment" store:Type="Tables" />
+          <EntitySet Name="Billing" EntityType="PDMSDataModel.Store.Billing" store:Type="Tables" />
           <EntitySet Name="ComplaintTemplate" EntityType="PDMSDataModel.Store.ComplaintTemplate" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="PDMSDataModel.Store.Contact" store:Type="Tables" />
           <EntitySet Name="Diagnosis" EntityType="PDMSDataModel.Store.Diagnosis" store:Type="Tables" />
@@ -37,6 +38,23 @@
           <Property Name="Mobile" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingId" />
+          </Key>
+          <Property Name="BillingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillingNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingDate" Type="datetime" Nullable="false" />
+          <Property Name="Debit" Type="int" Nullable="false" />
+          <Property Name="Credit" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="PatientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoctorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="HospitalName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ComplaintTemplate">
           <Key>
@@ -258,6 +276,7 @@
           <EntitySet Name="PatientVitals" EntityType="PDMSDataModel.PatientVital" />
           <EntitySet Name="ComplaintTemplates" EntityType="PDMSDataModel.ComplaintTemplate" />
           <EntitySet Name="ExaminationTemplates" EntityType="PDMSDataModel.ExaminationTemplate" />
+          <EntitySet Name="Billings" EntityType="PDMSDataModel.Billing" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -466,6 +485,23 @@
           <Property Type="Int32" Name="ExaminationTemplateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="ExaminationTemplateText" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingId" />
+          </Key>
+          <Property Type="Int32" Name="BillingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BillingNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BillingDate" Precision="3" Nullable="false" />
+          <Property Type="Int32" Name="Debit" Nullable="false" />
+          <Property Type="Int32" Name="Credit" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="PatientName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DoctorName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HospitalName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServiceName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Precision="3" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -697,6 +733,24 @@
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ExaminationTemplateText" ColumnName="ExaminationTemplateText" />
                 <ScalarProperty Name="ExaminationTemplateId" ColumnName="ExaminationTemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Billings">
+            <EntityTypeMapping TypeName="PDMSDataModel.Billing">
+              <MappingFragment StoreEntitySet="Billing">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+                <ScalarProperty Name="BillingNumber" ColumnName="BillingNumber" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -24,6 +24,7 @@
         <EntityTypeShape EntityType="PDMSDataModel.PatientVital" Width="1.5" PointX="4.5849610960972313" PointY="22.783530201196452" />
         <EntityTypeShape EntityType="PDMSDataModel.ComplaintTemplate" Width="1.5" PointX="8.96168434105892" PointY="8.6327509622242076" />
         <EntityTypeShape EntityType="PDMSDataModel.ExaminationTemplate" Width="1.5" PointX="4.5865892919649323" PointY="20.944210911609332" />
+        <EntityTypeShape EntityType="PDMSDataModel.Billing" Width="1.5" PointX="9.9149217893904638" PointY="6.08087447568815" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

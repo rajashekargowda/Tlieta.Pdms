@@ -4,46 +4,46 @@ using System.Linq;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class AppointmentData
+    public class BillingData
     {
         PDMSDataEntities entities = new PDMSDataEntities();
 
-        public List<Appointment> GetAppointments(DateTime from, DateTime to)
+        public List<Billing> GetBilling(DateTime from, DateTime to)
         {
-            List<Appointment> appointments = new List<Appointment>();
+            List<Billing> billing = new List<Billing>();
             to = to.Add(new TimeSpan(1, 0, 0, 0));
             from = from.Add(new TimeSpan(-1, 0, 0, 0));
             try
             {
-                appointments = (from a in entities.Appointments select a).ToList();
-                if (appointments.Count > 0)
+                billing = (from a in entities.Billings select a).ToList();
+                if (billing.Count > 0)
                 {
-                    return appointments.Where(i => i.AppointmentDate > from && i.AppointmentDate < to).ToList();
+                    return billing.Where(i => i.BillingDate > from && i.BillingDate < to).ToList();
                 }
             }
             catch { }
-            return appointments;
+            return billing;
         }
 
-        public bool AddSchedule(Appointment model)
+        public bool AddBilling(Billing model)
         {
             try
             {
-                entities.Appointments.Add(model);
+                entities.Billings.Add(model);
                 entities.SaveChanges();
                 return true;
             }
             catch { return false; }
         }
 
-        public bool UpdateSchedule(Appointment model)
+        public bool UpdateBilling(Billing model)
         {
             try
             {
-                Appointment appointment = entities.Appointments.Where(x => x.AppointmentId == model.AppointmentId).SingleOrDefault();
-                if (appointment != null)
+                Billing billing = entities.Billings.Where(x => x.BillingId == model.BillingId).SingleOrDefault();
+                if (billing != null)
                 {
-                    entities.Entry(appointment).CurrentValues.SetValues(model);
+                    entities.Entry(billing).CurrentValues.SetValues(model);
                     entities.SaveChanges();
                     return true;
                 }
@@ -55,14 +55,14 @@ namespace Tlieta.Pdms.DataAccess
             catch { return false; }
         }
 
-        public bool DeleteSchedule(int id)
+        public bool DeleteBilling(int id)
         {
             try
             {
-                Appointment appointment = entities.Appointments.Where(x => x.AppointmentId == id).SingleOrDefault();
-                if (appointment != null)
+                Billing billing = entities.Billings.Where(x => x.BillingId == id).SingleOrDefault();
+                if (billing != null)
                 {
-                    entities.Appointments.Remove(appointment);
+                    entities.Billings.Remove(billing);
                     entities.SaveChanges();
                     return true;
                 }
