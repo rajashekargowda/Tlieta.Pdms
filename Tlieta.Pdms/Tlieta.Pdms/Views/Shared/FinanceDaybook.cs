@@ -42,7 +42,7 @@ namespace Tlieta.Pdms.Views.Shared
             this.FinanceGrid.SummaryRowsBottom.Add(countAmount);
             
             FillGrid();
-            this.FinanceGrid.Columns["BillingDate"].FormatString = "{0:dd/MMM/yyyy}";
+            this.FinanceGrid.Columns["BillDate"].FormatString = "{0:dd/MMM/yyyy}";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -59,18 +59,13 @@ namespace Tlieta.Pdms.Views.Shared
             DateTime from = GetDateFromControl(FromDate);
             DateTime to = GetDateFromControl(ToDate);
 
-            List<Billing> billing = new BillingData().GetBilling(from, to);
+            List<DayBook> billing = new DayBookData().GetDayBook(from, to);
 
             FinanceGrid.DataSource = billing;
             FinanceGrid.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             FinanceGrid.ClearSelection();
 
-            FinanceGrid.Columns["BillingId"].IsVisible = false;
-            FinanceGrid.Columns["PatientId"].IsVisible = false;
-            FinanceGrid.Columns["PatientName"].IsVisible = false;
-            FinanceGrid.Columns["DoctorName"].IsVisible = false;
-            FinanceGrid.Columns["HospitalName"].IsVisible = false;
-            FinanceGrid.Columns["ServiceName"].IsVisible = false;
+            FinanceGrid.Columns["DayBookId"].IsVisible = false;
             FinanceGrid.Columns["UpdatedOn"].IsVisible = false;
         }
 
@@ -103,8 +98,8 @@ namespace Tlieta.Pdms.Views.Shared
         {
             try
             {
-                txtBillingId.Text = e.Row.Cells["BillingId"].Value.ToString();
-                radBillDate.Value = Convert.ToDateTime(e.Row.Cells["BillingDate"].Value.ToString());
+                txtBillingId.Text = e.Row.Cells["DayBookId"].Value.ToString();
+                radBillDate.Value = Convert.ToDateTime(e.Row.Cells["BillDate"].Value.ToString());
                 int credit = Convert.ToInt32(e.Row.Cells["Credit"].Value.ToString());
                 int debit = Convert.ToInt32(e.Row.Cells["Debit"].Value.ToString());
                 if (credit == 0)
@@ -117,7 +112,7 @@ namespace Tlieta.Pdms.Views.Shared
                     chkCredit.Checked = true;
                     txtAmount.Value = credit;
                 }
-                txtBillNumber.Text = e.Row.Cells["BillingNumber"].Value.ToString();
+                txtBillNumber.Text = e.Row.Cells["BillNumber"].Value.ToString();
                 txtNotes.Text = e.Row.Cells["Notes"].Value.ToString();
             }
             catch { }
@@ -135,12 +130,12 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddBilling_Click(object sender, EventArgs e)
         {
-            Billing billing = GetFormData();
+            DayBook billing = GetFormData();
             if (billing == null)
             {
                 return;
             }
-            bool result = new BillingData().AddBilling(billing);
+            bool result = new DayBookData().AddDayBook(billing);
 
             if (result)
             {
@@ -164,13 +159,13 @@ namespace Tlieta.Pdms.Views.Shared
                 return;
             }
 
-            Billing billing = GetFormData();
+            DayBook billing = GetFormData();
             if (billing == null)
             {
                 return;
             }
-            billing.BillingId = Convert.ToInt32(id);
-            bool result = new BillingData().UpdateBilling(billing);
+            billing.DayBookId = Convert.ToInt32(id);
+            bool result = new DayBookData().UpdateDayBook(billing);
 
             if (result)
             {
@@ -194,7 +189,7 @@ namespace Tlieta.Pdms.Views.Shared
                 return;
             }
 
-            bool result = new BillingData().DeleteBilling(
+            bool result = new DayBookData().DeleteDayBook(
                                             Convert.ToInt32(id));
             if (result)
             {
@@ -209,7 +204,7 @@ namespace Tlieta.Pdms.Views.Shared
             }
         }
 
-        private Billing GetFormData()
+        private DayBook GetFormData()
         {
             DateTime billingdate = DateTime.Now;
             try
@@ -248,11 +243,10 @@ namespace Tlieta.Pdms.Views.Shared
                 debit = amount;
             }
 
-            return (new Billing()
+            return (new DayBook()
             {
-                BillingDate = billingdate,
-                BillingNumber = txtBillNumber.Text,
-                PatientId = 0,
+                BillDate = billingdate,
+                BillNumber = txtBillNumber.Text,
                 Credit = credit,
                 Debit = debit,
                 UpdatedOn = DateTime.Now,

@@ -10,6 +10,7 @@
           <EntitySet Name="Billing" EntityType="PDMSDataModel.Store.Billing" store:Type="Tables" />
           <EntitySet Name="ComplaintTemplate" EntityType="PDMSDataModel.Store.ComplaintTemplate" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="PDMSDataModel.Store.Contact" store:Type="Tables" />
+          <EntitySet Name="DayBook" EntityType="PDMSDataModel.Store.DayBook" store:Type="Tables" />
           <EntitySet Name="Diagnosis" EntityType="PDMSDataModel.Store.Diagnosis" store:Type="Tables" />
           <EntitySet Name="DosageDuration" EntityType="PDMSDataModel.Store.DosageDuration" store:Type="Tables" />
           <EntitySet Name="DosageFrequency" EntityType="PDMSDataModel.Store.DosageFrequency" store:Type="Tables" />
@@ -75,6 +76,18 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Company" Type="nvarchar" MaxLength="100" />
           <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DayBook">
+          <Key>
+            <PropertyRef Name="DayBookId" />
+          </Key>
+          <Property Name="DayBookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillDate" Type="datetime" Nullable="false" />
+          <Property Name="Debit" Type="int" Nullable="false" />
+          <Property Name="Credit" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Diagnosis">
@@ -277,6 +290,7 @@
           <EntitySet Name="ComplaintTemplates" EntityType="PDMSDataModel.ComplaintTemplate" />
           <EntitySet Name="ExaminationTemplates" EntityType="PDMSDataModel.ExaminationTemplate" />
           <EntitySet Name="Billings" EntityType="PDMSDataModel.Billing" />
+          <EntitySet Name="DayBooks" EntityType="PDMSDataModel.DayBook" />
         </EntityContainer>
         <EntityType Name="Hospital">
           <Key>
@@ -502,6 +516,18 @@
           <Property Type="String" Name="ServiceName" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="UpdatedOn" Precision="3" Nullable="false" />
           <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DayBook">
+          <Key>
+            <PropertyRef Name="DayBookId" />
+          </Key>
+          <Property Type="Int32" Name="DayBookId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BillNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BillDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Debit" Nullable="false" />
+          <Property Type="Int32" Name="Credit" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -751,6 +777,19 @@
                 <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
                 <ScalarProperty Name="BillingNumber" ColumnName="BillingNumber" />
                 <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayBooks">
+            <EntityTypeMapping TypeName="PDMSDataModel.DayBook">
+              <MappingFragment StoreEntitySet="DayBook">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="BillNumber" ColumnName="BillNumber" />
+                <ScalarProperty Name="DayBookId" ColumnName="DayBookId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

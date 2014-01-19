@@ -45,5 +45,6 @@ namespace Tlieta.Pdms
         public DbSet<ComplaintTemplate> ComplaintTemplates { get; set; }
         public DbSet<ExaminationTemplate> ExaminationTemplates { get; set; }
         public DbSet<Billing> Billings { get; set; }
+        public DbSet<DayBook> DayBooks { get; set; }
     }
 }

@@ -25,6 +25,7 @@
         <EntityTypeShape EntityType="PDMSDataModel.ComplaintTemplate" Width="1.5" PointX="8.96168434105892" PointY="8.6327509622242076" />
         <EntityTypeShape EntityType="PDMSDataModel.ExaminationTemplate" Width="1.5" PointX="4.5865892919649323" PointY="20.944210911609332" />
         <EntityTypeShape EntityType="PDMSDataModel.Billing" Width="1.5" PointX="9.9149217893904638" PointY="6.08087447568815" />
+        <EntityTypeShape EntityType="PDMSDataModel.DayBook" Width="1.5" PointX="0.96731902890248178" PointY="12.44597825987543" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
