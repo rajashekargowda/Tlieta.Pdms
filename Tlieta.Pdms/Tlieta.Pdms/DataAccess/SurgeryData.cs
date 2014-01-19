@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -14,7 +16,10 @@ namespace Tlieta.Pdms.DataAccess
                 Surgery surgery = entities.Surgeries.Find(surgeryid);
                 return surgery;
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public List<Surgery> GetSurgeriesForPatient(int patientid)
@@ -24,7 +29,10 @@ namespace Tlieta.Pdms.DataAccess
                 List<Surgery> surgerylist = entities.Surgeries.Where(s => s.PatientId == patientid).ToList();
                 return surgerylist;
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public int AddSurgery(Surgery model)
@@ -34,7 +42,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.Surgeries.Add(model);
                 return entities.SaveChanges();
             }
-            catch { return 0; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return 0;
+            }
         }
 
         public bool UpdateSurgery(Surgery model)
@@ -53,7 +64,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

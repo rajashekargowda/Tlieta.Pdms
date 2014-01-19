@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -14,7 +16,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 complaint = (from c in entities.ComplaintTemplates select c).ToList();
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
             return complaint;
         }
 
@@ -26,7 +31,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<ExaminationTemplate> GetExaminationTemplate()
@@ -36,7 +44,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 examination = (from c in entities.ExaminationTemplates select c).ToList();
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
             return examination;
         }
 
@@ -48,7 +59,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

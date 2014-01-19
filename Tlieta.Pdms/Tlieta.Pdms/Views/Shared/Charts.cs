@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Tlieta.Utility;
 using Telerik.WinControls.UI;
 using System.IO;
 using Telerik.WinControls.RichTextBox.FormatProviders;
@@ -10,6 +9,7 @@ using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using Tlieta.Pdms.Properties;
 using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {

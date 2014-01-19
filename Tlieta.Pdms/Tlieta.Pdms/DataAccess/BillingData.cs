@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -21,7 +22,10 @@ namespace Tlieta.Pdms.DataAccess
                     return billing.Where(i => i.BillingDate > from && i.BillingDate < to).ToList();
                 }
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); 
+            }
             return billing;
         }
 
@@ -33,7 +37,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool UpdateBilling(Billing model)
@@ -52,7 +59,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool DeleteBilling(int id)
@@ -71,7 +81,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -13,7 +15,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from h in entities.Hospitals select h).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddHospital(Hospital hospital)
@@ -24,7 +29,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Operation> GetOperations()
@@ -33,7 +41,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.Operations select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddOperation(Operation operation)
@@ -44,7 +55,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Diagnosis> GetDiagnoses()
@@ -53,7 +67,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.Diagnoses select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddDiagnosis(Diagnosis diagnosis)
@@ -64,7 +81,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Employee> GetEmployees()
@@ -73,7 +93,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from e in entities.Employees select e).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddEmployee(Employee employee)
@@ -84,7 +107,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Role> GetRoles()
@@ -93,7 +119,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from r in entities.Roles select r).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddRole(Role role)
@@ -104,7 +133,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Service> GetServices()
@@ -113,7 +145,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from e in entities.Services select e).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddService(Service service)
@@ -124,7 +159,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<LabInvestigation> GetLabInvestigations()
@@ -133,7 +171,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.LabInvestigations select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddLabInvestigation(LabInvestigation labinvestigation)
@@ -144,7 +185,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<DosageFrequency> GetDosageFrequencies()
@@ -153,7 +197,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.DosageFrequencies select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddDosageFrequency(DosageFrequency dosagefrequency)
@@ -164,7 +211,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<DosageDuration> GetDosageDurations()
@@ -173,7 +223,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.DosageDurations select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddDosageDuration(DosageDuration dosageduration)
@@ -184,7 +237,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<Imaging> GetImagings()
@@ -193,7 +249,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.Imagings select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddImaging(Imaging imaging)
@@ -204,7 +263,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<OtherAdvise> GetOtherAdvises()
@@ -213,7 +275,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 return (from o in entities.OtherAdvises select o).ToList();
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddOtherAdvise(OtherAdvise otheradvise)
@@ -224,7 +289,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

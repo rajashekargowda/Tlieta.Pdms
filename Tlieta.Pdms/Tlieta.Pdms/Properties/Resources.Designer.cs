@@ -371,6 +371,15 @@ namespace Tlieta.Pdms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to log.txt.
+        /// </summary>
+        internal static string LogFile {
+            get {
+                return ResourceManager.GetString("LogFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap magnifier_bg {

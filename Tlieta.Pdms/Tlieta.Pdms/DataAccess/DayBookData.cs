@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -21,7 +22,10 @@ namespace Tlieta.Pdms.DataAccess
                     return daybook.Where(i => i.BillDate > from && i.BillDate < to).ToList();
                 }
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
             return daybook;
         }
 
@@ -33,7 +37,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool UpdateDayBook(DayBook model)
@@ -52,7 +59,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool DeleteDayBook(int id)
@@ -71,7 +81,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

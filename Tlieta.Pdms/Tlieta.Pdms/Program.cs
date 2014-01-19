@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
-using Tlieta.Utility;
 
 namespace Tlieta.Pdms
 {

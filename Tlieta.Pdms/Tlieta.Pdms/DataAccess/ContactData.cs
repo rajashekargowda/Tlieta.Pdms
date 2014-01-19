@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -14,7 +16,10 @@ namespace Tlieta.Pdms.DataAccess
             {
                 contacts = (from c in entities.Contacts select c).ToList();
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); 
+            }
             return contacts;
         }
 
@@ -26,7 +31,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool UpdateContact(Contact model)
@@ -45,7 +53,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
     }

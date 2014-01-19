@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -16,7 +17,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public List<PatientVital> GetPatientVital(int patientid)
@@ -33,7 +37,10 @@ namespace Tlieta.Pdms.DataAccess
                 }
                 return result;
             }
-            catch { return null; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
     }
 }

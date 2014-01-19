@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -21,7 +22,10 @@ namespace Tlieta.Pdms.DataAccess
                     return appointments.Where(i => i.AppointmentDate > from && i.AppointmentDate < to).ToList();
                 }
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); 
+            }
             return appointments;
         }
 
@@ -33,7 +37,10 @@ namespace Tlieta.Pdms.DataAccess
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool UpdateSchedule(Appointment model)
@@ -52,7 +59,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public bool DeleteSchedule(int id)
@@ -71,7 +81,10 @@ namespace Tlieta.Pdms.DataAccess
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

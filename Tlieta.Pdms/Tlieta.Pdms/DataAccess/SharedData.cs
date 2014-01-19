@@ -1,6 +1,7 @@
-﻿using Tlieta.Utility;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
+using Tlieta.Pdms.Code;
+using System;
 
 namespace Tlieta.Pdms.DataAccess
 {
@@ -32,26 +33,12 @@ namespace Tlieta.Pdms.DataAccess
                     entities.SaveChanges();
                 }
                 return serialkey;
-
-                //using (DBManager db = new DBManager())
-                //{
-                //    db.Open();
-                //    ds = db.ExecuteDataSet(CommandType.StoredProcedure, "spGetSerialKey");
-                //    if (ds != null && ds.Tables[0].Rows.Count > 0)
-                //    {
-                //        return ds.Tables[0].Rows[0][0].ToString();
-                //    }
-                //    else
-                //    {
-                //        string serialkey = FingerPrint.Value();
-                //        db.CreateParameters(1);
-                //        db.AddParameters(0, "@SerialKey", serialkey);
-                //        db.ExecuteNonQuery(CommandType.StoredProcedure, "spSetSerialKey");
-                //        return serialkey;
-                //    }
-                //}
             }
-            catch { return ""; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+                return "";
+            }
         }
     }
 } 
