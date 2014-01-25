@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.Web.Models
+namespace Tlieta.Pdms.Web
 {
     using System;
     using System.Collections.Generic;

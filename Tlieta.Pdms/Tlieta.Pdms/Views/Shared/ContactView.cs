@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -16,8 +17,14 @@ namespace Tlieta.Pdms.Views.Shared
         public ContactView()
         {
             InitializeComponent();
-
-            FillGrid();
+            try
+            {
+                FillGrid();
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void FillGrid()
@@ -39,7 +46,10 @@ namespace Tlieta.Pdms.Views.Shared
                 txtCompany.Text = e.Row.Cells[5].Value.ToString();
                 txtDesignation.Text = e.Row.Cells[6].Value.ToString();
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void RefreshTexts()
@@ -55,64 +65,78 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddSchedule_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text.Trim();
-            if (name == "")
+            try
             {
-                MessageBox.Show("Enter all mandatory values");
-                return;
+                string name = txtName.Text.Trim();
+                if (name == "")
+                {
+                    MessageBox.Show("Enter all mandatory values");
+                    return;
+                }
+
+                bool result = new ContactData().AddContact(new Contact()
+                {
+                    ContactName = name,
+                    Address = txtAddress.Text,
+                    Mobile = txtMobile.Text,
+                    Email = txtEmail.Text,
+                    Company = txtCompany.Text,
+                    Designation = txtDesignation.Text,
+                    UpdatedOn = DateTime.Now
+                });
+
+                if (result)
+                    MessageBox.Show("Added Successfully");
+
+                FillGrid();
+                RefreshTexts();
             }
-
-            bool result = new ContactData().AddContact(new Contact()
+            catch (Exception x)
             {
-                ContactName = name,
-                Address = txtAddress.Text,
-                Mobile = txtMobile.Text,
-                Email = txtEmail.Text,
-                Company = txtCompany.Text,
-                Designation = txtDesignation.Text,
-                UpdatedOn = DateTime.Now
-            });
-
-            if (result)
-                MessageBox.Show("Added Successfully");
-
-            FillGrid();
-            RefreshTexts();
+                FileLogger.LogError(x);
+            }
         }
 
         private void btnUpdateSchedule_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text.Trim();
-            string id = txtContactId.Text.Trim();
-
-            if (id == "")
+            try
             {
-                MessageBox.Show("Select(double click) a contact to update");
-                return;
+                string name = txtName.Text.Trim();
+                string id = txtContactId.Text.Trim();
+
+                if (id == "")
+                {
+                    MessageBox.Show("Select(double click) a contact to update");
+                    return;
+                }
+                else if (name == "")
+                {
+                    MessageBox.Show("Enter all mandatory values");
+                    return;
+                }
+
+                bool result = new ContactData().UpdateContact(new Contact()
+                {
+                    ContactId = Convert.ToInt32(id),
+                    ContactName = name,
+                    Address = txtAddress.Text,
+                    Mobile = txtMobile.Text,
+                    Email = txtEmail.Text,
+                    Company = txtCompany.Text,
+                    Designation = txtDesignation.Text,
+                    UpdatedOn = DateTime.Now
+                });
+
+                if (result)
+                    MessageBox.Show("Updated Successfully");
+
+                FillGrid();
+                RefreshTexts();
             }
-            else if (name == "")
+            catch (Exception x)
             {
-                MessageBox.Show("Enter all mandatory values");
-                return;
+                FileLogger.LogError(x);
             }
-
-            bool result = new ContactData().UpdateContact(new Contact()
-            {
-                ContactId = Convert.ToInt32(id),
-                ContactName = name,
-                Address = txtAddress.Text,
-                Mobile = txtMobile.Text,
-                Email = txtEmail.Text,
-                Company = txtCompany.Text,
-                Designation = txtDesignation.Text,
-                UpdatedOn = DateTime.Now
-            });
-
-            if (result)
-                MessageBox.Show("Updated Successfully");
-
-            FillGrid();
-            RefreshTexts();
         }
     }
 }

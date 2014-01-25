@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
 using Telerik.WinControls.Themes;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -17,70 +18,93 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddSchedule_Click(object sender, EventArgs e)
         {
-            DateTime startdate = (DateTime)(radDateStart.DateTimePickerElement.Value);
-            DateTime starttime = (DateTime)(radTimeStart.Value);
-            DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
+            try
+            {
+                DateTime startdate = (DateTime)(radDateStart.DateTimePickerElement.Value);
+                DateTime starttime = (DateTime)(radTimeStart.Value);
+                DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
 
-            bool result = new AppointmentData().AddSchedule(new Appointment(){
-                                            AppointmentDate = appointment,
-                                            Name = txtName.Text,
-                                            PatientId = txtPatientId.Text,
-                                            Mobile = txtMobile.Text,
-                                            Email = txtEmail.Text,
-                                            UpdatedOn = DateTime.Now
-            });
+                bool result = new AppointmentData().AddSchedule(new Appointment()
+                {
+                    AppointmentDate = appointment,
+                    Name = txtName.Text,
+                    PatientId = txtPatientId.Text,
+                    Mobile = txtMobile.Text,
+                    Email = txtEmail.Text,
+                    UpdatedOn = DateTime.Now
+                });
 
-            if (result)
-                MessageBox.Show("Added Successfully");
+                if (result)
+                    MessageBox.Show("Added Successfully");
 
-            RefreshTexts();
+                RefreshTexts();
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void btnUpdateSchedule_Click(object sender, EventArgs e)
         {
-            string id = txtAppointmentId.Text.Trim();
-            if (id == "")
+            try
             {
-                MessageBox.Show("Select(double click) an appointment to update");
-                return;
+                string id = txtAppointmentId.Text.Trim();
+                if (id == "")
+                {
+                    MessageBox.Show("Select(double click) an appointment to update");
+                    return;
+                }
+                DateTime startdate = (DateTime)(radDateStart.DateTimePickerElement.Value);
+                DateTime starttime = (DateTime)(radTimeStart.Value);
+                DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
+
+                bool result = new AppointmentData().UpdateSchedule(new Appointment()
+                {
+                    AppointmentId = Convert.ToInt32(id),
+                    AppointmentDate = appointment,
+                    Name = txtName.Text,
+                    PatientId = txtPatientId.Text,
+                    Mobile = txtMobile.Text,
+                    Email = txtEmail.Text,
+                    UpdatedOn = DateTime.Now
+                });
+
+                if (result)
+                    MessageBox.Show("Updated Successfully");
+
+                FillGrid();
+                RefreshTexts();
             }
-            DateTime startdate = (DateTime)(radDateStart.DateTimePickerElement.Value);
-            DateTime starttime = (DateTime)(radTimeStart.Value);
-            DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
-
-            bool result = new AppointmentData().UpdateSchedule(new Appointment(){
-                                            AppointmentId = Convert.ToInt32(id),
-                                            AppointmentDate = appointment,
-                                            Name = txtName.Text,
-                                            PatientId = txtPatientId.Text,
-                                            Mobile = txtMobile.Text,
-                                            Email = txtEmail.Text,
-                                            UpdatedOn = DateTime.Now 
-            });
-
-            if (result)
-                MessageBox.Show("Updated Successfully");
-
-            FillGrid();
-            RefreshTexts();
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string id = txtAppointmentId.Text.Trim();
-            if (id == "")
+            try
             {
-                MessageBox.Show("Select(double click) a contact to delete");
-                return;
+                string id = txtAppointmentId.Text.Trim();
+                if (id == "")
+                {
+                    MessageBox.Show("Select(double click) a contact to delete");
+                    return;
+                }
+
+                bool result = new AppointmentData().DeleteSchedule(
+                                                Convert.ToInt32(id));
+                if (result)
+                    MessageBox.Show("Deleted Successfully");
+
+                FillGrid();
+                RefreshTexts();
             }
-
-            bool result = new AppointmentData().DeleteSchedule(
-                                            Convert.ToInt32(id));
-            if (result)
-                MessageBox.Show("Deleted Successfully");
-
-            FillGrid();
-            RefreshTexts();
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -89,7 +113,10 @@ namespace Tlieta.Pdms.Views.Shared
             {
                 FillGrid();
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
 
         }
 
@@ -128,7 +155,14 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            this.AppointmentsGrid.Print(true, this.radPrintDocument1);
+            try
+            {
+                this.AppointmentsGrid.Print(true, this.radPrintDocument1);
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void AppointmentsGrid_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
@@ -145,7 +179,10 @@ namespace Tlieta.Pdms.Views.Shared
                 radDateStart.Value = appointment;
                 radTimeStart.Value = appointment;
             }
-            catch { }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         private void RefreshTexts()

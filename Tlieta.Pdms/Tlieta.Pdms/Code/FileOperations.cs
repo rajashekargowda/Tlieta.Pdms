@@ -8,19 +8,33 @@ namespace Tlieta.Pdms.Code
     {
         public static void OpenFolder(string foldername)
         {
-            Process.Start(new System.Diagnostics.ProcessStartInfo()
+            try
             {
-                FileName = foldername,
-                UseShellExecute = true,
-                Verb = "open"
-            });
+                Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = foldername,
+                    UseShellExecute = true,
+                    Verb = "open"
+                });
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         public static FileInfo[] GetFilesinFolder(string folder)
         {
-            DirectoryInfo mydir = new DirectoryInfo(folder);
-            FileInfo[] f = mydir.GetFiles();
-            return f;
+            try
+            {
+                DirectoryInfo mydir = new DirectoryInfo(folder);
+                FileInfo[] f = mydir.GetFiles();
+                return f;
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public static bool CreateDirectory(string folder)
@@ -33,7 +47,10 @@ namespace Tlieta.Pdms.Code
                 }
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public static bool DeleteDirectory(string folder)
@@ -45,7 +62,10 @@ namespace Tlieta.Pdms.Code
                 d.Delete(true);
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public static bool CopyFile(string sourcefile, string destination)
@@ -62,7 +82,10 @@ namespace Tlieta.Pdms.Code
                 f.CopyTo(destination + "\\" + f.Name);
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public static bool MoveFile(string sourcefile, string destination)
@@ -79,7 +102,10 @@ namespace Tlieta.Pdms.Code
                 f.MoveTo(destination + "\\" + f.Name);
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
 
         public static bool DeleteFile(string file)
@@ -91,7 +117,10 @@ namespace Tlieta.Pdms.Code
                 f.Delete();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return false;
+            }
         }
     }
 }

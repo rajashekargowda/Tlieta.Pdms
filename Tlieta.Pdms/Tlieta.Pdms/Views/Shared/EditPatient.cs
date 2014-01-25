@@ -13,6 +13,7 @@ using Telerik.WinControls.UI;
 using System.IO;
 using System.Configuration;
 using Telerik.WinControls.Enumerations;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -23,28 +24,35 @@ namespace Tlieta.Pdms.Views.Shared
         public EditPatient(int patientId)
         {
             InitializeComponent();
-            btnSavePatient.Visible = true;
-            PopulateData.PopulateHospital(ddlHospital);
-
-            new TelerikMetroTheme();
-
-            _patientid = patientId;
-            lblPatientId.Text = patientId.ToString();
-
-            if (_patientid != 0)
+            try
             {
-                btnSavePatient.Visible = false;
-                lblPatientId.Text = _patientid.ToString();
-                btnUpdate.Visible = true;
-                btnAdvanced.Visible = true;
-                PopulatePatient(_patientid);
-            }
-            else
-            {
-
                 btnSavePatient.Visible = true;
-                btnUpdate.Visible = false;
-                btnAdvanced.Visible = false;
+                PopulateData.PopulateHospital(ddlHospital);
+
+                new TelerikMetroTheme();
+
+                _patientid = patientId;
+                lblPatientId.Text = patientId.ToString();
+
+                if (_patientid != 0)
+                {
+                    btnSavePatient.Visible = false;
+                    lblPatientId.Text = _patientid.ToString();
+                    btnUpdate.Visible = true;
+                    btnAdvanced.Visible = true;
+                    PopulatePatient(_patientid);
+                }
+                else
+                {
+
+                    btnSavePatient.Visible = true;
+                    btnUpdate.Visible = false;
+                    btnAdvanced.Visible = false;
+                }
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
             }
         }
 
@@ -93,10 +101,14 @@ namespace Tlieta.Pdms.Views.Shared
         private void btnSavePatient_Click(object sender, EventArgs e)
         {
             bool result = true;
+            if (txtFirstName.Text.Trim() == "")
+            {
+                MessageBox.Show("Enter first name"); return;
+            }
             try
             {
                 Patient patient = new Patient();
-                patient.Prefix = ddlPrefix.SelectedItem.Text;
+                patient.Prefix = ddlPrefix.SelectedItem == null ? "" : ddlPrefix.SelectedItem.Text;
                 patient.FirstName = txtFirstName.Text.Trim();
                 patient.MiddleName = txtMiddleName.Text.Trim();
                 patient.LastName = txtLastName.Text.Trim();
@@ -114,7 +126,10 @@ namespace Tlieta.Pdms.Views.Shared
                 PatientData patientObject = new PatientData();
                 _patientid = patientObject.AddPatient(patient);
             }
-            catch { result = false; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return;
+            }
 
             if (result)
             {
@@ -189,7 +204,10 @@ namespace Tlieta.Pdms.Views.Shared
 
                 result = new PatientData().UpdatePatient(patient);
             }
-            catch { MessageBox.Show("Error updating patient : Please contact support"); return; }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); MessageBox.Show("Error updating patient : Please contact support"); return;
+            }
 
             if (result)
             {
@@ -219,20 +237,26 @@ namespace Tlieta.Pdms.Views.Shared
 
         private string AutoCapitalize(string p)
         {
-            if (p.Trim() != "")
+            try
             {
-                string result = "";
-                char[] name = p.ToCharArray();
-                name.SetValue((char)name.GetValue(0).ToString().ToUpper().ToCharArray().GetValue(0), 0);
-                foreach (char c in name)
+                if (p.Trim() != "")
                 {
-                    result = result + c.ToString();
+                    string result = "";
+                    char[] name = p.ToCharArray();
+                    name.SetValue((char)name.GetValue(0).ToString().ToUpper().ToCharArray().GetValue(0), 0);
+                    foreach (char c in name)
+                    {
+                        result = result + c.ToString();
+                    }
+                    return result;
                 }
-                return result;
+                else
+                    return "";
             }
-            else
-                return "";
-
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return "";
+            }
         }
 
         private void btnAdvanced_ToggleStateChanging(object sender, StateChangingEventArgs args)

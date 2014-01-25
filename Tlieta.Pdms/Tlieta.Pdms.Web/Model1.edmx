@@ -7,6 +7,7 @@
       <Schema Namespace="PDMSDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="PDMSDatabaseModelStoreContainer">
           <EntitySet Name="Contact" EntityType="PDMSDatabaseModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLog" EntityType="PDMSDatabaseModel.Store.ErrorLog" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Patient" EntityType="PDMSDatabaseModel.Store.Patient" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Contact">
@@ -21,6 +22,25 @@
           <Property Name="Company" Type="nvarchar" MaxLength="100" />
           <Property Name="Designation" Type="nvarchar" MaxLength="150" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Source" Type="varchar" MaxLength="500" />
+          <Property Name="LogDate" Type="datetime" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+          <Property Name="QueryString" Type="varchar" MaxLength="500" />
+          <Property Name="TargetSite" Type="varchar" MaxLength="500" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="500" />
+          <Property Name="ServerName" Type="varchar" MaxLength="500" />
+          <Property Name="RequestUrl" Type="varchar" MaxLength="500" />
+          <Property Name="UserAgent" Type="varchar" MaxLength="500" />
+          <Property Name="UserIP" Type="varchar" MaxLength="500" />
+          <Property Name="UserAuthentication" Type="varchar" MaxLength="500" />
+          <Property Name="UserName" Type="varchar" MaxLength="500" />
+          <Property Name="EventId" Type="int" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -59,6 +79,7 @@
       <Schema Namespace="PDMSDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PDMSDatabaseEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="PDMSDatabaseModel.Contact" />
+          <EntitySet Name="ErrorLogs" EntityType="PDMSDatabaseModel.ErrorLog" />
           <EntitySet Name="Patients" EntityType="PDMSDatabaseModel.Patient" />
         </EntityContainer>
         <EntityType Name="Contact">
@@ -73,6 +94,25 @@
           <Property Name="Company" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="Designation" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Source" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+          <Property Name="Message" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="QueryString" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="TargetSite" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="ServerName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="RequestUrl" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UserAgent" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UserIP" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UserAuthentication" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="EventId" Type="Int32" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -124,6 +164,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+                <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+                <ScalarProperty Name="UserAuthentication" ColumnName="UserAuthentication" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="PDMSDatabaseModel.Patient">
               <MappingFragment StoreEntitySet="Patient">
@@ -170,7 +230,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

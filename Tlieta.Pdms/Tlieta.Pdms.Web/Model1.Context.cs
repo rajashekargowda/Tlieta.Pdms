@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.Web.Models
+namespace Tlieta.Pdms.Web
 {
     using System;
     using System.Data.Entity;
@@ -26,6 +26,7 @@ namespace Tlieta.Pdms.Web.Models
         }
     
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ErrorLog> ErrorLogs { get; set; }
         public DbSet<Patient> Patients { get; set; }
     }
 }

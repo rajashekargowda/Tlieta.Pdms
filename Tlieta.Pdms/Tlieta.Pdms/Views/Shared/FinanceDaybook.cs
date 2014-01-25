@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
 using Telerik.WinControls.UI;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -18,31 +19,38 @@ namespace Tlieta.Pdms.Views.Shared
         {
             InitializeComponent();
 
-            radBillDate.Value = DateTime.Now;
-            FromDate.Value = DateTime.Now;
-            ToDate.Value = DateTime.Now;
-
-            GridViewSummaryRowItem countAmount = new GridViewSummaryRowItem();
-            countAmount.Add(new GridViewSummaryItem()
+            try
             {
-                Aggregate = GridAggregateFunction.Sum,
-                FormatString = "Total Debit = {0}",
-                FieldName = "Debit",
-                Name = "Debit"
-            });
-            countAmount.Add(new GridViewSummaryItem()
+                radBillDate.Value = DateTime.Now;
+                FromDate.Value = DateTime.Now;
+                ToDate.Value = DateTime.Now;
+
+                GridViewSummaryRowItem countAmount = new GridViewSummaryRowItem();
+                countAmount.Add(new GridViewSummaryItem()
+                {
+                    Aggregate = GridAggregateFunction.Sum,
+                    FormatString = "Total Debit = {0}",
+                    FieldName = "Debit",
+                    Name = "Debit"
+                });
+                countAmount.Add(new GridViewSummaryItem()
+                {
+                    Aggregate = GridAggregateFunction.Sum,
+                    FormatString = "Total Credit = {0}",
+                    FieldName = "Credit",
+                    Name = "Credit"
+                });
+
+
+                this.FinanceGrid.SummaryRowsBottom.Add(countAmount);
+
+                FillGrid();
+                this.FinanceGrid.Columns["BillDate"].FormatString = "{0:dd/MMM/yyyy}";
+            }
+            catch (Exception x)
             {
-                Aggregate = GridAggregateFunction.Sum,
-                FormatString = "Total Credit = {0}",
-                FieldName = "Credit",
-                Name = "Credit"
-            });
-
-
-            this.FinanceGrid.SummaryRowsBottom.Add(countAmount);
-            
-            FillGrid();
-            this.FinanceGrid.Columns["BillDate"].FormatString = "{0:dd/MMM/yyyy}";
+                FileLogger.LogError(x);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

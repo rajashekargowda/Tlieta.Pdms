@@ -45,6 +45,7 @@ function contactcontroller($scope) {
                 },
                 error: function (error) {
                     alert("Record could not be deleted");
+                    return false;
                 }
             });
         }

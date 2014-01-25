@@ -14,8 +14,9 @@ namespace Tlieta.Pdms.Web.Controllers
             return View();
         }
 
-        public ActionResult Dashboard()
+        public ActionResult Dashboard(string user)
         {
+            Session["userid"] = user;
             return View();
         }
 

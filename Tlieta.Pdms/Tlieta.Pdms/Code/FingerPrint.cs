@@ -12,15 +12,16 @@ namespace Tlieta.Pdms.Code
         private static string fingerPrint = string.Empty;
         public static string Value()
         {
-            if (string.IsNullOrEmpty(fingerPrint))
+            try
             {
-                fingerPrint = GetHash("CPU >> " + cpuId() +
-                    //"\nBIOS >> " + biosId() + 
-                    //"\nBASE >> " + baseId() +
-                                        "\nDISK >> " + diskId()
-                    //"\nVIDEO >> " + videoId() +
-                    //"\nMAC >> "+ macId()
-                                     );
+                if (string.IsNullOrEmpty(fingerPrint))
+                {
+                    fingerPrint = GetHash("CPU >> " + cpuId() + "\nDISK >> " + diskId());
+                }
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); 
             }
             return fingerPrint;
         }

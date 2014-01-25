@@ -1,56 +1,81 @@
 ﻿@{
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
-
-    @Html.AntiForgeryToken()
-            
-    <div id="divValidation" style="color: red; display: none;"></div>
-    <div class="loginPanel">
+<script src="@Url.Content("~/Scripts/Controllers/logincontroller.js")"></script>
+<div class="loginPanel" ng-controller="logincontroller">
+    <form name="formLogin" novalidate>
         <div class="loginOuter">
             <div class="loginInner">
-                <div class="formRow">                   
+                <div class="formRow">
                     <label class="fieldLabel">User Name</label>
                     <div class="fieldInput">
-                        <input id="txtUserId" type="text" />
+                        <input id="txtUserId" type="text" ng-model="user.UserId" required />
                     </div>
                 </div>
-                <div class="formRow">                   
+                <div class="formRow">
                     <label class="fieldLabel">Password</label>
-                    <div class="fieldInput"><input id="txtPassword" type="password" />
+                    <div class="fieldInput">
+                        <input id="txtPassword" type="password" ng-model="user.Password" required />
+                    </div>
+                </div>
+                <div class="formRow">
+                    <label class="fieldLabel"></label>
+                    <div class="fieldInput">
+                        <div id="divValidation" style="color: red;"><span ng-show="formLogin.$invalid">Enter username and password to login</span></div>
                     </div>
                 </div>
                 <br />
                 <div class="formRow marTop">
                     <label class="fieldLabel"></label>
                     <div class="fieldInput">
-                        <input type="button" id="Login" value="Login" class="mainActionBtn" onclick="return ValidateForm();" />
+                        <input type="button" id="Login" value="Login" class="mainActionBtn" ng-disabled="formLogin.$invalid" ng-click="authenticate()">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+</div>
 
 <script type="text/javascript">
 
-    $(document).ready(function () {
-        $("#Login").click(function (e) {
-            AuthenticateLogin();
-            return false;
-        });
-    });
+    //$(document).ready(function () {
+    //    $("#Login").click(function (e) {
+    //        AuthenticateLogin();
+    //        return false;
+    //    });
+    //});
 
     function AuthenticateLogin() {
-        //var id = $('#txtUserId').val().trim();
-        //var pwd = $('#txtPassword').val().trim();
-        //if (id.length == 0) {
-        //    PDMSAlert("Enter user name");
-        //    return false;
-        //}
-        //else if (pwd.length == 0) {
-        //    PDMSAlert("Enter password");
-        //    return false;
-        //}
-        location = "@Url.Action("Dashboard", "Home")";
+        var id = $('#txtUserId').val().trim();
+        var pwd = $('#txtPassword').val().trim();
+        if (id.length == 0) {
+            alert("Enter user name");
+            return false;
+        }
+        else if (pwd.length == 0) {
+            alert("Enter password");
+            return false;
+        }
+        var el = new Everlive('WjpzCxGm0DgYBhrZ');
+        var isvalid = el.Users.login(
+            id, pwd,
+            function (data) {
+                return true;
+            },
+            function (error) {
+                alert(JSON.stringify(error));
+                return false;
+            });
+        el.Users.currentUser()
+            .then(function (data) {
+                alert(JSON.stringify(data.result.principal_id));
+                return false;
+            },
+            function (error) {
+                alert(JSON.stringify(error));
+                return false;
+            });
+        //location = "@Url.Action("Dashboard", "Home")";
     }
 
 </script>

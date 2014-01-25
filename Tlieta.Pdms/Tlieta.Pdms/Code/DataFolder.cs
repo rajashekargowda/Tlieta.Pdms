@@ -1,5 +1,7 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.IO;
+using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -10,25 +12,53 @@ namespace Tlieta.Pdms.Views.Shared
 
         public static void CreatePatientDataFolders(int patient)
         {
-            Directory.CreateDirectory(path + patient.ToString() + "\\Videos");
-            Directory.CreateDirectory(path + patient.ToString() + "\\Photos");
+            try
+            {
+                Directory.CreateDirectory(path + patient.ToString() + "\\Videos");
+                Directory.CreateDirectory(path + patient.ToString() + "\\Photos");
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
         }
 
         public static string GetVideoFolder(string patient)
         {
-            return path + patient.ToString() + "\\Videos";
+            try
+            {
+                return path + patient.ToString() + "\\Videos";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return "";
+            }
         }
 
         public static string GetPhotoFolder(string patient)
         {
-            return path + patient.ToString() + "\\Photos";
+            try
+            {
+                return path + patient.ToString() + "\\Photos";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return "";
+            }
         }
 
         public static string GetChartsFolder()
         {
-            if (!Directory.Exists(chartspath))
+            try
             {
-                Directory.CreateDirectory(chartspath);
+                if (!Directory.Exists(chartspath))
+                {
+                    Directory.CreateDirectory(chartspath);
+                }
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
             }
             return chartspath;
         }
