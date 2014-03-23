@@ -15,6 +15,7 @@ namespace Tlieta.Pdms
     public partial class ComplaintTemplate
     {
         public int ComplaintTemplateId { get; set; }
+        public string ComplaintTemplateName { get; set; }
         public string ComplaintTemplateText { get; set; }
         public System.DateTime CreatedOn { get; set; }
     }

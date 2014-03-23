@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class PatientVitalData
+    public class PatientVitalData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public bool AddPatientVital(PatientVital model)
         {
             try

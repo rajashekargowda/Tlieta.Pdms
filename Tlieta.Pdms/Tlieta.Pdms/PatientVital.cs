@@ -21,8 +21,8 @@ namespace Tlieta.Pdms
         public string PulseRate { get; set; }
         public string RespiratoryRate { get; set; }
         public string Temperature { get; set; }
-        public string Weight { get; set; }
         public string Height { get; set; }
+        public string Weight { get; set; }
         public string BMI { get; set; }
         public System.DateTime TimeLine { get; set; }
     }

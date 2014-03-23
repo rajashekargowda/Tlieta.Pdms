@@ -16,18 +16,18 @@ namespace Tlieta.Pdms
     {
         public int SurgeryId { get; set; }
         public int PatientId { get; set; }
-        public Nullable<System.DateTime> SurgeryDate { get; set; }
-        public Nullable<int> OperationId { get; set; }
-        public Nullable<int> HospitalId { get; set; }
+        public System.DateTime SurgeryDate { get; set; }
+        public int OperationId { get; set; }
+        public int HospitalId { get; set; }
         public string IPNumber { get; set; }
         public string Notes { get; set; }
         public string PreOpDiagnosis { get; set; }
         public string PostOpDiagnosis { get; set; }
         public string ReferredBy { get; set; }
-        public Nullable<int> SurgeonId { get; set; }
-        public Nullable<int> AssistantSurgeonId { get; set; }
-        public Nullable<int> AnaesthetistId { get; set; }
-        public Nullable<int> ScrubNurseId { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public int SurgeonId { get; set; }
+        public int AssistantSurgeonId { get; set; }
+        public int AnaesthetistId { get; set; }
+        public int ScrubNurseId { get; set; }
+        public System.DateTime CreatedOn { get; set; }
     }
 }

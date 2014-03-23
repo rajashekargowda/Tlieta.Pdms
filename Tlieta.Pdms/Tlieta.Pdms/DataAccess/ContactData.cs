@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class ContactData
+    public class ContactData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<Contact> GetContacts()
         {
             List<Contact> contacts = new List<Contact>();

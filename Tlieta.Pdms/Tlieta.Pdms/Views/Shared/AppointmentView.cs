@@ -14,6 +14,10 @@ namespace Tlieta.Pdms.Views.Shared
         public AppointmentView()
         {
             InitializeComponent();
+
+            radDateStart.Value = DateTime.Now;
+            FromDate.Value = DateTime.Now;
+            ToDate.Value = DateTime.Now;
         }
 
         private void btnAddSchedule_Click(object sender, EventArgs e)

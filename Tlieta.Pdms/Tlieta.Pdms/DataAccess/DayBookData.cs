@@ -5,21 +5,20 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class DayBookData
+    public class DayBookData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<DayBook> GetDayBook(DateTime from, DateTime to)
         {
             List<DayBook> daybook = new List<DayBook>();
-            to = to.Add(new TimeSpan(1, 0, 0, 0));
-            from = from.Add(new TimeSpan(-1, 0, 0, 0));
+            DateTime searchto = new DateTime(to.Year, to.Month, to.Day);
+            searchto = searchto.Add(new TimeSpan(1, 0, 0, 0));
+            DateTime searchfrom = new DateTime(from.Year, from.Month, from.Day);
             try
             {
                 daybook = (from a in entities.DayBooks select a).ToList();
                 if (daybook.Count > 0)
                 {
-                    return daybook.Where(i => i.BillDate > from && i.BillDate < to).ToList();
+                    return daybook.Where(i => i.BillingDate > searchfrom && i.BillingDate < searchto).ToList();
                 }
             }
             catch (Exception x)

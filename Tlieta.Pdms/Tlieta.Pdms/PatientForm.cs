@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls.UI;
+using Tlieta.Pdms.Code;
 using Tlieta.Pdms.DataAccess;
 using Tlieta.Pdms.Properties;
 
@@ -49,7 +50,7 @@ namespace Tlieta.Pdms
 
             Patient patient = new PatientData().GetPatientById(_patientId);
             this._patientname = patient.FirstName.ToUpper() + " " + patient.LastName.ToUpper();
-            this._patientage = patient.Age.ToString();
+            this._patientage = Utility.GetAgeFromDob(patient.DOB).ToString();
 
             new TelerikMetroTheme();
             this.ThemeName = "Panorama";

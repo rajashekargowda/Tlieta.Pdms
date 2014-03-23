@@ -77,7 +77,7 @@ namespace Tlieta.Pdms.Views.Shared
                 txtPhone.Text = patient.HomePhone;
                 txtAddress.Text = patient.Address;
                 txtEmail.Text = patient.Email;
-                txtAge.Text = patient.Age.ToString();
+                DOB.Value = patient.DOB;
 
                 PopulateData.SelectDropDownItem(ddlHospital, patient.HospitalId.ToString().Trim());
                 if (patient.Prefix.Trim() != "")
@@ -112,7 +112,7 @@ namespace Tlieta.Pdms.Views.Shared
                 patient.FirstName = txtFirstName.Text.Trim();
                 patient.MiddleName = txtMiddleName.Text.Trim();
                 patient.LastName = txtLastName.Text.Trim();
-                patient.Age = GetAgeValue();
+                patient.DOB = DOB.Value;
                 patient.Gender = chkMale.Checked ? "M" : "F";
                 patient.Address = txtAddress.Text;
                 patient.Mobile = txtMobile.Text.Trim();
@@ -155,17 +155,6 @@ namespace Tlieta.Pdms.Views.Shared
             }
         }
 
-        private int GetAgeValue()
-        {
-            int age = 0;
-            try
-            {
-                age = Convert.ToInt32(txtAge.Text.Trim());
-            }
-            catch { }
-            return age;
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             bool result = true;
@@ -179,7 +168,7 @@ namespace Tlieta.Pdms.Views.Shared
                 patient.FirstName = txtFirstName.Text.Trim();
                 patient.MiddleName = txtMiddleName.Text.Trim();
                 patient.LastName = txtLastName.Text.Trim();
-                patient.Age = GetAgeValue();
+                patient.DOB = DOB.Value;
                 patient.Gender = chkMale.Checked ? "M" : "F";
                 patient.Address = txtAddress.Text;
                 patient.Mobile = txtMobile.Text.Trim();

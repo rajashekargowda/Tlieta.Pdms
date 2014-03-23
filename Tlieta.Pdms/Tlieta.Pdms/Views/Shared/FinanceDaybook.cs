@@ -45,7 +45,7 @@ namespace Tlieta.Pdms.Views.Shared
                 this.FinanceGrid.SummaryRowsBottom.Add(countAmount);
 
                 FillGrid();
-                this.FinanceGrid.Columns["BillDate"].FormatString = "{0:dd/MMM/yyyy}";
+                this.FinanceGrid.Columns["BillingDate"].FormatString = "{0:dd/MMM/yyyy}";
             }
             catch (Exception x)
             {
@@ -253,8 +253,8 @@ namespace Tlieta.Pdms.Views.Shared
 
             return (new DayBook()
             {
-                BillDate = billingdate,
-                BillNumber = txtBillNumber.Text,
+                BillingDate = billingdate,
+                BillingNumber = txtBillNumber.Text,
                 Credit = credit,
                 Debit = debit,
                 UpdatedOn = DateTime.Now,

@@ -4,28 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="61ba3677bca24c9cba49587a4d902ab0" Name="Diagram1" ZoomLevel="197">
-        <EntityTypeShape EntityType="PDMSDataModel.Hospital" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PDMSDataModel.Operation" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PDMSDataModel.Patient" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PDMSDataModel.Surgery" Width="1.5" PointX="2.5" PointY="2.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Employee" Width="1.5" PointX="4.5" PointY="0.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Role" Width="1.5" PointX="8.125" PointY="0.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Product" Width="1.5" PointX="6.25" PointY="0.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Appointment" Width="1.5" PointX="4.25" PointY="2.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Contact" Width="1.5" PointX="6" PointY="2.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Service" Width="1.5" PointX="2.5" PointY="6.75" />
-        <EntityTypeShape EntityType="PDMSDataModel.Diagnosis" Width="1.5" PointX="4.25" PointY="5.375" />
-        <EntityTypeShape EntityType="PDMSDataModel.DosageDuration" Width="1.5" PointX="11.292148416532273" PointY="6.1411591498838547" />
-        <EntityTypeShape EntityType="PDMSDataModel.DosageFrequency" Width="1.5" PointX="13.625" PointY="16.5" />
-        <EntityTypeShape EntityType="PDMSDataModel.Imaging" Width="1.5" PointX="15.25" PointY="16.5" />
-        <EntityTypeShape EntityType="PDMSDataModel.LabInvestigation" Width="1.5" PointX="8.75" PointY="16.5" />
-        <EntityTypeShape EntityType="PDMSDataModel.OtherAdvise" Width="1.5" PointX="10.375" PointY="16.5" />
-        <EntityTypeShape EntityType="PDMSDataModel.PatientVital" Width="1.5" PointX="4.5849610960972313" PointY="22.783530201196452" />
-        <EntityTypeShape EntityType="PDMSDataModel.ComplaintTemplate" Width="1.5" PointX="8.96168434105892" PointY="8.6327509622242076" />
-        <EntityTypeShape EntityType="PDMSDataModel.ExaminationTemplate" Width="1.5" PointX="4.5865892919649323" PointY="20.944210911609332" />
-        <EntityTypeShape EntityType="PDMSDataModel.Billing" Width="1.5" PointX="9.9149217893904638" PointY="6.08087447568815" />
-        <EntityTypeShape EntityType="PDMSDataModel.DayBook" Width="1.5" PointX="0.96731902890248178" PointY="12.44597825987543" />
+      <Diagram DiagramId="17915652de8740a98acc3c43f0283927" Name="Diagram1">
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Appointment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Billing" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.ComplaintTemplate" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Contact" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.DayBook" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Diagnosis" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.DosageDuration" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.DosageFrequency" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Employee" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.ErrorLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.ExaminationTemplate" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Hospital" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Imaging" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.LabInvestigation" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Operation" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.OtherAdvise" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Patient" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.PatientVital" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Product" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Role" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Service" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.sysdiagram" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Surgery" Width="1.5" PointX="11.289903564047954" PointY="30.051953344630057" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

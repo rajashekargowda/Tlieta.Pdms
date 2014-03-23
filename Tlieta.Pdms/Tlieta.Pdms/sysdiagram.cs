@@ -12,11 +12,12 @@ namespace Tlieta.Pdms
     using System;
     using System.Collections.Generic;
     
-    public partial class ExaminationTemplate
+    public partial class sysdiagram
     {
-        public int ExaminationTemplateId { get; set; }
-        public string ExaminationTemplateName { get; set; }
-        public string ExaminationTemplateText { get; set; }
-        public System.DateTime CreatedOn { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

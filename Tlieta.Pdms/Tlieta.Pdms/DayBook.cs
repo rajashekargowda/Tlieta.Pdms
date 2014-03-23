@@ -15,8 +15,8 @@ namespace Tlieta.Pdms
     public partial class DayBook
     {
         public int DayBookId { get; set; }
-        public string BillNumber { get; set; }
-        public System.DateTime BillDate { get; set; }
+        public string BillingNumber { get; set; }
+        public System.DateTime BillingDate { get; set; }
         public int Debit { get; set; }
         public int Credit { get; set; }
         public string Notes { get; set; }

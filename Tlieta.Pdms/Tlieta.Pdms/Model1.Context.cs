@@ -13,10 +13,10 @@ namespace Tlieta.Pdms
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PDMSDataEntities : DbContext
+    public partial class PDMSDatabaseEntities : DbContext
     {
-        public PDMSDataEntities()
-            : base("name=PDMSDataEntities")
+        public PDMSDatabaseEntities()
+            : base("name=PDMSDatabaseEntities")
         {
         }
     
@@ -25,26 +25,28 @@ namespace Tlieta.Pdms
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Hospital> Hospitals { get; set; }
-        public DbSet<Operation> Operations { get; set; }
-        public DbSet<Patient> Patients { get; set; }
-        public DbSet<Surgery> Surgeries { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Billing> Billings { get; set; }
+        public DbSet<ComplaintTemplate> ComplaintTemplates { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Service> Services { get; set; }
+        public DbSet<DayBook> DayBooks { get; set; }
         public DbSet<Diagnosis> Diagnoses { get; set; }
         public DbSet<DosageDuration> DosageDurations { get; set; }
         public DbSet<DosageFrequency> DosageFrequencies { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<ErrorLog> ErrorLogs { get; set; }
+        public DbSet<ExaminationTemplate> ExaminationTemplates { get; set; }
+        public DbSet<Hospital> Hospitals { get; set; }
         public DbSet<Imaging> Imagings { get; set; }
         public DbSet<LabInvestigation> LabInvestigations { get; set; }
+        public DbSet<Operation> Operations { get; set; }
         public DbSet<OtherAdvise> OtherAdvises { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<PatientVital> PatientVitals { get; set; }
-        public DbSet<ComplaintTemplate> ComplaintTemplates { get; set; }
-        public DbSet<ExaminationTemplate> ExaminationTemplates { get; set; }
-        public DbSet<Billing> Billings { get; set; }
-        public DbSet<DayBook> DayBooks { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<Surgery> Surgeries { get; set; }
     }
 }

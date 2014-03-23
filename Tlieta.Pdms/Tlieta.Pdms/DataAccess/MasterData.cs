@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class MasterData
+    public class MasterData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<Hospital> GetHospitals()
         {
             try

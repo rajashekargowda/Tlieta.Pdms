@@ -38,7 +38,7 @@ namespace Tlieta.Pdms.Views.Shared
             docPrintPhoto.InsertLineBreak();
             docPrintPhoto.Insert("Patient Id : " + _patientid);
             docPrintPhoto.InsertLineBreak();
-            docPrintPhoto.Insert("Age : " + patient.Age.ToString());
+            docPrintPhoto.Insert("Age : " + Utility.GetAgeFromDob(patient.DOB).ToString());
             docPrintPhoto.InsertLineBreak();
             docPrintPhoto.Insert("Address : " + patient.Address.ToUpper());
             docPrintPhoto.InsertLineBreak();

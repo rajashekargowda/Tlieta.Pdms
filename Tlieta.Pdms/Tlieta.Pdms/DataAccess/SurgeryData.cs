@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class SurgeryData
+    public class SurgeryData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public Surgery GetSurgeriesById(int surgeryid)
         {
             try

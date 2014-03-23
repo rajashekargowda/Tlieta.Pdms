@@ -16,6 +16,6 @@ namespace Tlieta.Pdms
     {
         public int OperationId { get; set; }
         public string OperationName { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public System.DateTime CreatedOn { get; set; }
     }
 }

@@ -16,6 +16,6 @@ namespace Tlieta.Pdms
     {
         public int RoleId { get; set; }
         public string RoleName { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public System.DateTime CreatedOn { get; set; }
     }
 }

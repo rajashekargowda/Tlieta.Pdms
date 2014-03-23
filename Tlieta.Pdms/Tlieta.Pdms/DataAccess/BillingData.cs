@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class BillingData
+    public class BillingData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<Billing> GetBilling(DateTime from, DateTime to)
         {
             List<Billing> billing = new List<Billing>();

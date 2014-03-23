@@ -5,10 +5,8 @@ using System;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class SharedData
+    public class SharedData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public SharedData()
         {
         }

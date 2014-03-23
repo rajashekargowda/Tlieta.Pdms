@@ -5,21 +5,20 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class AppointmentData
+    public class AppointmentData : BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<Appointment> GetAppointments(DateTime from, DateTime to)
         {
             List<Appointment> appointments = new List<Appointment>();
-            to = to.Add(new TimeSpan(1, 0, 0, 0));
-            from = from.Add(new TimeSpan(-1, 0, 0, 0));
+            DateTime searchto = new DateTime(to.Year, to.Month, to.Day);
+            searchto = searchto.Add(new TimeSpan(1, 0, 0, 0));
+            DateTime searchfrom = new DateTime(from.Year, from.Month, from.Day);
             try
             {
                 appointments = (from a in entities.Appointments select a).ToList();
                 if (appointments.Count > 0)
                 {
-                    return appointments.Where(i => i.AppointmentDate > from && i.AppointmentDate < to).ToList();
+                    return appointments.Where(i => i.AppointmentDate > searchfrom && i.AppointmentDate < searchto).ToList();
                 }
             }
             catch (Exception x)

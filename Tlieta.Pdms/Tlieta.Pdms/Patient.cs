@@ -19,7 +19,7 @@ namespace Tlieta.Pdms
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public Nullable<int> Age { get; set; }
+        public System.DateTime DOB { get; set; }
         public string Gender { get; set; }
         public string Address { get; set; }
         public string Mobile { get; set; }
@@ -33,9 +33,9 @@ namespace Tlieta.Pdms
         public string FamilyHistory { get; set; }
         public string SocioEconomicStatus { get; set; }
         public string Diet { get; set; }
-        public Nullable<bool> IsSmoker { get; set; }
+        public bool IsSmoker { get; set; }
         public string SmokingInfo { get; set; }
-        public Nullable<bool> IsAlchoholic { get; set; }
+        public bool IsAlchoholic { get; set; }
         public string AlchoholInfo { get; set; }
         public string MedicalInsurance { get; set; }
         public System.DateTime CreatedOn { get; set; }

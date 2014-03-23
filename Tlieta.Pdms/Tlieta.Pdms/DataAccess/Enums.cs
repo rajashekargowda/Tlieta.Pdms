@@ -15,6 +15,7 @@ namespace Tlieta.Pdms.DataAccess
         Admin = 1,
         Surgeon = 2,
         Anaesthetist = 3,
-        ScrubNurse = 4
+        ScrubNurse = 4,
+        FrontDesk = 5
     }
 }

@@ -17,6 +17,6 @@ namespace Tlieta.Pdms
         public int HospitalId { get; set; }
         public string HospitalName { get; set; }
         public string Location { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public System.DateTime CreatedOn { get; set; }
     }
 }

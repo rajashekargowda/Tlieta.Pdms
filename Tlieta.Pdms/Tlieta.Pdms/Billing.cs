@@ -24,7 +24,7 @@ namespace Tlieta.Pdms
         public string DoctorName { get; set; }
         public string HospitalName { get; set; }
         public string ServiceName { get; set; }
-        public System.DateTime UpdatedOn { get; set; }
         public string Notes { get; set; }
+        public System.DateTime UpdatedOn { get; set; }
     }
 }

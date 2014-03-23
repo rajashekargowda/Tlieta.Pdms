@@ -5,10 +5,8 @@ using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.DataAccess
 {
-    public class TemplateData
+    public class TemplateData:BaseData
     {
-        PDMSDataEntities entities = new PDMSDataEntities();
-
         public List<ComplaintTemplate> GetComplaintTemplate()
         {
             List<ComplaintTemplate> complaint = new List<ComplaintTemplate>();
