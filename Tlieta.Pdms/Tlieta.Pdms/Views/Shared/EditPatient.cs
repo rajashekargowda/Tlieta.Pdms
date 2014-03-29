@@ -271,5 +271,10 @@ namespace Tlieta.Pdms.Views.Shared
                 chkMale.Checked = false;
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateData.PopulateHospital(ddlHospital);
+        }
     }
 }

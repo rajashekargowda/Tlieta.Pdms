@@ -53,5 +53,10 @@ namespace Tlieta.Pdms.Views.Shared
             }
             catch { }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateData.PopulateHospital(ddlHospital);
+        }
     }
 }

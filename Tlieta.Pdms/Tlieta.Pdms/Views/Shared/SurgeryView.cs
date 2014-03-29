@@ -26,12 +26,7 @@ namespace Tlieta.Pdms.Views.Shared
         private void Surgery_Load(object sender, EventArgs e)
         {
             PopulateSurgery();
-            PopulateData.PopulateHospital(ddlHospital);
-            PopulateData.PopulateOperations(ddlOpertaion);
-            PopulateData.PopulateEmployees(ddlSurgeon, Roles.Surgeon);
-            PopulateData.PopulateEmployees(ddlAsstSurgeon, Roles.Surgeon);
-            PopulateData.PopulateEmployees(ddlAnaesthetist, Roles.Anaesthetist);
-            PopulateData.PopulateEmployees(ddlScrubNurse, Roles.ScrubNurse);
+            PopulateLookUpData();
         }
 
         private void PopulateSurgery()
@@ -226,6 +221,21 @@ namespace Tlieta.Pdms.Views.Shared
                 txtReferredBy.Text = "";
             }
             catch { }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateLookUpData();
+        }
+
+        private void PopulateLookUpData()
+        {
+            PopulateData.PopulateHospital(ddlHospital);
+            PopulateData.PopulateOperations(ddlOpertaion);
+            PopulateData.PopulateEmployees(ddlSurgeon, Roles.Surgeon);
+            PopulateData.PopulateEmployees(ddlAsstSurgeon, Roles.Surgeon);
+            PopulateData.PopulateEmployees(ddlAnaesthetist, Roles.Anaesthetist);
+            PopulateData.PopulateEmployees(ddlScrubNurse, Roles.ScrubNurse);
         }
     }
 }

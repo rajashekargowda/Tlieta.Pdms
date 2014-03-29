@@ -35,6 +35,7 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.btnSearch = new Telerik.WinControls.UI.RadButton();
             this.SearchGrid = new Telerik.WinControls.UI.RadGridView();
+            this.btnRefresh = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlHospital)).BeginInit();
@@ -42,6 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -116,11 +118,23 @@
             this.SearchGrid.ThemeName = "TelerikMetro";
             this.SearchGrid.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SearchGrid_CellDoubleClick);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(1205, 69);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(92, 23);
+            this.btnRefresh.TabIndex = 88;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // SearchPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.SearchGrid);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.ddlHospital);
@@ -136,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +165,6 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadButton btnSearch;
         private Telerik.WinControls.UI.RadGridView SearchGrid;
+        private Telerik.WinControls.UI.RadButton btnRefresh;
     }
 }

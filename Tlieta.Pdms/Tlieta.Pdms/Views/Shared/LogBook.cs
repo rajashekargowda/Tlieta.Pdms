@@ -59,5 +59,11 @@ namespace Tlieta.Pdms.Views.Shared
         {
             this.SearchGrid.Print(true, this.radPrintDocument1);
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateData.PopulateHospital(ddlHospital);
+            PopulateData.PopulateOperations(ddlOpertaion);
+        }
     }
 }

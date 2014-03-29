@@ -170,6 +170,8 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnChart3Refresh_Click(object sender, EventArgs e)
         {
+            PopulateData.PopulateOperations(ddlOpertaion);
+            PopulateData.SelectDropDownItem(ddlOpertaion, "0");
             LoadReportMonthlyOperations();
         }
         

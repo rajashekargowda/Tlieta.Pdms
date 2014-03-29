@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.btnSavePatient = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -82,6 +82,7 @@
             this.txtMedicalIssues = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.DOB = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.btnRefresh = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnSavePatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -132,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DOB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSavePatient
@@ -184,18 +186,18 @@
             // ddlPrefix
             // 
             this.ddlPrefix.DropDownAnimationEnabled = true;
-            radListDataItem1.Text = "Mr";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "Mrs";
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "Ms";
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "Miss";
-            radListDataItem4.TextWrap = true;
-            this.ddlPrefix.Items.Add(radListDataItem1);
-            this.ddlPrefix.Items.Add(radListDataItem2);
-            this.ddlPrefix.Items.Add(radListDataItem3);
-            this.ddlPrefix.Items.Add(radListDataItem4);
+            radListDataItem5.Text = "Mr";
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.Text = "Mrs";
+            radListDataItem6.TextWrap = true;
+            radListDataItem7.Text = "Ms";
+            radListDataItem7.TextWrap = true;
+            radListDataItem8.Text = "Miss";
+            radListDataItem8.TextWrap = true;
+            this.ddlPrefix.Items.Add(radListDataItem5);
+            this.ddlPrefix.Items.Add(radListDataItem6);
+            this.ddlPrefix.Items.Add(radListDataItem7);
+            this.ddlPrefix.Items.Add(radListDataItem8);
             this.ddlPrefix.Location = new System.Drawing.Point(34, 119);
             this.ddlPrefix.Name = "ddlPrefix";
             this.ddlPrefix.ShowImageInEditorArea = true;
@@ -673,11 +675,23 @@
             this.DOB.ThemeName = "TelerikMetro";
             this.DOB.Value = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(1119, 37);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(92, 32);
+            this.btnRefresh.TabIndex = 86;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // EditPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.DOB);
             this.Controls.Add(this.boxAdvanced);
             this.Controls.Add(this.btnAdvanced);
@@ -760,6 +774,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicalIssues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DOB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,5 +832,6 @@
         private Telerik.WinControls.UI.RadTextBox txtMeicalInsurance;
         private Telerik.WinControls.UI.RadLabel radLabel20;
         private Telerik.WinControls.UI.RadDateTimePicker DOB;
+        private Telerik.WinControls.UI.RadButton btnRefresh;
     }
 }

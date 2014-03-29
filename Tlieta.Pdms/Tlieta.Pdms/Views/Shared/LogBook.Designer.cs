@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark2 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.SearchGrid = new Telerik.WinControls.UI.RadGridView();
             this.btnSearch = new Telerik.WinControls.UI.RadButton();
             this.ddlHospital = new Telerik.WinControls.UI.RadDropDownList();
@@ -38,6 +38,7 @@
             this.ddlOpertaion = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radPrintDocument1 = new Telerik.WinControls.UI.RadPrintDocument();
+            this.btnRefresh = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -47,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlOpertaion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchGrid
@@ -128,7 +130,7 @@
             this.ddlOpertaion.Location = new System.Drawing.Point(20, 63);
             this.ddlOpertaion.Name = "ddlOpertaion";
             this.ddlOpertaion.ShowImageInEditorArea = true;
-            this.ddlOpertaion.Size = new System.Drawing.Size(200, 22);
+            this.ddlOpertaion.Size = new System.Drawing.Size(200, 20);
             this.ddlOpertaion.TabIndex = 35;
             this.ddlOpertaion.ThemeName = "TelerikMetro";
             // 
@@ -146,15 +148,27 @@
             this.radPrintDocument1.AssociatedObject = this.SearchGrid;
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark1.DrawInFront = true;
-            radPrintWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
-            this.radPrintDocument1.Watermark = radPrintWatermark1;
+            radPrintWatermark2.DrawInFront = true;
+            radPrintWatermark2.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
+            this.radPrintDocument1.Watermark = radPrintWatermark2;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(901, 63);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(102, 24);
+            this.btnRefresh.TabIndex = 88;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // LogBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.radLabel17);
             this.Controls.Add(this.ddlOpertaion);
             this.Controls.Add(this.radLabel1);
@@ -174,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlOpertaion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +205,6 @@
         private Telerik.WinControls.UI.RadDropDownList ddlOpertaion;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadPrintDocument radPrintDocument1;
+        private Telerik.WinControls.UI.RadButton btnRefresh;
     }
 }
