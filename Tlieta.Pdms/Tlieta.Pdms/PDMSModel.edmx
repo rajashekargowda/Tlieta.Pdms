@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PDMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PDMSModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="PDMSModel.Store.Appointment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Billing" EntityType="PDMSModel.Store.Billing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ComplaintTemplate" EntityType="PDMSModel.Store.ComplaintTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="PDMSModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DayBook" EntityType="PDMSModel.Store.DayBook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diagnosis" EntityType="PDMSModel.Store.Diagnosis" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DosageDuration" EntityType="PDMSModel.Store.DosageDuration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DosageFrequency" EntityType="PDMSModel.Store.DosageFrequency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="PDMSModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLog" EntityType="PDMSModel.Store.ErrorLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExaminationTemplate" EntityType="PDMSModel.Store.ExaminationTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hospital" EntityType="PDMSModel.Store.Hospital" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Imaging" EntityType="PDMSModel.Store.Imaging" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LabInvestigation" EntityType="PDMSModel.Store.LabInvestigation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Operation" EntityType="PDMSModel.Store.Operation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OtherAdvise" EntityType="PDMSModel.Store.OtherAdvise" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patient" EntityType="PDMSModel.Store.Patient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientVital" EntityType="PDMSModel.Store.PatientVital" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="PDMSModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="PDMSModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Service" EntityType="PDMSModel.Store.Service" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Surgery" EntityType="PDMSModel.Store.Surgery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="PDMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Name="AppointmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="PatientId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingId" />
+          </Key>
+          <Property Name="BillingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillingNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingDate" Type="datetime" Nullable="false" />
+          <Property Name="Debit" Type="int" Nullable="false" />
+          <Property Name="Credit" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="PatientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoctorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="HospitalName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComplaintTemplate">
+          <Key>
+            <PropertyRef Name="ComplaintTemplateId" />
+          </Key>
+          <Property Name="ComplaintTemplateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ComplaintTemplateName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ComplaintTemplateText" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="100" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DayBook">
+          <Key>
+            <PropertyRef Name="DayBookId" />
+          </Key>
+          <Property Name="DayBookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BillingNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillingDate" Type="datetime" Nullable="false" />
+          <Property Name="Debit" Type="int" Nullable="false" />
+          <Property Name="Credit" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="DiagnosisId" />
+          </Key>
+          <Property Name="DiagnosisId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiagnosisName" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DosageDuration">
+          <Key>
+            <PropertyRef Name="DosageDurationId" />
+          </Key>
+          <Property Name="DosageDurationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DosageDurationName" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DosageFrequency">
+          <Key>
+            <PropertyRef Name="DosageFrequencyId" />
+          </Key>
+          <Property Name="DosageFrequencyId" Type="int" Nullable="false" />
+          <Property Name="DosageFrequencyName" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="150" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Name="ErrorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Source" Type="varchar" MaxLength="500" />
+          <Property Name="LogDate" Type="datetime" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+          <Property Name="QueryString" Type="varchar" MaxLength="500" />
+          <Property Name="TargetSite" Type="varchar" MaxLength="500" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="500" />
+          <Property Name="ServerName" Type="varchar" MaxLength="500" />
+          <Property Name="RequestUrl" Type="varchar" MaxLength="500" />
+          <Property Name="UserAgent" Type="varchar" MaxLength="500" />
+          <Property Name="UserIP" Type="varchar" MaxLength="500" />
+          <Property Name="UserAuthentication" Type="varchar" MaxLength="500" />
+          <Property Name="UserName" Type="varchar" MaxLength="500" />
+          <Property Name="EventId" Type="int" />
+        </EntityType>
+        <EntityType Name="ExaminationTemplate">
+          <Key>
+            <PropertyRef Name="ExaminationTemplateId" />
+          </Key>
+          <Property Name="ExaminationTemplateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExaminationTemplateName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ExaminationTemplateText" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="HospitalId" />
+          </Key>
+          <Property Name="HospitalId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HospitalName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Imaging">
+          <Key>
+            <PropertyRef Name="ImagingId" />
+          </Key>
+          <Property Name="ImagingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImagingName" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LabInvestigation">
+          <Key>
+            <PropertyRef Name="LabInvestigationId" />
+          </Key>
+          <Property Name="LabInvestigationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LabInvestigationName" Type="varchar" MaxLength="100" />
+          <Property Name="NormalValue" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operation">
+          <Key>
+            <PropertyRef Name="OperationId" />
+          </Key>
+          <Property Name="OperationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OperationName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherAdvise">
+          <Key>
+            <PropertyRef Name="OtherAdviseId" />
+          </Key>
+          <Property Name="OtherAdviseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OtherAdviseName" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Prefix" Type="nvarchar" MaxLength="5" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="HospitalId" Type="int" />
+          <Property Name="KnownIllness" Type="nvarchar" MaxLength="500" />
+          <Property Name="KnownAllergy" Type="nvarchar" MaxLength="500" />
+          <Property Name="Medications" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferredBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyHistory" Type="nvarchar" MaxLength="500" />
+          <Property Name="SocioEconomicStatus" Type="nvarchar" MaxLength="500" />
+          <Property Name="Diet" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsSmoker" Type="bit" Nullable="false" />
+          <Property Name="SmokingInfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsAlchoholic" Type="bit" Nullable="false" />
+          <Property Name="AlchoholInfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MedicalInsurance" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientVital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="BPHigh" Type="varchar" MaxLength="10" />
+          <Property Name="BPLow" Type="varchar" MaxLength="10" />
+          <Property Name="PulseRate" Type="varchar" MaxLength="10" />
+          <Property Name="RespiratoryRate" Type="varchar" MaxLength="10" />
+          <Property Name="Temperature" Type="varchar" MaxLength="10" />
+          <Property Name="Height" Type="varchar" MaxLength="10" />
+          <Property Name="Weight" Type="varchar" MaxLength="10" />
+          <Property Name="BMI" Type="varchar" MaxLength="10" />
+          <Property Name="TimeLine" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductKey" />
+          </Key>
+          <Property Name="ProductKey" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CPUId" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiskId" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="varchar" MaxLength="100" />
+          <Property Name="Cost" Type="float" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Surgery">
+          <Key>
+            <PropertyRef Name="SurgeryId" />
+          </Key>
+          <Property Name="SurgeryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="SurgeryDate" Type="datetime" Nullable="false" />
+          <Property Name="OperationId" Type="int" Nullable="false" />
+          <Property Name="HospitalId" Type="int" Nullable="false" />
+          <Property Name="IPNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="PreOpDiagnosis" Type="nvarchar" MaxLength="150" />
+          <Property Name="PostOpDiagnosis" Type="nvarchar" MaxLength="150" />
+          <Property Name="ReferredBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="SurgeonId" Type="int" Nullable="false" />
+          <Property Name="AssistantSurgeonId" Type="int" Nullable="false" />
+          <Property Name="AnaesthetistId" Type="int" Nullable="false" />
+          <Property Name="ScrubNurseId" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PDMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="PDMSModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointments" EntityType="PDMSModel.Appointment" />
+          <EntitySet Name="Billings" EntityType="PDMSModel.Billing" />
+          <EntitySet Name="ComplaintTemplates" EntityType="PDMSModel.ComplaintTemplate" />
+          <EntitySet Name="Contacts" EntityType="PDMSModel.Contact" />
+          <EntitySet Name="DayBooks" EntityType="PDMSModel.DayBook" />
+          <EntitySet Name="Diagnoses" EntityType="PDMSModel.Diagnosis" />
+          <EntitySet Name="DosageDurations" EntityType="PDMSModel.DosageDuration" />
+          <EntitySet Name="DosageFrequencies" EntityType="PDMSModel.DosageFrequency" />
+          <EntitySet Name="Employees" EntityType="PDMSModel.Employee" />
+          <EntitySet Name="ErrorLogs" EntityType="PDMSModel.ErrorLog" />
+          <EntitySet Name="ExaminationTemplates" EntityType="PDMSModel.ExaminationTemplate" />
+          <EntitySet Name="Hospitals" EntityType="PDMSModel.Hospital" />
+          <EntitySet Name="Imagings" EntityType="PDMSModel.Imaging" />
+          <EntitySet Name="LabInvestigations" EntityType="PDMSModel.LabInvestigation" />
+          <EntitySet Name="Operations" EntityType="PDMSModel.Operation" />
+          <EntitySet Name="OtherAdvises" EntityType="PDMSModel.OtherAdvise" />
+          <EntitySet Name="Patients" EntityType="PDMSModel.Patient" />
+          <EntitySet Name="PatientVitals" EntityType="PDMSModel.PatientVital" />
+          <EntitySet Name="Products" EntityType="PDMSModel.Product" />
+          <EntitySet Name="Roles" EntityType="PDMSModel.Role" />
+          <EntitySet Name="Services" EntityType="PDMSModel.Service" />
+          <EntitySet Name="Surgeries" EntityType="PDMSModel.Surgery" />
+          <EntitySet Name="sysdiagrams" EntityType="PDMSModel.sysdiagram" />
+        </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Type="Int32" Name="AppointmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PatientId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingId" />
+          </Key>
+          <Property Type="Int32" Name="BillingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BillingNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BillingDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Debit" Nullable="false" />
+          <Property Type="Int32" Name="Credit" Nullable="false" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="PatientName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DoctorName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HospitalName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServiceName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ComplaintTemplate">
+          <Key>
+            <PropertyRef Name="ComplaintTemplateId" />
+          </Key>
+          <Property Type="Int32" Name="ComplaintTemplateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ComplaintTemplateName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ComplaintTemplateText" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Type="Int32" Name="ContactId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContactName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Company" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Designation" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DayBook">
+          <Key>
+            <PropertyRef Name="DayBookId" />
+          </Key>
+          <Property Type="Int32" Name="DayBookId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BillingNumber" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BillingDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Debit" Nullable="false" />
+          <Property Type="Int32" Name="Credit" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="DiagnosisId" />
+          </Key>
+          <Property Type="Int32" Name="DiagnosisId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DiagnosisName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DosageDuration">
+          <Key>
+            <PropertyRef Name="DosageDurationId" />
+          </Key>
+          <Property Type="Int32" Name="DosageDurationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DosageDurationName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="DosageFrequency">
+          <Key>
+            <PropertyRef Name="DosageFrequencyId" />
+          </Key>
+          <Property Type="Int32" Name="DosageFrequencyId" Nullable="false" />
+          <Property Type="String" Name="DosageFrequencyName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="EmployeeName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorId" />
+          </Key>
+          <Property Type="Int32" Name="ErrorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Source" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LogDate" Precision="3" />
+          <Property Type="String" Name="Message" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QueryString" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TargetSite" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StackTrace" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServerName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RequestUrl" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserAgent" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserIP" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserAuthentication" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EventId" />
+        </EntityType>
+        <EntityType Name="ExaminationTemplate">
+          <Key>
+            <PropertyRef Name="ExaminationTemplateId" />
+          </Key>
+          <Property Type="Int32" Name="ExaminationTemplateId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ExaminationTemplateName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ExaminationTemplateText" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="HospitalId" />
+          </Key>
+          <Property Type="Int32" Name="HospitalId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="HospitalName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Imaging">
+          <Key>
+            <PropertyRef Name="ImagingId" />
+          </Key>
+          <Property Type="Int32" Name="ImagingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ImagingName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LabInvestigation">
+          <Key>
+            <PropertyRef Name="LabInvestigationId" />
+          </Key>
+          <Property Type="Int32" Name="LabInvestigationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LabInvestigationName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NormalValue" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Operation">
+          <Key>
+            <PropertyRef Name="OperationId" />
+          </Key>
+          <Property Type="Int32" Name="OperationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OperationName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OtherAdvise">
+          <Key>
+            <PropertyRef Name="OtherAdviseId" />
+          </Key>
+          <Property Type="Int32" Name="OtherAdviseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OtherAdviseName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Type="Int32" Name="PatientId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Prefix" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DOB" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HomePhone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="HospitalId" />
+          <Property Type="String" Name="KnownIllness" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KnownAllergy" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Medications" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReferredBy" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyHistory" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SocioEconomicStatus" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Diet" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSmoker" Nullable="false" />
+          <Property Type="String" Name="SmokingInfo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAlchoholic" Nullable="false" />
+          <Property Type="String" Name="AlchoholInfo" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MedicalInsurance" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PatientVital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="BPHigh" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BPLow" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PulseRate" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RespiratoryRate" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Temperature" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Height" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Weight" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BMI" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TimeLine" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductKey" />
+          </Key>
+          <Property Type="String" Name="ProductKey" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CPUId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DiskId" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Type="Int32" Name="ServiceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ServiceName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Cost" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Surgery">
+          <Key>
+            <PropertyRef Name="SurgeryId" />
+          </Key>
+          <Property Type="Int32" Name="SurgeryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="DateTime" Name="SurgeryDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="OperationId" Nullable="false" />
+          <Property Type="Int32" Name="HospitalId" Nullable="false" />
+          <Property Type="String" Name="IPNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PreOpDiagnosis" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostOpDiagnosis" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReferredBy" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SurgeonId" Nullable="false" />
+          <Property Type="Int32" Name="AssistantSurgeonId" Nullable="false" />
+          <Property Type="Int32" Name="AnaesthetistId" Nullable="false" />
+          <Property Type="Int32" Name="ScrubNurseId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="PDMSModel" />
+        <Alias Key="Target" Value="PDMSModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="PDMSModelContainer" StorageEntityContainer="PDMSModelStoreContainer">
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="PDMSModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Billings">
+            <EntityTypeMapping TypeName="PDMSModel.Billing">
+              <MappingFragment StoreEntitySet="Billing">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+                <ScalarProperty Name="BillingNumber" ColumnName="BillingNumber" />
+                <ScalarProperty Name="BillingId" ColumnName="BillingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplaintTemplates">
+            <EntityTypeMapping TypeName="PDMSModel.ComplaintTemplate">
+              <MappingFragment StoreEntitySet="ComplaintTemplate">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ComplaintTemplateText" ColumnName="ComplaintTemplateText" />
+                <ScalarProperty Name="ComplaintTemplateName" ColumnName="ComplaintTemplateName" />
+                <ScalarProperty Name="ComplaintTemplateId" ColumnName="ComplaintTemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="PDMSModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayBooks">
+            <EntityTypeMapping TypeName="PDMSModel.DayBook">
+              <MappingFragment StoreEntitySet="DayBook">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+                <ScalarProperty Name="BillingNumber" ColumnName="BillingNumber" />
+                <ScalarProperty Name="DayBookId" ColumnName="DayBookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diagnoses">
+            <EntityTypeMapping TypeName="PDMSModel.Diagnosis">
+              <MappingFragment StoreEntitySet="Diagnosis">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DiagnosisName" ColumnName="DiagnosisName" />
+                <ScalarProperty Name="DiagnosisId" ColumnName="DiagnosisId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DosageDurations">
+            <EntityTypeMapping TypeName="PDMSModel.DosageDuration">
+              <MappingFragment StoreEntitySet="DosageDuration">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DosageDurationName" ColumnName="DosageDurationName" />
+                <ScalarProperty Name="DosageDurationId" ColumnName="DosageDurationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DosageFrequencies">
+            <EntityTypeMapping TypeName="PDMSModel.DosageFrequency">
+              <MappingFragment StoreEntitySet="DosageFrequency">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DosageFrequencyName" ColumnName="DosageFrequencyName" />
+                <ScalarProperty Name="DosageFrequencyId" ColumnName="DosageFrequencyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="PDMSModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="PDMSModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserAuthentication" ColumnName="UserAuthentication" />
+                <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+                <ScalarProperty Name="ServerName" ColumnName="ServerName" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="TargetSite" ColumnName="TargetSite" />
+                <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="ErrorId" ColumnName="ErrorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExaminationTemplates">
+            <EntityTypeMapping TypeName="PDMSModel.ExaminationTemplate">
+              <MappingFragment StoreEntitySet="ExaminationTemplate">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ExaminationTemplateText" ColumnName="ExaminationTemplateText" />
+                <ScalarProperty Name="ExaminationTemplateName" ColumnName="ExaminationTemplateName" />
+                <ScalarProperty Name="ExaminationTemplateId" ColumnName="ExaminationTemplateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="PDMSModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospital">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imagings">
+            <EntityTypeMapping TypeName="PDMSModel.Imaging">
+              <MappingFragment StoreEntitySet="Imaging">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ImagingName" ColumnName="ImagingName" />
+                <ScalarProperty Name="ImagingId" ColumnName="ImagingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LabInvestigations">
+            <EntityTypeMapping TypeName="PDMSModel.LabInvestigation">
+              <MappingFragment StoreEntitySet="LabInvestigation">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="NormalValue" ColumnName="NormalValue" />
+                <ScalarProperty Name="LabInvestigationName" ColumnName="LabInvestigationName" />
+                <ScalarProperty Name="LabInvestigationId" ColumnName="LabInvestigationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operations">
+            <EntityTypeMapping TypeName="PDMSModel.Operation">
+              <MappingFragment StoreEntitySet="Operation">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherAdvises">
+            <EntityTypeMapping TypeName="PDMSModel.OtherAdvise">
+              <MappingFragment StoreEntitySet="OtherAdvise">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="OtherAdviseName" ColumnName="OtherAdviseName" />
+                <ScalarProperty Name="OtherAdviseId" ColumnName="OtherAdviseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="PDMSModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="MedicalInsurance" ColumnName="MedicalInsurance" />
+                <ScalarProperty Name="AlchoholInfo" ColumnName="AlchoholInfo" />
+                <ScalarProperty Name="IsAlchoholic" ColumnName="IsAlchoholic" />
+                <ScalarProperty Name="SmokingInfo" ColumnName="SmokingInfo" />
+                <ScalarProperty Name="IsSmoker" ColumnName="IsSmoker" />
+                <ScalarProperty Name="Diet" ColumnName="Diet" />
+                <ScalarProperty Name="SocioEconomicStatus" ColumnName="SocioEconomicStatus" />
+                <ScalarProperty Name="FamilyHistory" ColumnName="FamilyHistory" />
+                <ScalarProperty Name="ReferredBy" ColumnName="ReferredBy" />
+                <ScalarProperty Name="Medications" ColumnName="Medications" />
+                <ScalarProperty Name="KnownAllergy" ColumnName="KnownAllergy" />
+                <ScalarProperty Name="KnownIllness" ColumnName="KnownIllness" />
+                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientVitals">
+            <EntityTypeMapping TypeName="PDMSModel.PatientVital">
+              <MappingFragment StoreEntitySet="PatientVital">
+                <ScalarProperty Name="TimeLine" ColumnName="TimeLine" />
+                <ScalarProperty Name="BMI" ColumnName="BMI" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="RespiratoryRate" ColumnName="RespiratoryRate" />
+                <ScalarProperty Name="PulseRate" ColumnName="PulseRate" />
+                <ScalarProperty Name="BPLow" ColumnName="BPLow" />
+                <ScalarProperty Name="BPHigh" ColumnName="BPHigh" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="PDMSModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="DiskId" ColumnName="DiskId" />
+                <ScalarProperty Name="CPUId" ColumnName="CPUId" />
+                <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="PDMSModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="PDMSModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surgeries">
+            <EntityTypeMapping TypeName="PDMSModel.Surgery">
+              <MappingFragment StoreEntitySet="Surgery">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ScrubNurseId" ColumnName="ScrubNurseId" />
+                <ScalarProperty Name="AnaesthetistId" ColumnName="AnaesthetistId" />
+                <ScalarProperty Name="AssistantSurgeonId" ColumnName="AssistantSurgeonId" />
+                <ScalarProperty Name="SurgeonId" ColumnName="SurgeonId" />
+                <ScalarProperty Name="ReferredBy" ColumnName="ReferredBy" />
+                <ScalarProperty Name="PostOpDiagnosis" ColumnName="PostOpDiagnosis" />
+                <ScalarProperty Name="PreOpDiagnosis" ColumnName="PreOpDiagnosis" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="IPNumber" ColumnName="IPNumber" />
+                <ScalarProperty Name="HospitalId" ColumnName="HospitalId" />
+                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+                <ScalarProperty Name="SurgeryDate" ColumnName="SurgeryDate" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="SurgeryId" ColumnName="SurgeryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PDMSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

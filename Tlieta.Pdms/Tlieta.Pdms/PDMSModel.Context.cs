@@ -13,10 +13,10 @@ namespace Tlieta.Pdms
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PDMSDatabaseEntities : DbContext
+    public partial class PDMSModelContainer : DbContext
     {
-        public PDMSDatabaseEntities()
-            : base("name=PDMSDatabaseEntities")
+        public PDMSModelContainer()
+            : base("name=PDMSModelContainer")
         {
         }
     
@@ -46,7 +46,7 @@ namespace Tlieta.Pdms
         public DbSet<Product> Products { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Surgery> Surgeries { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

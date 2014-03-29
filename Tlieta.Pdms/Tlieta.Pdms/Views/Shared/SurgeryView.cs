@@ -73,6 +73,7 @@ namespace Tlieta.Pdms.Views.Shared
                 try
                 {
                     int surgeryid = new SurgeryData().AddSurgery(surgery);
+                    if (surgeryid == 0) { result = false; }
                 }
                 catch { result = false; }
 

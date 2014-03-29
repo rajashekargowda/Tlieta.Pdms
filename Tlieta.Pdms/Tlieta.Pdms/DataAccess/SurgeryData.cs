@@ -37,6 +37,7 @@ namespace Tlieta.Pdms.DataAccess
         {
             try
             {
+                model.CreatedOn = DateTime.Now;
                 entities.Surgeries.Add(model);
                 return entities.SaveChanges();
             }
@@ -53,6 +54,7 @@ namespace Tlieta.Pdms.DataAccess
                 Surgery surgery = entities.Surgeries.Where(x => x.SurgeryId == model.SurgeryId).SingleOrDefault();
                 if (surgery != null)
                 {
+                    model.CreatedOn = surgery.CreatedOn;
                     entities.Entry(surgery).CurrentValues.SetValues(model);
                     entities.SaveChanges();
                     return true;

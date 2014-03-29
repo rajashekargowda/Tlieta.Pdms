@@ -8,6 +8,6 @@ namespace Tlieta.Pdms.DataAccess
 {
     public class BaseData
     {
-        public PDMSDatabaseEntities entities = new PDMSDatabaseEntities();
+        public PDMSModelContainer entities = new PDMSModelContainer();
     }
 }
