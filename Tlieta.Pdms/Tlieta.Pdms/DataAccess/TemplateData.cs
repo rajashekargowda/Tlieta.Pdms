@@ -21,6 +21,19 @@ namespace Tlieta.Pdms.DataAccess
             return complaint;
         }
 
+        public ComplaintTemplate GetComplaintTemplateById(int id)
+        {
+            try
+            {
+                ComplaintTemplate template = entities.ComplaintTemplates.Find(id);
+                return template;
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
+        }
+
         public bool AddComplaintTemplate(ComplaintTemplate model)
         {
             try
@@ -47,6 +60,19 @@ namespace Tlieta.Pdms.DataAccess
                 FileLogger.LogError(x);
             }
             return examination;
+        }
+
+        public ExaminationTemplate GetExaminationTemplateById(int id)
+        {
+            try
+            {
+                ExaminationTemplate template = entities.ExaminationTemplates.Find(id);
+                return template;
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x); return null;
+            }
         }
 
         public bool AddExaminationTemplate(ExaminationTemplate model)

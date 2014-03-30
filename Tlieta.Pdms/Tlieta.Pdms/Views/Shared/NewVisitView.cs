@@ -33,59 +33,77 @@ namespace Tlieta.Pdms.Views.Shared
         private void btnAddComplaint_Click(object sender, EventArgs e)
         {
             string template = "";
-            if (ddlComplaintTemplate.SelectedValue.ToString() == "0")
+            int id = Convert.ToInt32(ddlComplaintTemplate.SelectedValue.ToString());
+            if (id == 0)
             {
-                template = txtComplaintTemplate.Text.Trim();
-                if (template == "")
-                {
-                    MessageBox.Show("Enter new template");
-                }
-                else
-                {
-                    new TemplateData().AddComplaintTemplate(new ComplaintTemplate()
-                    {
-                        ComplaintTemplateId = 0,
-                        ComplaintTemplateText = template,
-                        CreatedOn = DateTime.Now
-                    });
-                    PopulateData.PopulateComplaintTemplate(ddlComplaintTemplate);
-                    txtComplaintTemplate.Text = "";
-                }
+                MessageBox.Show("Select template");
             }
             else
             {
-                template = ddlComplaintTemplate.SelectedItem.Text;
+                template = new TemplateData().GetComplaintTemplateById(id).ComplaintTemplateText;
             }
             txtComplaint.Text = txtComplaint.Text + " " + template;
+        }
+
+        private void btnAddComplaintTemplate_Click(object sender, EventArgs e)
+        {
+            string templatename = txtComplaintTemplate.Text.Trim();
+            string templatetext = txtComplaintText.Text.Trim();
+            if (templatename == "" || templatetext == "")
+            {
+                MessageBox.Show("Enter template name and data");
+            }
+            else
+            {
+                new TemplateData().AddComplaintTemplate(new ComplaintTemplate()
+                {
+                    ComplaintTemplateId = 0,
+                    ComplaintTemplateName = templatename,
+                    ComplaintTemplateText = templatetext,
+                    CreatedOn = DateTime.Now
+                });
+                PopulateData.PopulateComplaintTemplate(ddlComplaintTemplate);
+                txtComplaintTemplate.Text = "";
+                txtComplaintText.Text = "";
+            }
         }
 
         private void btnExamination_Click(object sender, EventArgs e)
         {
             string template = "";
-            if (ddlExaminationTemplate.SelectedValue.ToString() == "0")
+            int id = Convert.ToInt32(ddlExaminationTemplate.SelectedValue.ToString());
+            if (id == 0)
             {
-                template = txtExaminationTemplate.Text.Trim();
-                if (template == "")
-                {
-                    MessageBox.Show("Enter new template");
-                }
-                else
-                {
-                    new TemplateData().AddExaminationTemplate(new ExaminationTemplate()
-                    {
-                        ExaminationTemplateId = 0,
-                        ExaminationTemplateText = template,
-                        CreatedOn = DateTime.Now
-                    });
-                    PopulateData.PopulateExaminationTemplate(ddlExaminationTemplate);
-                    txtExaminationTemplate.Text = "";
-                }
+                MessageBox.Show("Select template");
             }
             else
             {
-                template = ddlExaminationTemplate.SelectedItem.Text;
+                template = new TemplateData().GetExaminationTemplateById(id).ExaminationTemplateText;
             }
             txtExamination.Text = txtExamination.Text + " " + template;
+        }
+
+        private void btnExaminationTemplate_Click(object sender, EventArgs e)
+        {
+            string templatename = txtExaminationTemplate.Text.Trim();
+            string templatetext = txtExaminationText.Text.Trim();
+            if (templatename == "" || templatetext == "")
+            {
+                MessageBox.Show("Enter template name and data");
+            }
+            else
+            {
+                new TemplateData().AddExaminationTemplate(new ExaminationTemplate()
+                {
+                    ExaminationTemplateId = 0,
+                    ExaminationTemplateName = templatename,
+                    ExaminationTemplateText = templatetext,
+                    CreatedOn = DateTime.Now
+                });
+                PopulateData.PopulateExaminationTemplate(ddlExaminationTemplate);
+                txtExaminationTemplate.Text = "";
+                txtExaminationText.Text = "";
+            }
         }
 
         private void btnSaveClinical_Click(object sender, EventArgs e)

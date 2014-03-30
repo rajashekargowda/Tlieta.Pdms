@@ -121,11 +121,11 @@ namespace Tlieta.Pdms.Views.Shared
             try
             {
                 List<ComplaintTemplate> complaints = new TemplateData().GetComplaintTemplate();
-                complaints.Insert(0, new ComplaintTemplate() { ComplaintTemplateId = 0, ComplaintTemplateText = "New Template" });
+                complaints.Insert(0, new ComplaintTemplate() { ComplaintTemplateId = 0, ComplaintTemplateName = "Select to add template" });
 
                 ddl.DataSource = complaints;
                 ddl.ValueMember = "ComplaintTemplateId";
-                ddl.DisplayMember = "ComplaintTemplateText";
+                ddl.DisplayMember = "ComplaintTemplateName";
             }
             catch (Exception x)
             {
@@ -138,11 +138,11 @@ namespace Tlieta.Pdms.Views.Shared
             try
             {
                 List<ExaminationTemplate> examination = new TemplateData().GetExaminationTemplate();
-                examination.Insert(0, new ExaminationTemplate() { ExaminationTemplateId = 0, ExaminationTemplateText = "New Template" });
+                examination.Insert(0, new ExaminationTemplate() { ExaminationTemplateId = 0, ExaminationTemplateName = "Select to add template" });
 
                 ddl.DataSource = examination;
                 ddl.ValueMember = "ExaminationTemplateId";
-                ddl.DisplayMember = "ExaminationTemplateText";
+                ddl.DisplayMember = "ExaminationTemplateName";
             }
             catch (Exception x)
             {
