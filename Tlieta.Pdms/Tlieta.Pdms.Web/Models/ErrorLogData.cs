@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Web.Models
 {
-    public class ErrorLogData
+    public class ErrorLogData : BaseData
     {
-        PDMSDatabaseEntities entities = new PDMSDatabaseEntities();
-
         public List<ErrorLog> GetErrorLog()
         {
             List<ErrorLog> errors = new List<ErrorLog>();

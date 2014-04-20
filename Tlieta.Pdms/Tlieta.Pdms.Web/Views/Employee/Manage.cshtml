@@ -1,0 +1,120 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/Controllers/usercontroller.js")"></script>
+<div class="mainBlock marBtm">
+    <h2><span>
+        <img src="~/Images/adduser.png" /></span>Users</h2>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea" ng-controller="usercontroller">
+                    <form name="formUser" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span ng-show="!formUser.$invalid">Valid data.</span>
+                                <span ng-show="formUser.EmployeeName.$error.required || formUser.UserId.$error.required" class="required">( * ) Mandatory fields. </span>
+                                <span ng-show="formUser.EmailId.$invalid" class="required">Enter valid email. </span>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Name<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="EmployeeId" type="hidden" name="EmployeeId" ng-model="user.EmployeeId" />
+                                    <input id="EmployeeName" type="text" name="EmployeeName" ng-model="user.EmployeeName" required />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">User Id<span class="required"> * </span> :</label>
+                                <div class="fieldInput">
+                                    <input id="UserId" type="text" name="UserId" ng-model="user.UserId" required/>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Role<span class="required"> * </span> :</label>
+                                <script type="text/x-kendo-tmpl" id="roletemplate">
+                                    <div style="float:left;height:48px;width:50px">
+                                        <img src="@Url.Content("~/Images/Roles/")#:RoleId#.png" style="text-align:center" alt="" />
+                                    </div>
+                                </script>
+                                <div class="fieldInput">
+                                    @(Html.Kendo().ListView<Tlieta.Pdms.DB.Role>()
+                                        .Name("RoleList")
+                                        .TagName("div")
+                                        .ClientTemplateId("roletemplate")
+                                        .DataSource(dataSource => {
+                                            dataSource.Read(read => read.Action("ReadRoles", "Employee"));
+                                        })
+                                        .Selectable(selectable => selectable.Mode(ListViewSelectionMode.Single))
+                                        .Events(events => events.Change("onRoleChange"))
+                                    )
+                                    <input id="RoleId" type="hidden" name="RoleId" ng-model="user.RoleId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Phone :</label>
+                                <div class="fieldInput">
+                                    <input id="Phone" type="text" name="Phone" ng-model="user.Phone" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Email :</label>
+                                <div class="fieldInput">
+                                    <input type="email" id="EmailId" name="EmailId" ng-model="user.EmailId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formAction">
+                            <button class="mainActionBtnB" ng-disabled="formUser.$invalid" ng-click="saveuser(user)">{{buttontext}}</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshuser()">Reset</button>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="gridArea">
+                @(Html.Kendo().Grid<Tlieta.Pdms.DB.Employee>()
+                        .Name("UserGrid")
+                        .Columns(
+                        columns =>
+                        {
+                            columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
+                            columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
+                            columns.Bound(p => p.EmployeeId).Visible(false);
+                            columns.Bound(p => p.RoleId).Visible(false);
+                            columns.Bound(p => p.EmployeeName).Title("Employee Name");
+                            columns.Bound(p => p.UserId).Title("User Id");
+                            columns.Bound(p => p.EmailId).Title("Email Id");
+                            columns.Bound(p => p.Phone).Title("Phone");
+                        })
+                  .Scrollable()
+                  //.Filterable(filterable => filterable
+                  //              .Extra(false)
+                  //              .Operators(operators => operators
+                  //                  .ForString(str => str.Clear()
+                  //                  .Contains("Contains")
+                  //            )))
+                  .Pageable()
+                  .DataSource(dataSource => dataSource
+                      .Ajax().PageSize(7)
+                      .Model(model =>
+                      {
+                          model.Id(p => p.EmployeeId);
+                          model.Field(p => p.EmployeeId);
+                          model.Field(p => p.RoleId);
+                          model.Field(p => p.EmployeeName);
+                          model.Field(p => p.UserId);
+                          model.Field(p => p.EmailId);
+                          model.Field(p => p.Phone);
+                      })
+                      .Read(read => read.Action("Read", "Employee"))
+                  )
+              )
+            </div>
+        </div>
+    </div>
+</div>

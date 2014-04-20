@@ -149,5 +149,39 @@ namespace Tlieta.Pdms.Views.Shared
                 FileLogger.LogError(x);
             }
         }
+
+        public static void PopulateLabInvestigation(RadDropDownList ddl)
+        {
+            try
+            {
+                List<LabInvestigation> lab = new MasterData().GetLabInvestigations();
+                lab.Insert(0, new LabInvestigation() { LabInvestigationId = 0, LabInvestigationName = "Select" });
+
+                ddl.DataSource = lab;
+                ddl.ValueMember = "LabInvestigationId";
+                ddl.DisplayMember = "LabInvestigationName";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
+        }
+
+        public static void PopulateImaging(RadDropDownList ddl)
+        {
+            try
+            {
+                List<Imaging> imaging = new MasterData().GetImagings();
+                imaging.Insert(0, new Imaging() { ImagingId = 0, ImagingName = "Select" });
+
+                ddl.DataSource = imaging;
+                ddl.ValueMember = "ImagingId";
+                ddl.DisplayMember = "ImagingName";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
+        }
     }
 }

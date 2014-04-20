@@ -7,20 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.Web
+namespace Tlieta.Pdms.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Contact
+    public partial class Hospital
     {
-        public int ContactId { get; set; }
-        public string ContactName { get; set; }
-        public string Address { get; set; }
-        public string Mobile { get; set; }
-        public string Email { get; set; }
-        public string Company { get; set; }
-        public string Designation { get; set; }
-        public System.DateTime UpdatedOn { get; set; }
+        public int HospitalId { get; set; }
+        public string HospitalName { get; set; }
+        public string Location { get; set; }
+        public System.DateTime CreatedOn { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.Web
+namespace Tlieta.Pdms.DB
 {
     using System;
     using System.Collections.Generic;
@@ -25,6 +25,7 @@ namespace Tlieta.Pdms.Web
         public string Mobile { get; set; }
         public string HomePhone { get; set; }
         public string Email { get; set; }
+        public Nullable<int> HospitalId { get; set; }
         public string KnownIllness { get; set; }
         public string KnownAllergy { get; set; }
         public string Medications { get; set; }

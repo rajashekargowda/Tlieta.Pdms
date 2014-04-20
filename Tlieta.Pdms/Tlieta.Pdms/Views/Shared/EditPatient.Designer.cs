@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             this.btnSavePatient = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -186,18 +186,18 @@
             // ddlPrefix
             // 
             this.ddlPrefix.DropDownAnimationEnabled = true;
-            radListDataItem5.Text = "Mr";
-            radListDataItem5.TextWrap = true;
-            radListDataItem6.Text = "Mrs";
-            radListDataItem6.TextWrap = true;
-            radListDataItem7.Text = "Ms";
-            radListDataItem7.TextWrap = true;
-            radListDataItem8.Text = "Miss";
-            radListDataItem8.TextWrap = true;
-            this.ddlPrefix.Items.Add(radListDataItem5);
-            this.ddlPrefix.Items.Add(radListDataItem6);
-            this.ddlPrefix.Items.Add(radListDataItem7);
-            this.ddlPrefix.Items.Add(radListDataItem8);
+            radListDataItem1.Text = "Mr";
+            radListDataItem1.TextWrap = true;
+            radListDataItem2.Text = "Mrs";
+            radListDataItem2.TextWrap = true;
+            radListDataItem3.Text = "Ms";
+            radListDataItem3.TextWrap = true;
+            radListDataItem4.Text = "Miss";
+            radListDataItem4.TextWrap = true;
+            this.ddlPrefix.Items.Add(radListDataItem1);
+            this.ddlPrefix.Items.Add(radListDataItem2);
+            this.ddlPrefix.Items.Add(radListDataItem3);
+            this.ddlPrefix.Items.Add(radListDataItem4);
             this.ddlPrefix.Location = new System.Drawing.Point(34, 119);
             this.ddlPrefix.Name = "ddlPrefix";
             this.ddlPrefix.ShowImageInEditorArea = true;
@@ -678,9 +678,9 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(1119, 37);
+            this.btnRefresh.Location = new System.Drawing.Point(1119, 45);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(92, 32);
+            this.btnRefresh.Size = new System.Drawing.Size(92, 24);
             this.btnRefresh.TabIndex = 86;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.ThemeName = "TelerikMetro";

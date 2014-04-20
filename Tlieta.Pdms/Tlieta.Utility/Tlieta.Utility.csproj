@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encryption.cs" />
     <Compile Include="FileOperations.cs" />
     <Compile Include="FingerPrint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

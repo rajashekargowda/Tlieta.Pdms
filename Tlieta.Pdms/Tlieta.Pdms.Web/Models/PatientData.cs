@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Web.Models
 {
-    public class PatientData
+    public class PatientData : BaseData
     {
-        PDMSDatabaseEntities entities = new PDMSDatabaseEntities();
-
         public int Add(Patient model)
         {
             try

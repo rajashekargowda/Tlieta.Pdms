@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tlieta.Pdms.DataAccess;
+using Telerik.WinControls.UI;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -19,12 +20,23 @@ namespace Tlieta.Pdms.Views.Shared
         {
             InitializeComponent();
 
+            InitializeData();
+        }
+
+        private void InitializeData()
+        {
             //Clinical data
             PopulateData.PopulateComplaintTemplate(ddlComplaintTemplate);
             PopulateData.PopulateExaminationTemplate(ddlExaminationTemplate);
 
             //Lab Test
+            PopulateData.PopulateLabInvestigation(ddllabTest);
+            SetGridPreferences(LabDataGrid);
             datetimeLabTest.Value = DateTime.Now;
+
+            //Imaging
+            PopulateData.PopulateImaging(ddlImagingTest);
+            datetimeImagingTest.Value = DateTime.Now;
 
             //Diagnosis
             datetimeFollowUp.Value = DateTime.Now.Add(new TimeSpan(7, 0, 0, 0));
@@ -129,6 +141,22 @@ namespace Tlieta.Pdms.Views.Shared
             {
                 datetimeFollowUp.Visible = false;
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            InitializeData();
+        }
+
+        private void btnAddLabTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetGridPreferences(RadGridView grid) 
+        {
+            grid.ShowGroupPanel = false;
+            grid.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill; 
         }
     }
 }

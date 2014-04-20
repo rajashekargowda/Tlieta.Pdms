@@ -44,7 +44,6 @@
             this.ddlComplaintTemplate = new Telerik.WinControls.UI.RadDropDownList();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnAddLabTest = new Telerik.WinControls.UI.RadButton();
-            this.LabDataGrid = new Telerik.WinControls.UI.RadGridView();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -85,6 +84,8 @@
             this.txtExaminationText = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel20 = new Telerik.WinControls.UI.RadLabel();
             this.btnExaminationTemplate = new Telerik.WinControls.UI.RadButton();
+            this.btnRefresh = new Telerik.WinControls.UI.RadButton();
+            this.LabDataGrid = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
@@ -104,8 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlComplaintTemplate)).BeginInit();
             this.radPageViewPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddLabTest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -145,6 +144,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExaminationText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExaminationTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // radPageView1
@@ -156,7 +158,7 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(26, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.SelectedPage = this.radPageViewPage2;
             this.radPageView1.Size = new System.Drawing.Size(1248, 514);
             this.radPageView1.TabIndex = 28;
             this.radPageView1.Text = "radPageView1";
@@ -337,8 +339,8 @@
             // 
             // radPageViewPage2
             // 
-            this.radPageViewPage2.Controls.Add(this.btnAddLabTest);
             this.radPageViewPage2.Controls.Add(this.LabDataGrid);
+            this.radPageViewPage2.Controls.Add(this.btnAddLabTest);
             this.radPageViewPage2.Controls.Add(this.radLabel5);
             this.radPageViewPage2.Controls.Add(this.radLabel4);
             this.radPageViewPage2.Controls.Add(this.radLabel3);
@@ -358,34 +360,11 @@
             this.btnAddLabTest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddLabTest.Location = new System.Drawing.Point(21, 409);
             this.btnAddLabTest.Name = "btnAddLabTest";
-            this.btnAddLabTest.Size = new System.Drawing.Size(174, 23);
+            this.btnAddLabTest.Size = new System.Drawing.Size(121, 23);
             this.btnAddLabTest.TabIndex = 32;
             this.btnAddLabTest.Text = "Add Test";
             this.btnAddLabTest.ThemeName = "TelerikMetro";
-            // 
-            // LabDataGrid
-            // 
-            this.LabDataGrid.AutoScroll = true;
-            this.LabDataGrid.Location = new System.Drawing.Point(256, 23);
-            // 
-            // 
-            // 
-            this.LabDataGrid.MasterTemplate.AllowAddNewRow = false;
-            this.LabDataGrid.MasterTemplate.AllowCellContextMenu = false;
-            this.LabDataGrid.MasterTemplate.AllowColumnHeaderContextMenu = false;
-            this.LabDataGrid.MasterTemplate.AllowDeleteRow = false;
-            this.LabDataGrid.MasterTemplate.AllowDragToGroup = false;
-            this.LabDataGrid.MasterTemplate.AllowEditRow = false;
-            this.LabDataGrid.MasterTemplate.EnableAlternatingRowColor = true;
-            this.LabDataGrid.MasterTemplate.EnableFiltering = true;
-            this.LabDataGrid.Name = "LabDataGrid";
-            this.LabDataGrid.ReadOnly = true;
-            this.LabDataGrid.ShowGroupPanel = false;
-            this.LabDataGrid.ShowItemToolTips = false;
-            this.LabDataGrid.Size = new System.Drawing.Size(711, 409);
-            this.LabDataGrid.TabIndex = 31;
-            this.LabDataGrid.Text = "radGridView1";
-            this.LabDataGrid.ThemeName = "TelerikMetro";
+            this.btnAddLabTest.Click += new System.EventHandler(this.btnAddLabTest_Click);
             // 
             // radLabel5
             // 
@@ -517,7 +496,7 @@
             this.ImagingGrid.AutoScroll = true;
             this.ImagingGrid.Location = new System.Drawing.Point(259, 23);
             // 
-            // 
+            // ImagingGrid
             // 
             this.ImagingGrid.MasterTemplate.AllowAddNewRow = false;
             this.ImagingGrid.MasterTemplate.AllowCellContextMenu = false;
@@ -833,11 +812,46 @@
             this.btnExaminationTemplate.ThemeName = "TelerikMetro";
             this.btnExaminationTemplate.Click += new System.EventHandler(this.btnExaminationTemplate_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(458, 543);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(92, 24);
+            this.btnRefresh.TabIndex = 87;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // LabDataGrid
+            // 
+            this.LabDataGrid.AutoScroll = true;
+            this.LabDataGrid.Location = new System.Drawing.Point(249, 26);
+            // 
+            // LabDataGrid
+            // 
+            this.LabDataGrid.MasterTemplate.AllowAddNewRow = false;
+            this.LabDataGrid.MasterTemplate.AllowCellContextMenu = false;
+            this.LabDataGrid.MasterTemplate.AllowColumnHeaderContextMenu = false;
+            this.LabDataGrid.MasterTemplate.AllowDeleteRow = false;
+            this.LabDataGrid.MasterTemplate.AllowDragToGroup = false;
+            this.LabDataGrid.MasterTemplate.AllowEditRow = false;
+            this.LabDataGrid.MasterTemplate.EnableAlternatingRowColor = true;
+            this.LabDataGrid.MasterTemplate.EnableFiltering = true;
+            this.LabDataGrid.Name = "LabDataGrid";
+            this.LabDataGrid.ReadOnly = true;
+            this.LabDataGrid.ShowGroupPanel = false;
+            this.LabDataGrid.ShowItemToolTips = false;
+            this.LabDataGrid.Size = new System.Drawing.Size(711, 409);
+            this.LabDataGrid.TabIndex = 44;
+            this.LabDataGrid.ThemeName = "TelerikMetro";
+            // 
             // NewVisitView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddNewVisit);
             this.Controls.Add(this.radPageView1);
             this.Name = "NewVisitView";
@@ -864,8 +878,6 @@
             this.radPageViewPage2.ResumeLayout(false);
             this.radPageViewPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddLabTest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
@@ -907,6 +919,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExaminationText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExaminationTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -941,7 +956,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel14;
         private Telerik.WinControls.UI.RadDateTimePicker datetimeLabTest;
         private Telerik.WinControls.UI.RadButton btnAddLabTest;
-        private Telerik.WinControls.UI.RadGridView LabDataGrid;
         private Telerik.WinControls.UI.RadButton btnAddImaging;
         private Telerik.WinControls.UI.RadGridView ImagingGrid;
         private Telerik.WinControls.UI.RadLabel radLabel6;
@@ -970,5 +984,7 @@
         private Telerik.WinControls.UI.RadButton btnExaminationTemplate;
         private Telerik.WinControls.UI.RadLabel radLabel20;
         private Telerik.WinControls.UI.RadTextBox txtExaminationText;
+        private Telerik.WinControls.UI.RadButton btnRefresh;
+        private Telerik.WinControls.UI.RadGridView LabDataGrid;
     }
 }

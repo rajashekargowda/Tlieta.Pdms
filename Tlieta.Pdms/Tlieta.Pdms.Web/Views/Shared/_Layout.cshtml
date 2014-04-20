@@ -2,12 +2,15 @@
 <html ng-app="tlieta">
 <head>
     <title>@ViewBag.Title</title>
-    <script src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
+
+    @*<script src="http://cdn.kendostatic.com/2014.1.416/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2014.1.416/js/kendo.all.min.js"></script>*@
+
     <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-route.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-kendo.js")"></script>
-    <script src="@Url.Content("~/Scripts/Everlive/everlive.all.min.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
     
     <link href="@Url.Content("~/Content/PdmsStyle.css")" rel="stylesheet" type="text/css" />
@@ -20,10 +23,10 @@
         <!--Header Starts-->
         <div class="header" ng-controller="headercontroller">
             <div class="mainBody">
-                @*<div class="logo"></div>*@
+                <div class="logo"></div>
                 <div class="userInfo">
                     <ul class="userAccount">
-                        <li><a href="#">Welcome <strong>{{username}}</strong> </a>
+                        <li><a href="#">Welcome <strong>@Session["employeename"]</strong> </a>
                             <ul class="userLinks">
                                 <li><a href="#" ng-click="changepassword()">Change password</a></li>
                                 <li><a href="#" ng-click="logout()">Logout</a></li>
@@ -41,10 +44,16 @@
                 <div class="nav" ng-controller="menucontroller">
                     <ul id="nav">
                         <li class="first">
-                            <a>Administration</a>
+                            <a>Admin</a>
                             <ul class="firstLevel">
-                                <li><a href="#" ng-click="redirect('contact')">Contact</a></li>
-                                <li><a href="#" ng-click="redirect('addpatient')">Add Patient</a></li>
+                                <li><a href="#" ng-click="redirect('users')">Users</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a>Front Desk</a>
+                            <ul class="firstLevel">
+                                <li><a href="#" ng-click="redirect('contacts')">Contacts</a></li>
+                                <li><a href="#" ng-click="redirect('appointments')">Appointments</a></li>
                             </ul>
                         </li>
                     </ul>

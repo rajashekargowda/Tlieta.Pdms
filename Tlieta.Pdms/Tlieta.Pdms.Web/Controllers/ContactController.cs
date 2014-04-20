@@ -1,11 +1,11 @@
-﻿using Kendo.Mvc.UI;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Tlieta.Pdms.Web.Models;
 using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Web.Controllers
 {
@@ -14,24 +14,6 @@ namespace Tlieta.Pdms.Web.Controllers
         public ActionResult Manage()
         {
             return View();
-        }
-
-        public ActionResult Angular()
-        {
-            return View();
-        }
-
-        public JsonResult Load()
-        {
-            List<Contact> list = new List<Contact>();
-            try
-            {
-                list = new ContactData().GetContacts();
-            }
-            catch (Exception x)
-            {
-            }
-            return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)

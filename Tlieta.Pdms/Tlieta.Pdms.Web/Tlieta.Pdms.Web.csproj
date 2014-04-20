@@ -115,6 +115,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Tlieta.Pdms.DB">
+      <HintPath>..\Tlieta.Pdms.DB\bin\Debug\Tlieta.Pdms.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="Tlieta.Utility">
+      <HintPath>..\Tlieta.Utility\bin\Debug\Tlieta.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
@@ -163,42 +169,25 @@
   <ItemGroup>
     <Compile Include="App_Start\Logging.cs" />
     <Compile Include="App_Start\SessionOutHandler.cs" />
-    <Compile Include="Contact.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
-    <Compile Include="ErrorLog.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\BaseData.cs" />
     <Compile Include="Models\ContactData.cs" />
     <Compile Include="Models\ErrorLogData.cs" />
     <Compile Include="Models\PatientData.cs" />
-    <Compile Include="Patient.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Keys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Keys.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-combined.min.css" />
@@ -410,27 +399,11 @@
     <Content Include="Content\kendo\2013.3.1119\images\kendoui.ttf" />
     <Content Include="Content\kendo\2013.3.1119\images\kendoui.woff" />
     <Content Include="Images\addpatient.png" />
+    <Content Include="Images\adduser.png" />
     <Content Include="Images\contact.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\home.png" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\dark-tab-a.png" />
     <Content Include="Images\dark-tab.png" />
@@ -456,6 +429,11 @@
     <Content Include="Images\phbtnbg-red.png" />
     <Content Include="Images\red-btn.png" />
     <Content Include="Images\redstripgr.png" />
+    <Content Include="Images\Roles\1.png" />
+    <Content Include="Images\Roles\2.png" />
+    <Content Include="Images\Roles\3.png" />
+    <Content Include="Images\Roles\4.png" />
+    <Content Include="Images\Roles\5.png" />
     <Content Include="Images\sprite.png" />
     <Content Include="Images\subnav-bg.png" />
     <Content Include="Images\subnav-left.png" />
@@ -487,13 +465,13 @@
     <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\contactcontroller.js" />
+    <Content Include="Scripts\Controllers\usercontroller.js" />
     <Content Include="Scripts\Controllers\logincontroller.js" />
     <Content Include="Scripts\Controllers\patientcontroller.js" />
     <Content Include="Scripts\Controllers\headercontroller.js" />
     <Content Include="Scripts\Controllers\menucontroller.js" />
     <Content Include="Scripts\Controllers\passwordcontroller.js" />
     <Content Include="Scripts\Common.js" />
-    <Content Include="Scripts\Controllers\testcontroller.js" />
     <Content Include="Scripts\Everlive\everlive.all.min.js" />
     <Content Include="Scripts\FooTable\footable.filter.js" />
     <Content Include="Scripts\FooTable\footable.js" />
@@ -743,10 +721,9 @@
     <Content Include="Views\Home\SessionTimeout.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />
     <Content Include="Views\Patient\Create.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Contact\Manage.cshtml" />
     <Content Include="Views\Patient\Info.cshtml" />
-    <Content Include="Views\Contact\Angular.cshtml" />
+    <Content Include="Views\Employee\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -756,6 +733,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Keys.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Keys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

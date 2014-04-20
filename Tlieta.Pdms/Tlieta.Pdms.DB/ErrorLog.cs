@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tlieta.Pdms.Web
+namespace Tlieta.Pdms.DB
 {
     using System;
     using System.Collections.Generic;

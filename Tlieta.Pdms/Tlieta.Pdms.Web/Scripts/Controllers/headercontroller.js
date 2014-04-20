@@ -1,7 +1,5 @@
 ﻿var app = angular.module('tlieta', []);
 function headercontroller($scope) {
-    $scope.username = "Sachin";
-
     $scope.home = function () {
         location.href = '/Home/Dashboard/';
     };

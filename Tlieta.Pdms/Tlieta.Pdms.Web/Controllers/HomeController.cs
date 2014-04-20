@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Tlieta.Pdms.DB;
+using Tlieta.Pdms.Web.Models;
+using Tlieta.Pdms.Web.Resources;
+using Tlieta.Utility;
 
 namespace Tlieta.Pdms.Web.Controllers
 {
@@ -12,6 +16,31 @@ namespace Tlieta.Pdms.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult Authenticate(Employee employee)
+        {
+            try
+            {
+                string key = Keys.EncryptionKey;
+                employee.Password = Encryption.Encrypt(key, employee.Password);
+
+                employee = new UserData().Authenticate(employee);
+
+                if (employee.RoleId > 0)
+                {
+                    Session["userid"] = employee.UserId;
+                    Session["email"] = employee.EmailId;
+                    Session["role"] = employee.RoleId;
+                    Session["employeename"] = employee.EmployeeName;
+                    Session["employeid"] = employee.EmployeeId;
+
+                    FormsAuthentication.SetAuthCookie(employee.UserId, true);
+                }
+            }
+            catch { }
+
+            return Json(employee, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Dashboard(string user)
@@ -24,7 +53,7 @@ namespace Tlieta.Pdms.Web.Controllers
         {
             return View();
         }
-        
+
         public ActionResult Logout()
         {
             ModelState.AddModelError("LoginException", "Successfully logged out !");

@@ -68,32 +68,25 @@
             </div>
             <div class="clear"></div>
             <div class="gridArea">
-                @(Html.Kendo().Grid<Tlieta.Pdms.Web.Contact>()
+                @(Html.Kendo().Grid<Tlieta.Pdms.DB.Contact>()
                         .Name("ContactGrid")
                         .Columns(
                         columns =>
                         {
                             columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
                             columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
-                            columns.Bound(p => p.ContactId).Visible(false);
+                            columns.Bound(p => p.ContactId).Visible(false).Filterable(false);
                             columns.Bound(p => p.ContactName).Title("Contact Name");
                             columns.Bound(p => p.Company).Title("Company");
-                            columns.Bound(p => p.Designation).Title("Designation").Filterable(false);
-                            columns.Bound(p => p.Address).Title("Address").Filterable(false);
-                            columns.Bound(p => p.Mobile).Title("Phone").Filterable(false);
-                            columns.Bound(p => p.Email).Title("Email").Filterable(false);
+                            columns.Bound(p => p.Designation).Title("Designation");
+                            columns.Bound(p => p.Address).Title("Address");
+                            columns.Bound(p => p.Mobile).Title("Phone");
+                            columns.Bound(p => p.Email).Title("Email");
                         })
                   .Scrollable()
-                  .Filterable(filterable => filterable
-                                .Extra(false)
-                                .Operators(operators => operators
-                                    .ForString(str => str.Clear()
-                                    .StartsWith("Starts With")
-                                    .Contains("Contains")
-                              )))
                   .Pageable()
                   .DataSource(dataSource => dataSource
-                      .Ajax().PageSize(5)
+                      .Ajax().PageSize(7)
                       .Model(model =>
                       {
                           model.Id(p => p.ContactId);
