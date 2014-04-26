@@ -14,7 +14,7 @@ namespace Tlieta.Pdms.Web.Models
             List<Employee> employees = new List<Employee>();
             try
             {
-                employees = (from e in entities.Employees select e).ToList();
+                employees = (from e in entities.Employees select e).OrderBy(x => x.EmployeeName).ToList();
             }
             catch { }
             return employees;

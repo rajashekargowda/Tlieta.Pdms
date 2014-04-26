@@ -13,7 +13,7 @@ namespace Tlieta.Pdms.Web.Models
             List<Contact> contacts = new List<Contact>();
             try
             {
-                contacts = (from c in entities.Contacts select c).ToList();
+                contacts = (from c in entities.Contacts select c).OrderBy(x => x.ContactName).ToList();
             }
             catch { }
             return contacts;
