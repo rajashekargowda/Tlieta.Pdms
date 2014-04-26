@@ -48,7 +48,7 @@ namespace Tlieta.Pdms.Web.Controllers
             return Json(employee, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Delete([DataSourceRequest] DataSourceRequest request, int id)
+        public JsonResult Delete([DataSourceRequest] DataSourceRequest request, int id)
         {
             new UserData().Delete(id);
             return Json(request);

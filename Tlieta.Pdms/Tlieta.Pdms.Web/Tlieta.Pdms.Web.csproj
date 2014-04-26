@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Logging.cs" />
     <Compile Include="App_Start\SessionOutHandler.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DrugController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,6 +180,7 @@
     </Compile>
     <Compile Include="Models\BaseData.cs" />
     <Compile Include="Models\ContactData.cs" />
+    <Compile Include="Models\DrugData.cs" />
     <Compile Include="Models\ErrorLogData.cs" />
     <Compile Include="Models\PatientData.cs" />
     <Compile Include="Models\UserData.cs" />
@@ -402,6 +404,7 @@
     <Content Include="Images\adduser.png" />
     <Content Include="Images\contact.png" />
     <Content Include="Images\delete.png" />
+    <Content Include="Images\drug.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\home.png" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -465,6 +468,7 @@
     <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\contactcontroller.js" />
+    <Content Include="Scripts\Controllers\drugcontroller.js" />
     <Content Include="Scripts\Controllers\usercontroller.js" />
     <Content Include="Scripts\Controllers\logincontroller.js" />
     <Content Include="Scripts\Controllers\patientcontroller.js" />
@@ -724,6 +728,7 @@
     <Content Include="Views\Contact\Manage.cshtml" />
     <Content Include="Views\Patient\Info.cshtml" />
     <Content Include="Views\Employee\Manage.cshtml" />
+    <Content Include="Views\Drug\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

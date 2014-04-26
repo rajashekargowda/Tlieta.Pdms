@@ -14,6 +14,7 @@
           <EntitySet Name="Diagnosis" EntityType="PDMSDatabaseModel.Store.Diagnosis" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DosageDuration" EntityType="PDMSDatabaseModel.Store.DosageDuration" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="DosageFrequency" EntityType="PDMSDatabaseModel.Store.DosageFrequency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Drug" EntityType="PDMSDatabaseModel.Store.Drug" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Employee" EntityType="PDMSDatabaseModel.Store.Employee" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ErrorLog" EntityType="PDMSDatabaseModel.Store.ErrorLog" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ExaminationTemplate" EntityType="PDMSDatabaseModel.Store.ExaminationTemplate" store:Type="Tables" Schema="dbo" />
@@ -117,6 +118,18 @@
           <Property Name="DosageFrequencyName" Type="varchar" MaxLength="150" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Drug">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="varchar" MaxLength="150" />
+          <Property Name="Company" Type="varchar" MaxLength="150" />
+          <Property Name="Formulation" Type="varchar" MaxLength="250" />
+          <Property Name="DrugContent" Type="varchar" MaxLength="250" />
+          <Property Name="Instructions" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeId" />
@@ -127,7 +140,7 @@
           <Property Name="EmailId" Type="varchar" MaxLength="150" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="UserId" Type="varchar" MaxLength="10" />
-          <Property Name="Password" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
@@ -330,6 +343,7 @@
           <EntitySet Name="Services" EntityType="PDMSDatabaseModel.Service" />
           <EntitySet Name="Surgeries" EntityType="PDMSDatabaseModel.Surgery" />
           <EntitySet Name="sysdiagrams" EntityType="PDMSDatabaseModel.sysdiagram" />
+          <EntitySet Name="Drugs" EntityType="PDMSDatabaseModel.Drug" />
         </EntityContainer>
         <EntityType Name="Appointment">
           <Key>
@@ -428,7 +442,7 @@
           <Property Name="EmailId" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="UserId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Password" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="ErrorLog">
@@ -602,6 +616,18 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Drug">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Type="Int32" Name="BrandId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BrandName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Company" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formulation" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DrugContent" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Instructions" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -901,6 +927,19 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drugs">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.Drug">
+              <MappingFragment StoreEntitySet="Drug">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+                <ScalarProperty Name="DrugContent" ColumnName="DrugContent" />
+                <ScalarProperty Name="Formulation" ColumnName="Formulation" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

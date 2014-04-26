@@ -5,9 +5,6 @@
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/jquery.min.js")"></script>
     <script src="@Url.Content("~/Scripts/kendo/2013.3.1119/kendo.all.min.js")"></script>
 
-    @*<script src="http://cdn.kendostatic.com/2014.1.416/js/jquery.min.js"></script>
-    <script src="http://cdn.kendostatic.com/2014.1.416/js/kendo.all.min.js"></script>*@
-
     <script src="@Url.Content("~/Scripts/AngularJS/angular.min.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-route.js")"></script>
     <script src="@Url.Content("~/Scripts/AngularJS/angular-kendo.js")"></script>
@@ -43,17 +40,26 @@
                 <!--Main Navigation Starts here-->
                 <div class="nav" ng-controller="menucontroller">
                     <ul id="nav">
+                        @if(Convert.ToInt32(@Session["role"]) == 1){
                         <li class="first">
                             <a>Admin</a>
                             <ul class="firstLevel">
                                 <li><a href="#" ng-click="redirect('users')">Users</a></li>
                             </ul>
                         </li>
+                        }
                         <li class="first">
                             <a>Front Desk</a>
                             <ul class="firstLevel">
                                 <li><a href="#" ng-click="redirect('contacts')">Contacts</a></li>
                                 <li><a href="#" ng-click="redirect('appointments')">Appointments</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a>Pharmacy</a>
+                            <ul class="firstLevel">
+                                <li><a href="#" ng-click="redirect('drugs')">Drugs</a></li>
+                                <li><a href="#" ng-click="redirect('dosage')">Dosage</a></li>
                             </ul>
                         </li>
                     </ul>

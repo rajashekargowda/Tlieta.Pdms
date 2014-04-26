@@ -48,5 +48,6 @@ namespace Tlieta.Pdms.DB
         public DbSet<Service> Services { get; set; }
         public DbSet<Surgery> Surgeries { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<Drug> Drugs { get; set; }
     }
 }

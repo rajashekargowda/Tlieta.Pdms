@@ -6,10 +6,9 @@ using Kendo.Mvc.UI;
 using Tlieta.Pdms.Web.Models;
 using Tlieta.Pdms.DB;
 
-
 namespace Tlieta.Pdms.Web.Controllers
 {
-    public class ContactController : Controller
+    public class DrugController : Controller
     {
         public ActionResult Manage()
         {
@@ -18,34 +17,34 @@ namespace Tlieta.Pdms.Web.Controllers
 
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            List<Contact> list = new List<Contact>();
+            List<Drug> list = new List<Drug>();
             try
             {
-                list = new ContactData().GetContacts();
+                list = new DrugData().GetDrugs();
             }
             catch (Exception ex)
             { }
             return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Save(Contact contact)
+        public JsonResult Save(Drug drug)
         {
             try
             {
-                if (contact.ContactId > 0)
-                    new ContactData().Update(contact);
+                if (drug.BrandId > 0)
+                    new DrugData().Update(drug);
                 else
-                    new ContactData().Add(contact);
+                    new DrugData().Add(drug);
             }
             catch (Exception x)
             {
             }
-            return Json(contact, JsonRequestBehavior.AllowGet);
+            return Json(drug, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult Delete([DataSourceRequest] DataSourceRequest request, int id)
         {
-            new ContactData().Delete(id);
+            new DrugData().Delete(id);
             return Json(request);
         }
     }

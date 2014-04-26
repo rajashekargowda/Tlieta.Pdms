@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/Controllers/drugcontroller.js")"></script>
+<div class="mainBlock marBtm">
+    <h2><span>
+        <img src="~/Images/drug.png" /></span>Drugs</h2>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea" ng-controller="drugcontroller">
+                    <form name="formDrug" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span ng-show="!formDrug.$invalid">Valid data.</span>
+                                <span ng-show="formDrug.BrandName.$error.required" class="required">( * ) Mandatory fields. </span>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Brand Name<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="BrandId" type="hidden" name="BrandId" ng-model="drug.BrandId" />
+                                    <input id="BrandName" type="text" name="BrandName" ng-model="drug.BrandName" required />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Company :</label>
+                                <div class="fieldInput">
+                                    <input id="Company" type="text" name="Company" ng-model="drug.Company" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Formulation :</label>
+                                <div class="fieldInput">
+                                    <input id="Formulation" type="text" name="Formulation" ng-model="drug.Formulation" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Instructions :</label>
+                                <div class="fieldInput">
+                                    <textarea id="Instructions" name="Instructions" ng-model="drug.Instructions" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Drug Content :</label>
+                                <div class="fieldInput">
+                                    <input id="DrugContent" type="text" name="DrugContent" ng-model="drug.DrugContent" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formAction">
+                            <button class="mainActionBtnB" ng-disabled="formDrug.$invalid" ng-click="savedrug(drug)">{{buttontext}}</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshdrug()">Reset</button>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="gridArea">
+                @(Html.Kendo().Grid<Tlieta.Pdms.DB.Drug>()
+                        .Name("DrugGrid")
+                        .Columns(
+                        columns =>
+                        {
+                            columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
+                            columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
+                            columns.Bound(p => p.BrandId).Visible(false).Filterable(false);
+                            columns.Bound(p => p.BrandName).Title("Brand Name");
+                            columns.Bound(p => p.Company).Title("Company");
+                            columns.Bound(p => p.Formulation).Title("Formulation");
+                            columns.Bound(p => p.DrugContent).Title("DrugContent");
+                            columns.Bound(p => p.Instructions).Title("Instructions");
+                        })
+                  .Scrollable()
+                  .Pageable()
+                  .DataSource(dataSource => dataSource
+                      .Ajax().PageSize(7)
+                      .Model(model =>
+                      {
+                          model.Id(p => p.BrandId);
+                          model.Field(p => p.BrandId);
+                          model.Field(p => p.BrandName);
+                          model.Field(p => p.Company);
+                          model.Field(p => p.Formulation);
+                          model.Field(p => p.DrugContent);
+                          model.Field(p => p.Instructions);
+                      })
+                      .Read(read => read.Action("Read", "Drug"))
+                  )
+              )
+            </div>
+        </div>
+    </div>
+</div>

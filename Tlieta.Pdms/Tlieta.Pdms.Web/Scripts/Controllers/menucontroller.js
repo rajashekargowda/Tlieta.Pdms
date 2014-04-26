@@ -5,5 +5,7 @@ function menucontroller($scope) {
             location.href = '/Contact/Manage/';
         else if (menu == 'users')
             location.href = '/Employee/Manage/';
+        else if (menu == 'drugs')
+            location.href = '/Drug/Manage/';
     };
 }

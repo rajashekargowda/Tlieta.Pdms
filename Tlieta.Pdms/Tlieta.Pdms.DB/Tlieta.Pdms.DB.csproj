@@ -70,6 +70,9 @@
     <Compile Include="DosageFrequency.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Drug.cs">
+      <DependentUpon>PdmsEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
