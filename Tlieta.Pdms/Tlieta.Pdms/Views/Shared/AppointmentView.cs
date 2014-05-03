@@ -28,7 +28,7 @@ namespace Tlieta.Pdms.Views.Shared
                 DateTime starttime = (DateTime)(radTimeStart.Value);
                 DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
 
-                bool result = new AppointmentData().AddSchedule(new Appointment()
+                bool result = new AppointmentData().Add(new Appointment()
                 {
                     AppointmentDate = appointment,
                     PatientName = txtName.Text,
@@ -63,7 +63,7 @@ namespace Tlieta.Pdms.Views.Shared
                 DateTime starttime = (DateTime)(radTimeStart.Value);
                 DateTime appointment = new DateTime(startdate.Year, startdate.Month, startdate.Day, starttime.Hour, starttime.Minute, starttime.Second);
 
-                bool result = new AppointmentData().UpdateSchedule(new Appointment()
+                bool result = new AppointmentData().Update(new Appointment()
                 {
                     AppointmentId = Convert.ToInt32(id),
                     AppointmentDate = appointment,
@@ -97,7 +97,7 @@ namespace Tlieta.Pdms.Views.Shared
                     return;
                 }
 
-                bool result = new AppointmentData().DeleteSchedule(
+                bool result = new AppointmentData().Delete(
                                                 Convert.ToInt32(id));
                 if (result)
                     MessageBox.Show("Deleted Successfully");

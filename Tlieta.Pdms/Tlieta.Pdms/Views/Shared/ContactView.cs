@@ -74,7 +74,7 @@ namespace Tlieta.Pdms.Views.Shared
                     return;
                 }
 
-                bool result = new ContactData().AddContact(new Contact()
+                bool result = new ContactData().Add(new Contact()
                 {
                     ContactName = name,
                     Address = txtAddress.Text,
@@ -115,7 +115,7 @@ namespace Tlieta.Pdms.Views.Shared
                     return;
                 }
 
-                bool result = new ContactData().UpdateContact(new Contact()
+                bool result = new ContactData().Update(new Contact()
                 {
                     ContactId = Convert.ToInt32(id),
                     ContactName = name,
