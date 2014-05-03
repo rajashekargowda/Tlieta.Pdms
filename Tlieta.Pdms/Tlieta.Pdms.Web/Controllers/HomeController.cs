@@ -5,9 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using Tlieta.Pdms.DB;
-using Tlieta.Pdms.Web.Models;
 using Tlieta.Pdms.Web.Resources;
-using Tlieta.Utility;
 
 namespace Tlieta.Pdms.Web.Controllers
 {

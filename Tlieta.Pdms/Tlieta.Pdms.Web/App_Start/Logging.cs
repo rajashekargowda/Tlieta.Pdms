@@ -13,7 +13,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
-using Tlieta.Pdms.Web.Models;
 using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Web

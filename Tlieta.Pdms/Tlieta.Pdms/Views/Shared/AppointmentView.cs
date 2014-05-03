@@ -3,7 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 using Telerik.WinControls.Themes;
 using Tlieta.Pdms.Code;
 
@@ -31,7 +31,7 @@ namespace Tlieta.Pdms.Views.Shared
                 bool result = new AppointmentData().AddSchedule(new Appointment()
                 {
                     AppointmentDate = appointment,
-                    Name = txtName.Text,
+                    PatientName = txtName.Text,
                     PatientId = txtPatientId.Text,
                     Mobile = txtMobile.Text,
                     Email = txtEmail.Text,
@@ -67,7 +67,7 @@ namespace Tlieta.Pdms.Views.Shared
                 {
                     AppointmentId = Convert.ToInt32(id),
                     AppointmentDate = appointment,
-                    Name = txtName.Text,
+                    PatientName = txtName.Text,
                     PatientId = txtPatientId.Text,
                     Mobile = txtMobile.Text,
                     Email = txtEmail.Text,

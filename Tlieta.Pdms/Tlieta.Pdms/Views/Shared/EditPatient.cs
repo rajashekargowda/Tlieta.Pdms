@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Themes;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 using Telerik.WinControls.UI;
 using System.IO;
 using System.Configuration;

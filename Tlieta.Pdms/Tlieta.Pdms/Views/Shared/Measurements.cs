@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Views.Shared
 {

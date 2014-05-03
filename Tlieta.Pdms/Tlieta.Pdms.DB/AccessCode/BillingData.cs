@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Tlieta.Pdms.DB
+{
+    public class BillingData : BaseData
+    {
+        public List<Billing> GetBilling(DateTime from, DateTime to)
+        {
+            List<Billing> billing = new List<Billing>();
+            to = to.Add(new TimeSpan(1, 0, 0, 0));
+            from = from.Add(new TimeSpan(-1, 0, 0, 0));
+            try
+            {
+                billing = (from a in entities.Billings select a).ToList();
+                if (billing.Count > 0)
+                {
+                    return billing.Where(i => i.BillingDate > from && i.BillingDate < to).ToList();
+                }
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+            return billing;
+        }
+
+        public bool AddBilling(Billing model)
+        {
+            try
+            {
+                entities.Billings.Add(model);
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+        }
+
+        public bool UpdateBilling(Billing model)
+        {
+            try
+            {
+                Billing billing = entities.Billings.Where(x => x.BillingId == model.BillingId).SingleOrDefault();
+                if (billing != null)
+                {
+                    entities.Entry(billing).CurrentValues.SetValues(model);
+                    entities.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+        }
+
+        public bool DeleteBilling(int id)
+        {
+            try
+            {
+                Billing billing = entities.Billings.Where(x => x.BillingId == id).SingleOrDefault();
+                if (billing != null)
+                {
+                    entities.Billings.Remove(billing);
+                    entities.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+        }
+    }
+}

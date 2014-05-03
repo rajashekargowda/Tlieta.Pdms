@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
-using Tlieta.Pdms.Web.Models;
 using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Web.Controllers
@@ -11,6 +10,10 @@ namespace Tlieta.Pdms.Web.Controllers
     public class DrugController : Controller
     {
         public ActionResult Manage()
+        {
+            return View();
+        }
+        public ActionResult Dosage()
         {
             return View();
         }

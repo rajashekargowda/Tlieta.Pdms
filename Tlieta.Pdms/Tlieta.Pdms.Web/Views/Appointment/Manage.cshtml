@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/Controllers/appointmentcontroller.js")"></script>
+<div class="mainBlock marBtm">
+    <h2><span>
+        <img src="~/Images/calendar.png" /></span>Appointment</h2>
+    <div class="blockCon">
+        <div class="padd10">
+            <div class="blockCon" id="showblockCon">
+                <div class="formArea" ng-controller="appointmentcontroller">
+                    <form name="formAppointment" novalidate>
+                        <div class="msgBox">
+                            <span class="ic-msg">
+                                <span class="required">{{errormessage}}</span>
+                                <span ng-show="formAppointment.AppointmentDate.$invalid" class="required">Enter valid date. </span>
+                                <span ng-show="formAppointment.Email.$invalid" class="required">Enter valid email. </span>
+
+                            </span>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Appointment Date<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="AppointmentId" type="hidden" name="AppointmentId" ng-model="appointment.AppointmentId" />                                    
+                                    @(Html.Kendo().DateTimePicker().Name("AppointmentDate").Value(DateTime.Now))
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">PatientName<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="PatientName" type="text" name="PatientName" ng-model="appointment.PatientName" required />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">PatientId :</label>
+                                <div class="fieldInput">
+                                    <input id="PatientId" type="text" name="PatientId" ng-model="appointment.PatientId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="formRow">
+                                <label class="fieldLabel">Doctor<span class="required"> * </span>:</label>
+                                <div class="fieldInput">
+                                    <input id="DoctorId" type="hidden" name="DoctorId" ng-model="appointment.DoctorId" />
+                                    <input id="DoctorName" type="hidden" name="DoctorName" ng-model="appointment.DoctorName" />
+                                    @(Html.Kendo().DropDownList().Name("DoctorList")
+                                            .DataValueField("EmployeeId")
+                                            .DataTextField("EmployeeName")
+                                            .OptionLabel("Select")
+                                            .HtmlAttributes(new { style = "width:250px" })
+                                            .DataSource(source =>
+                                            {
+                                                source.Read(read => { read.Action("ReadEmployeeByRole", "Employee"); });
+                                            })
+                                    )
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Mobile :</label>
+                                <div class="fieldInput">
+                                    <input id="Mobile" type="text" name="Mobile" ng-model="appointment.Mobile" />
+                                </div>
+                            </div>
+                            <div class="formRow">
+                                <label class="fieldLabel">Email :</label>
+                                <div class="fieldInput">
+                                    <input type="email" id="Email" name="Email" ng-model="appointment.Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formAction">
+                            <button class="mainActionBtnB" ng-disabled="formAppointment.$invalid" ng-click="saveappointment(appointment)">{{buttontext}}</button>&nbsp;
+                                    <button class="mainActionBtnB" ng-click="refreshappointment()">Reset</button>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+                <div class="formArea noBorder noBg">
+                    <div class="col">
+                        <div class="formRow">
+                            <label class="fieldLabel">Start date<span class="required">*</span>:</label>
+                            <div class="fieldInput">
+                                @(Html.Kendo().DatePicker().Name("startdate").Value(DateTime.Now))
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="formRow">
+                            <label class="fieldLabel">End date<span class="required">*</span>:</label>
+                            <div class="fieldInput">
+                                @(Html.Kendo().DatePicker().Name("enddate").Value(DateTime.Now)) 
+                                <br />
+                            </div>
+                            <br /><br />
+                            <label class="fieldLabel"></label>
+                            <div class="fieldInput">
+                                <button class="mainActionBtnB" ng-click="refreshappointment()">Get Appointments</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="gridArea">
+                @(Html.Kendo().Grid<Tlieta.Pdms.DB.Appointment>()
+                        .Name("AppointmentGrid")
+                        .Columns(
+                        columns =>
+                        {
+                            columns.Command(command => command.Custom("CustomEdit").Click("Edit").Text(" ")).Width(35).Title(" ");
+                            columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
+                            columns.Bound(p => p.AppointmentId).Visible(false).Filterable(false);
+                            columns.Bound(p => p.AppointmentDate).Title("Appointment Date").Format("{0:dd/MM/yyyy HH:mm:ss}");
+                            columns.Bound(p => p.PatientName).Title("Patient Name");
+                            columns.Bound(p => p.PatientId).Title("Patient Id");
+                            columns.Bound(p => p.DoctorName).Title("Doctor Name");
+                            columns.Bound(p => p.Mobile).Title("Mobile");
+                        })
+                  .Scrollable()
+                  .Pageable()
+                  .DataSource(dataSource => dataSource
+                      .Ajax().PageSize(7)
+                      .Model(model =>
+                      {
+                          model.Id(p => p.AppointmentId);
+                          model.Field(p => p.AppointmentId);
+                          model.Field(p => p.AppointmentDate);
+                          model.Field(p => p.PatientName);
+                          model.Field(p => p.PatientId);
+                          model.Field(p => p.DoctorName);
+                          model.Field(p => p.Mobile);
+                      })
+                      .Read(read => read.Action("Read", "Appointment").Data("additionalInfo"))
+                  )
+              )
+            </div>
+        </div>
+    </div>
+</div>

@@ -48,6 +48,14 @@
                             </ul>
                         </li>
                         }
+                        @if(Convert.ToInt32(@Session["role"]) == 2){
+                        <li class="first">
+                            <a>Doctor</a>
+                            <ul class="firstLevel">
+                                <li><a href="#" ng-click="redirect('calendar')">Appointments</a></li>
+                            </ul>
+                        </li>
+                        }
                         <li class="first">
                             <a>Front Desk</a>
                             <ul class="firstLevel">

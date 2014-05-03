@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Tlieta.Pdms.DB;
-using Tlieta.Utility;
 
-namespace Tlieta.Pdms.Web.Models
+namespace Tlieta.Pdms.DB
 {
     public class UserData : BaseData
     {
@@ -16,7 +14,24 @@ namespace Tlieta.Pdms.Web.Models
             {
                 employees = (from e in entities.Employees select e).OrderBy(x => x.EmployeeName).ToList();
             }
-            catch { }
+            catch (Exception x)
+            {
+                throw x;
+            }
+            return employees;
+        }
+
+        public List<Employee> GetEmployeesByRole(int roleid)
+        {
+            List<Employee> employees = new List<Employee>();
+            try
+            {
+                employees = (from e in entities.Employees select e).Where(r => r.RoleId == roleid).OrderBy(x => x.EmployeeName).ToList();
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
             return employees;
         }
 
@@ -27,7 +42,10 @@ namespace Tlieta.Pdms.Web.Models
             {
                 roles = (from e in entities.Roles select e).ToList();
             }
-            catch { }
+            catch (Exception x)
+            {
+                throw x;
+            }
             return roles;
         }
 
@@ -43,7 +61,10 @@ namespace Tlieta.Pdms.Web.Models
                         return employee;
                 }
             }
-            catch { }
+            catch (Exception x)
+            {
+                throw x;
+            }
             return model;
         }
 
@@ -55,7 +76,10 @@ namespace Tlieta.Pdms.Web.Models
                 entities.SaveChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                throw x;
+            }
         }
 
         public bool Update(Employee model)
@@ -74,19 +98,29 @@ namespace Tlieta.Pdms.Web.Models
                     return false;
                 }
             }
-            catch { return false; }
+            catch (Exception x)
+            {
+                throw x;
+            }
         }
 
         public bool Delete(int Id)
         {
-            var result = entities.Employees.Where(x => x.EmployeeId == Id);
-            if (result.Count() > 0)
+            try
             {
-                Employee employee = result.First();
-                entities.Employees.Remove(employee);
-                entities.SaveChanges();
+                var result = entities.Employees.Where(x => x.EmployeeId == Id);
+                if (result.Count() > 0)
+                {
+                    Employee employee = result.First();
+                    entities.Employees.Remove(employee);
+                    entities.SaveChanges();
+                }
+                return true;
             }
-            return true;
+            catch (Exception x)
+            {
+                throw x;
+            }
         }
     }
 }

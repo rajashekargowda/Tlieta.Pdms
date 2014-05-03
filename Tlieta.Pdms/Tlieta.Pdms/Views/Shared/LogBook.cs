@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 using Telerik.WinControls.Themes;
 
 namespace Tlieta.Pdms.Views.Shared

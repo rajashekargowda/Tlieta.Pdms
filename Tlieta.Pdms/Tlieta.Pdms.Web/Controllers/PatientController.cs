@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Tlieta.Pdms.Web.Models;
 
 namespace Tlieta.Pdms.Web.Controllers
 {

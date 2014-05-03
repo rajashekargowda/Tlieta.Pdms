@@ -2,11 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Tlieta.Pdms.Web.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Tlieta.Pdms.DB;
-using Tlieta.Utility;
 using Tlieta.Pdms.Web.Resources;
 
 namespace Tlieta.Pdms.Web.Controllers
@@ -66,5 +64,16 @@ namespace Tlieta.Pdms.Web.Controllers
             return Json(list.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult ReadEmployeeByRole()
+        {
+            List<Employee> list = new List<Employee>();
+            try
+            {
+                list = new UserData().GetEmployeesByRole((int)Enums.Role.Doctor);
+            }
+            catch (Exception ex)
+            { }
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
     }
 }

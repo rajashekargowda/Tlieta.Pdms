@@ -148,84 +148,22 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Tlieta.Pdms.DB">
+      <HintPath>..\Tlieta.Pdms.DB\bin\Debug\Tlieta.Pdms.DB.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointment.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Billing.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Code\FileLogger.cs" />
     <Compile Include="Code\FileOperations.cs" />
     <Compile Include="Code\FingerPrint.cs" />
-    <Compile Include="Code\Utility.cs" />
-    <Compile Include="ComplaintTemplate.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccess\AppointmentData.cs" />
-    <Compile Include="DataAccess\BaseData.cs" />
-    <Compile Include="DataAccess\BillingData.cs" />
-    <Compile Include="DataAccess\ContactData.cs" />
-    <Compile Include="DataAccess\DayBookData.cs" />
-    <Compile Include="DataAccess\Enums.cs" />
-    <Compile Include="DataAccess\MasterData.cs" />
-    <Compile Include="DataAccess\PatientData.cs" />
-    <Compile Include="DataAccess\PatientVitalData.cs" />
-    <Compile Include="DataAccess\ReportsData.cs" />
-    <Compile Include="DataAccess\SharedData.cs" />
-    <Compile Include="DataAccess\SurgeryData.cs" />
-    <Compile Include="DataAccess\TemplateData.cs" />
-    <Compile Include="DayBook.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagnosis.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DosageDuration.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DosageFrequency.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ErrorLog.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExaminationTemplate.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hospital.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Imaging.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LabInvestigation.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MyFormBehavior.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Operation.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OtherAdvise.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Patient.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientForm.cs">
       <SubType>Form</SubType>
@@ -233,42 +171,9 @@
     <Compile Include="PatientForm.Designer.cs">
       <DependentUpon>PatientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PatientVital.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PDMSModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PDMSModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PDMSModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PDMSModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PDMSModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Code\DataFolder.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Service.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Surgery.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>PDMSModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Views\Shared\AppointmentView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -462,23 +367,6 @@
       <DependentUpon>VisitHistoryView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="PDMSModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PDMSModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="PDMSModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PDMSModel.edmx</DependentUpon>
-      <LastGenOutput>PDMSModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="PDMSModel.edmx.diagram">
-      <DependentUpon>PDMSModel.edmx</DependentUpon>
-    </None>
-    <None Include="PDMSModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PDMSModel.edmx</DependentUpon>
-      <LastGenOutput>PDMSModel.cs</LastGenOutput>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

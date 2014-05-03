@@ -8,7 +8,7 @@ using Telerik.WinControls.RichTextBox.FileFormats.OpenXml.Docx;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using Tlieta.Pdms.Properties;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 using Tlieta.Pdms.Code;
 
 namespace Tlieta.Pdms.Views.Shared

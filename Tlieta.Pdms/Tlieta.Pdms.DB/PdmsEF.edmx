@@ -37,7 +37,9 @@
           </Key>
           <Property Name="AppointmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
+          <Property Name="DoctorName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PatientName" Type="nvarchar" MaxLength="150" />
           <Property Name="PatientId" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="15" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -320,7 +322,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="PDMSDatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PDMSDatabaseEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Appointments" EntityType="PDMSDatabaseModel.Appointment" />
           <EntitySet Name="Billings" EntityType="PDMSDatabaseModel.Billing" />
           <EntitySet Name="ComplaintTemplates" EntityType="PDMSDatabaseModel.ComplaintTemplate" />
           <EntitySet Name="Contacts" EntityType="PDMSDatabaseModel.Contact" />
@@ -344,19 +345,8 @@
           <EntitySet Name="Surgeries" EntityType="PDMSDatabaseModel.Surgery" />
           <EntitySet Name="sysdiagrams" EntityType="PDMSDatabaseModel.sysdiagram" />
           <EntitySet Name="Drugs" EntityType="PDMSDatabaseModel.Drug" />
+          <EntitySet Name="Appointments" EntityType="PDMSDatabaseModel.Appointment" />
         </EntityContainer>
-        <EntityType Name="Appointment">
-          <Key>
-            <PropertyRef Name="AppointmentId" />
-          </Key>
-          <Property Name="AppointmentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
-          <Property Name="PatientId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Mobile" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <EntityType Name="Billing">
           <Key>
             <PropertyRef Name="BillingId" />
@@ -629,25 +619,26 @@
           <Property Type="String" Name="Instructions" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Type="Int32" Name="AppointmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="DoctorId" Nullable="false" />
+          <Property Type="String" Name="DoctorName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PatientName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PatientId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mobile" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PDMSDatabaseModelStoreContainer" CdmEntityContainer="PDMSDatabaseEntities">
-          <EntitySetMapping Name="Appointments">
-            <EntityTypeMapping TypeName="PDMSDatabaseModel.Appointment">
-              <MappingFragment StoreEntitySet="Appointment">
-                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Billings">
             <EntityTypeMapping TypeName="PDMSDatabaseModel.Billing">
               <MappingFragment StoreEntitySet="Billing">
@@ -940,6 +931,21 @@
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="BrandName" ColumnName="BrandName" />
                 <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

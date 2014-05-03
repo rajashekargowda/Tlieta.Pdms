@@ -25,7 +25,6 @@ namespace Tlieta.Pdms.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Billing> Billings { get; set; }
         public DbSet<ComplaintTemplate> ComplaintTemplates { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -49,5 +48,6 @@ namespace Tlieta.Pdms.DB
         public DbSet<Surgery> Surgeries { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Drug> Drugs { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 }

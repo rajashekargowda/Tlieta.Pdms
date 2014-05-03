@@ -10,7 +10,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls.UI;
 using Tlieta.Pdms.Code;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 using Tlieta.Pdms.Properties;
 
 namespace Tlieta.Pdms

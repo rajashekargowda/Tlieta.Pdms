@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Code
 {
@@ -36,25 +36,5 @@ namespace Tlieta.Pdms.Code
             }
             catch { return null; }
         }
-
-        public static int GetAgeFromDob(DateTime dob)
-        {
-            int age = 0;
-            try
-            {
-                age = Convert.ToInt32(Math.Truncate(DateTime.Now.Subtract(dob).TotalDays * (1 / 365.242199)));
-            }
-            catch { }
-            return age;
-        }
-
-        //public static int ValidateBirthDate(DateTime birthday)
-        //{
-        //    DateTime today = DateTime.Now;
-        //    DateTime validDate = new DateTime(today.Year - 21, today.Month, today.Day);
-        //    TimeSpan validAge = today.Subtract(validDate);
-        //    TimeSpan actualAge = today.Subtract(birthday);
-        //    return TimeSpan.Compare(validAge, actualAge);
-        //}
     }
 }

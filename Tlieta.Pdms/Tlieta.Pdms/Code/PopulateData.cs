@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telerik.WinControls.UI;
 using Tlieta.Pdms.Code;
-using Tlieta.Pdms.DataAccess;
+using Tlieta.Pdms.DB;
 
 namespace Tlieta.Pdms.Views.Shared
 {

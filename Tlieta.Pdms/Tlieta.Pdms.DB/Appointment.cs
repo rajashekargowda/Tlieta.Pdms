@@ -16,7 +16,9 @@ namespace Tlieta.Pdms.DB
     {
         public int AppointmentId { get; set; }
         public System.DateTime AppointmentDate { get; set; }
-        public string Name { get; set; }
+        public int DoctorId { get; set; }
+        public string DoctorName { get; set; }
+        public string PatientName { get; set; }
         public string PatientId { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }

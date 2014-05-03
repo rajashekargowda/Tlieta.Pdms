@@ -37,6 +37,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessCode\AppointmentData.cs" />
+    <Compile Include="AccessCode\BaseData.cs" />
+    <Compile Include="AccessCode\BillingData.cs" />
+    <Compile Include="AccessCode\ContactData.cs" />
+    <Compile Include="AccessCode\DayBookData.cs" />
+    <Compile Include="AccessCode\DrugData.cs" />
+    <Compile Include="AccessCode\Encryption.cs" />
+    <Compile Include="AccessCode\Enums.cs" />
+    <Compile Include="AccessCode\ErrorLogData.cs" />
+    <Compile Include="AccessCode\FingerPrint.cs" />
+    <Compile Include="AccessCode\MasterData.cs" />
+    <Compile Include="AccessCode\PatientData.cs" />
+    <Compile Include="AccessCode\PatientVitalData.cs" />
+    <Compile Include="AccessCode\ReportsData.cs" />
+    <Compile Include="AccessCode\SharedData.cs" />
+    <Compile Include="AccessCode\SurgeryData.cs" />
+    <Compile Include="AccessCode\TemplateData.cs" />
+    <Compile Include="AccessCode\UserData.cs" />
+    <Compile Include="AccessCode\Utility.cs" />
     <Compile Include="Appointment.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
@@ -161,9 +181,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AccessCode\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
