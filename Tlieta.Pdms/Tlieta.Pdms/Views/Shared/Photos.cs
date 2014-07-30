@@ -27,15 +27,18 @@ namespace Tlieta.Pdms.Views.Shared
         {
             listPhotos.Items.Clear();
             FileInfo[] fi = FileOperations.GetFilesinFolder(DataFolder.GetPhotoFolder(_patientid));
-            foreach (FileInfo f in fi)
+            if (fi != null)
             {
-                RadListDataItem item = new RadListDataItem();
-                item.Value = f.FullName;
-                item.Text = f.Name;
-                item.TextAlignment = ContentAlignment.BottomCenter;
-                item.Image = GetResizedImage(Image.FromFile(f.FullName));
-                item.TextImageRelation = TextImageRelation.ImageAboveText;
-                listPhotos.Items.Add(item);
+                foreach (FileInfo f in fi)
+                {
+                    RadListDataItem item = new RadListDataItem();
+                    item.Value = f.FullName;
+                    item.Text = f.Name;
+                    item.TextAlignment = ContentAlignment.BottomCenter;
+                    item.Image = GetResizedImage(Image.FromFile(f.FullName));
+                    item.TextImageRelation = TextImageRelation.ImageAboveText;
+                    listPhotos.Items.Add(item);
+                }
             }
 
             if (listPhotos.Items.Count > 0)

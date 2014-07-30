@@ -37,12 +37,15 @@ namespace Tlieta.Pdms.Views.Shared
         {
             listVideos.Items.Clear();
             FileInfo[] fi = FileOperations.GetFilesinFolder(DataFolder.GetVideoFolder(_patientid));
-            foreach (FileInfo f in fi)
+            if (fi != null)
             {
-                RadListDataItem item = new RadListDataItem();
-                item.Text = f.Name;
-                item.Value = f.FullName;
-                listVideos.Items.Add(item);
+                foreach (FileInfo f in fi)
+                {
+                    RadListDataItem item = new RadListDataItem();
+                    item.Text = f.Name;
+                    item.Value = f.FullName;
+                    listVideos.Items.Add(item);
+                }
             }
         }
 

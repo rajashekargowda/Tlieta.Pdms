@@ -298,6 +298,38 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnAddDrug_Click(object sender, EventArgs e)
         {
+            string brandname = txtBrandName.Text.Trim();
+
+            if (brandname == "")
+            {
+                MessageBox.Show("Enter Brand Name");
+                return;
+            }
+            else
+            {
+                Drug drug = new Drug() { 
+                    BrandName = brandname, 
+                    Company = txtCompany.Text.Trim(),
+                    DrugContent = txtContents.Text.Trim(),
+                    Formulation = txtFormulation.Text.Trim(),
+                    Instructions = txtInstructions.Text.Trim(),
+                    CreatedOn = DateTime.Now 
+                };
+                bool result = new DrugData().Add(drug);
+                if (result)
+                {
+                    txtImagingName.Text = "";
+                    txtCompany.Text = "";
+                    txtContents.Text = "";
+                    txtFormulation.Text = "";
+                    txtInstructions.Text = "";
+                    MessageBox.Show("Drug added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add drug : contact Admin");
+                }
+            }
 
         }
     }

@@ -15,7 +15,8 @@ namespace Tlieta.Pdms.DB
             try
             {
                 entities.Patients.Add(model);
-                return entities.SaveChanges();
+                entities.SaveChanges();
+                return model.PatientId;
             }
             catch (Exception x)
             {

@@ -116,7 +116,7 @@
           <Key>
             <PropertyRef Name="DosageFrequencyId" />
           </Key>
-          <Property Name="DosageFrequencyId" Type="int" Nullable="false" />
+          <Property Name="DosageFrequencyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DosageFrequencyName" Type="varchar" MaxLength="150" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>

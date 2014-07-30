@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tlieta.Pdms.DB;
 using Telerik.WinControls.UI;
@@ -107,7 +101,7 @@ namespace Tlieta.Pdms.Views.Shared
             try
             {
                 txtBillingId.Text = e.Row.Cells["DayBookId"].Value.ToString();
-                radBillDate.Value = Convert.ToDateTime(e.Row.Cells["BillDate"].Value.ToString());
+                radBillDate.Value = Convert.ToDateTime(e.Row.Cells["BillingDate"].Value.ToString());
                 int credit = Convert.ToInt32(e.Row.Cells["Credit"].Value.ToString());
                 int debit = Convert.ToInt32(e.Row.Cells["Debit"].Value.ToString());
                 if (credit == 0)
@@ -120,7 +114,7 @@ namespace Tlieta.Pdms.Views.Shared
                     chkCredit.Checked = true;
                     txtAmount.Value = credit;
                 }
-                txtBillNumber.Text = e.Row.Cells["BillNumber"].Value.ToString();
+                txtBillNumber.Text = e.Row.Cells["BillingNumber"].Value.ToString();
                 txtNotes.Text = e.Row.Cells["Notes"].Value.ToString();
             }
             catch { }

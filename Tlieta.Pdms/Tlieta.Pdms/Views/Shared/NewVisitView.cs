@@ -153,10 +153,10 @@ namespace Tlieta.Pdms.Views.Shared
 
         }
 
-        private void SetGridPreferences(RadGridView grid) 
+        private void SetGridPreferences(RadGridView grid)
         {
             grid.ShowGroupPanel = false;
-            grid.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill; 
+            grid.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
