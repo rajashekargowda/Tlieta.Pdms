@@ -16,6 +16,9 @@ namespace Tlieta.Pdms.Views.Shared
     {
         int visitid = 0;
 
+        List<PatientLabData> labdatalist;
+        List<PatientImagingData> imagingdatalist;
+
         public NewVisitView(int patientid)
         {
             InitializeComponent();
@@ -36,10 +39,14 @@ namespace Tlieta.Pdms.Views.Shared
 
             //Imaging
             PopulateData.PopulateImaging(ddlImagingTest);
+            SetGridPreferences(ImagingGrid);
             datetimeImagingTest.Value = DateTime.Now;
 
             //Diagnosis
             datetimeFollowUp.Value = DateTime.Now.Add(new TimeSpan(7, 0, 0, 0));
+
+            if (labdatalist == null) { labdatalist = new List<PatientLabData>(); }
+            if (imagingdatalist == null) { imagingdatalist = new List<PatientImagingData>(); }
         }
 
         private void btnAddComplaint_Click(object sender, EventArgs e)
@@ -149,6 +156,75 @@ namespace Tlieta.Pdms.Views.Shared
         }
 
         private void btnAddLabTest_Click(object sender, EventArgs e)
+        {
+            int labtest = Convert.ToInt32(ddllabTest.SelectedValue);
+            string result = txtLabResults.Text.Trim();
+
+            if (labtest == 0)
+            {
+                MessageBox.Show("Select a lab test");
+                return;
+            } else if (result == "")
+            {
+                MessageBox.Show("Enter results");
+                return;
+            }
+
+            PatientLabData data = new PatientLabData()
+            {
+                LabTestId = labtest,
+                LabTestName = ddllabTest.SelectedItem.Text,
+                Results = result,
+                TestDate = datetimeLabTest.Value,
+                CreatedOn = DateTime.Now,
+                UpdatedOn = DateTime.Now
+            };
+
+            labdatalist.Add(data);
+
+            //LabDataGrid.DataSource = null;
+            LabDataGrid.ClearSelection();
+            LabDataGrid.DataSource = (from labdata in labdatalist
+                                      select new { labdata.LabTestName, labdata.Results, labdata.TestDate });
+            LabDataGrid.Refresh();
+        }
+
+        private void btnAddImaging_Click(object sender, EventArgs e)
+        {
+            int imaging = Convert.ToInt32(ddlImagingTest.SelectedValue);
+            string result = txtImagingFindings.Text.Trim();
+
+            if (imaging == 0)
+            {
+                MessageBox.Show("Select an imaging");
+                return;
+            }
+            else if (result == "")
+            {
+                MessageBox.Show("Enter findings");
+                return;
+            }
+
+            PatientImagingData data = new PatientImagingData()
+            {
+                ImagingId = imaging,
+                ImagingName = ddlImagingTest.SelectedItem.Text,
+                Findings = result,
+                TestDate = datetimeLabTest.Value,
+                CreatedOn = DateTime.Now,
+                UpdatedOn = DateTime.Now
+            };
+
+            imagingdatalist.Add(data);
+
+            //ImagingGrid.DataSource = null;
+            ImagingGrid.ClearSelection();
+            ImagingGrid.DataSource = (from imagingdata in imagingdatalist
+                                      select new { imagingdata.ImagingName, imagingdata.Findings, imagingdata.TestDate });
+            ImagingGrid.Refresh();
+        }
+
+        private void btnAddNewVisit_Click(object sender, EventArgs e)
         {
 
         }

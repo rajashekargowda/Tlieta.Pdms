@@ -467,6 +467,7 @@
     <Content Include="Scripts\Controllers\appointmentcontroller.js" />
     <Content Include="Scripts\Controllers\contactcontroller.js" />
     <Content Include="Scripts\Controllers\drugcontroller.js" />
+    <Content Include="Scripts\Controllers\maincontroller.js" />
     <Content Include="Scripts\Controllers\usercontroller.js" />
     <Content Include="Scripts\Controllers\logincontroller.js" />
     <Content Include="Scripts\Controllers\patientcontroller.js" />

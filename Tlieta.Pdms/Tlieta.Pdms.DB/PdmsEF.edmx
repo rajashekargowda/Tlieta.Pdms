@@ -24,6 +24,9 @@
           <EntitySet Name="Operation" EntityType="PDMSDatabaseModel.Store.Operation" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="OtherAdvise" EntityType="PDMSDatabaseModel.Store.OtherAdvise" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Patient" EntityType="PDMSDatabaseModel.Store.Patient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientImagingData" EntityType="PDMSDatabaseModel.Store.PatientImagingData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientLabData" EntityType="PDMSDatabaseModel.Store.PatientLabData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatientVisit" EntityType="PDMSDatabaseModel.Store.PatientVisit" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PatientVital" EntityType="PDMSDatabaseModel.Store.PatientVital" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="PDMSDatabaseModel.Store.Product" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Role" EntityType="PDMSDatabaseModel.Store.Role" store:Type="Tables" Schema="dbo" />
@@ -246,6 +249,47 @@
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="PatientImagingData">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Name="UniqueId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VisitId" Type="int" Nullable="false" />
+          <Property Name="ImagingId" Type="int" Nullable="false" />
+          <Property Name="ImagingName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Findings" Type="varchar" Nullable="false" MaxLength="1500" />
+          <Property Name="TestDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientLabData">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Name="UniqueId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VisitId" Type="int" Nullable="false" />
+          <Property Name="LabTestId" Type="int" Nullable="false" />
+          <Property Name="LabTestName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Results" Type="varchar" Nullable="false" MaxLength="1500" />
+          <Property Name="TestDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientVisit">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Name="VisitId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="ComplaintHistory" Type="varchar" MaxLength="1500" />
+          <Property Name="ExaminationNotes" Type="varchar" MaxLength="1500" />
+          <Property Name="Diagnosis" Type="varchar" MaxLength="1500" />
+          <Property Name="OtherAdvise" Type="varchar" MaxLength="1500" />
+          <Property Name="IsFolowUpRequired" Type="bit" Nullable="false" />
+          <Property Name="FollowUpDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="PatientVital">
           <Key>
             <PropertyRef Name="Id" />
@@ -346,6 +390,9 @@
           <EntitySet Name="sysdiagrams" EntityType="PDMSDatabaseModel.sysdiagram" />
           <EntitySet Name="Drugs" EntityType="PDMSDatabaseModel.Drug" />
           <EntitySet Name="Appointments" EntityType="PDMSDatabaseModel.Appointment" />
+          <EntitySet Name="PatientVisits" EntityType="PDMSDatabaseModel.PatientVisit" />
+          <EntitySet Name="PatientImagingDatas" EntityType="PDMSDatabaseModel.PatientImagingData" />
+          <EntitySet Name="PatientLabDatas" EntityType="PDMSDatabaseModel.PatientLabData" />
         </EntityContainer>
         <EntityType Name="Billing">
           <Key>
@@ -631,6 +678,47 @@
           <Property Type="String" Name="PatientId" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Mobile" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PatientVisit">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Type="Int32" Name="VisitId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PatientId" Nullable="false" />
+          <Property Type="String" Name="ComplaintHistory" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ExaminationNotes" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Diagnosis" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OtherAdvise" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsFolowUpRequired" Nullable="false" />
+          <Property Type="DateTime" Name="FollowUpDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PatientImagingData">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Type="Int32" Name="UniqueId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VisitId" Nullable="false" />
+          <Property Type="Int32" Name="ImagingId" Nullable="false" />
+          <Property Type="String" Name="ImagingName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Findings" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TestDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PatientLabData">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Type="Int32" Name="UniqueId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VisitId" Nullable="false" />
+          <Property Type="Int32" Name="LabTestId" Nullable="false" />
+          <Property Type="String" Name="LabTestName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Results" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TestDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
@@ -946,6 +1034,50 @@
                 <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
                 <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
                 <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientVisits">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.PatientVisit">
+              <MappingFragment StoreEntitySet="PatientVisit">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+                <ScalarProperty Name="IsFolowUpRequired" ColumnName="IsFolowUpRequired" />
+                <ScalarProperty Name="OtherAdvise" ColumnName="OtherAdvise" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="ExaminationNotes" ColumnName="ExaminationNotes" />
+                <ScalarProperty Name="ComplaintHistory" ColumnName="ComplaintHistory" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientImagingDatas">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.PatientImagingData">
+              <MappingFragment StoreEntitySet="PatientImagingData">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="TestDate" ColumnName="TestDate" />
+                <ScalarProperty Name="Findings" ColumnName="Findings" />
+                <ScalarProperty Name="ImagingName" ColumnName="ImagingName" />
+                <ScalarProperty Name="ImagingId" ColumnName="ImagingId" />
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientLabDatas">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.PatientLabData">
+              <MappingFragment StoreEntitySet="PatientLabData">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="TestDate" ColumnName="TestDate" />
+                <ScalarProperty Name="Results" ColumnName="Results" />
+                <ScalarProperty Name="LabTestName" ColumnName="LabTestName" />
+                <ScalarProperty Name="LabTestId" ColumnName="LabTestId" />
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

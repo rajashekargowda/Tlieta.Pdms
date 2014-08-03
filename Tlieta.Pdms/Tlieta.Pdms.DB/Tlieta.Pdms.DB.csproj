@@ -66,6 +66,7 @@
     <Compile Include="AccessCode\TemplateData.cs" />
     <Compile Include="AccessCode\UserData.cs" />
     <Compile Include="AccessCode\Utility.cs" />
+    <Compile Include="AccessCode\VisitData.cs" />
     <Compile Include="Appointment.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
@@ -118,6 +119,15 @@
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs">
+      <DependentUpon>PdmsEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientImagingData.cs">
+      <DependentUpon>PdmsEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientLabData.cs">
+      <DependentUpon>PdmsEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientVisit.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientVital.cs">

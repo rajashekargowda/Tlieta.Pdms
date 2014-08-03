@@ -49,5 +49,8 @@ namespace Tlieta.Pdms.DB
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Drug> Drugs { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<PatientVisit> PatientVisits { get; set; }
+        public DbSet<PatientImagingData> PatientImagingDatas { get; set; }
+        public DbSet<PatientLabData> PatientLabDatas { get; set; }
     }
 }
