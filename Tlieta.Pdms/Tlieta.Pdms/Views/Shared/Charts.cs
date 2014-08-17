@@ -102,5 +102,31 @@ namespace Tlieta.Pdms.Views.Shared
         {
             args.NewItem.Height = 126;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FileInfo f = new FileInfo(browsePhoto.Value);
+                string ext = f.Extension.ToLower();
+                if (ext == ".jpg" || ext == ".bmp" || ext == ".png")
+                {
+                    FileOperations.CopyFile(f.FullName, DataFolder.GetChartsFolder());
+                }
+            }
+            catch { return; }
+
+            PopulatePhotoList();
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            FileOperations.OpenFolder(DataFolder.GetChartsFolder());
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            PopulatePhotoList();
+        }
     }
 }

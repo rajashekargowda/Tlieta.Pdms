@@ -28,6 +28,7 @@
           <EntitySet Name="PatientLabData" EntityType="PDMSDatabaseModel.Store.PatientLabData" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PatientVisit" EntityType="PDMSDatabaseModel.Store.PatientVisit" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="PatientVital" EntityType="PDMSDatabaseModel.Store.PatientVital" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Prescription" EntityType="PDMSDatabaseModel.Store.Prescription" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="PDMSDatabaseModel.Store.Product" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Role" EntityType="PDMSDatabaseModel.Store.Role" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Service" EntityType="PDMSDatabaseModel.Store.Service" store:Type="Tables" Schema="dbo" />
@@ -306,6 +307,22 @@
           <Property Name="BMI" Type="varchar" MaxLength="10" />
           <Property Name="TimeLine" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Name="UniqueId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VisitId" Type="int" Nullable="false" />
+          <Property Name="DrugId" Type="int" Nullable="false" />
+          <Property Name="DrugName" Type="varchar" MaxLength="150" />
+          <Property Name="DosageFrequencyId" Type="int" Nullable="false" />
+          <Property Name="Dosage" Type="nchar" MaxLength="10" />
+          <Property Name="Duration" Type="varchar" MaxLength="5" />
+          <Property Name="Units" Type="varchar" MaxLength="5" />
+          <Property Name="Instructions" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductKey" />
@@ -393,6 +410,7 @@
           <EntitySet Name="PatientVisits" EntityType="PDMSDatabaseModel.PatientVisit" />
           <EntitySet Name="PatientImagingDatas" EntityType="PDMSDatabaseModel.PatientImagingData" />
           <EntitySet Name="PatientLabDatas" EntityType="PDMSDatabaseModel.PatientLabData" />
+          <EntitySet Name="Prescriptions" EntityType="PDMSDatabaseModel.Prescription" />
         </EntityContainer>
         <EntityType Name="Billing">
           <Key>
@@ -720,6 +738,22 @@
           <Property Type="DateTime" Name="TestDate" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Prescription">
+          <Key>
+            <PropertyRef Name="UniqueId" />
+          </Key>
+          <Property Type="Int32" Name="UniqueId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VisitId" Nullable="false" />
+          <Property Type="Int32" Name="DrugId" Nullable="false" />
+          <Property Type="Int32" Name="DosageFrequencyId" Nullable="false" />
+          <Property Type="String" Name="Duration" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Units" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Instructions" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+          <Property Type="String" Name="DrugName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Dosage" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1076,6 +1110,23 @@
                 <ScalarProperty Name="Results" ColumnName="Results" />
                 <ScalarProperty Name="LabTestName" ColumnName="LabTestName" />
                 <ScalarProperty Name="LabTestId" ColumnName="LabTestId" />
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prescriptions">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.Prescription">
+              <MappingFragment StoreEntitySet="Prescription">
+                <ScalarProperty Name="Dosage" ColumnName="Dosage" />
+                <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="DosageFrequencyId" ColumnName="DosageFrequencyId" />
+                <ScalarProperty Name="DrugId" ColumnName="DrugId" />
                 <ScalarProperty Name="VisitId" ColumnName="VisitId" />
                 <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
               </MappingFragment>

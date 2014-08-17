@@ -52,5 +52,6 @@ namespace Tlieta.Pdms.DB
         public DbSet<PatientVisit> PatientVisits { get; set; }
         public DbSet<PatientImagingData> PatientImagingDatas { get; set; }
         public DbSet<PatientLabData> PatientLabDatas { get; set; }
+        public DbSet<Prescription> Prescriptions { get; set; }
     }
 }

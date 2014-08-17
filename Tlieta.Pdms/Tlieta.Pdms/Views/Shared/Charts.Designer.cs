@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark3 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.btnRefresh = new Telerik.WinControls.UI.RadButton();
             this.btnPrint = new Telerik.WinControls.UI.RadButton();
             this.docPrintPhoto = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -36,11 +36,19 @@
             this.listPhotos = new Telerik.WinControls.UI.RadListControl();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.radPrintDocument1 = new Telerik.WinControls.UI.RadPrintDocument();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.btnOpenFolder = new Telerik.WinControls.UI.RadButton();
+            this.btnAdd = new Telerik.WinControls.UI.RadButton();
+            this.browsePhoto = new Telerik.WinControls.UI.RadBrowseEditor();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docPrintPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listPhotos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOpenFolder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browsePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -92,7 +100,7 @@
             this.listPhotos.ItemHeight = 50;
             this.listPhotos.Location = new System.Drawing.Point(33, 30);
             this.listPhotos.Name = "listPhotos";
-            this.listPhotos.Size = new System.Drawing.Size(238, 538);
+            this.listPhotos.Size = new System.Drawing.Size(238, 479);
             this.listPhotos.TabIndex = 6;
             this.listPhotos.ThemeName = "TelerikMetro";
             this.listPhotos.ItemDataBound += new Telerik.WinControls.UI.ListItemDataBoundEventHandler(this.listPhotos_ItemDataBound);
@@ -101,15 +109,57 @@
             // 
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark1.DrawInFront = true;
-            radPrintWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
-            this.radPrintDocument1.Watermark = radPrintWatermark1;
+            radPrintWatermark3.DrawInFront = true;
+            radPrintWatermark3.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
+            this.radPrintDocument1.Watermark = radPrintWatermark3;
+            // 
+            // radButton1
+            // 
+            this.radButton1.Location = new System.Drawing.Point(195, 543);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(77, 22);
+            this.radButton1.TabIndex = 14;
+            this.radButton1.Text = "Refresh";
+            this.radButton1.ThemeName = "TelerikMetro";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.Location = new System.Drawing.Point(95, 543);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(94, 22);
+            this.btnOpenFolder.TabIndex = 13;
+            this.btnOpenFolder.Text = "Open Folder";
+            this.btnOpenFolder.ThemeName = "TelerikMetro";
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(33, 543);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 22);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.ThemeName = "TelerikMetro";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // browsePhoto
+            // 
+            this.browsePhoto.Location = new System.Drawing.Point(33, 515);
+            this.browsePhoto.Name = "browsePhoto";
+            this.browsePhoto.Size = new System.Drawing.Size(239, 22);
+            this.browsePhoto.TabIndex = 12;
+            this.browsePhoto.ThemeName = "ControlDefault";
             // 
             // Charts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.radButton1);
+            this.Controls.Add(this.btnOpenFolder);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.browsePhoto);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.docPrintPhoto);
@@ -123,6 +173,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.docPrintPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInsert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listPhotos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOpenFolder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.browsePhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +190,9 @@
         private Telerik.WinControls.UI.RadListControl listPhotos;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private Telerik.WinControls.UI.RadPrintDocument radPrintDocument1;
+        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadButton btnOpenFolder;
+        private Telerik.WinControls.UI.RadButton btnAdd;
+        private Telerik.WinControls.UI.RadBrowseEditor browsePhoto;
     }
 }

@@ -277,9 +277,6 @@
   <data name="printphoto48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\printphoto48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="letterpadheader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\letterpadheader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TLIETA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\tlieta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,5 +316,41 @@
   <data name="LogFile" xml:space="preserve">
     <value>log.txt</value>
     <comment>Log file</comment>
+  </data>
+  <data name="letterhead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\letterhead.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FitnessCertificate" xml:space="preserve">
+    <value>&lt;br /&gt;
+&lt;h1&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;u&gt;CERTIFICATE OF MEDICAL FITNESS&lt;/u&gt;&lt;/h1&gt;
+&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;
+&lt;p align='right'&gt;&lt;span&gt;Signature of the Applicant ___________________________&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt; 
+&lt;p&gt;&lt;span&gt;I, Dr. ................................................ …………….do hereby certify that I have carefully examined Sri./Smt. .................................................................................................................... of the ........................................................................................................................................ who was suffering from ....................................................................................................................................... and whose signature is given above, and find that he/she has recovered form his/her illness and is now fit to resume duties. I also certify that before arriving at this decision I have examined the original medical certificate(s) and statement(s) of the case (or certified copies thereof) on which leave was granted or extending, and have taken these in consideration in arriving at my decision.&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;p align='left'&gt;&lt;span&gt;Station:  _______________________&lt;/span&gt;&lt;/p&gt;
+&lt;p align='left'&gt;&lt;span&gt;Date :    ________________________&lt;/span&gt;&lt;/p&gt;</value>
+    <comment>Fitness Certificate content in html</comment>
+  </data>
+  <data name="MedicalCertificate" xml:space="preserve">
+    <value>&lt;br /&gt;
+&lt;h1&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;u&gt;MEDICAL CERTIFICATE&lt;/u&gt;&lt;/h1&gt;
+&lt;br /&gt;&lt;br /&gt; &lt;br /&gt;
+&lt;p align='right'&gt;&lt;span&gt;Signature of the Applicant ___________________________&lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt; 
+&lt;p&gt;&lt;span&gt;I,
+Dr. ..........................................................................
+after careful personal examination of the case hereby certify that  …………………………………………………………………………………………………. 
+whose signature is given above, is suffering from .................................................................................................................................................................................................................... and that I consider that a period of absence from duty for at least ……………………..
+days with effect from ........................... to ..............................
+is absolutely necessary for the restoration of his/her health. &lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;p align='left'&gt;&lt;span&gt;Station:  _______________________&lt;/span&gt;&lt;/p&gt;
+&lt;p align='left'&gt;&lt;span&gt;Date :    ________________________&lt;/span&gt;&lt;/p&gt;</value>
+    <comment>Medical Certificate content in html</comment>
   </data>
 </root>

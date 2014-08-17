@@ -422,7 +422,7 @@
     <Content Include="Resources\hospital48.png" />
     <Content Include="Resources\iv48.png" />
     <Content Include="Resources\ivf_fertilization48.png" />
-    <Content Include="Resources\letterpadheader.png" />
+    <Content Include="Resources\letterhead.gif" />
     <Content Include="Resources\letters.png" />
     <Content Include="Resources\medicalchart.png" />
     <Content Include="Resources\medical_record48.png" />

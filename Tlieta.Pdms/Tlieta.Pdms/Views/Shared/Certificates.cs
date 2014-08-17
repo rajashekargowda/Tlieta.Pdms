@@ -27,12 +27,11 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void btnMedical_Click(object sender, EventArgs e)
         {
-            PrepareDocument("<b>Sachin</b>");
+            PrepareDocument(Resources.MedicalCertificate);
         }
 
         private void PrepareDocument(string content)
         {
-            //string htmlcontent = File.ReadAllText("Certificates/Medical.txt");
             HtmlFormatProvider provider = new HtmlFormatProvider();
             RadDocument document = provider.Import(content);
             this.docCertificate.Document = document;
@@ -52,6 +51,16 @@ namespace Tlieta.Pdms.Views.Shared
                 Process.Start(info);
             }
             catch { }
+        }
+
+        private void btnFitness_Click(object sender, EventArgs e)
+        {
+            PrepareDocument(Resources.FitnessCertificate);
+        }
+
+        private void Certificates_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

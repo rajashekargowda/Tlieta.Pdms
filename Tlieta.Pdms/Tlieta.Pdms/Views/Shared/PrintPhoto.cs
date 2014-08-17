@@ -31,8 +31,9 @@ namespace Tlieta.Pdms.Views.Shared
 
         private void PrepareDocument()
         {
-            this.docPrintPhoto.InsertImage((Bitmap)Resources.letterpadheader);
-
+            this.docPrintPhoto.InsertImage((Bitmap)Resources.letterhead);
+            docPrintPhoto.InsertLineBreak();
+            docPrintPhoto.InsertLineBreak();
             Patient patient = new PatientData().GetPatientById(Convert.ToInt32(_patientid));
             docPrintPhoto.Insert("Patient Name : " + patient.FirstName.ToUpper() + " " + patient.LastName.ToUpper());
             docPrintPhoto.InsertLineBreak();

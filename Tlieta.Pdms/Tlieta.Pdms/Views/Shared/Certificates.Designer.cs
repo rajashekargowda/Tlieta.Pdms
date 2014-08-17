@@ -79,6 +79,7 @@
             this.btnFitness.TabIndex = 9;
             this.btnFitness.Text = "Fitness Certificate";
             this.btnFitness.ThemeName = "TelerikMetro";
+            this.btnFitness.Click += new System.EventHandler(this.btnFitness_Click);
             // 
             // btnDisability
             // 
@@ -101,6 +102,7 @@
             this.Controls.Add(this.docCertificate);
             this.Name = "Certificates";
             this.Size = new System.Drawing.Size(1300, 600);
+            this.Load += new System.EventHandler(this.Certificates_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docCertificate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMedical)).EndInit();

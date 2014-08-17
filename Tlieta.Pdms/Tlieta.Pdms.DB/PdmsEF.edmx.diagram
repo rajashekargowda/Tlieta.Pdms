@@ -32,6 +32,7 @@
         <EntityTypeShape EntityType="PDMSDatabaseModel.PatientVisit" Width="1.5" PointX="1.5" PointY="15.875" />
         <EntityTypeShape EntityType="PDMSDatabaseModel.PatientImagingData" Width="1.5" PointX="5.25" PointY="15.875" />
         <EntityTypeShape EntityType="PDMSDatabaseModel.PatientLabData" Width="1.5" PointX="3.5" PointY="15.875" />
+        <EntityTypeShape EntityType="PDMSDatabaseModel.Prescription" Width="1.5" PointX="7" PointY="15.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

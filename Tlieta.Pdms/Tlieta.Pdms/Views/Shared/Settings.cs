@@ -318,6 +318,7 @@ namespace Tlieta.Pdms.Views.Shared
                 bool result = new DrugData().Add(drug);
                 if (result)
                 {
+                    txtBrandName.Text = "";
                     txtImagingName.Text = "";
                     txtCompany.Text = "";
                     txtContents.Text = "";

@@ -26,6 +26,19 @@ namespace Tlieta.Pdms.DB
             }
         }
 
+        public Drug GetDrugById(int brandid)
+        {
+            try
+            {
+                Drug drug = entities.Drugs.Find(brandid);
+                return drug;
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+        }
+
         public bool Add(Drug model)
         {
             try

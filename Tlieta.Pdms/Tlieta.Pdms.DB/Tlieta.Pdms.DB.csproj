@@ -148,6 +148,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PdmsEF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Prescription.cs">
+      <DependentUpon>PdmsEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>PdmsEF.tt</DependentUpon>
     </Compile>

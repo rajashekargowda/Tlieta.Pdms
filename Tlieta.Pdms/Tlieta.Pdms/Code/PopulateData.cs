@@ -183,5 +183,39 @@ namespace Tlieta.Pdms.Views.Shared
                 FileLogger.LogError(x);
             }
         }
+
+        public static void PopulateDrug(RadDropDownList ddl)
+        {
+            try
+            {
+                List<Drug> drugs = new DrugData().GetDrugs();
+                drugs.Insert(0, new Drug() { BrandId = 0, BrandName = "Select" });
+
+                ddl.DataSource = drugs;
+                ddl.ValueMember = "BrandId";
+                ddl.DisplayMember = "BrandName";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
+        }
+
+        public static void PopulateDosage(RadDropDownList ddl)
+        {
+            try
+            {
+                List<DosageFrequency> dosage = new MasterData().GetDosageFrequencies();
+                dosage.Insert(0, new DosageFrequency() { DosageFrequencyId = 0, DosageFrequencyName = "Select" });
+
+                ddl.DataSource = dosage;
+                ddl.ValueMember = "DosageFrequencyId";
+                ddl.DisplayMember = "DosageFrequencyName";
+            }
+            catch (Exception x)
+            {
+                FileLogger.LogError(x);
+            }
+        }
     }
 }
