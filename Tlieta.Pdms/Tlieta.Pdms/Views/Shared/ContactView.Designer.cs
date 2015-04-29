@@ -45,6 +45,7 @@
             this.btnUpdateSchedule = new Telerik.WinControls.UI.RadButton();
             this.btnAddSchedule = new Telerik.WinControls.UI.RadButton();
             this.txtContactId = new Telerik.WinControls.UI.RadTextBox();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
@@ -87,7 +88,7 @@
             this.ContactsGrid.Size = new System.Drawing.Size(951, 565);
             this.ContactsGrid.TabIndex = 28;
             this.ContactsGrid.Text = "radGridView1";
-            this.ContactsGrid.ThemeName = "TelerikMetro";
+            this.ContactsGrid.ThemeName = "TelerikMetroBlue";
             this.ContactsGrid.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.ContactsGrid_CellDoubleClick);
             // 
             // txtName
@@ -95,10 +96,9 @@
             this.txtName.Location = new System.Drawing.Point(18, 46);
             this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(263, 23);
+            this.txtName.Size = new System.Drawing.Size(263, 20);
             this.txtName.TabIndex = 52;
             this.txtName.TabStop = false;
-            this.txtName.ThemeName = "TelerikMetro";
             // 
             // radLabel3
             // 
@@ -121,17 +121,13 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.AutoSize = false;
             this.txtAddress.Location = new System.Drawing.Point(19, 116);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            // 
-            // 
-            // 
-            this.txtAddress.RootElement.StretchVertically = true;
             this.txtAddress.Size = new System.Drawing.Size(262, 83);
             this.txtAddress.TabIndex = 54;
             this.txtAddress.TabStop = false;
-            this.txtAddress.ThemeName = "TelerikMetro";
             // 
             // radLabel7
             // 
@@ -146,10 +142,9 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(19, 313);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(262, 23);
+            this.txtEmail.Size = new System.Drawing.Size(262, 20);
             this.txtEmail.TabIndex = 58;
             this.txtEmail.TabStop = false;
-            this.txtEmail.ThemeName = "TelerikMetro";
             // 
             // radLabel10
             // 
@@ -164,10 +159,9 @@
             // 
             this.txtMobile.Location = new System.Drawing.Point(18, 245);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(263, 23);
+            this.txtMobile.Size = new System.Drawing.Size(263, 20);
             this.txtMobile.TabIndex = 56;
             this.txtMobile.TabStop = false;
-            this.txtMobile.ThemeName = "TelerikMetro";
             // 
             // radLabel8
             // 
@@ -182,10 +176,9 @@
             // 
             this.txtDesignation.Location = new System.Drawing.Point(19, 450);
             this.txtDesignation.Name = "txtDesignation";
-            this.txtDesignation.Size = new System.Drawing.Size(262, 23);
+            this.txtDesignation.Size = new System.Drawing.Size(262, 20);
             this.txtDesignation.TabIndex = 62;
             this.txtDesignation.TabStop = false;
-            this.txtDesignation.ThemeName = "TelerikMetro";
             // 
             // radLabel1
             // 
@@ -200,10 +193,9 @@
             // 
             this.txtCompany.Location = new System.Drawing.Point(18, 382);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(263, 23);
+            this.txtCompany.Size = new System.Drawing.Size(263, 20);
             this.txtCompany.TabIndex = 60;
             this.txtCompany.TabStop = false;
-            this.txtCompany.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
@@ -222,7 +214,7 @@
             this.btnUpdateSchedule.Size = new System.Drawing.Size(71, 32);
             this.btnUpdateSchedule.TabIndex = 64;
             this.btnUpdateSchedule.Text = "Update";
-            this.btnUpdateSchedule.ThemeName = "TelerikMetro";
+            this.btnUpdateSchedule.ThemeName = "TelerikMetroBlue";
             this.btnUpdateSchedule.Click += new System.EventHandler(this.btnUpdateSchedule_Click);
             // 
             // btnAddSchedule
@@ -233,7 +225,7 @@
             this.btnAddSchedule.Size = new System.Drawing.Size(72, 32);
             this.btnAddSchedule.TabIndex = 63;
             this.btnAddSchedule.Text = "Add";
-            this.btnAddSchedule.ThemeName = "TelerikMetro";
+            this.btnAddSchedule.ThemeName = "TelerikMetroBlue";
             this.btnAddSchedule.Click += new System.EventHandler(this.btnAddSchedule_Click);
             // 
             // txtContactId
@@ -246,7 +238,7 @@
             this.txtContactId.ThemeName = "TelerikMetro";
             this.txtContactId.Visible = false;
             // 
-            // Contacts
+            // ContactView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +260,7 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.ContactsGrid);
-            this.Name = "Contacts";
+            this.Name = "ContactView";
             this.Size = new System.Drawing.Size(1300, 600);
             ((System.ComponentModel.ISupportInitialize)(this.ContactsGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsGrid)).EndInit();
@@ -312,5 +304,6 @@
         private Telerik.WinControls.UI.RadButton btnUpdateSchedule;
         private Telerik.WinControls.UI.RadButton btnAddSchedule;
         private Telerik.WinControls.UI.RadTextBox txtContactId;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     }
 }

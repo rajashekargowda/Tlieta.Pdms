@@ -49,6 +49,7 @@
             this.txtComplaint = new Telerik.WinControls.UI.RadTextBox();
             this.ddlComplaintTemplate = new Telerik.WinControls.UI.RadDropDownList();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDeleteLab = new Telerik.WinControls.UI.RadButton();
             this.LabDataGrid = new Telerik.WinControls.UI.RadGridView();
             this.btnAddLabTest = new Telerik.WinControls.UI.RadButton();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
@@ -61,6 +62,7 @@
             this.ddllabTest = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDeleteImaging = new Telerik.WinControls.UI.RadButton();
             this.btnAddImaging = new Telerik.WinControls.UI.RadButton();
             this.ImagingGrid = new Telerik.WinControls.UI.RadGridView();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -82,6 +84,7 @@
             this.txtDiagnosis = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDeletePrescription = new Telerik.WinControls.UI.RadButton();
             this.radLabel29 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel28 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel27 = new Telerik.WinControls.UI.RadLabel();
@@ -105,11 +108,7 @@
             this.ddlDrug = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel26 = new Telerik.WinControls.UI.RadLabel();
             this.btnAddNewVisit = new Telerik.WinControls.UI.RadButton();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.btnRefresh = new Telerik.WinControls.UI.RadButton();
-            this.btnDeleteLab = new Telerik.WinControls.UI.RadButton();
-            this.btnDeleteImaging = new Telerik.WinControls.UI.RadButton();
-            this.btnDeletePrescription = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
@@ -134,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtComplaint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlComplaintTemplate)).BeginInit();
             this.radPageViewPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteLab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddLabTest)).BeginInit();
@@ -147,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddllabTest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             this.radPageViewPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImaging)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImaging)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagingGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagingGrid.MasterTemplate)).BeginInit();
@@ -169,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiagnosis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             this.radPageViewPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePrescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel27)).BeginInit();
@@ -194,9 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNewVisit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteLab)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImaging)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePrescription)).BeginInit();
             this.SuspendLayout();
             // 
             // radPageView1
@@ -208,11 +207,11 @@
             this.radPageView1.Controls.Add(this.radPageViewPage5);
             this.radPageView1.Location = new System.Drawing.Point(26, 3);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage5;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1248, 514);
             this.radPageView1.TabIndex = 28;
             this.radPageView1.Text = "radPageView1";
-            this.radPageView1.ThemeName = "TelerikMetro";
+            this.radPageView1.ThemeName = "TelerikMetroBlue";
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage;
             // 
             // radPageViewPage1
@@ -220,6 +219,7 @@
             this.radPageViewPage1.BackColor = System.Drawing.SystemColors.Window;
             this.radPageViewPage1.Controls.Add(this.radGroupBox2);
             this.radPageViewPage1.Controls.Add(this.radGroupBox1);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(139F, 44F);
             this.radPageViewPage1.Location = new System.Drawing.Point(205, 4);
             this.radPageViewPage1.Name = "radPageViewPage1";
             this.radPageViewPage1.Size = new System.Drawing.Size(1039, 506);
@@ -236,22 +236,13 @@
             this.radGroupBox2.Controls.Add(this.btnExamination);
             this.radGroupBox2.Controls.Add(this.txtExamination);
             this.radGroupBox2.Controls.Add(this.ddlExaminationTemplate);
-            this.radGroupBox2.FooterImageIndex = -1;
-            this.radGroupBox2.FooterImageKey = "";
-            this.radGroupBox2.HeaderImageIndex = -1;
-            this.radGroupBox2.HeaderImageKey = "";
-            this.radGroupBox2.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox2.HeaderText = "Examination Notes";
             this.radGroupBox2.Location = new System.Drawing.Point(34, 256);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
-            // 
-            // 
-            // 
-            this.radGroupBox2.RootElement.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
             this.radGroupBox2.Size = new System.Drawing.Size(911, 224);
             this.radGroupBox2.TabIndex = 25;
             this.radGroupBox2.Text = "Examination Notes";
+            this.radGroupBox2.ThemeName = "TelerikMetroBlue";
             // 
             // btnExaminationTemplate
             // 
@@ -261,7 +252,7 @@
             this.btnExaminationTemplate.Size = new System.Drawing.Size(136, 23);
             this.btnExaminationTemplate.TabIndex = 27;
             this.btnExaminationTemplate.Text = "Add New Template";
-            this.btnExaminationTemplate.ThemeName = "TelerikMetro";
+            this.btnExaminationTemplate.ThemeName = "TelerikMetroBlue";
             this.btnExaminationTemplate.Click += new System.EventHandler(this.btnExaminationTemplate_Click);
             // 
             // radLabel20
@@ -275,26 +266,21 @@
             // 
             // txtExaminationText
             // 
+            this.txtExaminationText.AutoSize = false;
             this.txtExaminationText.Location = new System.Drawing.Point(553, 90);
             this.txtExaminationText.Multiline = true;
             this.txtExaminationText.Name = "txtExaminationText";
-            // 
-            // 
-            // 
-            this.txtExaminationText.RootElement.StretchVertically = true;
             this.txtExaminationText.Size = new System.Drawing.Size(342, 129);
             this.txtExaminationText.TabIndex = 25;
             this.txtExaminationText.TabStop = false;
-            this.txtExaminationText.ThemeName = "TelerikMetro";
             // 
             // txtExaminationTemplate
             // 
             this.txtExaminationTemplate.Location = new System.Drawing.Point(553, 62);
             this.txtExaminationTemplate.Name = "txtExaminationTemplate";
-            this.txtExaminationTemplate.Size = new System.Drawing.Size(342, 23);
+            this.txtExaminationTemplate.Size = new System.Drawing.Size(342, 20);
             this.txtExaminationTemplate.TabIndex = 24;
             this.txtExaminationTemplate.TabStop = false;
-            this.txtExaminationTemplate.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
@@ -313,33 +299,31 @@
             this.btnExamination.Size = new System.Drawing.Size(138, 23);
             this.btnExamination.TabIndex = 23;
             this.btnExamination.Text = "Add Template Data";
-            this.btnExamination.ThemeName = "TelerikMetro";
+            this.btnExamination.ThemeName = "TelerikMetroBlue";
             this.btnExamination.Click += new System.EventHandler(this.btnExamination_Click);
             // 
             // txtExamination
             // 
+            this.txtExamination.AutoSize = false;
             this.txtExamination.Location = new System.Drawing.Point(86, 92);
             this.txtExamination.MaxLength = 1500;
             this.txtExamination.Multiline = true;
             this.txtExamination.Name = "txtExamination";
-            // 
-            // 
-            // 
-            this.txtExamination.RootElement.StretchVertically = true;
             this.txtExamination.Size = new System.Drawing.Size(433, 127);
             this.txtExamination.TabIndex = 15;
             this.txtExamination.TabStop = false;
-            this.txtExamination.ThemeName = "TelerikMetro";
             // 
             // ddlExaminationTemplate
             // 
-            this.ddlExaminationTemplate.DropDownAnimationEnabled = true;
+            this.ddlExaminationTemplate.AllowShowFocusCues = false;
+            this.ddlExaminationTemplate.AutoCompleteDisplayMember = null;
+            this.ddlExaminationTemplate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ddlExaminationTemplate.AutoCompleteValueMember = null;
             this.ddlExaminationTemplate.Location = new System.Drawing.Point(86, 35);
             this.ddlExaminationTemplate.Name = "ddlExaminationTemplate";
-            this.ddlExaminationTemplate.ShowImageInEditorArea = true;
             this.ddlExaminationTemplate.Size = new System.Drawing.Size(433, 22);
             this.ddlExaminationTemplate.TabIndex = 21;
-            this.ddlExaminationTemplate.ThemeName = "TelerikMetro";
+            this.ddlExaminationTemplate.ThemeName = "TelerikMetroBlue";
             // 
             // radGroupBox1
             // 
@@ -352,22 +336,13 @@
             this.radGroupBox1.Controls.Add(this.btnAddComplaint);
             this.radGroupBox1.Controls.Add(this.txtComplaint);
             this.radGroupBox1.Controls.Add(this.ddlComplaintTemplate);
-            this.radGroupBox1.FooterImageIndex = -1;
-            this.radGroupBox1.FooterImageKey = "";
-            this.radGroupBox1.HeaderImageIndex = -1;
-            this.radGroupBox1.HeaderImageKey = "";
-            this.radGroupBox1.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox1.HeaderText = "Presenting Complaint & Relevant History";
             this.radGroupBox1.Location = new System.Drawing.Point(34, 14);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
-            // 
-            // 
-            // 
-            this.radGroupBox1.RootElement.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
             this.radGroupBox1.Size = new System.Drawing.Size(911, 224);
             this.radGroupBox1.TabIndex = 24;
             this.radGroupBox1.Text = "Presenting Complaint & Relevant History";
+            this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             // 
             // btnAddComplaintTemplate
             // 
@@ -377,22 +352,18 @@
             this.btnAddComplaintTemplate.Size = new System.Drawing.Size(136, 23);
             this.btnAddComplaintTemplate.TabIndex = 26;
             this.btnAddComplaintTemplate.Text = "Add New Template";
-            this.btnAddComplaintTemplate.ThemeName = "TelerikMetro";
+            this.btnAddComplaintTemplate.ThemeName = "TelerikMetroBlue";
             this.btnAddComplaintTemplate.Click += new System.EventHandler(this.btnAddComplaintTemplate_Click);
             // 
             // txtComplaintText
             // 
+            this.txtComplaintText.AutoSize = false;
             this.txtComplaintText.Location = new System.Drawing.Point(553, 90);
             this.txtComplaintText.Multiline = true;
             this.txtComplaintText.Name = "txtComplaintText";
-            // 
-            // 
-            // 
-            this.txtComplaintText.RootElement.StretchVertically = true;
             this.txtComplaintText.Size = new System.Drawing.Size(342, 129);
             this.txtComplaintText.TabIndex = 16;
             this.txtComplaintText.TabStop = false;
-            this.txtComplaintText.ThemeName = "TelerikMetro";
             // 
             // radLabel17
             // 
@@ -407,10 +378,9 @@
             // 
             this.txtComplaintTemplate.Location = new System.Drawing.Point(553, 63);
             this.txtComplaintTemplate.Name = "txtComplaintTemplate";
-            this.txtComplaintTemplate.Size = new System.Drawing.Size(342, 23);
+            this.txtComplaintTemplate.Size = new System.Drawing.Size(342, 20);
             this.txtComplaintTemplate.TabIndex = 24;
             this.txtComplaintTemplate.TabStop = false;
-            this.txtComplaintTemplate.ThemeName = "TelerikMetro";
             // 
             // radLabel1
             // 
@@ -429,33 +399,31 @@
             this.btnAddComplaint.Size = new System.Drawing.Size(138, 23);
             this.btnAddComplaint.TabIndex = 23;
             this.btnAddComplaint.Text = "Add Template Data";
-            this.btnAddComplaint.ThemeName = "TelerikMetro";
+            this.btnAddComplaint.ThemeName = "TelerikMetroBlue";
             this.btnAddComplaint.Click += new System.EventHandler(this.btnAddComplaint_Click);
             // 
             // txtComplaint
             // 
+            this.txtComplaint.AutoSize = false;
             this.txtComplaint.Location = new System.Drawing.Point(86, 92);
             this.txtComplaint.MaxLength = 1500;
             this.txtComplaint.Multiline = true;
             this.txtComplaint.Name = "txtComplaint";
-            // 
-            // 
-            // 
-            this.txtComplaint.RootElement.StretchVertically = true;
             this.txtComplaint.Size = new System.Drawing.Size(433, 127);
             this.txtComplaint.TabIndex = 15;
             this.txtComplaint.TabStop = false;
-            this.txtComplaint.ThemeName = "TelerikMetro";
             // 
             // ddlComplaintTemplate
             // 
-            this.ddlComplaintTemplate.DropDownAnimationEnabled = true;
+            this.ddlComplaintTemplate.AllowShowFocusCues = false;
+            this.ddlComplaintTemplate.AutoCompleteDisplayMember = null;
+            this.ddlComplaintTemplate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ddlComplaintTemplate.AutoCompleteValueMember = null;
             this.ddlComplaintTemplate.Location = new System.Drawing.Point(86, 35);
             this.ddlComplaintTemplate.Name = "ddlComplaintTemplate";
-            this.ddlComplaintTemplate.ShowImageInEditorArea = true;
             this.ddlComplaintTemplate.Size = new System.Drawing.Size(433, 22);
             this.ddlComplaintTemplate.TabIndex = 21;
-            this.ddlComplaintTemplate.ThemeName = "TelerikMetro";
+            this.ddlComplaintTemplate.ThemeName = "TelerikMetroBlue";
             // 
             // radPageViewPage2
             // 
@@ -471,10 +439,22 @@
             this.radPageViewPage2.Controls.Add(this.radLabel13);
             this.radPageViewPage2.Controls.Add(this.ddllabTest);
             this.radPageViewPage2.Controls.Add(this.radLabel11);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(139F, 44F);
             this.radPageViewPage2.Location = new System.Drawing.Point(205, 4);
             this.radPageViewPage2.Name = "radPageViewPage2";
             this.radPageViewPage2.Size = new System.Drawing.Size(1039, 506);
             this.radPageViewPage2.Text = "Lab Data";
+            // 
+            // btnDeleteLab
+            // 
+            this.btnDeleteLab.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteLab.Location = new System.Drawing.Point(136, 409);
+            this.btnDeleteLab.Name = "btnDeleteLab";
+            this.btnDeleteLab.Size = new System.Drawing.Size(86, 23);
+            this.btnDeleteLab.TabIndex = 45;
+            this.btnDeleteLab.Text = "Delete";
+            this.btnDeleteLab.ThemeName = "TelerikMetroBlue";
+            this.btnDeleteLab.Click += new System.EventHandler(this.btnDeleteLab_Click);
             // 
             // LabDataGrid
             // 
@@ -496,7 +476,7 @@
             this.LabDataGrid.ShowItemToolTips = false;
             this.LabDataGrid.Size = new System.Drawing.Size(711, 409);
             this.LabDataGrid.TabIndex = 44;
-            this.LabDataGrid.ThemeName = "TelerikMetro";
+            this.LabDataGrid.ThemeName = "TelerikMetroBlue";
             // 
             // btnAddLabTest
             // 
@@ -506,7 +486,7 @@
             this.btnAddLabTest.Size = new System.Drawing.Size(109, 23);
             this.btnAddLabTest.TabIndex = 32;
             this.btnAddLabTest.Text = "Add Test";
-            this.btnAddLabTest.ThemeName = "TelerikMetro";
+            this.btnAddLabTest.ThemeName = "TelerikMetroBlue";
             this.btnAddLabTest.Click += new System.EventHandler(this.btnAddLabTest_Click);
             // 
             // radLabel5
@@ -550,34 +530,25 @@
             // 
             // datetimeLabTest
             // 
-            this.datetimeLabTest.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datetimeLabTest.Location = new System.Drawing.Point(21, 357);
-            this.datetimeLabTest.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetimeLabTest.MinDate = new System.DateTime(((long)(0)));
             this.datetimeLabTest.Name = "datetimeLabTest";
-            this.datetimeLabTest.NullableValue = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
-            this.datetimeLabTest.NullDate = new System.DateTime(((long)(0)));
-            this.datetimeLabTest.Size = new System.Drawing.Size(200, 23);
+            this.datetimeLabTest.Size = new System.Drawing.Size(200, 22);
             this.datetimeLabTest.TabIndex = 26;
             this.datetimeLabTest.TabStop = false;
             this.datetimeLabTest.Text = "12 May 2013";
-            this.datetimeLabTest.ThemeName = "TelerikMetro";
+            this.datetimeLabTest.ThemeName = "TelerikMetroBlue";
             this.datetimeLabTest.Value = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
             // 
             // txtLabResults
             // 
+            this.txtLabResults.AutoSize = false;
             this.txtLabResults.Location = new System.Drawing.Point(21, 129);
             this.txtLabResults.MaxLength = 1500;
             this.txtLabResults.Multiline = true;
             this.txtLabResults.Name = "txtLabResults";
-            // 
-            // 
-            // 
-            this.txtLabResults.RootElement.StretchVertically = true;
             this.txtLabResults.Size = new System.Drawing.Size(200, 174);
             this.txtLabResults.TabIndex = 24;
             this.txtLabResults.TabStop = false;
-            this.txtLabResults.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
@@ -590,13 +561,15 @@
             // 
             // ddllabTest
             // 
-            this.ddllabTest.DropDownAnimationEnabled = true;
+            this.ddllabTest.AllowShowFocusCues = false;
+            this.ddllabTest.AutoCompleteDisplayMember = null;
+            this.ddllabTest.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ddllabTest.AutoCompleteValueMember = null;
             this.ddllabTest.Location = new System.Drawing.Point(21, 53);
             this.ddllabTest.Name = "ddllabTest";
-            this.ddllabTest.ShowImageInEditorArea = true;
-            this.ddllabTest.Size = new System.Drawing.Size(200, 23);
+            this.ddllabTest.Size = new System.Drawing.Size(200, 22);
             this.ddllabTest.TabIndex = 22;
-            this.ddllabTest.ThemeName = "TelerikMetro";
+            this.ddllabTest.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel11
             // 
@@ -621,10 +594,22 @@
             this.radPageViewPage3.Controls.Add(this.radLabel10);
             this.radPageViewPage3.Controls.Add(this.ddlImagingTest);
             this.radPageViewPage3.Controls.Add(this.radLabel12);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(139F, 44F);
             this.radPageViewPage3.Location = new System.Drawing.Point(205, 4);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(1039, 506);
             this.radPageViewPage3.Text = "Imaging";
+            // 
+            // btnDeleteImaging
+            // 
+            this.btnDeleteImaging.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteImaging.Location = new System.Drawing.Point(123, 409);
+            this.btnDeleteImaging.Name = "btnDeleteImaging";
+            this.btnDeleteImaging.Size = new System.Drawing.Size(86, 23);
+            this.btnDeleteImaging.TabIndex = 46;
+            this.btnDeleteImaging.Text = "Delete";
+            this.btnDeleteImaging.ThemeName = "TelerikMetroBlue";
+            this.btnDeleteImaging.Click += new System.EventHandler(this.btnDeleteImaging_Click);
             // 
             // btnAddImaging
             // 
@@ -634,7 +619,7 @@
             this.btnAddImaging.Size = new System.Drawing.Size(84, 23);
             this.btnAddImaging.TabIndex = 44;
             this.btnAddImaging.Text = "Add Test";
-            this.btnAddImaging.ThemeName = "TelerikMetro";
+            this.btnAddImaging.ThemeName = "TelerikMetroBlue";
             this.btnAddImaging.Click += new System.EventHandler(this.btnAddImaging_Click);
             // 
             // ImagingGrid
@@ -659,7 +644,7 @@
             this.ImagingGrid.Size = new System.Drawing.Size(711, 409);
             this.ImagingGrid.TabIndex = 43;
             this.ImagingGrid.Text = "radGridView1";
-            this.ImagingGrid.ThemeName = "TelerikMetro";
+            this.ImagingGrid.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel6
             // 
@@ -702,34 +687,25 @@
             // 
             // datetimeImagingTest
             // 
-            this.datetimeImagingTest.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datetimeImagingTest.Location = new System.Drawing.Point(24, 357);
-            this.datetimeImagingTest.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetimeImagingTest.MinDate = new System.DateTime(((long)(0)));
             this.datetimeImagingTest.Name = "datetimeImagingTest";
-            this.datetimeImagingTest.NullableValue = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
-            this.datetimeImagingTest.NullDate = new System.DateTime(((long)(0)));
-            this.datetimeImagingTest.Size = new System.Drawing.Size(200, 23);
+            this.datetimeImagingTest.Size = new System.Drawing.Size(200, 22);
             this.datetimeImagingTest.TabIndex = 38;
             this.datetimeImagingTest.TabStop = false;
             this.datetimeImagingTest.Text = "12 May 2013";
-            this.datetimeImagingTest.ThemeName = "TelerikMetro";
+            this.datetimeImagingTest.ThemeName = "TelerikMetroBlue";
             this.datetimeImagingTest.Value = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
             // 
             // txtImagingFindings
             // 
+            this.txtImagingFindings.AutoSize = false;
             this.txtImagingFindings.Location = new System.Drawing.Point(24, 129);
             this.txtImagingFindings.MaxLength = 1500;
             this.txtImagingFindings.Multiline = true;
             this.txtImagingFindings.Name = "txtImagingFindings";
-            // 
-            // 
-            // 
-            this.txtImagingFindings.RootElement.StretchVertically = true;
             this.txtImagingFindings.Size = new System.Drawing.Size(200, 174);
             this.txtImagingFindings.TabIndex = 37;
             this.txtImagingFindings.TabStop = false;
-            this.txtImagingFindings.ThemeName = "TelerikMetro";
             // 
             // radLabel10
             // 
@@ -742,13 +718,15 @@
             // 
             // ddlImagingTest
             // 
-            this.ddlImagingTest.DropDownAnimationEnabled = true;
+            this.ddlImagingTest.AllowShowFocusCues = false;
+            this.ddlImagingTest.AutoCompleteDisplayMember = null;
+            this.ddlImagingTest.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ddlImagingTest.AutoCompleteValueMember = null;
             this.ddlImagingTest.Location = new System.Drawing.Point(24, 53);
             this.ddlImagingTest.Name = "ddlImagingTest";
-            this.ddlImagingTest.ShowImageInEditorArea = true;
-            this.ddlImagingTest.Size = new System.Drawing.Size(200, 23);
+            this.ddlImagingTest.Size = new System.Drawing.Size(200, 22);
             this.ddlImagingTest.TabIndex = 35;
-            this.ddlImagingTest.ThemeName = "TelerikMetro";
+            this.ddlImagingTest.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel12
             // 
@@ -769,6 +747,7 @@
             this.radPageViewPage4.Controls.Add(this.radLabel16);
             this.radPageViewPage4.Controls.Add(this.txtDiagnosis);
             this.radPageViewPage4.Controls.Add(this.radLabel15);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(139F, 44F);
             this.radPageViewPage4.Location = new System.Drawing.Point(205, 4);
             this.radPageViewPage4.Name = "radPageViewPage4";
             this.radPageViewPage4.Size = new System.Drawing.Size(1039, 506);
@@ -776,26 +755,22 @@
             // 
             // datetimeFollowUp
             // 
-            this.datetimeFollowUp.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datetimeFollowUp.Location = new System.Drawing.Point(202, 370);
-            this.datetimeFollowUp.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetimeFollowUp.MinDate = new System.DateTime(((long)(0)));
             this.datetimeFollowUp.Name = "datetimeFollowUp";
-            this.datetimeFollowUp.NullableValue = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
-            this.datetimeFollowUp.NullDate = new System.DateTime(((long)(0)));
-            this.datetimeFollowUp.Size = new System.Drawing.Size(200, 23);
+            this.datetimeFollowUp.Size = new System.Drawing.Size(200, 22);
             this.datetimeFollowUp.TabIndex = 64;
             this.datetimeFollowUp.TabStop = false;
             this.datetimeFollowUp.Text = "12 May 2013";
-            this.datetimeFollowUp.ThemeName = "TelerikMetro";
+            this.datetimeFollowUp.ThemeName = "TelerikMetroBlue";
             this.datetimeFollowUp.Value = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
             // 
             // chkFollowUp
             // 
             this.chkFollowUp.Location = new System.Drawing.Point(171, 372);
             this.chkFollowUp.Name = "chkFollowUp";
-            this.chkFollowUp.Size = new System.Drawing.Size(15, 15);
+            this.chkFollowUp.Size = new System.Drawing.Size(18, 18);
             this.chkFollowUp.TabIndex = 63;
+            this.chkFollowUp.ThemeName = "TelerikMetroBlue";
             this.chkFollowUp.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkFollowUp_ToggleStateChanged);
             // 
             // radLabel19
@@ -809,18 +784,14 @@
             // 
             // txtOtherAdvise
             // 
+            this.txtOtherAdvise.AutoSize = false;
             this.txtOtherAdvise.Location = new System.Drawing.Point(53, 234);
             this.txtOtherAdvise.MaxLength = 1500;
             this.txtOtherAdvise.Multiline = true;
             this.txtOtherAdvise.Name = "txtOtherAdvise";
-            // 
-            // 
-            // 
-            this.txtOtherAdvise.RootElement.StretchVertically = true;
             this.txtOtherAdvise.Size = new System.Drawing.Size(622, 110);
             this.txtOtherAdvise.TabIndex = 59;
             this.txtOtherAdvise.TabStop = false;
-            this.txtOtherAdvise.ThemeName = "TelerikMetro";
             // 
             // radLabel18
             // 
@@ -843,18 +814,14 @@
             // 
             // txtDiagnosis
             // 
+            this.txtDiagnosis.AutoSize = false;
             this.txtDiagnosis.Location = new System.Drawing.Point(53, 75);
             this.txtDiagnosis.MaxLength = 1500;
             this.txtDiagnosis.Multiline = true;
             this.txtDiagnosis.Name = "txtDiagnosis";
-            // 
-            // 
-            // 
-            this.txtDiagnosis.RootElement.StretchVertically = true;
             this.txtDiagnosis.Size = new System.Drawing.Size(622, 110);
             this.txtDiagnosis.TabIndex = 56;
             this.txtDiagnosis.TabStop = false;
-            this.txtDiagnosis.ThemeName = "TelerikMetro";
             // 
             // radLabel15
             // 
@@ -890,10 +857,22 @@
             this.radPageViewPage5.Controls.Add(this.radLabel25);
             this.radPageViewPage5.Controls.Add(this.ddlDrug);
             this.radPageViewPage5.Controls.Add(this.radLabel26);
+            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(139F, 44F);
             this.radPageViewPage5.Location = new System.Drawing.Point(205, 4);
             this.radPageViewPage5.Name = "radPageViewPage5";
             this.radPageViewPage5.Size = new System.Drawing.Size(1039, 506);
             this.radPageViewPage5.Text = "Prescription";
+            // 
+            // btnDeletePrescription
+            // 
+            this.btnDeletePrescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDeletePrescription.Location = new System.Drawing.Point(170, 454);
+            this.btnDeletePrescription.Name = "btnDeletePrescription";
+            this.btnDeletePrescription.Size = new System.Drawing.Size(86, 23);
+            this.btnDeletePrescription.TabIndex = 78;
+            this.btnDeletePrescription.Text = "Delete";
+            this.btnDeletePrescription.ThemeName = "TelerikMetroBlue";
+            this.btnDeletePrescription.Click += new System.EventHandler(this.btnDeletePrescription_Click);
             // 
             // radLabel29
             // 
@@ -927,24 +906,24 @@
             // 
             // ddlDosage
             // 
+            this.ddlDosage.AllowShowFocusCues = false;
+            this.ddlDosage.AutoCompleteDisplayMember = null;
             this.ddlDosage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddlDosage.DropDownAnimationEnabled = true;
+            this.ddlDosage.AutoCompleteValueMember = null;
             this.ddlDosage.Location = new System.Drawing.Point(145, 207);
             this.ddlDosage.Name = "ddlDosage";
-            this.ddlDosage.ShowImageInEditorArea = true;
-            this.ddlDosage.Size = new System.Drawing.Size(200, 23);
+            this.ddlDosage.Size = new System.Drawing.Size(200, 22);
             this.ddlDosage.TabIndex = 74;
-            this.ddlDosage.ThemeName = "TelerikMetro";
+            this.ddlDosage.ThemeName = "TelerikMetroBlue";
             // 
             // txtUnit
             // 
             this.txtUnit.Location = new System.Drawing.Point(145, 286);
             this.txtUnit.MaxLength = 5;
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(200, 23);
+            this.txtUnit.Size = new System.Drawing.Size(200, 20);
             this.txtUnit.TabIndex = 73;
             this.txtUnit.TabStop = false;
-            this.txtUnit.ThemeName = "TelerikMetro";
             // 
             // radLabel24
             // 
@@ -960,10 +939,9 @@
             this.txtDuration.Location = new System.Drawing.Point(143, 249);
             this.txtDuration.MaxLength = 5;
             this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(200, 23);
+            this.txtDuration.Size = new System.Drawing.Size(200, 20);
             this.txtDuration.TabIndex = 71;
             this.txtDuration.TabStop = false;
-            this.txtDuration.ThemeName = "TelerikMetro";
             // 
             // radLabel23
             // 
@@ -997,10 +975,9 @@
             this.txtContents.MaxLength = 20;
             this.txtContents.Name = "txtContents";
             this.txtContents.ReadOnly = true;
-            this.txtContents.Size = new System.Drawing.Size(200, 23);
+            this.txtContents.Size = new System.Drawing.Size(200, 20);
             this.txtContents.TabIndex = 66;
             this.txtContents.TabStop = false;
-            this.txtContents.ThemeName = "TelerikMetro";
             // 
             // txtCompany
             // 
@@ -1008,10 +985,9 @@
             this.txtCompany.MaxLength = 40;
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.ReadOnly = true;
-            this.txtCompany.Size = new System.Drawing.Size(200, 23);
+            this.txtCompany.Size = new System.Drawing.Size(200, 20);
             this.txtCompany.TabIndex = 64;
             this.txtCompany.TabStop = false;
-            this.txtCompany.ThemeName = "TelerikMetro";
             // 
             // radLabel41
             // 
@@ -1035,10 +1011,9 @@
             this.txtFormulation.MaxLength = 20;
             this.txtFormulation.Name = "txtFormulation";
             this.txtFormulation.ReadOnly = true;
-            this.txtFormulation.Size = new System.Drawing.Size(200, 23);
+            this.txtFormulation.Size = new System.Drawing.Size(200, 20);
             this.txtFormulation.TabIndex = 62;
             this.txtFormulation.TabStop = false;
-            this.txtFormulation.ThemeName = "TelerikMetro";
             // 
             // PrescriptionGrid
             // 
@@ -1059,9 +1034,9 @@
             this.PrescriptionGrid.ReadOnly = true;
             this.PrescriptionGrid.ShowGroupPanel = false;
             this.PrescriptionGrid.ShowItemToolTips = false;
-            this.PrescriptionGrid.Size = new System.Drawing.Size(669, 429);
+            this.PrescriptionGrid.Size = new System.Drawing.Size(669, 450);
             this.PrescriptionGrid.TabIndex = 55;
-            this.PrescriptionGrid.ThemeName = "TelerikMetro";
+            this.PrescriptionGrid.ThemeName = "TelerikMetroBlue";
             // 
             // btnAddPrescription
             // 
@@ -1071,7 +1046,7 @@
             this.btnAddPrescription.Size = new System.Drawing.Size(121, 23);
             this.btnAddPrescription.TabIndex = 54;
             this.btnAddPrescription.Text = "Add Prescription";
-            this.btnAddPrescription.ThemeName = "TelerikMetro";
+            this.btnAddPrescription.ThemeName = "TelerikMetroBlue";
             this.btnAddPrescription.Click += new System.EventHandler(this.btnAddPrescription_Click);
             // 
             // radLabel22
@@ -1086,18 +1061,14 @@
             // 
             // txtInstructions
             // 
+            this.txtInstructions.AutoSize = false;
             this.txtInstructions.Location = new System.Drawing.Point(27, 360);
             this.txtInstructions.MaxLength = 500;
             this.txtInstructions.Multiline = true;
             this.txtInstructions.Name = "txtInstructions";
-            // 
-            // 
-            // 
-            this.txtInstructions.RootElement.StretchVertically = true;
             this.txtInstructions.Size = new System.Drawing.Size(316, 67);
             this.txtInstructions.TabIndex = 48;
             this.txtInstructions.TabStop = false;
-            this.txtInstructions.ThemeName = "TelerikMetro";
             // 
             // radLabel25
             // 
@@ -1110,14 +1081,15 @@
             // 
             // ddlDrug
             // 
+            this.ddlDrug.AllowShowFocusCues = false;
+            this.ddlDrug.AutoCompleteDisplayMember = null;
             this.ddlDrug.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddlDrug.DropDownAnimationEnabled = true;
+            this.ddlDrug.AutoCompleteValueMember = null;
             this.ddlDrug.Location = new System.Drawing.Point(143, 50);
             this.ddlDrug.Name = "ddlDrug";
-            this.ddlDrug.ShowImageInEditorArea = true;
-            this.ddlDrug.Size = new System.Drawing.Size(200, 23);
+            this.ddlDrug.Size = new System.Drawing.Size(200, 22);
             this.ddlDrug.TabIndex = 46;
-            this.ddlDrug.ThemeName = "TelerikMetro";
+            this.ddlDrug.ThemeName = "TelerikMetroBlue";
             this.ddlDrug.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ddlDrug_SelectedIndexChanged);
             // 
             // radLabel26
@@ -1137,7 +1109,7 @@
             this.btnAddNewVisit.Size = new System.Drawing.Size(209, 23);
             this.btnAddNewVisit.TabIndex = 29;
             this.btnAddNewVisit.Text = "Add New Visit";
-            this.btnAddNewVisit.ThemeName = "TelerikMetro";
+            this.btnAddNewVisit.ThemeName = "TelerikMetroBlue";
             this.btnAddNewVisit.Click += new System.EventHandler(this.btnAddNewVisit_Click);
             // 
             // btnRefresh
@@ -1148,41 +1120,8 @@
             this.btnRefresh.Size = new System.Drawing.Size(92, 24);
             this.btnRefresh.TabIndex = 87;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnDeleteLab
-            // 
-            this.btnDeleteLab.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteLab.Location = new System.Drawing.Point(136, 409);
-            this.btnDeleteLab.Name = "btnDeleteLab";
-            this.btnDeleteLab.Size = new System.Drawing.Size(86, 23);
-            this.btnDeleteLab.TabIndex = 45;
-            this.btnDeleteLab.Text = "Delete";
-            this.btnDeleteLab.ThemeName = "TelerikMetro";
-            this.btnDeleteLab.Click += new System.EventHandler(this.btnDeleteLab_Click);
-            // 
-            // btnDeleteImaging
-            // 
-            this.btnDeleteImaging.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteImaging.Location = new System.Drawing.Point(123, 409);
-            this.btnDeleteImaging.Name = "btnDeleteImaging";
-            this.btnDeleteImaging.Size = new System.Drawing.Size(86, 23);
-            this.btnDeleteImaging.TabIndex = 46;
-            this.btnDeleteImaging.Text = "Delete";
-            this.btnDeleteImaging.ThemeName = "TelerikMetro";
-            this.btnDeleteImaging.Click += new System.EventHandler(this.btnDeleteImaging_Click);
-            // 
-            // btnDeletePrescription
-            // 
-            this.btnDeletePrescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDeletePrescription.Location = new System.Drawing.Point(170, 454);
-            this.btnDeletePrescription.Name = "btnDeletePrescription";
-            this.btnDeletePrescription.Size = new System.Drawing.Size(86, 23);
-            this.btnDeletePrescription.TabIndex = 78;
-            this.btnDeletePrescription.Text = "Delete";
-            this.btnDeletePrescription.ThemeName = "TelerikMetro";
-            this.btnDeletePrescription.Click += new System.EventHandler(this.btnDeletePrescription_Click);
             // 
             // NewVisitView
             // 
@@ -1221,6 +1160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlComplaintTemplate)).EndInit();
             this.radPageViewPage2.ResumeLayout(false);
             this.radPageViewPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteLab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddLabTest)).EndInit();
@@ -1235,6 +1175,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             this.radPageViewPage3.ResumeLayout(false);
             this.radPageViewPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImaging)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImaging)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagingGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagingGrid)).EndInit();
@@ -1259,6 +1200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             this.radPageViewPage5.ResumeLayout(false);
             this.radPageViewPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePrescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel27)).EndInit();
@@ -1284,9 +1226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddNewVisit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteLab)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteImaging)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePrescription)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1342,7 +1281,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel16;
         private Telerik.WinControls.UI.RadButton btnAddNewVisit;
         private Telerik.WinControls.UI.RadLabel radLabel17;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadTextBox txtComplaintText;
         private Telerik.WinControls.UI.RadButton btnAddComplaintTemplate;
         private Telerik.WinControls.UI.RadButton btnExaminationTemplate;

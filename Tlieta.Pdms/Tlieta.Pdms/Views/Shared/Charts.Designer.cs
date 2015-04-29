@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark3 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.btnRefresh = new Telerik.WinControls.UI.RadButton();
             this.btnPrint = new Telerik.WinControls.UI.RadButton();
             this.docPrintPhoto = new Telerik.WinControls.RichTextBox.RadRichTextBox();
@@ -53,22 +53,24 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Location = new System.Drawing.Point(1148, 68);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 22);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnPrint
             // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Location = new System.Drawing.Point(1148, 106);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(83, 22);
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "Print";
-            this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.ThemeName = "TelerikMetroBlue";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // docPrintPhoto
@@ -80,76 +82,78 @@
             this.docPrintPhoto.Name = "docPrintPhoto";
             this.docPrintPhoto.Size = new System.Drawing.Size(865, 538);
             this.docPrintPhoto.TabIndex = 10;
+            this.docPrintPhoto.ThemeName = "TelerikMetroBlue";
             // 
             // btnInsert
             // 
+            this.btnInsert.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnInsert.Location = new System.Drawing.Point(1148, 30);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(83, 22);
             this.btnInsert.TabIndex = 7;
             this.btnInsert.Text = "Insert";
-            this.btnInsert.ThemeName = "TelerikMetro";
+            this.btnInsert.ThemeName = "TelerikMetroBlue";
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // listPhotos
             // 
             this.listPhotos.AutoScroll = true;
             this.listPhotos.AutoSizeItems = true;
-            this.listPhotos.CaseSensitiveSort = true;
             this.listPhotos.EnableKineticScrolling = true;
             this.listPhotos.ItemHeight = 50;
             this.listPhotos.Location = new System.Drawing.Point(33, 30);
             this.listPhotos.Name = "listPhotos";
             this.listPhotos.Size = new System.Drawing.Size(238, 479);
             this.listPhotos.TabIndex = 6;
-            this.listPhotos.ThemeName = "TelerikMetro";
+            this.listPhotos.ThemeName = "TelerikMetroBlue";
             this.listPhotos.ItemDataBound += new Telerik.WinControls.UI.ListItemDataBoundEventHandler(this.listPhotos_ItemDataBound);
             // 
             // radPrintDocument1
             // 
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark3.DrawInFront = true;
-            radPrintWatermark3.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
-            this.radPrintDocument1.Watermark = radPrintWatermark3;
+            this.radPrintDocument1.Watermark = radPrintWatermark1;
             // 
             // radButton1
             // 
+            this.radButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.radButton1.Location = new System.Drawing.Point(195, 543);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(77, 22);
             this.radButton1.TabIndex = 14;
             this.radButton1.Text = "Refresh";
-            this.radButton1.ThemeName = "TelerikMetro";
+            this.radButton1.ThemeName = "TelerikMetroBlue";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // btnOpenFolder
             // 
+            this.btnOpenFolder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnOpenFolder.Location = new System.Drawing.Point(95, 543);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(94, 22);
             this.btnOpenFolder.TabIndex = 13;
             this.btnOpenFolder.Text = "Open Folder";
-            this.btnOpenFolder.ThemeName = "TelerikMetro";
+            this.btnOpenFolder.ThemeName = "TelerikMetroBlue";
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Location = new System.Drawing.Point(33, 543);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 22);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
-            this.btnAdd.ThemeName = "TelerikMetro";
+            this.btnAdd.ThemeName = "TelerikMetroBlue";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // browsePhoto
             // 
             this.browsePhoto.Location = new System.Drawing.Point(33, 515);
             this.browsePhoto.Name = "browsePhoto";
-            this.browsePhoto.Size = new System.Drawing.Size(239, 22);
+            this.browsePhoto.Size = new System.Drawing.Size(239, 23);
             this.browsePhoto.TabIndex = 12;
-            this.browsePhoto.ThemeName = "ControlDefault";
+            this.browsePhoto.ThemeName = "TelerikMetroBlue";
             // 
             // Charts
             // 
@@ -178,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.browsePhoto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

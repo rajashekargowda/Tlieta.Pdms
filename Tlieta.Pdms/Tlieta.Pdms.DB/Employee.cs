@@ -15,12 +15,21 @@ namespace Tlieta.Pdms.DB
     public partial class Employee
     {
         public int EmployeeId { get; set; }
-        public string EmployeeName { get; set; }
-        public int RoleId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
         public string EmailId { get; set; }
+        public string Address { get; set; }
         public string Phone { get; set; }
         public string UserId { get; set; }
         public string Password { get; set; }
+        public int RoleId { get; set; }
+        public string VerificationDocument { get; set; }
+        public string VerificationNumber { get; set; }
+        public Nullable<int> ManagerId { get; set; }
+        public Nullable<System.DateTime> HiredDate { get; set; }
+        public Nullable<bool> IsActive { get; set; }
+        public Nullable<System.DateTime> InactiveFrom { get; set; }
         public System.DateTime CreatedOn { get; set; }
     }
 }

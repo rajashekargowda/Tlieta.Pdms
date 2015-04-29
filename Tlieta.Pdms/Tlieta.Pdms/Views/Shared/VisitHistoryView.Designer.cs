@@ -43,12 +43,13 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Location = new System.Drawing.Point(1151, 35);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(83, 22);
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "Print";
-            this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.ThemeName = "TelerikMetroBlue";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // docPrintVisit
@@ -60,36 +61,35 @@
             this.docPrintVisit.Name = "docPrintVisit";
             this.docPrintVisit.Size = new System.Drawing.Size(865, 538);
             this.docPrintVisit.TabIndex = 10;
+            this.docPrintVisit.ThemeName = "TelerikMetroBlue";
             // 
             // radPrintPhotos
             // 
             this.radPrintPhotos.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintPhotos.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark1.DrawInFront = true;
-            radPrintWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
             this.radPrintPhotos.Watermark = radPrintWatermark1;
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Location = new System.Drawing.Point(1151, 76);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(83, 22);
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // listVisits
             // 
             this.listVisits.AutoScroll = true;
-            this.listVisits.CaseSensitiveSort = true;
             this.listVisits.EnableKineticScrolling = true;
             this.listVisits.ItemHeight = 50;
             this.listVisits.Location = new System.Drawing.Point(43, 35);
             this.listVisits.Name = "listVisits";
             this.listVisits.Size = new System.Drawing.Size(205, 538);
             this.listVisits.TabIndex = 41;
-            this.listVisits.ThemeName = "TelerikMetro";
+            this.listVisits.ThemeName = "TelerikMetroBlue";
             this.listVisits.SelectedValueChanged += new System.EventHandler(this.listVisits_SelectedValueChanged);
             // 
             // VisitHistoryView

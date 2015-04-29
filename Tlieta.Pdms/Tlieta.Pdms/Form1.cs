@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls.UI;
+using Tlieta.Pdms.DB;
 using Tlieta.Pdms.Properties;
 
 namespace Tlieta.Pdms
@@ -33,6 +34,9 @@ namespace Tlieta.Pdms
         private string currentExample = string.Empty;
         private Dictionary<string, UserControl> exampleControls;
 
+        private string AppUser;
+        private string AppUserPwd;
+
         #region Initialization
 
         public Form1(string pSerialkey)
@@ -41,7 +45,7 @@ namespace Tlieta.Pdms
 
             this.serialKey = pSerialkey;
 
-            new TelerikMetroTheme();
+            new TelerikMetroBlueTheme();
             this.ThemeName = "Panorama";
 
             this.radPanorama1.ThemeName = "Panorama";
@@ -62,6 +66,16 @@ namespace Tlieta.Pdms
             //this.PrepareFooter();
             //this.PrepareLogo();
             this.PreparePages();
+            this.PrepareLogin();
+        }
+
+        private void PrepareLogin()
+        {
+            this.applicationsGroup.Enabled = false;
+            this.practiceManagementGroup.Enabled = false;
+            this.settingsGroup.Enabled = false;
+            this.FooterPanel.Visible = false;
+            Error.Text = "";
         }
 
         private void PreparePages()
@@ -160,7 +174,7 @@ namespace Tlieta.Pdms
 
             this.headerLabel = new LightVisualElement();
             this.headerLabel.Text = ConfigurationSettings.AppSettings["ApplicationLabel"].ToString();
-            this.headerLabel.Font = new Font("Segoe UI Light", 42, GraphicsUnit.Point);
+            this.headerLabel.Font = new Font("Segoe UI Light", 35, GraphicsUnit.Point);
             this.headerLabel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.headerLabel.ForeColor = Color.White;
             this.headerLabel.TextAlignment = ContentAlignment.MiddleLeft;
@@ -170,19 +184,19 @@ namespace Tlieta.Pdms
             this.headerLabel.StretchHorizontally = false;
             headerLayout.Children.Add(this.headerLabel);
 
-            StackLayoutElement headerLogo = new StackLayoutElement();
-            headerLogo.Margin = new System.Windows.Forms.Padding(1220, 60, 0, 0);
-            headerLogo.StretchHorizontally = false;
+            //StackLayoutElement headerLogo = new StackLayoutElement();
+            //headerLogo.Margin = new System.Windows.Forms.Padding(1220, 60, 0, 0);
+            //headerLogo.StretchHorizontally = false;
 
-            this.logoTlietaHeader = new RadImageItem();
-            this.logoTlietaHeader.Image = Tlieta.Pdms.Properties.Resources.TLIETA90;
-            this.logoTlietaHeader.BackColor = Color.Transparent;
-            this.logoTlietaHeader.Margin = new Padding(0, 0, 20, 0);
-            this.logoTlietaHeader.BorderThickness = new Padding(0, 0, 0, 0);
-            headerLogo.Children.Add(this.logoTlietaHeader);
+            //this.logoTlietaHeader = new RadImageItem();
+            //this.logoTlietaHeader.Image = Tlieta.Pdms.Properties.Resources.TLIETA90;
+            //this.logoTlietaHeader.BackColor = Color.Transparent;
+            //this.logoTlietaHeader.Margin = new Padding(0, 0, 20, 0);
+            //this.logoTlietaHeader.BorderThickness = new Padding(0, 0, 0, 0);
+            //headerLogo.Children.Add(this.logoTlietaHeader);
 
             this.radPanorama1.PanoramaElement.Children.Add(headerLayout);
-            this.radPanorama1.PanoramaElement.Children.Add(headerLogo);
+            //this.radPanorama1.PanoramaElement.Children.Add(headerLogo);
         }
 
         private void PrepareFooter()
@@ -478,6 +492,35 @@ namespace Tlieta.Pdms
         protected override FormControlBehavior InitializeFormBehavior()
         {
             return new MyFormBehavior(this, true);
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Employee employee = new Employee();
+                employee.UserId = UserText.Text.Trim();
+                employee.Password = Encryption.Encrypt(Resources.EncryptionKey, PasswordText.Text.Trim());
+                employee = new UserData().Authenticate(employee);
+                if(employee.RoleId > 0)
+                {
+                    Error.Text = "";
+                    this.applicationsGroup.Enabled = true;
+                    this.practiceManagementGroup.Enabled = true;
+                    this.settingsGroup.Enabled = true;
+                    this.LoginPanel.Visible = false;
+                    this.FooterPanel.Visible = true;
+                    this.UserLabel.Text = employee.FirstName + " " + employee.LastName;
+                }
+                else
+                {
+                    Error.Text = "Login failed !!";
+                }
+            }
+            catch (Exception x)
+            {
+                Error.Text = "Login failed !!";
+            }
         }
     }
 }

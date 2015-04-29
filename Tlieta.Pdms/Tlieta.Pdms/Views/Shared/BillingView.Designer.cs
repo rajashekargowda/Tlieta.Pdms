@@ -52,7 +52,7 @@
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radPrintDocument1 = new Telerik.WinControls.UI.RadPrintDocument();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNotes)).BeginInit();
@@ -91,11 +91,10 @@
             // 
             // 
             this.txtAmount.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren;
-            this.txtAmount.ShowBorder = true;
             this.txtAmount.Size = new System.Drawing.Size(263, 22);
             this.txtAmount.TabIndex = 136;
             this.txtAmount.TabStop = false;
-            this.txtAmount.ThemeName = "TelerikMetro";
+            this.txtAmount.ThemeName = "TelerikMetroBlue";
             // 
             // btnReset
             // 
@@ -105,23 +104,19 @@
             this.btnReset.Size = new System.Drawing.Size(71, 32);
             this.btnReset.TabIndex = 135;
             this.btnReset.Text = "Reset";
-            this.btnReset.ThemeName = "TelerikMetro";
+            this.btnReset.ThemeName = "TelerikMetroBlue";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtNotes
             // 
+            this.txtNotes.AutoSize = false;
             this.txtNotes.Location = new System.Drawing.Point(32, 310);
             this.txtNotes.MaxLength = 400;
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            // 
-            // 
-            // 
-            this.txtNotes.RootElement.StretchVertically = true;
             this.txtNotes.Size = new System.Drawing.Size(263, 83);
             this.txtNotes.TabIndex = 134;
             this.txtNotes.TabStop = false;
-            this.txtNotes.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
@@ -139,7 +134,7 @@
             this.chkDebit.Size = new System.Drawing.Size(53, 19);
             this.chkDebit.TabIndex = 132;
             this.chkDebit.Text = "Debit";
-            this.chkDebit.ThemeName = "TelerikMetro";
+            this.chkDebit.ThemeName = "TelerikMetroBlue";
             this.chkDebit.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkDebit_ToggleStateChanged);
             // 
             // chkCredit
@@ -149,23 +144,18 @@
             this.chkCredit.Size = new System.Drawing.Size(56, 19);
             this.chkCredit.TabIndex = 131;
             this.chkCredit.Text = "Credit";
-            this.chkCredit.ThemeName = "TelerikMetro";
+            this.chkCredit.ThemeName = "TelerikMetroBlue";
             this.chkCredit.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkCredit_ToggleStateChanged);
             // 
             // ToDate
             // 
-            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.ToDate.Location = new System.Drawing.Point(611, 46);
-            this.ToDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ToDate.MinDate = new System.DateTime(((long)(0)));
             this.ToDate.Name = "ToDate";
-            this.ToDate.NullableValue = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
-            this.ToDate.NullDate = new System.DateTime(((long)(0)));
-            this.ToDate.Size = new System.Drawing.Size(150, 20);
+            this.ToDate.Size = new System.Drawing.Size(150, 22);
             this.ToDate.TabIndex = 130;
             this.ToDate.TabStop = false;
             this.ToDate.Text = "22 September 2013";
-            this.ToDate.ThemeName = "TelerikMetro";
+            this.ToDate.ThemeName = "TelerikMetroBlue";
             this.ToDate.Value = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
             // 
             // radLabel5
@@ -179,18 +169,13 @@
             // 
             // FromDate
             // 
-            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.FromDate.Location = new System.Drawing.Point(402, 46);
-            this.FromDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.FromDate.MinDate = new System.DateTime(((long)(0)));
             this.FromDate.Name = "FromDate";
-            this.FromDate.NullableValue = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
-            this.FromDate.NullDate = new System.DateTime(((long)(0)));
-            this.FromDate.Size = new System.Drawing.Size(150, 20);
+            this.FromDate.Size = new System.Drawing.Size(150, 22);
             this.FromDate.TabIndex = 128;
             this.FromDate.TabStop = false;
             this.FromDate.Text = "22 September 2013";
-            this.FromDate.ThemeName = "TelerikMetro";
+            this.FromDate.ThemeName = "TelerikMetroBlue";
             this.FromDate.Value = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
             // 
             // radLabel3
@@ -204,22 +189,24 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Location = new System.Drawing.Point(955, 46);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(102, 24);
             this.btnPrint.TabIndex = 126;
             this.btnPrint.Text = "Print";
-            this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.ThemeName = "TelerikMetroBlue";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSearch
             // 
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Location = new System.Drawing.Point(800, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 24);
             this.btnSearch.TabIndex = 125;
             this.btnSearch.Text = "Search";
-            this.btnSearch.ThemeName = "TelerikMetro";
+            this.btnSearch.ThemeName = "TelerikMetroBlue";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FinanceGrid
@@ -243,7 +230,7 @@
             this.FinanceGrid.Size = new System.Drawing.Size(921, 467);
             this.FinanceGrid.TabIndex = 124;
             this.FinanceGrid.Text = "radGridView1";
-            this.FinanceGrid.ThemeName = "TelerikMetro";
+            this.FinanceGrid.ThemeName = "TelerikMetroBlue";
             this.FinanceGrid.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.FinanceGrid_CellDoubleClick);
             // 
             // btnDeleteBilling
@@ -254,7 +241,7 @@
             this.btnDeleteBilling.Size = new System.Drawing.Size(71, 32);
             this.btnDeleteBilling.TabIndex = 121;
             this.btnDeleteBilling.Text = "Delete";
-            this.btnDeleteBilling.ThemeName = "TelerikMetro";
+            this.btnDeleteBilling.ThemeName = "TelerikMetroBlue";
             this.btnDeleteBilling.Click += new System.EventHandler(this.btnDeleteBilling_Click);
             // 
             // txtBillingId
@@ -262,7 +249,7 @@
             this.txtBillingId.Location = new System.Drawing.Point(32, 533);
             this.txtBillingId.MaxLength = 30;
             this.txtBillingId.Name = "txtBillingId";
-            this.txtBillingId.Size = new System.Drawing.Size(263, 23);
+            this.txtBillingId.Size = new System.Drawing.Size(263, 20);
             this.txtBillingId.TabIndex = 123;
             this.txtBillingId.TabStop = false;
             this.txtBillingId.ThemeName = "TelerikMetro";
@@ -285,7 +272,7 @@
             this.btnUpdateBilling.Size = new System.Drawing.Size(71, 32);
             this.btnUpdateBilling.TabIndex = 120;
             this.btnUpdateBilling.Text = "Update";
-            this.btnUpdateBilling.ThemeName = "TelerikMetro";
+            this.btnUpdateBilling.ThemeName = "TelerikMetroBlue";
             this.btnUpdateBilling.Click += new System.EventHandler(this.btnUpdateBilling_Click);
             // 
             // btnAddBilling
@@ -296,7 +283,7 @@
             this.btnAddBilling.Size = new System.Drawing.Size(72, 32);
             this.btnAddBilling.TabIndex = 119;
             this.btnAddBilling.Text = "Add";
-            this.btnAddBilling.ThemeName = "TelerikMetro";
+            this.btnAddBilling.ThemeName = "TelerikMetroBlue";
             this.btnAddBilling.Click += new System.EventHandler(this.btnAddBilling_Click);
             // 
             // txtBillNumber
@@ -304,25 +291,19 @@
             this.txtBillNumber.Location = new System.Drawing.Point(32, 143);
             this.txtBillNumber.MaxLength = 30;
             this.txtBillNumber.Name = "txtBillNumber";
-            this.txtBillNumber.Size = new System.Drawing.Size(263, 23);
+            this.txtBillNumber.Size = new System.Drawing.Size(263, 20);
             this.txtBillNumber.TabIndex = 118;
             this.txtBillNumber.TabStop = false;
-            this.txtBillNumber.ThemeName = "TelerikMetro";
             // 
             // radBillDate
             // 
-            this.radBillDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.radBillDate.Location = new System.Drawing.Point(32, 73);
-            this.radBillDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.radBillDate.MinDate = new System.DateTime(((long)(0)));
             this.radBillDate.Name = "radBillDate";
-            this.radBillDate.NullableValue = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
-            this.radBillDate.NullDate = new System.DateTime(((long)(0)));
-            this.radBillDate.Size = new System.Drawing.Size(150, 20);
+            this.radBillDate.Size = new System.Drawing.Size(150, 22);
             this.radBillDate.TabIndex = 116;
             this.radBillDate.TabStop = false;
             this.radBillDate.Text = "22 September 2013";
-            this.radBillDate.ThemeName = "TelerikMetro";
+            this.radBillDate.ThemeName = "TelerikMetroBlue";
             this.radBillDate.Value = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
             // 
             // radLabel6
@@ -338,8 +319,6 @@
             // 
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark1.DrawInFront = true;
-            radPrintWatermark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
             this.radPrintDocument1.Watermark = radPrintWatermark1;
             // 
             // radLabel4
@@ -433,6 +412,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadPrintDocument radPrintDocument1;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     }
 }

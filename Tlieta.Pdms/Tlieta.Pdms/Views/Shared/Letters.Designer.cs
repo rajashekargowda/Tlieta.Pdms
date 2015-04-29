@@ -42,12 +42,13 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Location = new System.Drawing.Point(1164, 34);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(83, 22);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Print";
-            this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.ThemeName = "TelerikMetroBlue";
             // 
             // docLetters
             // 
@@ -58,33 +59,37 @@
             this.docLetters.Name = "docLetters";
             this.docLetters.Size = new System.Drawing.Size(876, 548);
             this.docLetters.TabIndex = 7;
+            this.docLetters.ThemeName = "TelerikMetroBlue";
             // 
             // btnRequest
             // 
+            this.btnRequest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRequest.Location = new System.Drawing.Point(18, 121);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(199, 22);
             this.btnRequest.TabIndex = 12;
             this.btnRequest.Text = "MRI/CT/USG Request";
-            this.btnRequest.ThemeName = "TelerikMetro";
+            this.btnRequest.ThemeName = "TelerikMetroBlue";
             // 
             // btnThanksReferral
             // 
+            this.btnThanksReferral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnThanksReferral.Location = new System.Drawing.Point(18, 78);
             this.btnThanksReferral.Name = "btnThanksReferral";
             this.btnThanksReferral.Size = new System.Drawing.Size(199, 22);
             this.btnThanksReferral.TabIndex = 11;
             this.btnThanksReferral.Text = "Thanks for Referral";
-            this.btnThanksReferral.ThemeName = "TelerikMetro";
+            this.btnThanksReferral.ThemeName = "TelerikMetroBlue";
             // 
             // btnReferral
             // 
+            this.btnReferral.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnReferral.Location = new System.Drawing.Point(18, 34);
             this.btnReferral.Name = "btnReferral";
             this.btnReferral.Size = new System.Drawing.Size(199, 22);
             this.btnReferral.TabIndex = 10;
             this.btnReferral.Text = "Referral";
-            this.btnReferral.ThemeName = "TelerikMetro";
+            this.btnReferral.ThemeName = "TelerikMetroBlue";
             // 
             // Letters
             // 

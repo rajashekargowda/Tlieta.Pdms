@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.listPhotos = new Telerik.WinControls.UI.RadListControl();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.browsePhoto = new Telerik.WinControls.UI.RadBrowseEditor();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.btnOpenFolder = new Telerik.WinControls.UI.RadButton();
@@ -47,14 +46,13 @@
             // 
             this.listPhotos.AutoScroll = true;
             this.listPhotos.AutoSizeItems = true;
-            this.listPhotos.CaseSensitiveSort = true;
             this.listPhotos.EnableKineticScrolling = true;
             this.listPhotos.ItemHeight = 50;
             this.listPhotos.Location = new System.Drawing.Point(40, 40);
             this.listPhotos.Name = "listPhotos";
             this.listPhotos.Size = new System.Drawing.Size(239, 467);
             this.listPhotos.TabIndex = 0;
-            this.listPhotos.ThemeName = "TelerikMetro";
+            this.listPhotos.ThemeName = "TelerikMetroBlue";
             this.listPhotos.SelectedValueChanged += new System.EventHandler(this.listPhotos_SelectedValueChanged);
             this.listPhotos.ItemDataBound += new Telerik.WinControls.UI.ListItemDataBoundEventHandler(this.listPhotos_ItemDataBound);
             // 
@@ -62,38 +60,41 @@
             // 
             this.browsePhoto.Location = new System.Drawing.Point(40, 513);
             this.browsePhoto.Name = "browsePhoto";
-            this.browsePhoto.Size = new System.Drawing.Size(239, 22);
+            this.browsePhoto.Size = new System.Drawing.Size(239, 23);
             this.browsePhoto.TabIndex = 3;
-            this.browsePhoto.ThemeName = "ControlDefault";
+            this.browsePhoto.ThemeName = "TelerikMetroBlue";
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Location = new System.Drawing.Point(40, 541);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 22);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
-            this.btnAdd.ThemeName = "TelerikMetro";
+            this.btnAdd.ThemeName = "TelerikMetroBlue";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnOpenFolder
             // 
+            this.btnOpenFolder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnOpenFolder.Location = new System.Drawing.Point(102, 541);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(94, 22);
             this.btnOpenFolder.TabIndex = 5;
             this.btnOpenFolder.Text = "Open Folder";
-            this.btnOpenFolder.ThemeName = "TelerikMetro";
+            this.btnOpenFolder.ThemeName = "TelerikMetroBlue";
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Location = new System.Drawing.Point(202, 541);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(77, 22);
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // panelPhotoView
@@ -104,7 +105,7 @@
             this.panelPhotoView.Name = "panelPhotoView";
             this.panelPhotoView.Size = new System.Drawing.Size(999, 523);
             this.panelPhotoView.TabIndex = 7;
-            this.panelPhotoView.ThemeName = "TelerikMetro";
+            this.panelPhotoView.ThemeName = "TelerikMetroBlue";
             // 
             // Photos
             // 
@@ -127,13 +128,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelPhotoView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Telerik.WinControls.UI.RadListControl listPhotos;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadBrowseEditor browsePhoto;
         private Telerik.WinControls.UI.RadButton btnAdd;
         private Telerik.WinControls.UI.RadButton btnOpenFolder;

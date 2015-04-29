@@ -24,14 +24,14 @@ namespace Tlieta.Pdms.Views.Shared
                 {
                     Aggregate = GridAggregateFunction.Sum,
                     FormatString = "Total Debit = {0}",
-                    FieldName = "Debit",
+                    //FieldName = "Debit",
                     Name = "Debit"
                 });
                 countAmount.Add(new GridViewSummaryItem()
                 {
                     Aggregate = GridAggregateFunction.Sum,
                     FormatString = "Total Credit = {0}",
-                    FieldName = "Credit",
+                    //FieldName = "Credit",
                     Name = "Credit"
                 });
 

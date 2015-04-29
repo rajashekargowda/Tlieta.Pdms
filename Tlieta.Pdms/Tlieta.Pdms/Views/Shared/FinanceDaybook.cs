@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Tlieta.Pdms.DB;
 using Telerik.WinControls.UI;
 using Tlieta.Pdms.Code;
+using Telerik.WinControls.Themes;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -12,7 +13,7 @@ namespace Tlieta.Pdms.Views.Shared
         public FinanceDaybook()
         {
             InitializeComponent();
-
+            
             try
             {
                 radBillDate.Value = DateTime.Now;
@@ -24,14 +25,14 @@ namespace Tlieta.Pdms.Views.Shared
                 {
                     Aggregate = GridAggregateFunction.Sum,
                     FormatString = "Total Debit = {0}",
-                    FieldName = "Debit",
+                    //FieldName = "Debit",
                     Name = "Debit"
                 });
                 countAmount.Add(new GridViewSummaryItem()
-                {
+                {                    
                     Aggregate = GridAggregateFunction.Sum,
                     FormatString = "Total Credit = {0}",
-                    FieldName = "Credit",
+                    //FieldName = "Credit",
                     Name = "Credit"
                 });
 

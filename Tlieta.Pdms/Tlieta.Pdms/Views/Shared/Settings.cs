@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tlieta.Pdms.DB;
+using Tlieta.Pdms.Properties;
 
 namespace Tlieta.Pdms.Views.Shared
 {
@@ -116,7 +117,8 @@ namespace Tlieta.Pdms.Views.Shared
             }
             else
             {
-                Employee employee = new Employee() { EmployeeName = name, RoleId = role, CreatedOn = DateTime.Now };
+                Employee employee = new Employee() { FirstName = name, RoleId = role, CreatedOn = DateTime.Now };
+                employee.Password = Encryption.Encrypt(Resources.EncryptionKey, Resources.DefaultPassword);
                 bool result = new MasterData().AddEmployee(employee);
 
                 if (result)

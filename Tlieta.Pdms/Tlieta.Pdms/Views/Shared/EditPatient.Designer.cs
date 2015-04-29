@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
             this.btnSavePatient = new Telerik.WinControls.UI.RadButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -43,7 +43,6 @@
             this.txtLastName = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.chkMale = new Telerik.WinControls.UI.RadCheckBox();
             this.chkFemale = new Telerik.WinControls.UI.RadCheckBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -83,6 +82,7 @@
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.DOB = new Telerik.WinControls.UI.RadDateTimePicker();
             this.btnRefresh = new Telerik.WinControls.UI.RadButton();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.btnSavePatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -139,12 +139,12 @@
             // btnSavePatient
             // 
             this.btnSavePatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSavePatient.Location = new System.Drawing.Point(216, 464);
+            this.btnSavePatient.Location = new System.Drawing.Point(187, 464);
             this.btnSavePatient.Name = "btnSavePatient";
             this.btnSavePatient.Size = new System.Drawing.Size(92, 32);
             this.btnSavePatient.TabIndex = 0;
             this.btnSavePatient.Text = "Submit";
-            this.btnSavePatient.ThemeName = "TelerikMetro";
+            this.btnSavePatient.ThemeName = "TelerikMetroBlue";
             this.btnSavePatient.Click += new System.EventHandler(this.btnSavePatient_Click);
             // 
             // radLabel1
@@ -185,54 +185,52 @@
             // 
             // ddlPrefix
             // 
-            this.ddlPrefix.DropDownAnimationEnabled = true;
-            radListDataItem1.Text = "Mr";
-            radListDataItem1.TextWrap = true;
-            radListDataItem2.Text = "Mrs";
-            radListDataItem2.TextWrap = true;
-            radListDataItem3.Text = "Ms";
-            radListDataItem3.TextWrap = true;
-            radListDataItem4.Text = "Miss";
-            radListDataItem4.TextWrap = true;
-            this.ddlPrefix.Items.Add(radListDataItem1);
-            this.ddlPrefix.Items.Add(radListDataItem2);
-            this.ddlPrefix.Items.Add(radListDataItem3);
-            this.ddlPrefix.Items.Add(radListDataItem4);
+            this.ddlPrefix.AllowShowFocusCues = false;
+            this.ddlPrefix.AutoCompleteDisplayMember = null;
+            this.ddlPrefix.AutoCompleteValueMember = null;
+            radListDataItem5.Text = "Mr";
+            radListDataItem5.TextWrap = true;
+            radListDataItem6.Text = "Mrs";
+            radListDataItem6.TextWrap = true;
+            radListDataItem7.Text = "Ms";
+            radListDataItem7.TextWrap = true;
+            radListDataItem8.Text = "Miss";
+            radListDataItem8.TextWrap = true;
+            this.ddlPrefix.Items.Add(radListDataItem5);
+            this.ddlPrefix.Items.Add(radListDataItem6);
+            this.ddlPrefix.Items.Add(radListDataItem7);
+            this.ddlPrefix.Items.Add(radListDataItem8);
             this.ddlPrefix.Location = new System.Drawing.Point(34, 119);
             this.ddlPrefix.Name = "ddlPrefix";
-            this.ddlPrefix.ShowImageInEditorArea = true;
-            this.ddlPrefix.Size = new System.Drawing.Size(57, 20);
+            this.ddlPrefix.Size = new System.Drawing.Size(57, 22);
             this.ddlPrefix.TabIndex = 5;
-            this.ddlPrefix.ThemeName = "TelerikMetro";
+            this.ddlPrefix.ThemeName = "TelerikMetroBlue";
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(34, 172);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(160, 23);
+            this.txtFirstName.Size = new System.Drawing.Size(160, 20);
             this.txtFirstName.TabIndex = 6;
             this.txtFirstName.TabStop = false;
-            this.txtFirstName.ThemeName = "TelerikMetro";
             this.txtFirstName.Leave += new System.EventHandler(this.txtFirstName_Leave);
             // 
             // txtMiddleName
             // 
             this.txtMiddleName.Location = new System.Drawing.Point(34, 228);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(160, 23);
+            this.txtMiddleName.Size = new System.Drawing.Size(160, 20);
             this.txtMiddleName.TabIndex = 7;
             this.txtMiddleName.TabStop = false;
-            this.txtMiddleName.ThemeName = "TelerikMetro";
             this.txtMiddleName.Leave += new System.EventHandler(this.txtMiddleName_Leave);
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(34, 284);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(160, 23);
+            this.txtLastName.Size = new System.Drawing.Size(160, 20);
             this.txtLastName.TabIndex = 8;
             this.txtLastName.TabStop = false;
-            this.txtLastName.ThemeName = "TelerikMetro";
             this.txtLastName.Leave += new System.EventHandler(this.txtLastName_Leave);
             // 
             // radLabel5
@@ -260,7 +258,7 @@
             this.chkMale.Size = new System.Drawing.Size(50, 19);
             this.chkMale.TabIndex = 9;
             this.chkMale.Text = "Male";
-            this.chkMale.ThemeName = "TelerikMetro";
+            this.chkMale.ThemeName = "TelerikMetroBlue";
             this.chkMale.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkMale_ToggleStateChanged);
             // 
             // chkFemale
@@ -270,7 +268,7 @@
             this.chkFemale.Size = new System.Drawing.Size(62, 19);
             this.chkFemale.TabIndex = 10;
             this.chkFemale.Text = "Female";
-            this.chkFemale.ThemeName = "TelerikMetro";
+            this.chkFemale.ThemeName = "TelerikMetroBlue";
             this.chkFemale.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.chkFemale_ToggleStateChanged);
             // 
             // radLabel7
@@ -293,35 +291,29 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.AutoSize = false;
             this.txtAddress.Location = new System.Drawing.Point(272, 119);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            // 
-            // 
-            // 
-            this.txtAddress.RootElement.StretchVertically = true;
             this.txtAddress.Size = new System.Drawing.Size(200, 83);
             this.txtAddress.TabIndex = 13;
             this.txtAddress.TabStop = false;
-            this.txtAddress.ThemeName = "TelerikMetro";
             // 
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(272, 235);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(160, 23);
+            this.txtMobile.Size = new System.Drawing.Size(160, 20);
             this.txtMobile.TabIndex = 14;
             this.txtMobile.TabStop = false;
-            this.txtMobile.ThemeName = "TelerikMetro";
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(272, 291);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(160, 23);
+            this.txtPhone.Size = new System.Drawing.Size(160, 20);
             this.txtPhone.TabIndex = 16;
             this.txtPhone.TabStop = false;
-            this.txtPhone.ThemeName = "TelerikMetro";
             // 
             // radLabel9
             // 
@@ -336,10 +328,9 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(272, 347);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(160, 23);
+            this.txtEmail.Size = new System.Drawing.Size(160, 20);
             this.txtEmail.TabIndex = 18;
             this.txtEmail.TabStop = false;
-            this.txtEmail.ThemeName = "TelerikMetro";
             // 
             // radLabel10
             // 
@@ -352,13 +343,14 @@
             // 
             // ddlHospital
             // 
-            this.ddlHospital.DropDownAnimationEnabled = true;
+            this.ddlHospital.AllowShowFocusCues = false;
+            this.ddlHospital.AutoCompleteDisplayMember = null;
+            this.ddlHospital.AutoCompleteValueMember = null;
             this.ddlHospital.Location = new System.Drawing.Point(272, 403);
             this.ddlHospital.Name = "ddlHospital";
-            this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 20;
-            this.ddlHospital.ThemeName = "TelerikMetro";
+            this.ddlHospital.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel11
             // 
@@ -372,12 +364,12 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Location = new System.Drawing.Point(216, 464);
+            this.btnUpdate.Location = new System.Drawing.Point(187, 464);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(92, 32);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.ThemeName = "TelerikMetro";
+            this.btnUpdate.ThemeName = "TelerikMetroBlue";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // radLabel12
@@ -400,12 +392,13 @@
             // 
             // btnAdvanced
             // 
+            this.btnAdvanced.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdvanced.Location = new System.Drawing.Point(314, 464);
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(147, 32);
             this.btnAdvanced.TabIndex = 24;
             this.btnAdvanced.Text = "Show Advanced Data";
-            this.btnAdvanced.ThemeName = "TelerikMetro";
+            this.btnAdvanced.ThemeName = "TelerikMetroBlue";
             this.btnAdvanced.ToggleStateChanging += new Telerik.WinControls.UI.StateChangingEventHandler(this.btnAdvanced_ToggleStateChanging);
             // 
             // boxAdvanced
@@ -431,37 +424,24 @@
             this.boxAdvanced.Controls.Add(this.radLabel14);
             this.boxAdvanced.Controls.Add(this.txtMedicalIssues);
             this.boxAdvanced.Controls.Add(this.radLabel13);
-            this.boxAdvanced.FooterImageIndex = -1;
-            this.boxAdvanced.FooterImageKey = "";
-            this.boxAdvanced.HeaderImageIndex = -1;
-            this.boxAdvanced.HeaderImageKey = "";
-            this.boxAdvanced.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.boxAdvanced.HeaderText = "Advanced Data";
             this.boxAdvanced.Location = new System.Drawing.Point(509, 92);
             this.boxAdvanced.Name = "boxAdvanced";
-            this.boxAdvanced.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
-            // 
-            // 
-            // 
-            this.boxAdvanced.RootElement.Padding = new System.Windows.Forms.Padding(2, 18, 2, 2);
             this.boxAdvanced.Size = new System.Drawing.Size(702, 404);
             this.boxAdvanced.TabIndex = 25;
             this.boxAdvanced.Text = "Advanced Data";
+            this.boxAdvanced.ThemeName = "TelerikMetroBlue";
             this.boxAdvanced.Visible = false;
             // 
             // txtMeicalInsurance
             // 
+            this.txtMeicalInsurance.AutoSize = false;
             this.txtMeicalInsurance.Location = new System.Drawing.Point(478, 199);
             this.txtMeicalInsurance.Multiline = true;
             this.txtMeicalInsurance.Name = "txtMeicalInsurance";
-            // 
-            // 
-            // 
-            this.txtMeicalInsurance.RootElement.StretchVertically = true;
             this.txtMeicalInsurance.Size = new System.Drawing.Size(200, 112);
             this.txtMeicalInsurance.TabIndex = 34;
             this.txtMeicalInsurance.TabStop = false;
-            this.txtMeicalInsurance.ThemeName = "TelerikMetro";
             // 
             // radLabel20
             // 
@@ -474,17 +454,13 @@
             // 
             // txtSocioStatus
             // 
+            this.txtSocioStatus.AutoSize = false;
             this.txtSocioStatus.Location = new System.Drawing.Point(258, 228);
             this.txtSocioStatus.Multiline = true;
             this.txtSocioStatus.Name = "txtSocioStatus";
-            // 
-            // 
-            // 
-            this.txtSocioStatus.RootElement.StretchVertically = true;
             this.txtSocioStatus.Size = new System.Drawing.Size(200, 83);
             this.txtSocioStatus.TabIndex = 32;
             this.txtSocioStatus.TabStop = false;
-            this.txtSocioStatus.ThemeName = "TelerikMetro";
             // 
             // radLabel19
             // 
@@ -497,17 +473,13 @@
             // 
             // txtFamilyHistory
             // 
+            this.txtFamilyHistory.AutoSize = false;
             this.txtFamilyHistory.Location = new System.Drawing.Point(258, 110);
             this.txtFamilyHistory.Multiline = true;
             this.txtFamilyHistory.Name = "txtFamilyHistory";
-            // 
-            // 
-            // 
-            this.txtFamilyHistory.RootElement.StretchVertically = true;
             this.txtFamilyHistory.Size = new System.Drawing.Size(200, 83);
             this.txtFamilyHistory.TabIndex = 30;
             this.txtFamilyHistory.TabStop = false;
-            this.txtFamilyHistory.ThemeName = "TelerikMetro";
             // 
             // radLabel18
             // 
@@ -522,10 +494,9 @@
             // 
             this.txtDiet.Location = new System.Drawing.Point(258, 346);
             this.txtDiet.Name = "txtDiet";
-            this.txtDiet.Size = new System.Drawing.Size(160, 23);
+            this.txtDiet.Size = new System.Drawing.Size(160, 20);
             this.txtDiet.TabIndex = 28;
             this.txtDiet.TabStop = false;
-            this.txtDiet.ThemeName = "TelerikMetro";
             // 
             // radLabel17
             // 
@@ -543,16 +514,15 @@
             this.chkAlchoholic.Size = new System.Drawing.Size(80, 19);
             this.chkAlchoholic.TabIndex = 26;
             this.chkAlchoholic.Text = "Alchoholic";
-            this.chkAlchoholic.ThemeName = "TelerikMetro";
+            this.chkAlchoholic.ThemeName = "TelerikMetroBlue";
             // 
             // txtAlchoholic
             // 
             this.txtAlchoholic.Location = new System.Drawing.Point(478, 116);
             this.txtAlchoholic.Name = "txtAlchoholic";
-            this.txtAlchoholic.Size = new System.Drawing.Size(160, 23);
+            this.txtAlchoholic.Size = new System.Drawing.Size(160, 20);
             this.txtAlchoholic.TabIndex = 25;
             this.txtAlchoholic.TabStop = false;
-            this.txtAlchoholic.ThemeName = "TelerikMetro";
             // 
             // chkSmoker
             // 
@@ -561,25 +531,23 @@
             this.chkSmoker.Size = new System.Drawing.Size(65, 19);
             this.chkSmoker.TabIndex = 24;
             this.chkSmoker.Text = "Smoker";
-            this.chkSmoker.ThemeName = "TelerikMetro";
+            this.chkSmoker.ThemeName = "TelerikMetroBlue";
             // 
             // txtSmoker
             // 
             this.txtSmoker.Location = new System.Drawing.Point(478, 54);
             this.txtSmoker.Name = "txtSmoker";
-            this.txtSmoker.Size = new System.Drawing.Size(160, 23);
+            this.txtSmoker.Size = new System.Drawing.Size(160, 20);
             this.txtSmoker.TabIndex = 23;
             this.txtSmoker.TabStop = false;
-            this.txtSmoker.ThemeName = "TelerikMetro";
             // 
             // txtReferredBy
             // 
             this.txtReferredBy.Location = new System.Drawing.Point(258, 54);
             this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(160, 23);
+            this.txtReferredBy.Size = new System.Drawing.Size(160, 20);
             this.txtReferredBy.TabIndex = 21;
             this.txtReferredBy.TabStop = false;
-            this.txtReferredBy.ThemeName = "TelerikMetro";
             // 
             // radLabel16
             // 
@@ -592,17 +560,13 @@
             // 
             // txtMedication
             // 
+            this.txtMedication.AutoSize = false;
             this.txtMedication.Location = new System.Drawing.Point(16, 286);
             this.txtMedication.Multiline = true;
             this.txtMedication.Name = "txtMedication";
-            // 
-            // 
-            // 
-            this.txtMedication.RootElement.StretchVertically = true;
             this.txtMedication.Size = new System.Drawing.Size(200, 83);
             this.txtMedication.TabIndex = 19;
             this.txtMedication.TabStop = false;
-            this.txtMedication.ThemeName = "TelerikMetro";
             // 
             // radLabel15
             // 
@@ -615,17 +579,13 @@
             // 
             // txtAllergies
             // 
+            this.txtAllergies.AutoSize = false;
             this.txtAllergies.Location = new System.Drawing.Point(16, 170);
             this.txtAllergies.Multiline = true;
             this.txtAllergies.Name = "txtAllergies";
-            // 
-            // 
-            // 
-            this.txtAllergies.RootElement.StretchVertically = true;
             this.txtAllergies.Size = new System.Drawing.Size(200, 83);
             this.txtAllergies.TabIndex = 17;
             this.txtAllergies.TabStop = false;
-            this.txtAllergies.ThemeName = "TelerikMetro";
             // 
             // radLabel14
             // 
@@ -638,17 +598,13 @@
             // 
             // txtMedicalIssues
             // 
+            this.txtMedicalIssues.AutoSize = false;
             this.txtMedicalIssues.Location = new System.Drawing.Point(16, 54);
             this.txtMedicalIssues.Multiline = true;
             this.txtMedicalIssues.Name = "txtMedicalIssues";
-            // 
-            // 
-            // 
-            this.txtMedicalIssues.RootElement.StretchVertically = true;
             this.txtMedicalIssues.Size = new System.Drawing.Size(200, 83);
             this.txtMedicalIssues.TabIndex = 15;
             this.txtMedicalIssues.TabStop = false;
-            this.txtMedicalIssues.ThemeName = "TelerikMetro";
             // 
             // radLabel13
             // 
@@ -661,18 +617,13 @@
             // 
             // DOB
             // 
-            this.DOB.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DOB.Location = new System.Drawing.Point(34, 340);
-            this.DOB.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DOB.MinDate = new System.DateTime(((long)(0)));
             this.DOB.Name = "DOB";
-            this.DOB.NullableValue = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
-            this.DOB.NullDate = new System.DateTime(((long)(0)));
-            this.DOB.Size = new System.Drawing.Size(150, 20);
+            this.DOB.Size = new System.Drawing.Size(150, 22);
             this.DOB.TabIndex = 85;
             this.DOB.TabStop = false;
             this.DOB.Text = "22 September 2013";
-            this.DOB.ThemeName = "TelerikMetro";
+            this.DOB.ThemeName = "TelerikMetroBlue";
             this.DOB.Value = new System.DateTime(2013, 9, 22, 15, 32, 29, 443);
             // 
             // btnRefresh
@@ -683,7 +634,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(92, 24);
             this.btnRefresh.TabIndex = 86;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // EditPatient
@@ -691,13 +642,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnSavePatient);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.DOB);
             this.Controls.Add(this.boxAdvanced);
             this.Controls.Add(this.btnAdvanced);
             this.Controls.Add(this.lblPatientId);
             this.Controls.Add(this.radLabel12);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.ddlHospital);
             this.Controls.Add(this.radLabel11);
             this.Controls.Add(this.txtEmail);
@@ -720,7 +672,6 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
-            this.Controls.Add(this.btnSavePatient);
             this.Name = "EditPatient";
             this.Size = new System.Drawing.Size(1300, 600);
             ((System.ComponentModel.ISupportInitialize)(this.btnSavePatient)).EndInit();
@@ -793,7 +744,6 @@
         private Telerik.WinControls.UI.RadTextBox txtLastName;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadCheckBox chkMale;
         private Telerik.WinControls.UI.RadCheckBox chkFemale;
         private Telerik.WinControls.UI.RadLabel radLabel7;
@@ -833,5 +783,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel20;
         private Telerik.WinControls.UI.RadDateTimePicker DOB;
         private Telerik.WinControls.UI.RadButton btnRefresh;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
     }
 }

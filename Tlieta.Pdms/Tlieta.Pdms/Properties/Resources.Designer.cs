@@ -211,6 +211,15 @@ namespace Tlieta.Pdms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 123456.
+        /// </summary>
+        internal static string DefaultPassword {
+            get {
+                return ResourceManager.GetString("DefaultPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dentistry48 {
@@ -247,6 +256,15 @@ namespace Tlieta.Pdms.Properties {
             get {
                 object obj = ResourceManager.GetObject("ecg_chart48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pdms.
+        /// </summary>
+        internal static string EncryptionKey {
+            get {
+                return ResourceManager.GetString("EncryptionKey", resourceCulture);
             }
         }
         

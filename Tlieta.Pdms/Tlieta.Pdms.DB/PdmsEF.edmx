@@ -141,12 +141,21 @@
             <PropertyRef Name="EmployeeId" />
           </Key>
           <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeName" Type="varchar" MaxLength="150" />
-          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" />
           <Property Name="EmailId" Type="varchar" MaxLength="150" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="UserId" Type="varchar" MaxLength="10" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="VerificationDocument" Type="varchar" MaxLength="50" />
+          <Property Name="VerificationNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ManagerId" Type="int" />
+          <Property Name="HiredDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="InactiveFrom" Type="datetime" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ErrorLog">
@@ -390,7 +399,6 @@
           <EntitySet Name="Diagnoses" EntityType="PDMSDatabaseModel.Diagnosis" />
           <EntitySet Name="DosageDurations" EntityType="PDMSDatabaseModel.DosageDuration" />
           <EntitySet Name="DosageFrequencies" EntityType="PDMSDatabaseModel.DosageFrequency" />
-          <EntitySet Name="Employees" EntityType="PDMSDatabaseModel.Employee" />
           <EntitySet Name="ErrorLogs" EntityType="PDMSDatabaseModel.ErrorLog" />
           <EntitySet Name="ExaminationTemplates" EntityType="PDMSDatabaseModel.ExaminationTemplate" />
           <EntitySet Name="Hospitals" EntityType="PDMSDatabaseModel.Hospital" />
@@ -411,6 +419,7 @@
           <EntitySet Name="PatientImagingDatas" EntityType="PDMSDatabaseModel.PatientImagingData" />
           <EntitySet Name="PatientLabDatas" EntityType="PDMSDatabaseModel.PatientLabData" />
           <EntitySet Name="Prescriptions" EntityType="PDMSDatabaseModel.Prescription" />
+          <EntitySet Name="Employees" EntityType="PDMSDatabaseModel.Employee" />
         </EntityContainer>
         <EntityType Name="Billing">
           <Key>
@@ -485,19 +494,6 @@
           </Key>
           <Property Name="DosageFrequencyId" Type="Int32" Nullable="false" />
           <Property Name="DosageFrequencyName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="EmployeeId" />
-          </Key>
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="RoleId" Type="Int32" Nullable="false" />
-          <Property Name="EmailId" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="UserId" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="ErrorLog">
@@ -755,6 +751,28 @@
           <Property Type="String" Name="DrugName" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Dosage" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DOB" Precision="3" />
+          <Property Type="String" Name="EmailId" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserId" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="VerificationDocument" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VerificationNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ManagerId" />
+          <Property Type="DateTime" Name="HiredDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" />
+          <Property Type="DateTime" Name="InactiveFrom" Precision="3" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -839,20 +857,6 @@
               <MappingFragment StoreEntitySet="DosageFrequency">
                 <ScalarProperty Name="DosageFrequencyId" ColumnName="DosageFrequencyId" />
                 <ScalarProperty Name="DosageFrequencyName" ColumnName="DosageFrequencyName" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="PDMSDatabaseModel.Employee">
-              <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1129,6 +1133,29 @@
                 <ScalarProperty Name="DrugId" ColumnName="DrugId" />
                 <ScalarProperty Name="VisitId" ColumnName="VisitId" />
                 <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="PDMSDatabaseModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="InactiveFrom" ColumnName="InactiveFrom" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="VerificationNumber" ColumnName="VerificationNumber" />
+                <ScalarProperty Name="VerificationDocument" ColumnName="VerificationDocument" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

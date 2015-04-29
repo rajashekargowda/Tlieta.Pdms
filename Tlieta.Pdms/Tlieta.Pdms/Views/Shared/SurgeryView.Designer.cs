@@ -104,18 +104,13 @@
             // 
             // datetimeSurgery
             // 
-            this.datetimeSurgery.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.datetimeSurgery.Location = new System.Drawing.Point(282, 154);
-            this.datetimeSurgery.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetimeSurgery.MinDate = new System.DateTime(((long)(0)));
             this.datetimeSurgery.Name = "datetimeSurgery";
-            this.datetimeSurgery.NullableValue = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
-            this.datetimeSurgery.NullDate = new System.DateTime(((long)(0)));
-            this.datetimeSurgery.Size = new System.Drawing.Size(150, 20);
+            this.datetimeSurgery.Size = new System.Drawing.Size(150, 22);
             this.datetimeSurgery.TabIndex = 23;
             this.datetimeSurgery.TabStop = false;
             this.datetimeSurgery.Text = "12 May 2013";
-            this.datetimeSurgery.ThemeName = "TelerikMetro";
+            this.datetimeSurgery.ThemeName = "TelerikMetroBlue";
             this.datetimeSurgery.Value = new System.DateTime(2013, 5, 12, 12, 43, 30, 354);
             // 
             // radLabel6
@@ -139,13 +134,14 @@
             // 
             // ddlOpertaion
             // 
-            this.ddlOpertaion.DropDownAnimationEnabled = true;
+            this.ddlOpertaion.AllowShowFocusCues = false;
+            this.ddlOpertaion.AutoCompleteDisplayMember = null;
+            this.ddlOpertaion.AutoCompleteValueMember = null;
             this.ddlOpertaion.Location = new System.Drawing.Point(282, 78);
             this.ddlOpertaion.Name = "ddlOpertaion";
-            this.ddlOpertaion.ShowImageInEditorArea = true;
-            this.ddlOpertaion.Size = new System.Drawing.Size(200, 20);
+            this.ddlOpertaion.Size = new System.Drawing.Size(200, 22);
             this.ddlOpertaion.TabIndex = 26;
-            this.ddlOpertaion.ThemeName = "TelerikMetro";
+            this.ddlOpertaion.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel11
             // 
@@ -168,13 +164,14 @@
             // 
             // ddlHospital
             // 
-            this.ddlHospital.DropDownAnimationEnabled = true;
+            this.ddlHospital.AllowShowFocusCues = false;
+            this.ddlHospital.AutoCompleteDisplayMember = null;
+            this.ddlHospital.AutoCompleteValueMember = null;
             this.ddlHospital.Location = new System.Drawing.Point(282, 222);
             this.ddlHospital.Name = "ddlHospital";
-            this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 32;
-            this.ddlHospital.ThemeName = "TelerikMetro";
+            this.ddlHospital.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel4
             // 
@@ -190,10 +187,9 @@
             this.txtIPNumber.Location = new System.Drawing.Point(285, 301);
             this.txtIPNumber.MaxLength = 20;
             this.txtIPNumber.Name = "txtIPNumber";
-            this.txtIPNumber.Size = new System.Drawing.Size(197, 23);
+            this.txtIPNumber.Size = new System.Drawing.Size(197, 20);
             this.txtIPNumber.TabIndex = 35;
             this.txtIPNumber.TabStop = false;
-            this.txtIPNumber.ThemeName = "TelerikMetro";
             // 
             // radLabel5
             // 
@@ -215,17 +211,13 @@
             // 
             // txtNotes
             // 
+            this.txtNotes.AutoSize = false;
             this.txtNotes.Location = new System.Drawing.Point(285, 370);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            // 
-            // 
-            // 
-            this.txtNotes.RootElement.StretchVertically = true;
             this.txtNotes.Size = new System.Drawing.Size(633, 67);
             this.txtNotes.TabIndex = 37;
             this.txtNotes.TabStop = false;
-            this.txtNotes.ThemeName = "TelerikMetro";
             // 
             // btnAddSurgery
             // 
@@ -235,7 +227,7 @@
             this.btnAddSurgery.Size = new System.Drawing.Size(92, 32);
             this.btnAddSurgery.TabIndex = 38;
             this.btnAddSurgery.Text = "Add";
-            this.btnAddSurgery.ThemeName = "TelerikMetro";
+            this.btnAddSurgery.ThemeName = "TelerikMetroBlue";
             this.btnAddSurgery.Click += new System.EventHandler(this.btnAddSurgery_Click);
             // 
             // btnUpdate
@@ -246,20 +238,19 @@
             this.btnUpdate.Size = new System.Drawing.Size(92, 32);
             this.btnUpdate.TabIndex = 39;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.ThemeName = "TelerikMetro";
+            this.btnUpdate.ThemeName = "TelerikMetroBlue";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // listSurgery
             // 
             this.listSurgery.AutoScroll = true;
-            this.listSurgery.CaseSensitiveSort = true;
             this.listSurgery.EnableKineticScrolling = true;
             this.listSurgery.ItemHeight = 50;
             this.listSurgery.Location = new System.Drawing.Point(59, 48);
             this.listSurgery.Name = "listSurgery";
             this.listSurgery.Size = new System.Drawing.Size(178, 443);
             this.listSurgery.TabIndex = 40;
-            this.listSurgery.ThemeName = "TelerikMetro";
+            this.listSurgery.ThemeName = "TelerikMetroBlue";
             this.listSurgery.SelectedValueChanged += new System.EventHandler(this.listSurgery_SelectedValueChanged);
             // 
             // radLabel9
@@ -276,20 +267,18 @@
             this.txtPreOpDiagnosis.Location = new System.Drawing.Point(660, 48);
             this.txtPreOpDiagnosis.MaxLength = 20;
             this.txtPreOpDiagnosis.Name = "txtPreOpDiagnosis";
-            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPreOpDiagnosis.Size = new System.Drawing.Size(258, 20);
             this.txtPreOpDiagnosis.TabIndex = 44;
             this.txtPreOpDiagnosis.TabStop = false;
-            this.txtPreOpDiagnosis.ThemeName = "TelerikMetro";
             // 
             // txtPostOpDiagnosis
             // 
             this.txtPostOpDiagnosis.Location = new System.Drawing.Point(660, 90);
             this.txtPostOpDiagnosis.MaxLength = 20;
             this.txtPostOpDiagnosis.Name = "txtPostOpDiagnosis";
-            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 23);
+            this.txtPostOpDiagnosis.Size = new System.Drawing.Size(258, 20);
             this.txtPostOpDiagnosis.TabIndex = 46;
             this.txtPostOpDiagnosis.TabStop = false;
-            this.txtPostOpDiagnosis.ThemeName = "TelerikMetro";
             // 
             // radLabel10
             // 
@@ -305,10 +294,9 @@
             this.txtReferredBy.Location = new System.Drawing.Point(660, 133);
             this.txtReferredBy.MaxLength = 20;
             this.txtReferredBy.Name = "txtReferredBy";
-            this.txtReferredBy.Size = new System.Drawing.Size(258, 23);
+            this.txtReferredBy.Size = new System.Drawing.Size(258, 20);
             this.txtReferredBy.TabIndex = 48;
             this.txtReferredBy.TabStop = false;
-            this.txtReferredBy.ThemeName = "TelerikMetro";
             // 
             // radLabel12
             // 
@@ -330,23 +318,25 @@
             // 
             // ddlSurgeon
             // 
-            this.ddlSurgeon.DropDownAnimationEnabled = true;
+            this.ddlSurgeon.AllowShowFocusCues = false;
+            this.ddlSurgeon.AutoCompleteDisplayMember = null;
+            this.ddlSurgeon.AutoCompleteValueMember = null;
             this.ddlSurgeon.Location = new System.Drawing.Point(660, 192);
             this.ddlSurgeon.Name = "ddlSurgeon";
-            this.ddlSurgeon.ShowImageInEditorArea = true;
-            this.ddlSurgeon.Size = new System.Drawing.Size(258, 20);
+            this.ddlSurgeon.Size = new System.Drawing.Size(258, 22);
             this.ddlSurgeon.TabIndex = 50;
-            this.ddlSurgeon.ThemeName = "TelerikMetro";
+            this.ddlSurgeon.ThemeName = "TelerikMetroBlue";
             // 
             // ddlAsstSurgeon
             // 
-            this.ddlAsstSurgeon.DropDownAnimationEnabled = true;
+            this.ddlAsstSurgeon.AllowShowFocusCues = false;
+            this.ddlAsstSurgeon.AutoCompleteDisplayMember = null;
+            this.ddlAsstSurgeon.AutoCompleteValueMember = null;
             this.ddlAsstSurgeon.Location = new System.Drawing.Point(660, 232);
             this.ddlAsstSurgeon.Name = "ddlAsstSurgeon";
-            this.ddlAsstSurgeon.ShowImageInEditorArea = true;
-            this.ddlAsstSurgeon.Size = new System.Drawing.Size(258, 20);
+            this.ddlAsstSurgeon.Size = new System.Drawing.Size(258, 22);
             this.ddlAsstSurgeon.TabIndex = 52;
-            this.ddlAsstSurgeon.ThemeName = "TelerikMetro";
+            this.ddlAsstSurgeon.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel15
             // 
@@ -359,13 +349,14 @@
             // 
             // ddlAnaesthetist
             // 
-            this.ddlAnaesthetist.DropDownAnimationEnabled = true;
+            this.ddlAnaesthetist.AllowShowFocusCues = false;
+            this.ddlAnaesthetist.AutoCompleteDisplayMember = null;
+            this.ddlAnaesthetist.AutoCompleteValueMember = null;
             this.ddlAnaesthetist.Location = new System.Drawing.Point(660, 271);
             this.ddlAnaesthetist.Name = "ddlAnaesthetist";
-            this.ddlAnaesthetist.ShowImageInEditorArea = true;
-            this.ddlAnaesthetist.Size = new System.Drawing.Size(258, 20);
+            this.ddlAnaesthetist.Size = new System.Drawing.Size(258, 22);
             this.ddlAnaesthetist.TabIndex = 54;
-            this.ddlAnaesthetist.ThemeName = "TelerikMetro";
+            this.ddlAnaesthetist.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel16
             // 
@@ -378,13 +369,14 @@
             // 
             // ddlScrubNurse
             // 
-            this.ddlScrubNurse.DropDownAnimationEnabled = true;
+            this.ddlScrubNurse.AllowShowFocusCues = false;
+            this.ddlScrubNurse.AutoCompleteDisplayMember = null;
+            this.ddlScrubNurse.AutoCompleteValueMember = null;
             this.ddlScrubNurse.Location = new System.Drawing.Point(660, 310);
             this.ddlScrubNurse.Name = "ddlScrubNurse";
-            this.ddlScrubNurse.ShowImageInEditorArea = true;
-            this.ddlScrubNurse.Size = new System.Drawing.Size(258, 20);
+            this.ddlScrubNurse.Size = new System.Drawing.Size(258, 22);
             this.ddlScrubNurse.TabIndex = 56;
-            this.ddlScrubNurse.ThemeName = "TelerikMetro";
+            this.ddlScrubNurse.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel18
             // 
@@ -403,7 +395,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(92, 32);
             this.btnRefresh.TabIndex = 87;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // SurgeryView

@@ -32,7 +32,6 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.ddlHospital = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.btnSearch = new Telerik.WinControls.UI.RadButton();
             this.SearchGrid = new Telerik.WinControls.UI.RadGridView();
             this.btnRefresh = new Telerik.WinControls.UI.RadButton();
@@ -50,10 +49,9 @@
             // 
             this.txtName.Location = new System.Drawing.Point(36, 69);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 23);
+            this.txtName.Size = new System.Drawing.Size(235, 20);
             this.txtName.TabIndex = 8;
             this.txtName.TabStop = false;
-            this.txtName.ThemeName = "TelerikMetro";
             // 
             // radLabel2
             // 
@@ -66,18 +64,19 @@
             // 
             // ddlHospital
             // 
-            this.ddlHospital.DropDownAnimationEnabled = true;
-            this.ddlHospital.Location = new System.Drawing.Point(217, 69);
+            this.ddlHospital.AllowShowFocusCues = false;
+            this.ddlHospital.AutoCompleteDisplayMember = null;
+            this.ddlHospital.AutoCompleteValueMember = null;
+            this.ddlHospital.Location = new System.Drawing.Point(295, 69);
             this.ddlHospital.Name = "ddlHospital";
-            this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 22;
-            this.ddlHospital.ThemeName = "TelerikMetro";
+            this.ddlHospital.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel11
             // 
             this.radLabel11.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.radLabel11.Location = new System.Drawing.Point(217, 39);
+            this.radLabel11.Location = new System.Drawing.Point(295, 39);
             this.radLabel11.Name = "radLabel11";
             this.radLabel11.Size = new System.Drawing.Size(106, 24);
             this.radLabel11.TabIndex = 21;
@@ -85,12 +84,13 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(442, 68);
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.Location = new System.Drawing.Point(520, 68);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 24);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Search";
-            this.btnSearch.ThemeName = "TelerikMetro";
+            this.btnSearch.ThemeName = "TelerikMetroBlue";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SearchGrid
@@ -115,7 +115,7 @@
             this.SearchGrid.Size = new System.Drawing.Size(1261, 474);
             this.SearchGrid.TabIndex = 27;
             this.SearchGrid.Text = "radGridView1";
-            this.SearchGrid.ThemeName = "TelerikMetro";
+            this.SearchGrid.ThemeName = "TelerikMetroBlue";
             this.SearchGrid.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SearchGrid_CellDoubleClick);
             // 
             // btnRefresh
@@ -162,7 +162,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadDropDownList ddlHospital;
         private Telerik.WinControls.UI.RadLabel radLabel11;
-        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.UI.RadButton btnSearch;
         private Telerik.WinControls.UI.RadGridView SearchGrid;
         private Telerik.WinControls.UI.RadButton btnRefresh;

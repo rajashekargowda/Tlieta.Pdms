@@ -117,107 +117,104 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="Telerik.WinControls.RadChart" name="Telerik.WinControls.RadChart, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-  <data name="chartMargins37.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <assembly alias="Telerik.WinControls.RadChart" name="Telerik.WinControls.RadChart, Version=2014.2.715.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  <data name="chartMargins1.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>14px</value>
   </data>
-  <data name="chartMargins37.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins1.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>6%</value>
   </data>
-  <data name="chartMargins37.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins1.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10px</value>
   </data>
-  <data name="chartMargins37.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins1.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>4%</value>
   </data>
-  <data name="chartMargins38.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins2.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins38.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins2.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>2%</value>
   </data>
-  <data name="chartMargins39.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins3.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins39.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins3.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>9%</value>
   </data>
-  <data name="chartMargins39.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins3.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>90px</value>
   </data>
-  <data name="chartMargins39.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins3.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>19%</value>
   </data>
-  <data name="chartPaddings13.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartPaddings1.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10%</value>
   </data>
-  <data name="chartMargins40.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins4.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>14px</value>
   </data>
-  <data name="chartMargins40.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins4.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>6%</value>
   </data>
-  <data name="chartMargins40.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins4.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10px</value>
   </data>
-  <data name="chartMargins40.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins4.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>4%</value>
   </data>
-  <data name="chartMargins41.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins5.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins41.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins5.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>2%</value>
   </data>
-  <data name="chartMargins42.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins6.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins42.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins6.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>9%</value>
   </data>
-  <data name="chartMargins42.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins6.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>90px</value>
   </data>
-  <data name="chartMargins42.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins6.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>19%</value>
   </data>
-  <data name="chartPaddings14.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartPaddings2.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10%</value>
   </data>
-  <data name="chartMargins43.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins7.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>14px</value>
   </data>
-  <data name="chartMargins43.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins7.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>6%</value>
   </data>
-  <data name="chartMargins43.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins7.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10px</value>
   </data>
-  <data name="chartMargins43.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins7.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>4%</value>
   </data>
-  <data name="chartMargins44.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins8.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins44.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins8.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>2%</value>
   </data>
-  <data name="chartMargins45.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins9.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>12%</value>
   </data>
-  <data name="chartMargins45.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins9.Left" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>9%</value>
   </data>
-  <data name="chartMargins45.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins9.Right" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>90px</value>
   </data>
-  <data name="chartMargins45.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartMargins9.Top" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>19%</value>
   </data>
-  <data name="chartPaddings15.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
+  <data name="chartPaddings3.Bottom" type="Telerik.Charting.Styles.Unit, Telerik.WinControls.RadChart">
     <value>10%</value>
   </data>
-  <metadata name="telerikMetroTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

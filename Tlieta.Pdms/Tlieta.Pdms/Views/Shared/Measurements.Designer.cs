@@ -87,7 +87,7 @@
             this.btnAddMeasurement.Size = new System.Drawing.Size(155, 32);
             this.btnAddMeasurement.TabIndex = 80;
             this.btnAddMeasurement.Text = "Add to Timeline";
-            this.btnAddMeasurement.ThemeName = "TelerikMetro";
+            this.btnAddMeasurement.ThemeName = "TelerikMetroBlue";
             this.btnAddMeasurement.Click += new System.EventHandler(this.btnAddMeasurement_Click);
             // 
             // txtBPHigh
@@ -95,10 +95,9 @@
             this.txtBPHigh.Location = new System.Drawing.Point(77, 37);
             this.txtBPHigh.MaxLength = 30;
             this.txtBPHigh.Name = "txtBPHigh";
-            this.txtBPHigh.Size = new System.Drawing.Size(80, 23);
+            this.txtBPHigh.Size = new System.Drawing.Size(80, 20);
             this.txtBPHigh.TabIndex = 69;
             this.txtBPHigh.TabStop = false;
-            this.txtBPHigh.ThemeName = "TelerikMetro";
             // 
             // radLabel4
             // 
@@ -131,7 +130,7 @@
             this.MeasurementGrid.Size = new System.Drawing.Size(897, 547);
             this.MeasurementGrid.TabIndex = 66;
             this.MeasurementGrid.Text = "radGridView1";
-            this.MeasurementGrid.ThemeName = "TelerikMetro";
+            this.MeasurementGrid.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel3
             // 
@@ -156,10 +155,9 @@
             this.txtBPLow.Location = new System.Drawing.Point(181, 39);
             this.txtBPLow.MaxLength = 30;
             this.txtBPLow.Name = "txtBPLow";
-            this.txtBPLow.Size = new System.Drawing.Size(80, 23);
+            this.txtBPLow.Size = new System.Drawing.Size(80, 20);
             this.txtBPLow.TabIndex = 83;
             this.txtBPLow.TabStop = false;
-            this.txtBPLow.ThemeName = "TelerikMetro";
             // 
             // radLabel6
             // 
@@ -256,60 +254,54 @@
             this.txtWeight.Location = new System.Drawing.Point(76, 258);
             this.txtWeight.MaxLength = 30;
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(80, 23);
+            this.txtWeight.Size = new System.Drawing.Size(80, 20);
             this.txtWeight.TabIndex = 94;
             this.txtWeight.TabStop = false;
-            this.txtWeight.ThemeName = "TelerikMetro";
             // 
             // txtBMI
             // 
             this.txtBMI.Location = new System.Drawing.Point(76, 301);
             this.txtBMI.MaxLength = 30;
             this.txtBMI.Name = "txtBMI";
-            this.txtBMI.Size = new System.Drawing.Size(80, 23);
+            this.txtBMI.Size = new System.Drawing.Size(80, 20);
             this.txtBMI.TabIndex = 95;
             this.txtBMI.TabStop = false;
-            this.txtBMI.ThemeName = "TelerikMetro";
             // 
             // txtHeight
             // 
             this.txtHeight.Location = new System.Drawing.Point(76, 213);
             this.txtHeight.MaxLength = 30;
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(80, 23);
+            this.txtHeight.Size = new System.Drawing.Size(80, 20);
             this.txtHeight.TabIndex = 96;
             this.txtHeight.TabStop = false;
-            this.txtHeight.ThemeName = "TelerikMetro";
             // 
             // txtTemp
             // 
             this.txtTemp.Location = new System.Drawing.Point(76, 170);
             this.txtTemp.MaxLength = 30;
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(80, 23);
+            this.txtTemp.Size = new System.Drawing.Size(80, 20);
             this.txtTemp.TabIndex = 97;
             this.txtTemp.TabStop = false;
-            this.txtTemp.ThemeName = "TelerikMetro";
             // 
             // txtRR
             // 
             this.txtRR.Location = new System.Drawing.Point(76, 127);
             this.txtRR.MaxLength = 30;
             this.txtRR.Name = "txtRR";
-            this.txtRR.Size = new System.Drawing.Size(80, 23);
+            this.txtRR.Size = new System.Drawing.Size(80, 20);
             this.txtRR.TabIndex = 98;
             this.txtRR.TabStop = false;
-            this.txtRR.ThemeName = "TelerikMetro";
             // 
             // txtPR
             // 
             this.txtPR.Location = new System.Drawing.Point(76, 84);
             this.txtPR.MaxLength = 30;
             this.txtPR.Name = "txtPR";
-            this.txtPR.Size = new System.Drawing.Size(80, 23);
+            this.txtPR.Size = new System.Drawing.Size(80, 20);
             this.txtPR.TabIndex = 99;
             this.txtPR.TabStop = false;
-            this.txtPR.ThemeName = "TelerikMetro";
             // 
             // radLabel14
             // 

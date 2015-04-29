@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark2 = new Telerik.WinControls.UI.RadPrintWatermark();
+            Telerik.WinControls.UI.RadPrintWatermark radPrintWatermark1 = new Telerik.WinControls.UI.RadPrintWatermark();
             this.SearchGrid = new Telerik.WinControls.UI.RadGridView();
             this.btnSearch = new Telerik.WinControls.UI.RadButton();
             this.ddlHospital = new Telerik.WinControls.UI.RadDropDownList();
@@ -73,27 +73,29 @@
             this.SearchGrid.Size = new System.Drawing.Size(857, 480);
             this.SearchGrid.TabIndex = 33;
             this.SearchGrid.Text = "radGridView1";
-            this.SearchGrid.ThemeName = "TelerikMetro";
+            this.SearchGrid.ThemeName = "TelerikMetroBlue";
             // 
             // btnSearch
             // 
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Location = new System.Drawing.Point(509, 63);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 24);
             this.btnSearch.TabIndex = 32;
             this.btnSearch.Text = "Search";
-            this.btnSearch.ThemeName = "TelerikMetro";
+            this.btnSearch.ThemeName = "TelerikMetroBlue";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // ddlHospital
             // 
-            this.ddlHospital.DropDownAnimationEnabled = true;
+            this.ddlHospital.AllowShowFocusCues = false;
+            this.ddlHospital.AutoCompleteDisplayMember = null;
+            this.ddlHospital.AutoCompleteValueMember = null;
             this.ddlHospital.Location = new System.Drawing.Point(240, 63);
             this.ddlHospital.Name = "ddlHospital";
-            this.ddlHospital.ShowImageInEditorArea = true;
-            this.ddlHospital.Size = new System.Drawing.Size(200, 20);
+            this.ddlHospital.Size = new System.Drawing.Size(200, 22);
             this.ddlHospital.TabIndex = 31;
-            this.ddlHospital.ThemeName = "TelerikMetro";
+            this.ddlHospital.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel11
             // 
@@ -106,12 +108,13 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Location = new System.Drawing.Point(901, 105);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(102, 24);
             this.btnPrint.TabIndex = 33;
             this.btnPrint.Text = "Print";
-            this.btnPrint.ThemeName = "TelerikMetro";
+            this.btnPrint.ThemeName = "TelerikMetroBlue";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // radLabel17
@@ -126,13 +129,14 @@
             // 
             // ddlOpertaion
             // 
-            this.ddlOpertaion.DropDownAnimationEnabled = true;
+            this.ddlOpertaion.AllowShowFocusCues = false;
+            this.ddlOpertaion.AutoCompleteDisplayMember = null;
+            this.ddlOpertaion.AutoCompleteValueMember = null;
             this.ddlOpertaion.Location = new System.Drawing.Point(20, 63);
             this.ddlOpertaion.Name = "ddlOpertaion";
-            this.ddlOpertaion.ShowImageInEditorArea = true;
-            this.ddlOpertaion.Size = new System.Drawing.Size(200, 20);
+            this.ddlOpertaion.Size = new System.Drawing.Size(200, 22);
             this.ddlOpertaion.TabIndex = 35;
-            this.ddlOpertaion.ThemeName = "TelerikMetro";
+            this.ddlOpertaion.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel1
             // 
@@ -148,9 +152,7 @@
             this.radPrintDocument1.AssociatedObject = this.SearchGrid;
             this.radPrintDocument1.FooterFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radPrintDocument1.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            radPrintWatermark2.DrawInFront = true;
-            radPrintWatermark2.Font = new System.Drawing.Font("Microsoft Sans Serif", 144F);
-            this.radPrintDocument1.Watermark = radPrintWatermark2;
+            this.radPrintDocument1.Watermark = radPrintWatermark1;
             // 
             // btnRefresh
             // 
@@ -160,7 +162,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(102, 24);
             this.btnRefresh.TabIndex = 88;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.ThemeName = "TelerikMetro";
+            this.btnRefresh.ThemeName = "TelerikMetroBlue";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // LogBook

@@ -353,4 +353,10 @@ is absolutely necessary for the restoration of his/her health. &lt;/span&gt;&lt;
 &lt;p align='left'&gt;&lt;span&gt;Date :    ________________________&lt;/span&gt;&lt;/p&gt;</value>
     <comment>Medical Certificate content in html</comment>
   </data>
+  <data name="DefaultPassword" xml:space="preserve">
+    <value>123456</value>
+  </data>
+  <data name="EncryptionKey" xml:space="preserve">
+    <value>pdms</value>
+  </data>
 </root>

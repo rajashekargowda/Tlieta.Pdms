@@ -12,7 +12,7 @@ namespace Tlieta.Pdms.DB
             List<Employee> employees = new List<Employee>();
             try
             {
-                employees = (from e in entities.Employees select e).OrderBy(x => x.EmployeeName).ToList();
+                employees = (from e in entities.Employees select e).OrderBy(x => x.FirstName).ToList();
             }
             catch (Exception x)
             {
@@ -26,13 +26,31 @@ namespace Tlieta.Pdms.DB
             List<Employee> employees = new List<Employee>();
             try
             {
-                employees = (from e in entities.Employees select e).Where(r => r.RoleId == roleid).OrderBy(x => x.EmployeeName).ToList();
+                employees = (from e in entities.Employees select e).Where(r => r.RoleId == roleid).OrderBy(x => x.FirstName).ToList();
             }
             catch (Exception x)
             {
                 throw x;
             }
             return employees;
+        }
+
+        public bool IsValidUserId(string userid)
+        {
+            bool IsValid = true;
+            try
+            {
+                Employee employee = entities.Employees.Where(x => x.UserId == model.UserId).SingleOrDefault();
+                if (employee != null)
+                {
+                    IsValid = false;
+                }
+            }
+            catch (Exception x)
+            {
+                throw x;
+            }
+            return IsValid;
         }
 
         public List<Role> GetRoles()

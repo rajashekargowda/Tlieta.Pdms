@@ -32,7 +32,6 @@ namespace Tlieta.Pdms.DB
         public DbSet<Diagnosis> Diagnoses { get; set; }
         public DbSet<DosageDuration> DosageDurations { get; set; }
         public DbSet<DosageFrequency> DosageFrequencies { get; set; }
-        public DbSet<Employee> Employees { get; set; }
         public DbSet<ErrorLog> ErrorLogs { get; set; }
         public DbSet<ExaminationTemplate> ExaminationTemplates { get; set; }
         public DbSet<Hospital> Hospitals { get; set; }
@@ -53,5 +52,6 @@ namespace Tlieta.Pdms.DB
         public DbSet<PatientImagingData> PatientImagingDatas { get; set; }
         public DbSet<PatientLabData> PatientLabDatas { get; set; }
         public DbSet<Prescription> Prescriptions { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
