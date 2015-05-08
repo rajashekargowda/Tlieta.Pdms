@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html class=" js rgba multiplebgs backgroundsize borderradius boxshadow textshadow opacity cssanimations cssgradients csstransitions fontface">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="~/Content/style.default.css" type="text/css">
+    <link id="skinstyle" rel="stylesheet" href="~/Content/style.navyblue.css" type="text/css">
+    <script type="text/javascript" src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-migrate-1.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.smartWizard.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
+</head>
+
+<body>
+    <div class="topbar"><a class="barmenu"></a></div>
+    <div id="mainwrapper" class="mainwrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="~/Home/Start/">
+                    <img src="~/Content/images/logo.png" alt=""></a>
+            </div>
+            <div class="headerinner">
+                <ul class="headmenu">
+                    <li class="right">
+                        <div class="userloggedinfo">
+                            <img src="~/Content/images/profile.png" alt="">
+                            <div class="userinfo">
+                                <h5>Sachin Kumar<small>- skumar@bitrix24.com</small></h5>
+                                <ul>
+                                    <li><a href="~/Admin/Home">Admin Access</a></li>
+                                    <li><a href="~/Home/Profile">Edit Profile</a></li>
+                                    <li><a href="~/Home/Logout">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--headmenu-->
+            </div>
+        </div>
+        <div class="rightpanel">
+            @*<ul class="breadcrumbs">
+                <li><a href="~/Home/Dashboard"><i class="iconfa-home"></i></a><span class="separator"></span></li>
+                <li class="right">
+
+                </li>
+            </ul>*@
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <div class="footer-left"><span>© 2015. Tlieta Solutions Private Limited. All Rights Reserved.</span></div>
+            <div class="footer-right"><span>Designed by: Tlieta Solutions Private Limited</span></div>
+        </div>
+        <!--rightpanel-->
+    </div>
+    <!--mainwrapper-->
+</body>
+</html>

@@ -86,7 +86,7 @@
                             columns.Command(command => command.Custom("CustomDelete").Click("Delete").Text(" ")).Width(35).Title(" ");
                             columns.Bound(p => p.EmployeeId).Visible(false);
                             columns.Bound(p => p.RoleId).Visible(false);
-                            columns.Bound(p => p.EmployeeName).Title("Employee Name");
+                            columns.Bound(p => p.FirstName).Title("Employee Name");
                             columns.Bound(p => p.UserId).Title("User Id");
                             columns.Bound(p => p.EmailId).Title("Email Id");
                             columns.Bound(p => p.Phone).Title("Phone");
@@ -106,7 +106,7 @@
                           model.Id(p => p.EmployeeId);
                           model.Field(p => p.EmployeeId);
                           model.Field(p => p.RoleId);
-                          model.Field(p => p.EmployeeName);
+                          model.Field(p => p.FirstName);
                           model.Field(p => p.UserId);
                           model.Field(p => p.EmailId);
                           model.Field(p => p.Phone);

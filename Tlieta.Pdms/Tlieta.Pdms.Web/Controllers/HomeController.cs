@@ -30,7 +30,7 @@ namespace Tlieta.Pdms.Web.Controllers
                     Session["userid"] = employee.UserId;
                     Session["email"] = employee.EmailId;
                     Session["role"] = employee.RoleId;
-                    Session["employeename"] = employee.EmployeeName;
+                    Session["employeename"] = employee.FirstName + " " + employee.LastName;
                     Session["employeid"] = employee.EmployeeId;
 
                     FormsAuthentication.SetAuthCookie(employee.UserId, true);

@@ -1,4 +1,4 @@
-﻿var app = angular.module('tlieta', []);
+﻿r2var app = angular.module('tlieta', []);
 function usercontroller($scope) {
 
     $scope.roles = [
@@ -12,10 +12,10 @@ function usercontroller($scope) {
 
     $scope.buttontext = "Add User";
 
-    $scope.user = { EmployeeId: 0, EmployeeName: "", RoleId: 0, EmailId: "", Phone: "", UserId: "", Password: "", CreatedOn: new Date() }
+    $scope.user = { EmployeeId: 0, FirstName: "", RoleId: 0, EmailId: "", Phone: "", UserId: "", Password: "", CreatedOn: new Date() }
 
     $scope.refreshuser = function () {
-        $scope.user = { EmployeeId: 0, EmployeeName: "", RoleId: 0, EmailId: "", Phone: "", UserId: "", Password: "", CreatedOn: new Date() }
+        $scope.user = { EmployeeId: 0, FirstName: "", RoleId: 0, EmailId: "", Phone: "", UserId: "", Password: "", CreatedOn: new Date() }
         $scope.buttontext = "Add User";
         RefreshListView();
     }
@@ -63,7 +63,7 @@ function usercontroller($scope) {
 
 function Edit(e) {
     var dataItem = this.dataItem($(e.target).closest("tr"));
-    var scope = angular.element("#EmployeeName").scope();
+    var scope = angular.element("#EmployeeId").scope();
     scope.$apply(function () {
         scope.user = dataItem;
         scope.buttontext = "Update User";
@@ -76,7 +76,7 @@ function Edit(e) {
 
 function Delete(e) {
     var dataItem = this.dataItem($(e.target).closest("tr"));
-    angular.element("#EmployeeName").scope().deleteuser(dataItem.EmployeeId);
+    angular.element("#EmployeeId").scope().deleteuser(dataItem.EmployeeId);
     return false;
 }
 
@@ -95,7 +95,7 @@ function onRoleChange(e) {
     var index = this.select().index();
     var dataItem = this.dataSource.view()[index];
     
-    var scope = angular.element("#EmployeeName").scope();
+    var scope = angular.element("#EmployeeId").scope();
     scope.$apply(function () {
         if (dataItem) {
             scope.user.RoleId = dataItem.RoleId;

@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pageheader">
+    <div class="pageicon"><span class="iconfa-user"></span></div>
+    <div class="pagetitle">
+        <h5>User</h5>
+        <h1>Edit Profile</h1>
+        <div class="linkbar">
+            <ul class="list-nostyle list-inline">
+                <li><a href="#" class="btn btn-circle"><i class="iconfa-heart"></i></a></li>
+                <li><a href="#" class="btn btn-primary btn-circle"><i class="iconfa-off"></i></a></li>
+                <li><a href="#" class="btn btn-warning btn-circle"><i class="iconfa-signal"></i></a></li>
+                <li><a href="#" class="btn btn-danger btn-circle"><i class="iconfa-book"></i></a></li>
+                <li><a href="#" class="btn btn-info btn-circle"><i class="iconfa-pencil"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--pageheader-->
+<div class="maincontent">
+    <div class="maincontentinner">
+        <div class="row-fluid">
+            <div class="span4 profile-left">
+
+                <div class="widgetbox profile-photo">
+                    <div class="headtitle">
+                        <h4 class="widgettitle">Profile</h4>
+                    </div>
+                    <div class="widgetcontent">
+                        <div class="profilethumb">
+                            <img src="~/Content/images/profile.png" alt="" class="img-polaroid" style="float: left">
+                        </div>
+                        <!--profilethumb-->
+                    </div>
+                </div>
+
+
+                <div class="widgetbox tags">
+                    <div class="smallerform">
+                        <h4 class="widgettitle">Change Password</h4>
+                        <div class="widgetcontent">
+                            <p>
+                                <label>New Password:</label>
+                                <input type="password" name="newpassword" id="newpassword" class="input-xlarge">
+                            </p>
+                            <p>
+                                <label>Confirm:</label>
+                                <input type="password" name="confirmpassword" id="confirmpassword" class="input-xlarge">
+                            </p>
+                            <p>
+                                <label style="padding: 0"></label>
+                                <button type="button" class="btn btn-primary">Update Password</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--span4-->
+            <div class="span8">
+                <div class="largerform">
+                    <div class="widgetbox personal-information">
+                        <h4 class="widgettitle">Contact Information</h4>
+                        <div class="widgetcontent">
+                            <p>
+                                <label>Address:</label>
+                                <textarea id="address" name="address" class="span8" maxlength="250"></textarea>
+                            </p>
+                            <p>
+                                <label>Phone:</label>
+                                <input type="text" id="phone" name="phone" class="input-xlarge" maxlength="15">
+                            </p>
+                            <p>
+                                <label>Email Id:</label>
+                                <input type="email" name="email" id="email" class="input-xlarge" maxlength="50">
+                            </p>
+                            <p>
+                                <label>Verification Document:</label>
+                                <input type="text" name="verificationdoc" id="verificationdoc" class="input-xlarge">
+                            </p>
+                            <p>
+                                <label>Verification Number:</label>
+                                <input type="text" name="verificationnum" id="verificationnum" class="input-xlarge">
+                            </p>
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary">Update Contact Info</button>
+                                <button type="reset" class="btn">Reset</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--span8-->
+        </div>
+    </div>
+    <!--maincontentinner-->
+</div>
+<!--maincontent-->
